@@ -4,12 +4,18 @@ A Slack bot that turns requests ("move Alyson Fletcher to alumni, now at UCLA") 
 
 Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack thread is one request:
 
-1. A Claude agent (Agent SDK) edits a fresh git worktree of the website on its own branch. It can only read and edit
-   files in that worktree, and never sees the bot's credentials. The repo's `CLAUDE.md` tells it where content lives.
-2. The bot builds the site, publishes a preview, posts screenshots of the changed pages, and opens a pull request.
-3. Nothing goes live until an approved person (`config.json` → `approved`) clicks Publish, even for their own
-   requests. Publishing merges the pull request and the site redeploys; an Undo button reverts it.
-4. Replies in the thread revise the change (in channels, @mention the bot in the reply).
+1. **Talk.** A Claude agent (Agent SDK) works out the change with the requester, reading (not editing) a fresh git
+   worktree of the website. When it knows the change, it describes it and asks them to confirm. The repo's
+   `CLAUDE.md` tells it where content lives.
+2. **Preview.** On confirmation (a reply like "go ahead", or the Build preview button) the agent edits the worktree.
+   The bot builds the site, uploads a preview to Cloudflare Pages and posts screenshots of the changed pages. Replies
+   go back to step 1 for a revision (in channels, @mention the bot in the reply).
+3. **Publish.** If the requester is approved (`config.json` → `approved`), the preview has a Publish button: it opens a
+   pull request and merges it, and the site redeploys. Anyone else gets Submit for review, which opens the pull
+   request; an approved person then clicks Publish. An Undo button reverts a published change, through a preview.
+
+Nothing goes live from a message. The agent can only read and edit files in its worktree (editing only after
+confirmation), and never sees the bot's credentials.
 
 ## Running it
 
@@ -20,13 +26,16 @@ npx playwright install chromium-headless-shell
 npm start            # node --env-file=.env src/main.ts
 ```
 
-`bot/.env` (never committed) holds `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN`, `GITHUB_TOKEN` and `ANTHROPIC_API_KEY`.
-The Slack app is defined by `slack-app-manifest.yml` (Socket Mode, so no public URL is needed). Runtime state
-(the clone, worktrees, job records, screenshots, local previews) lives in `bot/state/`.
+`bot/.env` (never committed) holds `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN`, `GITHUB_TOKEN`, `ANTHROPIC_API_KEY`,
+`CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (a token with Account → Cloudflare Pages → Edit). The Slack app is
+defined by `slack-app-manifest.yml` (Socket Mode, so no public URL is needed). Runtime state (the clone, worktrees,
+job records, screenshots, local previews) lives in `bot/state/`.
 
-Previews: with `previews.repo` null in `config.json`, they're served from this machine at
-`http://localhost:4500/previews/<id>/` (fine for testing); set `previews.repo` and `previews.url` to publish them to a
-GitHub Pages repo instead.
+Previews: each request's build is uploaded with wrangler as a branch deployment of the Cloudflare Pages project
+`previews.project`, at `https://<date>-<suffix>.<previews.domain>/`, and deleted when the request is published or
+discarded. Without the Cloudflare settings, the latest build is only served on this machine at
+`http://localhost:4500/` (fine for testing). Either way, screenshots are taken from that local server.
 
-`node --env-file=.env src/try.ts "<request>"` runs one request without Slack or GitHub writes (worktree, agent,
-build, preview, screenshots) and prints where everything went. `npm run check` type-checks.
+`node --env-file=.env src/try.ts "<request>"` runs one request without Slack or GitHub writes (worktree, talk, edit
+with the proposal confirmed automatically, build, preview, screenshots) and prints where everything went.
+`npm run check` type-checks.

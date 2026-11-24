@@ -10,9 +10,10 @@ type Config = {
   siteUrl: string; // the live site, for "published" messages
   model: string;
   maxBudgetUsd: number; // per agent run
-  // Where previews go: a GitHub Pages repo (repo + url), or, with repo null, a local server on localPort.
-  previews: { repo: string | null; url: string | null; localPort: number };
-  approved: Record<string, string>; // Slack user ID -> name; their requests are merged automatically
+  // Previews: a Cloudflare Pages project and its domain (<project>.pages.dev, possibly with a suffix Cloudflare
+  // added), and the local port the latest build is served on for screenshots.
+  previews: { project: string; domain: string | null; localPort: number };
+  approved: Record<string, string>; // Slack user ID -> name: who can publish
 };
 
 export const config: Config = JSON.parse(fs.readFileSync(path.join(BOT_DIR, 'config.json'), 'utf8'));
@@ -25,7 +26,7 @@ export function secret(name: string): string {
 
 export const isApproved = (user: string) => Object.hasOwn(config.approved, user);
 
-const SECRETS = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN', 'GITHUB_TOKEN', 'ANTHROPIC_API_KEY'];
+const SECRETS = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN', 'GITHUB_TOKEN', 'ANTHROPIC_API_KEY', 'CLOUDFLARE_API_TOKEN'];
 
 /** Remove every credential (raw, or base64 in a git auth header) from text bound for Slack, GitHub or the log. */
 export function redact(text: string) {

@@ -6,12 +6,12 @@ import path from 'node:path';
 
 import { chromium } from 'playwright';
 
-import { STATE, config, log } from './config.ts';
-import { botCommit, git, run } from './git.ts';
+import { BOT_DIR, STATE, config, log, secret } from './config.ts';
+import { run } from './git.ts';
 
 const DEPS = path.join(STATE, 'site-deps'); // one shared node_modules for every worktree
-const LOCAL = path.join(STATE, 'previews-local'); // served at http://localhost:<localPort>/previews/<id>/
-const PREVIEWS_CLONE = path.join(STATE, 'previews');
+const LOCAL = path.join(STATE, 'previews-local'); // each request's latest build, by id
+const WRANGLER = path.join(BOT_DIR, 'node_modules', '.bin', 'wrangler');
 
 /** Link the worktree's site/node_modules to the shared install, reinstalling when the lockfile changes. */
 export async function linkDeps(dir: string) {
@@ -30,19 +30,24 @@ export async function linkDeps(dir: string) {
   if (!fs.existsSync(link)) fs.symlinkSync(path.join(DEPS, 'node_modules'), link);
 }
 
-export const previewBase = (id: string) => `/previews/${id}`;
+// Previews: each request's build is uploaded to Cloudflare Pages as a branch deployment of one project, at
+// https://<alias>.<previews.domain>/ (a stable URL per request). Without Cloudflare credentials (testing), the
+// latest build is only served locally. Either way the local server is what the screenshots are taken from.
+
+const cloudflare = () => Boolean(process.env.CLOUDFLARE_API_TOKEN && process.env.CLOUDFLARE_ACCOUNT_ID && config.previews.domain);
+
+/** Cloudflare's name for a request's preview: date and random suffix of the id ("20261124-rav9"), well under
+ * Pages' 28-character limit for branch aliases. */
+const alias = (id: string) => `${id.slice(0, 8)}-${id.slice(-4)}`.toLowerCase();
 
 export function previewUrl(id: string) {
-  return config.previews.repo && config.previews.url
-    ? `${config.previews.url}/${id}/`
-    : `http://localhost:${config.previews.localPort}${previewBase(id)}/`;
+  return cloudflare() ? `https://${alias(id)}.${config.previews.domain}/` : `http://localhost:${config.previews.localPort}/`;
 }
 
-/** Build the site with the preview's base path. Returns the build log's tail on failure. */
+/** Build the site for its preview URL. Returns the build log's tail on failure. */
 export async function build(dir: string, id: string): Promise<{ ok: boolean; log: string }> {
-  const site = config.previews.url ? new URL(config.previews.url).origin : `http://localhost:${config.previews.localPort}`;
   try {
-    await run('npx', ['astro', 'build'], path.join(dir, 'site'), { SITE: site, BASE: previewBase(id), PUBLIC_NOINDEX: 'true' });
+    await run('npx', ['astro', 'build'], path.join(dir, 'site'), { SITE: previewUrl(id), BASE: '/', PUBLIC_NOINDEX: 'true' });
     return { ok: true, log: '' };
   } catch (e) {
     const err = e as { stdout?: string; stderr?: string; message: string };
@@ -51,37 +56,46 @@ export async function build(dir: string, id: string): Promise<{ ok: boolean; log
   }
 }
 
-/** Copy the build to the local preview server, and to the previews repo if one is configured. */
+/** Serve the build locally (for screenshots) and upload it to Cloudflare. Returns the preview URL. */
 export async function publishPreview(dir: string, id: string) {
   const dist = path.join(dir, 'site', 'dist');
-  const local = path.join(LOCAL, 'previews', id);
+  const local = path.join(LOCAL, id);
   fs.rmSync(local, { recursive: true, force: true });
-  fs.mkdirSync(path.dirname(local), { recursive: true });
+  fs.mkdirSync(LOCAL, { recursive: true });
   fs.cpSync(dist, local, { recursive: true });
-  if (!config.previews.repo) return;
-  if (!fs.existsSync(path.join(PREVIEWS_CLONE, '.git'))) {
-    await run('git', ['clone', '--quiet', `https://github.com/${config.previews.repo}.git`, PREVIEWS_CLONE], STATE);
+  serving = local;
+  if (cloudflare()) {
+    await run(WRANGLER, ['pages', 'deploy', dist, '--project-name', config.previews.project, '--branch', alias(id),
+      '--commit-dirty=true', '--commit-message', id], STATE, { WRANGLER_SEND_METRICS: 'false', CI: 'true' });
   }
-  await git(PREVIEWS_CLONE, 'pull', '--quiet', '--rebase');
-  const target = path.join(PREVIEWS_CLONE, id);
-  fs.rmSync(target, { recursive: true, force: true });
-  fs.cpSync(dist, target, { recursive: true });
-  await git(PREVIEWS_CLONE, 'add', '-A');
-  await botCommit(PREVIEWS_CLONE, `Preview ${id}`).catch(() => {}); // nothing to commit if the build is unchanged
-  await git(PREVIEWS_CLONE, 'push', '--quiet');
+  return previewUrl(id);
 }
 
 export async function removePreview(id: string) {
-  fs.rmSync(path.join(LOCAL, 'previews', id), { recursive: true, force: true });
-  if (!config.previews.repo || !fs.existsSync(path.join(PREVIEWS_CLONE, id))) return;
-  await git(PREVIEWS_CLONE, 'pull', '--quiet', '--rebase');
-  await git(PREVIEWS_CLONE, 'rm', '-r', '--quiet', id);
-  await botCommit(PREVIEWS_CLONE, `Remove preview ${id}`);
-  await git(PREVIEWS_CLONE, 'push', '--quiet');
+  fs.rmSync(path.join(LOCAL, id), { recursive: true, force: true });
+  if (!cloudflare()) return;
+  // Delete the request's deployments (newest first; a busy month has far fewer than 100 previews).
+  for (let page = 1; page <= 4; page++) {
+    const list = await pagesApi('GET', `/deployments?env=preview&per_page=25&page=${page}`);
+    for (const d of list as { id: string; deployment_trigger?: { metadata?: { branch?: string } } }[]) {
+      if (d.deployment_trigger?.metadata?.branch === alias(id)) await pagesApi('DELETE', `/deployments/${d.id}?force=true`);
+    }
+    if ((list as unknown[]).length < 25) break;
+  }
 }
 
-// --- Local preview server (also what the screenshots are taken from) ---
+async function pagesApi(method: string, rest: string): Promise<unknown> {
+  const url = `https://api.cloudflare.com/client/v4/accounts/${secret('CLOUDFLARE_ACCOUNT_ID')}/pages/projects/${config.previews.project}${rest}`;
+  const res = await fetch(url, { method, headers: { Authorization: `Bearer ${secret('CLOUDFLARE_API_TOKEN')}` } });
+  const data = (await res.json().catch(() => null)) as { success?: boolean; result?: unknown; errors?: unknown } | null;
+  if (!data?.success) throw new Error(`Cloudflare ${method} ${rest}: ${res.status} ${JSON.stringify(data?.errors ?? null)}`);
+  return data.result;
+}
 
+// --- Local preview server: serves the latest build at the root, for screenshots (and as the preview itself when
+// Cloudflare isn't configured). Requests are handled one at a time, so "latest" is the one being shown. ---
+
+let serving = '';
 const TYPES: Record<string, string> = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
   '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp',
@@ -89,11 +103,11 @@ const TYPES: Record<string, string> = {
 };
 
 export function startPreviewServer() {
-  fs.mkdirSync(LOCAL, { recursive: true });
   http.createServer((req, res) => {
+    if (!serving) { res.writeHead(404).end('No preview yet'); return; }
     const rel = decodeURIComponent(new URL(req.url ?? '/', 'http://x').pathname);
-    let file = path.join(LOCAL, path.normalize(rel));
-    if (!file.startsWith(LOCAL)) { res.writeHead(403).end(); return; }
+    let file = path.join(serving, path.normalize(rel));
+    if (!file.startsWith(serving)) { res.writeHead(403).end(); return; }
     if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
     if (!fs.existsSync(file)) { res.writeHead(404).end('Not found'); return; }
     res.writeHead(200, { 'content-type': TYPES[path.extname(file).toLowerCase()] ?? 'application/octet-stream' });
@@ -140,7 +154,7 @@ export async function screenshots(id: string, routes: string[], focus: string[])
   try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 2 });
     for (const route of routes) {
-      await page.goto(`http://127.0.0.1:${config.previews.localPort}${previewBase(id)}/${route}`, { waitUntil: 'networkidle' });
+      await page.goto(`http://127.0.0.1:${config.previews.localPort}/${route}`, { waitUntil: 'networkidle' });
       await page.waitForTimeout(route.startsWith('papers') ? 5000 : 1500); // let the hero grids and paper map settle
       for (const t of focus) {
         const hit = page.getByText(t, { exact: false }).first();

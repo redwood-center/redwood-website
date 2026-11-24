@@ -1,7 +1,12 @@
-// Redwood Website Bot. Anyone in the Redwood Slack can DM it (or @mention it in a channel) with a change to the
-// website. Each Slack thread is one request: the agent edits a branch, the bot builds the site, publishes a preview,
-// posts screenshots and opens a pull request. Nothing goes live until an approved person clicks Publish (approved
-// people's own requests included). Replies in the thread revise the change.
+// Redwood Website Bot. Anyone in the Redwood Slack can DM it (or @mention it in a channel) about a change to the
+// website. Each Slack thread is one request, in four steps:
+//   1. Talk: the agent (read-only) works out the change with the requester, then describes it and asks to confirm.
+//   2. Build: on confirmation (a reply, or the Build preview button) it edits a branch; the bot builds the site,
+//      uploads a preview and posts screenshots. Replies after that go back to step 1 for a revision.
+//   3. Publish (approved people): opens a pull request and merges it; the live site redeploys. Anyone else gets
+//      Submit for review instead, which opens the pull request for an approved person to publish.
+//   4. Undo (approved people) reverts a published change, through the same preview.
+// Nothing goes live from a message: only the Publish button publishes.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -11,12 +16,19 @@ import type { WebClient } from '@slack/web-api';
 import { type AgentResult, runAgent } from './agent.ts';
 import { STATE, config, isApproved, log, redact, secret } from './config.ts';
 import {
-  changedFiles, closePR, commitAndPush, deleteRemoteBranch, diffText, mergePR, newWorktree, openPR, removeWorktree,
-  revert, updatePR, WORK_DIR,
+  changedFiles, closePR, commitAll, deleteRemoteBranch, diffText, mergePR, newWorktree, openPR, pushBranch,
+  removeWorktree, revert, updatePR, WORK_DIR,
 } from './git.ts';
-import {
-  build, focusTexts, linkDeps, previewUrl, publishPreview, removePreview, routesFor, screenshots, startPreviewServer,
-} from './site.ts';
+import { build, focusTexts, linkDeps, publishPreview, removePreview, routesFor, screenshots, startPreviewServer } from './site.ts';
+
+type Status =
+  | 'discussing' // talking it over; nothing proposed yet (or a question was answered)
+  | 'proposed' // the agent described a change and asked to confirm
+  | 'working' // editing and building
+  | 'preview' // a preview is up, waiting for Publish / Submit for review / a reply
+  | 'submitted' // pull request open, waiting for an approved person to publish
+  | 'merged' | 'discarded' | 'failed';
+const ACTIVE = new Set<Status>(['discussing', 'proposed', 'preview', 'submitted']); // a reply continues the request
 
 type Job = {
   id: string;
@@ -25,10 +37,13 @@ type Job = {
   requester: string; // Slack user ID
   title: string;
   branch: string;
-  status: 'working' | 'open' | 'merged' | 'discarded' | 'failed';
+  status: Status;
   sessionId?: string;
+  attached?: string[]; // attachments saved into the worktree, not yet used or dropped
+  proposal?: string; // the change as the agent described it, for the pull request
+  previewUrl?: string;
   pr?: { number: number; url: string };
-  summary?: string;
+  summary?: string; // what the agent says it changed
   mergeSha?: string; // the commit on main once published, for Undo
 };
 
@@ -36,14 +51,18 @@ type Job = {
 
 const JOBS_FILE = path.join(STATE, 'jobs.json');
 const jobs: Record<string, Job> = fs.existsSync(JOBS_FILE) ? JSON.parse(fs.readFileSync(JOBS_FILE, 'utf8')) : {};
-for (const j of Object.values(jobs)) if (j.status === 'working') j.status = 'failed'; // interrupted by a restart
+for (const j of Object.values(jobs)) {
+  const status = j.status as string;
+  if (status === 'open') j.status = j.pr ? 'submitted' : 'discussing'; // records from before the talk step
+  if (status === 'working') j.status = fs.existsSync(path.join(WORK_DIR, j.id)) ? 'discussing' : 'failed'; // interrupted by a restart
+}
 const saveJobs = () => {
   fs.mkdirSync(STATE, { recursive: true });
   fs.writeFileSync(JOBS_FILE, JSON.stringify(jobs, null, 1));
 };
 const byId = (id: string) => Object.values(jobs).find((j) => j.id === id);
 
-// One request at a time: worktrees are independent, but builds and the previews repo are shared.
+// One request at a time: worktrees are independent, but builds and the local preview server are shared.
 let queue: Promise<void> = Promise.resolve();
 let pending = 0;
 function enqueue(task: () => Promise<void>) {
@@ -78,14 +97,34 @@ const shortTitle = (text: string) => {
   return line.length > 70 ? `${line.slice(0, 67)}…` : line;
 };
 const slugify = (text: string) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 30) || 'change';
+const newId = (text: string) =>
+  `${new Date().toISOString().slice(0, 10).replaceAll('-', '')}-${slugify(text)}-${Math.random().toString(36).slice(2, 6)}`;
+
+// --- Slack message helpers ---
+
+const section = (text: string) => ({ type: 'section', text: { type: 'mrkdwn', text } });
+const context = (text: string) => ({ type: 'context', elements: [{ type: 'mrkdwn', text }] });
+const actions = (...buttons: unknown[]) => ({ type: 'actions', elements: buttons });
+const button = (text: string, action: string, value: string, style?: 'primary' | 'danger') =>
+  ({ type: 'button', text: { type: 'plain_text', text }, action_id: action, value, ...(style ? { style } : {}) });
+
+/** A message in a thread that can be rewritten in place (the "Thinking…" status becomes the reply). */
+type Post = { channel: string; ts: string };
+const update = (client: WebClient, post: Post, text: string, blocks?: unknown[]) =>
+  client.chat.update({ channel: post.channel, ts: post.ts, text, ...(blocks ? { blocks: blocks as never } : {}) })
+    .then(() => {}, (e) => log('update failed', e));
+async function postIn(client: WebClient, job: { channel: string; threadTs: string }, text: string): Promise<Post> {
+  const r = await client.chat.postMessage({ channel: job.channel, thread_ts: job.threadTs, text });
+  return { channel: job.channel, ts: r.ts! };
+}
 
 // --- Incoming messages ---
 
 type Incoming = { user: string; text: string; channel: string; ts: string; thread_ts?: string; files?: SlackFile[] };
 type SlackFile = { name?: string; mimetype?: string; url_private_download?: string };
 
-app.event('app_mention', async ({ event, client, context }) => {
-  const text = event.text.replaceAll(`<@${context.botUserId}>`, '').trim();
+app.event('app_mention', async ({ event, client, context: ctx }) => {
+  const text = event.text.replaceAll(`<@${ctx.botUserId}>`, '').trim();
   handle(client, { ...(event as unknown as Incoming), text });
 });
 
@@ -99,129 +138,185 @@ app.message(async ({ message, client }) => {
 function handle(client: WebClient, m: Incoming) {
   if (!m.text?.trim() && !m.files?.length) return;
   const threadTs = m.thread_ts ?? m.ts;
-  const key = `${m.channel}:${threadTs}`;
   if (pending > 0) {
     client.chat.postMessage({ channel: m.channel, thread_ts: threadTs, text: "Got it. I'm finishing another request first; this one is next." });
   }
-  enqueue(() => work(client, key, m, threadTs));
+  enqueue(() => talk(client, `${m.channel}:${threadTs}`, m, threadTs));
 }
 
-/** One request: edit (or, for Undo, revert the published commit), build, preview, pull request, then publish or
- * offer to. */
-async function work(client: WebClient, key: string, m: Incoming, threadTs: string, undo?: Job) {
-  const say = (text: string, extra: Record<string, unknown> = {}) =>
-    client.chat.postMessage({ channel: m.channel, thread_ts: threadTs, text, ...extra });
-  const react = (name: string, remove = false) => {
-    const args = { channel: m.channel, timestamp: m.ts, name };
-    return (remove ? client.reactions.remove(args) : client.reactions.add(args)).catch(() => {});
-  };
+const react = (client: WebClient, m: { channel: string; ts: string }, name: string, remove = false) => {
+  const args = { channel: m.channel, timestamp: m.ts, name };
+  return (remove ? client.reactions.remove(args) : client.reactions.add(args)).catch(() => {});
+};
 
-  await react('eyes');
-  const status = await say('Working on it…');
-  const setStatus = (text: string) => client.chat.update({ channel: m.channel, ts: status.ts!, text }).catch(() => {});
-  const requester = await nameOf(client, m.user);
-
+/** Step 1: pass a message to the agent (read-only) and post its reply: an answer, a question, or a proposal to
+ * confirm. If the message confirms the latest proposal, go on to build it. */
+async function talk(client: WebClient, key: string, m: Incoming, threadTs: string) {
+  await react(client, m, 'eyes');
   let job = jobs[key];
-  const followUp = job?.status === 'open';
-  const previous = job && !followUp ? job : undefined;
+  const previous = job && !ACTIVE.has(job.status) ? job : undefined;
+  const status = await postIn(client, { channel: m.channel, threadTs }, 'Thinking…');
+  const name = await nameOf(client, m.user);
   try {
-    if (!followUp) {
-      const id = `${new Date().toISOString().slice(0, 10).replaceAll('-', '')}-${slugify(m.text)}-${Math.random().toString(36).slice(2, 6)}`;
-      const title = undo ? `Undo: ${undo.title}` : shortTitle(m.text || 'Website change');
-      job = { id, channel: m.channel, threadTs, requester: m.user, title, branch: `bot/${id}`, status: 'working' };
+    if (!job || previous) {
+      const id = newId(m.text);
+      job = { id, channel: m.channel, threadTs, requester: m.user, title: shortTitle(m.text || 'Website change'), branch: `bot/${id}`, status: 'discussing' };
       jobs[key] = job;
+      saveJobs();
       await newWorktree(job.id, job.branch);
     }
-    // Name the change after the message that asked for it, not a greeting that opened the thread.
-    if (followUp && !job.pr && (await changedFiles(path.join(WORK_DIR, job.id))).length === 0) job.title = shortTitle(m.text);
-    job.status = 'working';
-    saveJobs();
     const dir = path.join(WORK_DIR, job.id);
-    await linkDeps(dir);
     const attached = await saveAttachments(dir, m.files ?? []);
+    job.attached = [...(job.attached ?? []), ...attached];
+    saveJobs();
 
-    // 1. Edit (or revert).
-    let prompt = `${requester} asks on Slack:\n\n${m.text}`;
+    let prompt = `[Talking] ${name} says:\n\n${m.text}`;
     if (attached.length) prompt += `\n\nThey attached these files, now in the working copy:\n${attached.map((a) => `- ${a}`).join('\n')}`;
-    if (previous?.summary) prompt += `\n\n(Earlier in this thread, already published or discarded: "${previous.title}": ${previous.summary})`;
-    if (followUp) prompt = `${requester} replies:\n\n${m.text}${attached.length ? `\n\nNew attachments:\n${attached.map((a) => `- ${a}`).join('\n')}` : ''}`;
+    if (previous?.summary) prompt += `\n\n(Earlier in this thread, already ${previous.status}: "${previous.title}": ${previous.summary})`;
+    const agent = await runAgent(dir, prompt, 'talk', job.sessionId);
+    job.sessionId = agent.sessionId;
+    saveJobs();
+    log(job.id, `talk $${agent.costUsd.toFixed(2)}`, agent.error ?? '');
+    if (agent.error) throw new Error(`I stopped early (${agent.error})`);
+
+    if (/^\s*\[confirmed\]\s*$/.test(agent.text) || (agent.text.endsWith('[confirmed]') && job.status === 'proposed')) {
+      await update(client, status, 'Building the preview…');
+      await buildPreview(client, job, status, name);
+    } else {
+      const proposal = agent.text.match(/\n?\[proposal:\s*(.+?)\]\s*$/);
+      const text = (proposal ? agent.text.slice(0, proposal.index).trim() : agent.text) || "I'm not sure what to change. Could you say more?";
+      if (proposal) {
+        job.status = 'proposed';
+        job.title = shortTitle(proposal[1]);
+        job.proposal = text;
+        saveJobs();
+        await update(client, status, text, [
+          section(text),
+          context('Reply to change it, or say go ahead.'),
+          actions(button('Build preview', 'build', job.id, 'primary'), button('Discard', 'discard', job.id)),
+        ]);
+      } else {
+        await update(client, status, text);
+      }
+    }
+    await react(client, m, 'eyes', true);
+  } catch (e) {
+    log(job?.id, 'talk failed', e);
+    await update(client, status, `Sorry, something went wrong: ${failure(e)}`);
+    await react(client, m, 'eyes', true);
+    await react(client, m, 'x');
+  }
+}
+
+/** Step 2: make the confirmed change (or, for Undo, revert a published one), build, preview, screenshot. `status`
+ * is the thread message that shows progress and becomes the result. */
+async function buildPreview(client: WebClient, job: Job, status: Post, name: string, undo?: Job) {
+  const dir = path.join(WORK_DIR, job.id);
+  const progress = (step: string) => update(client, status, `Building the preview… (${step})`);
+  job.status = 'working';
+  saveJobs();
+  try {
+    await linkDeps(dir);
     let agent: AgentResult;
     if (undo?.mergeSha) {
       await revert(dir, undo.mergeSha);
-      agent = { text: `Undid "${undo.title}".`, sessionId: '', costUsd: 0 };
+      agent = { text: `This undoes "${undo.title}".`, sessionId: '', costUsd: 0 };
+      job.proposal = agent.text;
     } else {
-      setStatus('Working on it… (editing the site)');
-      agent = await runAgent(dir, prompt, job.sessionId);
+      await progress('editing the site');
+      agent = await runAgent(dir, `[Editing] ${name} confirmed. Make the change you proposed.`, 'edit', job.sessionId);
       job.sessionId = agent.sessionId;
-      log(job.id, `agent $${agent.costUsd.toFixed(2)}`, agent.error ?? '');
+      log(job.id, `edit $${agent.costUsd.toFixed(2)}`, agent.error ?? '');
       if (agent.error) throw new Error(`the editing step stopped early (${agent.error})`);
-      await dropUnusedAttachments(dir, attached);
+      await dropUnusedAttachments(dir, job.attached ?? []);
+      job.attached = [];
     }
 
     const files = await changedFiles(dir);
     if (!files.length) {
-      // A question back, or nothing to change. Keep the thread open for the answer.
-      job.status = 'open';
+      job.status = 'discussing';
       saveJobs();
-      await setStatus(agent.text || "I didn't find anything to change.");
-      await react('eyes', true);
+      await update(client, status, agent.text || "I didn't find anything to change.");
       return;
     }
 
-    // 2. Build; one chance for the agent to fix a failed build.
-    setStatus('Working on it… (building the site)');
+    // One chance for the agent to fix a failed build.
+    await progress('building the site');
     let built = await build(dir, job.id);
-    if (!built.ok) {
-      agent = await runAgent(dir, `The site build failed after your change. Fix it. Build output:\n\n${built.log}`, job.sessionId);
+    if (!built.ok && !undo) {
+      agent = await runAgent(dir, `[Editing] The site build failed after your change. Fix it. Build output:\n\n${built.log}`, 'edit', job.sessionId);
       job.sessionId = agent.sessionId;
       built = await build(dir, job.id);
-      if (!built.ok) throw new Error(`the site doesn't build with this change:\n\`\`\`${built.log.slice(-1500)}\`\`\``);
     }
+    if (!built.ok) throw new Error(`the site doesn't build with this change:\n\`\`\`${built.log.slice(-1500)}\`\`\``);
     job.summary = agent.text;
 
-    // 3. Preview, branch, pull request.
-    setStatus('Working on it… (publishing a preview)');
-    await publishPreview(dir, job.id);
-    const preview = previewUrl(job.id);
-    await commitAndPush(dir, job.branch, `${job.title}\n\nRequested by ${requester} on Slack.`);
-    const body = `Requested by **${requester}** on Slack:\n\n> ${m.text.replaceAll('\n', '\n> ')}\n\n${agent.text}\n\nPreview: ${preview}`;
-    if (job.pr) await updatePR(job.pr.number, body);
-    else {
-      const pr = await openPR(job.branch, job.title, body);
-      job.pr = { number: pr.number, url: pr.html_url };
+    await progress('uploading the preview');
+    job.previewUrl = await publishPreview(dir, job.id);
+    const requester = await nameOf(client, job.requester);
+    await commitAll(dir, `${job.title}\n\nRequested by ${requester} on Slack.`);
+    if (job.pr) { // already submitted for review: keep the pull request in step with the preview
+      await pushBranch(dir, job.branch);
+      await updatePR(job.pr.number, prBody(job, requester));
     }
+    await progress('taking screenshots');
     const routes = routesFor(files);
     const shots = await screenshots(job.id, routes.length ? routes : [''], focusTexts(await diffText(dir))).catch((e) => {
-      log(job!.id, 'screenshots failed', e);
+      log(job.id, 'screenshots failed', e);
       return [] as string[];
     });
 
-    // 4. Offer it. Nothing goes live from a message: only the Publish button (approved people) publishes.
-    const fileList = files.map((f) => `\`${f.replace(/^site\//, '')}\``).join(', ');
-    job.status = 'open';
-    const next = isApproved(m.user)
-      ? 'Check the preview, then Publish. Reply here to change it.'
-      : `An approved person (${approvedList()}) can publish it. Reply here to change it.`;
-    const text = `${agent.text}\n\n${next}`;
-    const blocks = resultBlocks(text, fileList, job, preview, [button('Publish', 'publish', job.id, 'primary'), button('Discard', 'discard', job.id)]);
+    job.status = job.pr ? 'submitted' : 'preview';
     saveJobs();
-    await client.chat.update({ channel: m.channel, ts: status.ts!, text, blocks: blocks as never });
+    const { text, blocks } = previewMessage(job, files);
+    await update(client, status, text, blocks);
     if (shots.length) {
       await client.files.uploadV2({
-        channel_id: m.channel, thread_ts: threadTs,
+        channel_id: job.channel, thread_ts: job.threadTs,
         file_uploads: shots.map((f) => ({ file: f, filename: path.basename(f) })),
         initial_comment: 'How it would look:',
-      }).catch((e) => log(job!.id, 'upload failed', e));
+      }).catch((e) => log(job.id, 'upload failed', e));
     }
-    await react('eyes', true);
-    await react('white_check_mark');
   } catch (e) {
-    log(job?.id, 'failed', e);
+    log(job.id, 'build failed', e);
     // Keep the thread's work if there is any, so a reply like "try again" picks up where this stopped.
-    if (job) { job.status = job.pr || fs.existsSync(path.join(WORK_DIR, job.id)) ? 'open' : 'failed'; saveJobs(); }
-    await setStatus(`Sorry, something went wrong: ${failure(e)}`);
-    await react('eyes', true);
-    await react('x');
+    job.status = fs.existsSync(dir) ? (job.pr ? 'submitted' : 'discussing') : 'failed';
+    saveJobs();
+    await update(client, status, `Sorry, something went wrong: ${failure(e)}${job.status === 'failed' ? '' : '\nReply here to try again.'}`);
+  }
+}
+
+/** The preview's message: what changed, the link, and Publish (approved requester, or once submitted) or Submit
+ * for review (anyone else). */
+function previewMessage(job: Job, files: string[]) {
+  const fileList = files.map((f) => `\`${f.replace(/^site\//, '')}\``).join(', ');
+  const submitted = job.status === 'submitted';
+  const next = submitted
+    ? `Submitted for review. An approved person (${approvedList()}) can publish it. Reply here to change it.`
+    : isApproved(job.requester)
+      ? 'If it looks right, Publish. Reply here to change it.'
+      : `If it looks right, Submit for review and an approved person (${approvedList()}) will publish it. Reply here to change it.`;
+  const text = `${job.summary}\n\n<${job.previewUrl}|Open the preview>. ${next}`;
+  const links = [`Changed ${fileList}`, job.pr && `<${job.pr.url}|Pull request #${job.pr.number}>`].filter(Boolean).join('  ·  ');
+  const primary = submitted || isApproved(job.requester)
+    ? button('Publish', 'publish', job.id, 'primary')
+    : button('Submit for review', 'submit', job.id, 'primary');
+  return { text, blocks: [section(text), context(links), actions(primary, button('Discard', 'discard', job.id))] };
+}
+
+const prBody = (job: Job, requester: string) =>
+  `Requested by **${requester}** on Slack.\n\n${job.proposal ?? ''}\n\n${job.summary ?? ''}\n\nPreview: ${job.previewUrl}`;
+
+/** Push the branch and open (or update) its pull request. */
+async function ensurePR(client: WebClient, job: Job) {
+  const dir = path.join(WORK_DIR, job.id);
+  await pushBranch(dir, job.branch);
+  const body = prBody(job, await nameOf(client, job.requester));
+  if (job.pr) await updatePR(job.pr.number, body);
+  else {
+    const pr = await openPR(job.branch, job.title, body);
+    job.pr = { number: pr.number, url: pr.html_url };
+    saveJobs();
   }
 }
 
@@ -255,95 +350,114 @@ async function dropUnusedAttachments(dir: string, attached: string[]) {
   }
 }
 
-// --- Publishing, discarding, undoing ---
+// --- Buttons ---
 
-async function publish(job: Job) {
-  job.mergeSha = (await mergePR(job.pr!.number, job.title)).sha;
-  job.status = 'merged';
-  saveJobs();
-  await deleteRemoteBranch(job.branch);
-  await removeWorktree(job.id, job.branch);
-  await removePreview(job.id).catch((e) => log(job.id, 'preview cleanup failed', e));
-}
-
-async function discard(job: Job) {
-  if (job.pr) await closePR(job.pr.number);
-  job.status = 'discarded';
-  saveJobs();
-  await deleteRemoteBranch(job.branch);
-  await removeWorktree(job.id, job.branch);
-  await removePreview(job.id).catch((e) => log(job.id, 'preview cleanup failed', e));
-}
-
-const section = (text: string) => ({ type: 'section', text: { type: 'mrkdwn', text } });
-const button = (text: string, action: string, value: string, style?: 'primary' | 'danger') =>
-  ({ type: 'button', text: { type: 'plain_text', text }, action_id: action, value, ...(style ? { style } : {}) });
-
-function resultBlocks(text: string, fileList: string, job: Job, preview: string | null, buttons: unknown[]) {
-  const links = [preview && `<${preview}|Preview>`, job.pr && `<${job.pr.url}|Pull request #${job.pr.number}>`].filter(Boolean).join('  ·  ');
-  return [
-    { type: 'section', text: { type: 'mrkdwn', text } },
-    { type: 'context', elements: [{ type: 'mrkdwn', text: `Changed ${fileList}${links ? `  ·  ${links}` : ''}` }] },
-    { type: 'actions', elements: buttons },
-  ];
-}
-
-app.action('publish', async ({ ack, body, action, client }) => {
-  await ack();
-  const user = body.user.id;
+type ActionArgs = { ack: () => Promise<void>; body: unknown; action: unknown; client: WebClient };
+/** The job a button refers to, the clicker, and the message the button is on. */
+function clicked({ body, action }: ActionArgs) {
+  const b = body as { user: { id: string }; channel?: { id: string }; message?: { ts: string; text?: string } };
   const job = byId((action as { value: string }).value);
-  const channel = body.channel!.id;
-  const ts = (body as { message?: { ts: string } }).message!.ts;
-  if (!job || job.status !== 'open') return;
-  if (!isApproved(user)) {
-    await client.chat.postEphemeral({ channel, user, thread_ts: job.threadTs, text: `Only approved people can publish (${approvedList()}). Ask one of them to click Publish.` });
-    return;
-  }
+  return { job, user: b.user.id, post: { channel: b.channel!.id, ts: b.message!.ts }, text: b.message?.text ?? '' };
+}
+const deny = (client: WebClient, job: Job, user: string, text: string) =>
+  client.chat.postEphemeral({ channel: job.channel, user, thread_ts: job.threadTs, text }).then(() => {}, () => {});
+
+app.action('build', async (args) => {
+  await args.ack();
+  const { job, user, post, text } = clicked(args);
+  if (!job || job.status !== 'proposed') return;
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can build this.');
+  await update(args.client, post, text, [section(text), context(`<@${user}> confirmed.`)]);
+  enqueue(async () => {
+    const status = await postIn(args.client, job, 'Building the preview…');
+    await buildPreview(args.client, job, status, await nameOf(args.client, user));
+  });
+});
+
+app.action('submit', async (args) => {
+  await args.ack();
+  const { job, user, post } = clicked(args);
+  if (!job || job.status !== 'preview') return;
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can submit this.');
   enqueue(async () => {
     try {
-      await publish(job);
-      const text = `${job.summary}\n\n:white_check_mark: Published by <@${user}>; <${config.siteUrl}|the live site> updates in about a minute.`;
-      await client.chat.update({ channel, ts, text, blocks: [section(text), { type: 'actions', elements: [button('Undo', 'undo', job.id)] }] as never });
+      await ensurePR(args.client, job);
+      job.status = 'submitted';
+      saveJobs();
+      const { text, blocks } = previewMessage(job, await changedFiles(path.join(WORK_DIR, job.id)));
+      await update(args.client, post, text, blocks);
     } catch (e) {
-      log(job.id, 'publish failed', e);
-      await client.chat.postMessage({ channel, thread_ts: job.threadTs, text: `Couldn't publish: ${failure(e)}` });
+      log(job.id, 'submit failed', e);
+      await postIn(args.client, job, `Couldn't submit: ${failure(e)}`);
     }
   });
 });
 
-app.action('discard', async ({ ack, body, action, client }) => {
-  await ack();
-  const user = body.user.id;
-  const job = byId((action as { value: string }).value);
-  const channel = body.channel!.id;
-  if (!job || job.status !== 'open') return;
-  if (user !== job.requester && !isApproved(user)) {
-    await client.chat.postEphemeral({ channel, user, thread_ts: job.threadTs, text: 'Only the person who asked, or an approved person, can discard this.' });
-    return;
-  }
+app.action('publish', async (args) => {
+  await args.ack();
+  const { job, user, post } = clicked(args);
+  if (!job || (job.status !== 'preview' && job.status !== 'submitted')) return;
+  if (!isApproved(user)) return deny(args.client, job, user, `Only approved people can publish (${approvedList()}).`);
   enqueue(async () => {
-    await discard(job);
-    const text = `Discarded by <@${user}>.`;
-    await client.chat.update({ channel, ts: (body as { message?: { ts: string } }).message!.ts, text, blocks: [section(text)] as never });
+    try {
+      await ensurePR(args.client, job);
+      job.mergeSha = (await mergePR(job.pr!.number, job.title)).sha;
+      job.status = 'merged';
+      saveJobs();
+      await cleanUp(job);
+      const text = `${job.summary}\n\n:white_check_mark: Published by <@${user}>; <${config.siteUrl}|the live site> updates in about a minute.`;
+      await update(args.client, post, text, [section(text), actions(button('Undo', 'undo', job.id))]);
+    } catch (e) {
+      log(job.id, 'publish failed', e);
+      await postIn(args.client, job, `Couldn't publish: ${failure(e)}`);
+    }
   });
 });
 
-app.action('undo', async ({ ack, body, action, client }) => {
-  await ack();
-  const user = body.user.id;
-  const job = byId((action as { value: string }).value);
-  const channel = body.channel!.id;
-  if (!job || job.status !== 'merged') return;
-  if (!isApproved(user)) {
-    await client.chat.postEphemeral({ channel, user, thread_ts: job.threadTs, text: `Only approved people can undo a published change (${approvedList()}).` });
-    return;
-  }
-  // Undo = a new request in the same thread (a git revert of the published commit), so it gets the same build,
-  // preview and pull request treatment, and is published at once since the clicker is approved.
-  const key = `${job.channel}:${job.threadTs}`;
-  enqueue(() => work(client, key, { user, text: `Undo "${job.title}"`, channel, ts: job.threadTs, thread_ts: job.threadTs }, job.threadTs, job));
+app.action('discard', async (args) => {
+  await args.ack();
+  const { job, user, post } = clicked(args);
+  if (!job || !ACTIVE.has(job.status)) return;
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can discard this.');
+  enqueue(async () => {
+    if (job.pr) await closePR(job.pr.number).catch((e) => log(job.id, 'close failed', e));
+    job.status = 'discarded';
+    saveJobs();
+    await cleanUp(job);
+    const text = `Discarded by <@${user}>.`;
+    await update(args.client, post, text, [section(text)]);
+  });
 });
+
+app.action('undo', async (args) => {
+  await args.ack();
+  const { job: published, user } = clicked(args);
+  if (!published || published.status !== 'merged') return;
+  if (!isApproved(user)) return deny(args.client, published, user, `Only approved people can undo a published change (${approvedList()}).`);
+  // Undo is a new request in the same thread (a git revert of the published commit) with its own preview, then Publish.
+  enqueue(async () => {
+    const status = await postIn(args.client, published, 'Building the preview… (undoing)');
+    const id = newId(`undo ${published.title}`);
+    const job: Job = { id, channel: published.channel, threadTs: published.threadTs, requester: user, title: `Undo: ${published.title}`, branch: `bot/${id}`, status: 'working' };
+    jobs[`${job.channel}:${job.threadTs}`] = job;
+    saveJobs();
+    try {
+      await newWorktree(job.id, job.branch);
+    } catch (e) {
+      job.status = 'failed';
+      saveJobs();
+      return update(args.client, status, `Sorry, something went wrong: ${failure(e)}`);
+    }
+    await buildPreview(args.client, job, status, await nameOf(args.client, user), published);
+  });
+});
+
+async function cleanUp(job: Job) {
+  await deleteRemoteBranch(job.branch);
+  await removeWorktree(job.id, job.branch);
+  await removePreview(job.id).catch((e) => log(job.id, 'preview cleanup failed', e));
+}
 
 startPreviewServer();
 await app.start();
-log(`redwood-website-bot running; previews at ${previewUrl('<id>')}`);
+log('redwood-website-bot running');

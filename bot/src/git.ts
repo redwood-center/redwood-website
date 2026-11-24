@@ -76,14 +76,16 @@ export async function diffText(dir: string) {
 
 export const botCommit = (cwd: string, message: string) => run('git', [...BOT_AUTHOR, 'commit', '--quiet', '-m', message], cwd);
 
-/** Commit whatever is staged (if anything) and push the branch. Returns false if there was nothing to commit. */
-export async function commitAndPush(dir: string, branch: string, message: string) {
+/** Commit everything in the worktree (if anything changed). */
+export async function commitAll(dir: string, message: string) {
   await git(dir, 'add', '-A');
   const staged = await git(dir, 'diff', '--cached', '--name-only');
   if (staged.trim()) await botCommit(dir, message);
-  await gitAuth(dir, 'push', '--quiet', '--force-with-lease', 'origin', `HEAD:refs/heads/${branch}`);
-  return Boolean(staged.trim());
 }
+
+/** Push the worktree's branch to GitHub. */
+export const pushBranch = (dir: string, branch: string) =>
+  gitAuth(dir, 'push', '--quiet', '--force-with-lease', 'origin', `HEAD:refs/heads/${branch}`);
 
 // --- GitHub REST ---
 

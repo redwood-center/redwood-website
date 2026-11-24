@@ -4,8 +4,8 @@
   "model": "claude-opus-5-5",
   "maxBudgetUsd": 3,
   "previews": {
-    "repo": null,
-    "url": null,
+    "project": "redwood-previews",
+    "domain": null,
     "localPort": 4500
   },
   "approved": {
