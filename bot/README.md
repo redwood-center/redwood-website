@@ -29,7 +29,7 @@ npm start            # node --env-file=.env src/main.ts
 `bot/.env` (never committed) holds `SLACK_BOT_TOKEN`, `SLACK_APP_TOKEN`, `GITHUB_TOKEN`, `ANTHROPIC_API_KEY`,
 `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` (a token with Account → Cloudflare Pages → Edit). The Slack app is
 defined by `slack-app-manifest.yml` (Socket Mode, so no public URL is needed). Runtime state (the clone, worktrees,
-job records, screenshots, local previews) lives in `bot/state/`.
+job records) lives in `bot/state/`.
 
 Previews: each request's build is uploaded with wrangler as a branch deployment of the Cloudflare Pages project
 `previews.project`, at `https://<date>-<suffix>.<previews.domain>/`, and deleted when the request is published or
