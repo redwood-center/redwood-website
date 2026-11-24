@@ -17,8 +17,8 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
    request, the merged commit, a link to the deploy. An Undo button reverts a merged change, through a preview.
    `everyoneCanPublishUntil` in `config.json` gives everyone merge access until that time (a trial period).
 
-Nothing goes live from a message: only Merge to main, or merging the pull request on GitHub. The agent can only read and edit files in its worktree (editing only after
-confirmation), and never sees the bot's credentials.
+Nothing goes live from a message: only Merge to main, or merging the pull request on GitHub. The agent can only read
+and edit files in its worktree (editing only after confirmation), and never sees the bot's credentials.
 
 ## Running it
 
