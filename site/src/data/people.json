@@ -267,15 +267,10 @@
  {
   "slug": "chris-kymn",
   "name": "Chris Kymn",
-  "group": "Students",
+  "group": "Alumni",
   "order": 20,
-  "title": "PhD Student",
-  "affiliation": "Neuroscience",
-  "labs": [
-   "Olshausen Lab"
-  ],
-  "website": null,
-  "photo": "media/people/chris_kymn_headshot-300x350.png"
+  "current_affiliation": "HHMI Janelia Research Campus",
+  "website": null
  },
  {
   "slug": "wanyu-lei",
