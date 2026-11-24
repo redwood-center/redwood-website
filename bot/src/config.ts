@@ -10,9 +10,8 @@ type Config = {
   siteUrl: string; // the live site, for "published" messages
   model: string;
   maxBudgetUsd: number; // per agent run
-  // Previews: a Cloudflare Pages project and its domain (<project>.pages.dev, possibly with a suffix Cloudflare
-  // added), and the local port the latest build is served on for screenshots.
-  previews: { project: string; domain: string | null; localPort: number };
+  // Previews: a Cloudflare Pages project and its domain (<project>.pages.dev, possibly with a suffix Cloudflare added).
+  previews: { project: string; domain: string };
   approved: Record<string, string>; // Slack user ID -> name: who can publish
 };
 

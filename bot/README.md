@@ -8,11 +8,12 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
    worktree of the website. When it knows the change, it describes it and asks them to confirm. The repo's
    `CLAUDE.md` tells it where content lives.
 2. **Preview.** On confirmation (a reply like "go ahead", or the Build preview button) the agent edits the worktree.
-   The bot builds the site, uploads a preview to Cloudflare Pages and posts screenshots of the changed pages. Replies
+   The bot builds the site, uploads a preview to Cloudflare Pages and posts its link. Replies
    go back to step 1 for a revision (in channels, @mention the bot in the reply).
 3. **Publish.** If the requester is approved (`config.json` → `approved`), the preview has a Publish button: it opens a
    pull request and merges it, and the site redeploys. Anyone else gets Submit for review, which opens the pull
-   request; an approved person then clicks Publish. An Undo button reverts a published change, through a preview.
+   request; an approved person then clicks Publish. Each button gets a reply in the thread: the pull request, the
+   merged commit, a link to the deploy. An Undo button reverts a published change, through a preview.
 
 Nothing goes live from a message. The agent can only read and edit files in its worktree (editing only after
 confirmation), and never sees the bot's credentials.
@@ -22,7 +23,6 @@ confirmation), and never sees the bot's credentials.
 ```sh
 cd bot
 npm install
-npx playwright install chromium-headless-shell
 npm start            # node --env-file=.env src/main.ts
 ```
 
@@ -33,9 +33,8 @@ job records, screenshots, local previews) lives in `bot/state/`.
 
 Previews: each request's build is uploaded with wrangler as a branch deployment of the Cloudflare Pages project
 `previews.project`, at `https://<date>-<suffix>.<previews.domain>/`, and deleted when the request is published or
-discarded. Without the Cloudflare settings, the latest build is only served on this machine at
-`http://localhost:4500/` (fine for testing). Either way, screenshots are taken from that local server.
+discarded.
 
 `node --env-file=.env src/try.ts "<request>"` runs one request without Slack or GitHub writes (worktree, talk, edit
-with the proposal confirmed automatically, build, preview, screenshots) and prints where everything went.
+with the proposal confirmed automatically, build, preview) and prints where everything went.
 `npm run check` type-checks.

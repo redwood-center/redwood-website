@@ -5,8 +5,7 @@
   "maxBudgetUsd": 3,
   "previews": {
     "project": "redwood-previews",
-    "domain": "redwood-previews.pages.dev",
-    "localPort": 4500
+    "domain": "redwood-previews.pages.dev"
   },
   "approved": {
     "UQGJCSLAJ": "Jamie Simon",

@@ -1,13 +1,13 @@
 // Dry run of a request without Slack or GitHub writes: worktree -> talk -> (if it proposes) edit -> build ->
-// preview -> screenshots. The proposal is confirmed automatically.
+// Cloudflare preview. The proposal is confirmed automatically.
 //   node --env-file=.env src/try.ts "Move Alyson Fletcher to alumni, now at UCLA"
 // Leaves the worktree and preview in state/ for inspection; removes the branch with --clean <id>.
 import path from 'node:path';
 
 import { runAgent } from './agent.ts';
 import { log } from './config.ts';
-import { changedFiles, diffText, newWorktree, removeWorktree, WORK_DIR } from './git.ts';
-import { build, focusTexts, linkDeps, publishPreview, routesFor, screenshots, startPreviewServer } from './site.ts';
+import { changedFiles, newWorktree, removeWorktree, WORK_DIR } from './git.ts';
+import { build, linkDeps, publishPreview } from './site.ts';
 
 const [arg, maybeId] = process.argv.slice(2);
 if (arg === '--clean') {
@@ -27,12 +27,7 @@ log('changed:', files);
 if (files.length) {
   const built = await build(dir, id);
   log('build ok:', built.ok, built.log);
-  if (built.ok) {
-    startPreviewServer();
-    const url = await publishPreview(dir, id);
-    const shots = await screenshots(id, routesFor(files), focusTexts(await diffText(dir)));
-    log('preview:', url, 'screenshots:', shots);
-  }
+  if (built.ok) log('preview:', await publishPreview(dir, id));
 }
 log('worktree:', path.join(WORK_DIR, id));
 process.exit(0);
