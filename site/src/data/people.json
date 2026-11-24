@@ -286,6 +286,14 @@
   "photo": "media/people/wanyu_lei_headshot_2025-300x350.jpg"
  },
  {
+  "slug": "hansen-lillemark",
+  "name": "Hansen Lillemark",
+  "group": "Alumni",
+  "order": 999,
+  "current_affiliation": "UC San Diego",
+  "website": "http://hansenlillemark.com"
+ },
+ {
   "slug": "hana-mir",
   "name": "Hana Mir",
   "group": "Students",
