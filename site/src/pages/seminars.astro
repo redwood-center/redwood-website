@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import UpcomingSeminars from '../components/UpcomingSeminars.astro';
-import { upcoming, past, seminarUrl, type Seminar } from '../lib/seminars';
+import { upcoming, past, searchable, seminarUrl, type Seminar } from '../lib/seminars';
 import { formatShort } from '../lib/url';
 
 const byYear = new Map<string, Seminar[]>();
@@ -21,22 +21,27 @@ const years = [...byYear.keys()];
     </p>
   </section>
 
-  {upcoming.length > 0 && (
-    <section class="section" aria-labelledby="upcoming-title">
-      <div class="wrap">
-        <h2 id="upcoming-title">Upcoming</h2>
-        <UpcomingSeminars seminars={upcoming} showSummary />
-      </div>
-    </section>
-  )}
+  <section class="section" aria-labelledby="upcoming-title">
+    <div class="wrap">
+      <h2 id="upcoming-title">Upcoming</h2>
+      {upcoming.length > 0
+        ? <UpcomingSeminars seminars={upcoming} showSummary />
+        : <p class="none">None on the books. Check back later!</p>}
+    </div>
+  </section>
 
   <script is:inline>
     // One year at a time when JS runs; without it, every year shows.
     document.documentElement.classList.add('years-js');
   </script>
   <section class="section section--wash" aria-labelledby="past-title">
-    <div class="wrap">
+    <div class="wrap past">
       <h2 id="past-title">Past seminars</h2>
+      <div class="search" hidden>
+        <label for="speaker-search">Search by speaker</label>
+        <input id="speaker-search" type="search" placeholder="Speaker name" autocomplete="off" spellcheck="false" />
+        <p class="status" aria-live="polite"></p>
+      </div>
       <nav class="years" aria-label="Choose a year">
         {years.map((y, i) => <a href={`#y${y}`} aria-current={i === 0 ? 'true' : undefined}>{y}</a>)}
       </nav>
@@ -45,7 +50,7 @@ const years = [...byYear.keys()];
           <h3>{y}</h3>
           <ul class="talks">
             {byYear.get(y)!.map((s) => (
-              <li>
+              <li data-speaker={searchable(s.speaker)}>
                 <time datetime={s.date}>{formatShort(s.date)}</time>
                 <div>
                   <a class="title" href={seminarUrl(s)}>{s.title}</a>
@@ -83,6 +88,37 @@ const years = [...byYear.keys()];
   );
   window.addEventListener('hashchange', () => show(location.hash.slice(1))); // back/forward, pasted links
   show(location.hash.slice(1));
+
+  // Speaker search: while there's a query, every year's matching talks show (year links hidden).
+  const past = document.querySelector<HTMLElement>('.past')!;
+  const box = past.querySelector<HTMLElement>('.search')!;
+  const input = box.querySelector<HTMLInputElement>('input')!;
+  const status = box.querySelector<HTMLElement>('.status')!;
+  const norm = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  box.hidden = false;
+
+  function search() {
+    const words = norm(input.value).split(/\s+/).filter(Boolean);
+    past.classList.toggle('searching', words.length > 0);
+    let total = 0;
+    for (const block of blocks) {
+      let hits = 0;
+      for (const li of block.querySelectorAll<HTMLElement>('li')) {
+        const hit = words.every((w) => li.dataset.speaker!.includes(w));
+        li.hidden = !hit;
+        if (hit) hits++;
+      }
+      block.classList.toggle('has-hits', hits > 0);
+      total += hits;
+    }
+    status.textContent = !words.length ? ''
+      : total ? `${total} talk${total === 1 ? '' : 's'}` : `No speakers match “${input.value.trim()}”.`;
+  }
+  input.addEventListener('input', search);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { input.value = ''; search(); }
+  });
+  search(); // a query the browser restored on back
 </script>
 
 <style>
@@ -96,6 +132,27 @@ const years = [...byYear.keys()];
     margin-top: 1rem;
   }
   h2 { font-size: var(--step-3); font-weight: 650; letter-spacing: -0.01em; margin-bottom: 1.75rem; }
+
+  .none { font-family: var(--serif); font-size: var(--step-1); color: var(--slate); }
+
+  .search { margin: -0.5rem 0 1.75rem; }
+  .search label { display: block; font-weight: 600; font-size: 0.9375rem; margin-bottom: 0.4rem; }
+  .search input {
+    width: min(100%, 22rem);
+    font: inherit;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: inherit;
+  }
+  .search input:focus-visible { outline: 3px solid var(--gold); outline-offset: 1px; border-color: var(--brand); }
+  .status { margin-top: 0.5rem; color: var(--slate); font-size: 0.9375rem; min-height: 1.4em; }
+  .searching .years { display: none; }
+  :global(.years-js) .searching .year { display: none; }
+  :global(.years-js) .searching .year.has-hits { display: block; }
+  .searching .year.has-hits ~ .year.has-hits { margin-top: 2rem; }
+  .talks li[hidden] { display: none; }
 
   .years {
     display: flex;

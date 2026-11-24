@@ -19,8 +19,10 @@ not code. Keep changes as small as the request allows, and match the surrounding
     `"photo": "media/people/deepthi_bannai_headshot_2025-300x350.jpg"`. They're shown at 300x350, cropped to fill.
 - **Seminars**: `site/src/data/seminars.json`, newest first. Fields: `slug` (`firstname-lastname-mon-yyyy`, e.g.
   `jeff-hawkins-nov-2026`), `title`, `speaker`, `affiliation`, `date` (`YYYY-MM-DD`), `time` (e.g. `12:00pm`),
-  `location`, `recording_url` (or `null`), `summary` (the abstract, plain text). Upcoming seminars appear on the
-  homepage automatically, by date.
+  `location`, `recording_url` (or `null`), `summary` (the full abstract as plain text: paragraphs separated by a
+  blank line, links as `[text](url)` or a bare URL or email address). Each seminar gets its own page at
+  `seminars/<slug>/`. Upcoming seminars appear on the homepage and at the top of the Seminars page automatically,
+  by date.
 - **Blog posts**: Markdown in `site/src/content/blog/<slug>.md`, with front matter `title`, `date`, `authors`
   (list), `summary`.
 - **Research pillars** (Research page and homepage): `site/src/data/research.ts`.

@@ -1,0 +1,74 @@
+---
+import Base from '../../layouts/Base.astro';
+import { abstractExcerpt, abstractParagraphs, seminars, type Seminar } from '../../lib/seminars';
+import { formatDate, url, weekday } from '../../lib/url';
+
+export function getStaticPaths() {
+  return seminars.map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props as { s: Seminar };
+const paragraphs = abstractParagraphs(s);
+---
+
+<Base title={s.title} current="seminars" description={`${s.speaker}: ${abstractExcerpt(s, 200)}`}>
+  <article class="wrap talk">
+    <p class="back"><a href={url('seminars/')}>Seminars</a></p>
+    <h1>{s.title}</h1>
+    <p class="speaker">{s.speaker}{s.affiliation && <span class="affil">, {s.affiliation}</span>}</p>
+    <dl class="facts">
+      <div>
+        <dt>When</dt>
+        <dd><time datetime={s.date}>{weekday(s.date)}, {formatDate(s.date)}</time>{s.time && `, ${s.time}`}</dd>
+      </div>
+      {s.location && (
+        <div>
+          <dt>Where</dt>
+          <dd>{s.location}</dd>
+        </div>
+      )}
+      {s.recording_url && (
+        <div>
+          <dt>Recording</dt>
+          <dd><a href={s.recording_url}>Watch the talk</a></dd>
+        </div>
+      )}
+    </dl>
+    {paragraphs.length > 0 && (
+      <div class="prose abstract">
+        {paragraphs.map((p) => <p set:html={p} />)}
+      </div>
+    )}
+  </article>
+</Base>
+
+<style>
+  .talk { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  .back { font-weight: 500; }
+  h1 {
+    margin-top: 1rem;
+    font-size: var(--step-4);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 26ch;
+  }
+  .speaker { margin-top: 1.25rem; font-size: var(--step-1); font-weight: 600; }
+  .affil { font-weight: 400; color: var(--slate); }
+  .facts {
+    margin: 1.5rem 0 0;
+    padding-left: 1.1rem;
+    border-left: 4px solid var(--gold);
+    display: grid;
+    gap: 0.35rem;
+  }
+  .facts div { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1rem; }
+  .facts dt { color: var(--slate); font-size: 0.9375rem; padding-top: 0.1rem; }
+  .facts dd { margin: 0; }
+  .abstract { margin-top: clamp(2rem, 4vw, 2.75rem); }
+  .abstract :global(a) { overflow-wrap: anywhere; }
+  @media (max-width: 640px) {
+    .facts div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .facts div + div { margin-top: 0.4rem; }
+  }
+</style>

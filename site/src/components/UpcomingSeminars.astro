@@ -1,5 +1,5 @@
 ---
-import { seminarUrl, type Seminar } from '../lib/seminars';
+import { abstractExcerpt, seminarUrl, type Seminar } from '../lib/seminars';
 import { formatShort, weekday } from '../lib/url';
 
 interface Props {
@@ -22,7 +22,7 @@ const { seminars, showSummary = false } = Astro.props;
         <h3><a href={seminarUrl(s)}>{s.title}</a></h3>
         <p class="speaker">{s.speaker}{s.affiliation && <span class="affil">, {s.affiliation}</span>}</p>
         {s.location && <p class="where">{s.location}</p>}
-        {showSummary && s.summary && <p class="summary">{s.summary}</p>}
+        {showSummary && s.summary && <p class="summary">{abstractExcerpt(s)}</p>}
       </div>
     </li>
   ))}

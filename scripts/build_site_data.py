@@ -57,6 +57,39 @@ def strip_tags(html):
     return re.sub(r"\s+([.,;:!?)])", r"\1", text)  # get_text(" ") leaves "link ." gaps
 
 
+def abstract_text(html):
+    """An abstract as plain text: paragraphs separated by blank lines, <br> as a line break, links as [text](url)
+    (or the bare URL when the text is the URL). The site renders this format (site/src/lib/seminars.ts)."""
+    from bs4 import Comment, NavigableString
+
+    def inline(node):
+        out = []
+        for c in node.children:
+            if isinstance(c, Comment):
+                continue
+            if isinstance(c, NavigableString):
+                out.append(re.sub(r"\s+", " ", str(c)))
+            elif c.name == "br":
+                out.append("\n")
+            elif c.name == "a" and c.get("href"):
+                text = re.sub(r"\s+", " ", c.get_text(" ")).strip()
+                href = c["href"].strip().replace(" ", "%20").replace(")", "%29")
+                if href.startswith("/"):
+                    href = BASE + href
+                bare = href[len("mailto:"):] if href.startswith("mailto:") else href
+                out.append(bare if text in ("", bare, href) else f"[{text.replace(']', ')')}]({href})")
+            elif c.name in ("p", "div"):
+                out.append(f"\n\n{inline(c)}\n\n")
+            else:
+                out.append(inline(c))
+        return "".join(out)
+
+    lines = [re.sub(r"[ \t\xa0]+", " ", line).strip() for line in inline(BeautifulSoup(html or "", "html.parser")).split("\n")]
+    paras = [p.strip() for p in re.split(r"\n{2,}", "\n".join(lines))]
+    paras = [re.sub(r" +([.,;:!?)])", r"\1", p) for p in paras if p and not re.fullmatch(r"[_\-–—\s]+", p)]
+    return "\n\n".join(paras)
+
+
 def excerpt(text, limit):
     """Up to `limit` chars: whole sentences if they fit, else cut at a word with an ellipsis."""
     if len(text) <= limit:
@@ -150,7 +183,7 @@ def seminars():
         out.append({"slug": s["slug"], "title": s["title"], "speaker": s["speaker"],
                     "affiliation": s["affiliation"], "date": s["date"], "time": s["time"],
                     "location": loc, "recording_url": s["recording_url"],
-                    "summary": excerpt(strip_tags(s["abstract_html"]), 400)})
+                    "summary": abstract_text(s["abstract_html"])})
     return out
 
 
