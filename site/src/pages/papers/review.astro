@@ -1,0 +1,404 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Base from '../../layouts/Base.astro';
+import data from '../../data/papers.json';
+
+// The paper review tool (in/out decisions, topic fixes). Unlinked; it only works on the local dev server, where
+// decisions save through the endpoint in astro.config.mjs. The public build shows a short note instead.
+
+// Review decisions ({id: {status: 'in'|'out', category?}}) live in papers-db/review.json. Read with fs, not
+// imported, so the dev server doesn't reload the page every time a decision is saved.
+const reviewFile = path.resolve('../papers-db/review.json');
+const review = fs.existsSync(reviewFile) ? JSON.parse(fs.readFileSync(reviewFile, 'utf8')) : {};
+// Decisions made by rule or by Claude (scripts/papers/auto_review.py); Jamie's own choices above always win.
+const autoFile = path.resolve('../papers-db/auto-review.json');
+const auto = fs.existsSync(autoFile) ? JSON.parse(fs.readFileSync(autoFile, 'utf8')) : {};
+const editable = import.meta.env.DEV;
+---
+
+<Base title="Paper review" current="papers">
+  <section class="intro wrap">
+    <h1>Paper review</h1>
+    {editable ? (
+      <p class="lead">
+        Mark each paper <strong>in</strong> or <strong>out</strong>; decisions save to{' '}<code>papers-db/review.json</code>
+        and override the automatic ones (<code>scripts/papers/auto_review.py</code>).
+      </p>
+    ) : (
+      <p class="lead">The review tool runs on the local dev server only.</p>
+    )}
+  </section>
+
+  {editable && <section class="wrap review" aria-label="Papers">
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="Show">
+        <button role="tab" data-tab="todo">To review <span></span></button>
+        <button role="tab" data-tab="in">In <span></span></button>
+        <button role="tab" data-tab="out">Out <span></span></button>
+        <button role="tab" data-tab="other">Not flagged <span></span></button>
+        <button role="tab" data-tab="all">All <span></span></button>
+      </div>
+      <div class="filters">
+        <label><span class="visually-hidden">Search</span><input type="search" id="q" placeholder="Search titles, authors, venues" /></label>
+        <label><span class="visually-hidden">Person</span><select id="person"><option value="">Everyone</option></select></label>
+        <label><span class="visually-hidden">Topic</span><select id="cat"><option value="">All topics</option></select></label>
+        <label><span class="visually-hidden">Sort</span>
+          <select id="sort"><option value="new">Newest first</option><option value="cited">Most cited</option></select>
+        </label>
+      </div>
+      {editable && (
+        <p class="keys">
+          <kbd>j</kbd>/<kbd>k</kbd> move, <kbd>i</kbd> in, <kbd>x</kbd> out, <kbd>u</kbd> undecide,{' '}
+          <kbd>a</kbd> abstract, <kbd>o</kbd> open, <kbd>/</kbd> search
+        </p>
+      )}
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ol class="plist" id="plist"></ol>
+  </section>}
+
+  <script type="application/json" id="papers-data" set:html={JSON.stringify({ ...data, review, auto, editable })} />
+</Base>
+
+<script>
+  // Runs only where the review list is rendered (the local dev server).
+  function main() {
+    type Paper = {
+      id: string; title: string; year: number | null; venue: string; abstract: string | null;
+      authors: [string, string | null][]; citations: number | null; link: string | null; pdf: string | null;
+      category: string | null; candidate: boolean; why: string[];
+      versions: { id: string; title: string; venue: string; year: number | null }[];
+      cites: string[]; cited_by: string[];
+    };
+    type Decision = { status?: 'in' | 'out'; category?: string };
+    const D = JSON.parse(document.getElementById('papers-data')!.textContent!) as {
+      categories: Record<string, string>; people: Record<string, { name: string; current: boolean }>;
+      seeds: string[]; papers: Paper[]; review: Record<string, Decision>; editable: boolean;
+      auto: Record<string, { status: 'in' | 'out'; why: string }>;
+    };
+    const byId = new Map(D.papers.map((p) => [p.id, p]));
+    const review = D.review;
+    const $ = <T extends Element>(s: string) => document.querySelector(s) as T;
+    const list = $<HTMLOListElement>('#plist');
+    const q = $<HTMLInputElement>('#q'), personSel = $<HTMLSelectElement>('#person');
+    const catSel = $<HTMLSelectElement>('#cat'), sortSel = $<HTMLSelectElement>('#sort');
+    const tabs = [...document.querySelectorAll<HTMLButtonElement>('.tabs button')];
+
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+    const catOf = (p: Paper) => review[p.id]?.category ?? p.category ?? '';
+    const statusOf = (p: Paper) => review[p.id]?.status ?? D.auto[p.id]?.status;
+    // An automatic decision is shown (with its reason) only while Jamie hasn't overridden it.
+    const autoOf = (p: Paper) => (review[p.id]?.status ? undefined : D.auto[p.id]);
+    const bucket = (p: Paper) => statusOf(p) ?? (p.candidate ? 'todo' : 'other');
+
+    // Filter menus: seed authors first, then everyone else at Redwood who appears on a paper.
+    const slugs = new Set(D.papers.flatMap((p) => p.authors.map((a) => a[1]).filter(Boolean) as string[]));
+    const ordered = [...D.seeds, ...[...slugs].filter((s) => !D.seeds.includes(s)).sort((a, b) =>
+      (D.people[a]?.name ?? a).split(' ').pop()!.localeCompare((D.people[b]?.name ?? b).split(' ').pop()!))];
+    for (const s of ordered) personSel.add(new Option(D.people[s]?.name ?? s, s));
+    for (const [k, v] of Object.entries(D.categories)) catSel.add(new Option(v, k));
+    catSel.add(new Option('No topic', '-'));
+
+    let tab = D.editable ? 'todo' : D.papers.some((p) => statusOf(p) === 'in') ? 'in' : 'todo';
+    let visible: Paper[] = [];
+    let cursor = -1;
+
+    function authorsHtml(p: Paper) {
+      const n = p.authors.length;
+      const shown = n > 14 ? [...p.authors.slice(0, 10), null, ...p.authors.slice(-2)] : p.authors;
+      return shown.map((a) => {
+        if (!a) return `<span class="more">… ${n - 12} more …</span>`;
+        const [name, slug] = a;
+        if (!slug) return esc(name);
+        const who = D.people[slug];
+        return `<b class="${who?.current ? 'rw' : 'rw alum'}" title="${esc(who?.name ?? slug)}${who?.current ? '' : ' (alumni)'}">${esc(name)}</b>`;
+      }).join(', ');
+    }
+
+    function linkList(ids: string[]) {
+      return ids.map((id) => byId.get(id)).filter(Boolean)
+        .map((p) => `<li><a href="#p-${p!.id}" data-jump="${p!.id}">${esc(p!.title)}</a> <span>${p!.year ?? ''}</span></li>`).join('');
+    }
+
+    function row(p: Paper) {
+      const st = statusOf(p);
+      const cat = catOf(p);
+      const meta = [p.venue, p.citations != null ? `${p.citations.toLocaleString()} citations` : ''].filter(Boolean).join(', ');
+      const graph = [p.cites.length && `<button class="lnk" data-show="cites">Cites ${p.cites.length} Redwood ${p.cites.length === 1 ? 'paper' : 'papers'}</button>`,
+        p.cited_by.length && `<button class="lnk" data-show="cited_by">Cited by ${p.cited_by.length}</button>`].filter(Boolean).join(' ');
+      const catCtl = D.editable
+        ? `<select class="pcat" aria-label="Topic"><option value="">No topic</option>${Object.entries(D.categories)
+            .map(([k, v]) => `<option value="${k}"${k === cat ? ' selected' : ''}>${esc(v)}</option>`).join('')}</select>`
+        : cat ? `<span class="tag">${esc(D.categories[cat] ?? cat)}</span>` : '';
+      return `<li class="paper${st ? ' is-' + st : ''}" id="p-${p.id}" data-id="${p.id}">
+        <span class="yr">${p.year ?? ''}</span>
+        <div class="body">
+          <h3>${p.link ? `<a href="${esc(p.link)}">${esc(p.title)}</a>` : esc(p.title)}</h3>
+          <p class="authors">${authorsHtml(p)}</p>
+          <p class="meta">${esc(meta)}${p.pdf ? ` <a href="${esc(p.pdf)}">PDF</a>` : ''}</p>
+          ${D.editable ? `<p class="why">${autoOf(p) ? `<span class="auto">auto ${autoOf(p)!.status}: ${esc(autoOf(p)!.why)}</span>` : ''}${p.why.map((w) => `<span>${esc(w)}</span>`).join('')}</p>` : ''}
+          ${p.versions.length ? `<p class="versions">Also as: ${p.versions.map((v) => `${esc(v.title)} (${esc(v.venue || '?')}, ${v.year ?? '?'})`).join('; ')}</p>` : ''}
+          <p class="extras">${p.abstract ? '<button class="lnk" data-show="abstract">Abstract</button> ' : ''}${graph}</p>
+          <div class="drawer" hidden></div>
+        </div>
+        <div class="ctl">
+          ${catCtl}
+          ${D.editable ? `<div class="decide" role="group" aria-label="Decision">
+            <button data-set="in" aria-pressed="${st === 'in'}">In</button>
+            <button data-set="out" aria-pressed="${st === 'out'}">Out</button></div>` : ''}
+        </div>
+      </li>`;
+    }
+
+    function counts() {
+      const c: Record<string, number> = { todo: 0, in: 0, out: 0, other: 0, all: D.papers.length };
+      for (const p of D.papers) c[bucket(p)]++;
+      for (const t of tabs) t.querySelector('span')!.textContent = String(c[t.dataset.tab!]);
+    }
+
+    function render() {
+      const term = q.value.trim().toLowerCase();
+      const person = personSel.value, cat = catSel.value;
+      visible = D.papers.filter((p) =>
+        (tab === 'all' || bucket(p) === tab) &&
+        (!person || p.authors.some((a) => a[1] === person)) &&
+        (!cat || (cat === '-' ? !catOf(p) : catOf(p) === cat)) &&
+        (!term || `${p.title} ${p.venue} ${p.authors.map((a) => a[0]).join(' ')}`.toLowerCase().includes(term)));
+      if (sortSel.value === 'cited') visible = [...visible].sort((a, b) => (b.citations ?? 0) - (a.citations ?? 0));
+      list.innerHTML = visible.map(row).join('');
+      $('#count').textContent = `${visible.length} ${visible.length === 1 ? 'paper' : 'papers'}`;
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.tab === tab)));
+      cursor = Math.min(cursor, visible.length - 1);
+      counts();
+      focusRow(cursor, false);
+    }
+
+    function focusRow(i: number, scroll = true) {
+      list.querySelector('.cur')?.classList.remove('cur');
+      cursor = i;
+      const li = list.children[i] as HTMLElement | undefined;
+      if (!li) return;
+      li.classList.add('cur');
+      if (scroll) li.scrollIntoView({ block: 'nearest' });
+    }
+
+    async function save(id: string, d: Decision | null) {
+      if (d && !d.status && !d.category) d = null;
+      if (d) review[id] = d; else delete review[id];
+      await fetch('/__paper-review', { method: 'POST', body: JSON.stringify({ [id]: d }) });
+    }
+
+    function decide(id: string, status: 'in' | 'out' | undefined) {
+      const d = { ...review[id] };
+      if (status && d.status !== status) d.status = status; else delete d.status;
+      save(id, d);
+      // Show the effective status: Jamie's choice, or the automatic one it falls back to when cleared.
+      const st = statusOf(byId.get(id)!);
+      const li = document.getElementById(`p-${id}`)!;
+      li.classList.remove('is-in', 'is-out');
+      if (st) li.classList.add(`is-${st}`);
+      li.querySelectorAll<HTMLButtonElement>('[data-set]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.set === st)));
+      counts();
+    }
+
+    function toggleDrawer(li: HTMLElement, what: string) {
+      const p = byId.get(li.dataset.id!)!;
+      const drawer = li.querySelector<HTMLElement>('.drawer')!;
+      if (!drawer.hidden && drawer.dataset.what === what) { drawer.hidden = true; return; }
+      drawer.dataset.what = what;
+      drawer.innerHTML = what === 'abstract' ? `<p>${esc(p.abstract ?? '')}</p>`
+        : `<ul>${linkList(what === 'cites' ? p.cites : p.cited_by)}</ul>`;
+      drawer.hidden = false;
+    }
+
+    list.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      const li = t.closest<HTMLElement>('.paper');
+      if (!li) return;
+      focusRow([...list.children].indexOf(li), false);
+      const set = t.closest<HTMLButtonElement>('[data-set]');
+      if (set) decide(li.dataset.id!, set.dataset.set as 'in' | 'out');
+      const show = t.closest<HTMLButtonElement>('[data-show]');
+      if (show) toggleDrawer(li, show.dataset.show!);
+      const jump = t.closest<HTMLAnchorElement>('[data-jump]');
+      if (jump && !document.getElementById(`p-${jump.dataset.jump}`)) {
+        // Target is filtered out of the current view: show everything, then jump.
+        e.preventDefault(); tab = 'all'; q.value = ''; personSel.value = ''; catSel.value = ''; render();
+        document.getElementById(`p-${jump.dataset.jump}`)?.scrollIntoView({ block: 'center' });
+      }
+    });
+    list.addEventListener('change', (e) => {
+      const t = e.target as HTMLSelectElement;
+      if (!t.classList.contains('pcat')) return;
+      const id = t.closest<HTMLElement>('.paper')!.dataset.id!;
+      const p = byId.get(id)!;
+      const d = { ...review[id] };
+      if (t.value && t.value !== p.category) d.category = t.value; else delete d.category;
+      save(id, d);
+    });
+    tabs.forEach((b) => b.addEventListener('click', () => { tab = b.dataset.tab!; cursor = -1; render(); }));
+    [q, personSel, catSel, sortSel].forEach((el) => el.addEventListener('input', () => { cursor = -1; render(); }));
+
+    document.addEventListener('keydown', (e) => {
+      const t = e.target as HTMLElement;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (t.matches('input, select, textarea')) { if (e.key === 'Escape') t.blur(); return; }
+      const li = list.children[cursor] as HTMLElement | undefined;
+      const k = e.key;
+      if (k === 'j') focusRow(Math.min(cursor + 1, visible.length - 1));
+      else if (k === 'k') focusRow(Math.max(cursor - 1, 0));
+      else if (k === '/') { e.preventDefault(); q.focus(); }
+      else if (k === 'a' && li) toggleDrawer(li, 'abstract');
+      else if (k === 'o' && li) { const p = byId.get(li.dataset.id!)!; if (p.link) window.open(p.link, '_blank'); }
+      else if (D.editable && li && (k === 'i' || k === 'x' || k === 'u')) {
+        const id = li.dataset.id!;
+        if (k === 'u') decide(id, undefined);
+        else if (statusOf(byId.get(id)!) !== (k === 'i' ? 'in' : 'out')) decide(id, k === 'i' ? 'in' : 'out');
+        if (k !== 'u') focusRow(Math.min(cursor + 1, visible.length - 1));
+      } else return;
+      e.preventDefault();
+    });
+
+    render();
+  }
+  if (document.getElementById('plist')) main();
+</script>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead { font-family: var(--serif); font-size: var(--step-1); line-height: 1.5; max-width: 60ch; margin-top: 1rem; }
+  .lead code { font-size: 0.85em; }
+  .review-note code { font-size: 0.85em; }
+
+  .review { padding-block: 2rem clamp(4rem, 8vw, 6rem); }
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: grid;
+    gap: 0.75rem;
+    padding-block: 0.9rem;
+    background: var(--bg, #fff);
+    border-bottom: 1px solid var(--line);
+  }
+  .tabs { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+  .tabs button {
+    font: inherit;
+    font-weight: 550;
+    background: none;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    padding: 0.2rem 0;
+    color: var(--slate);
+    cursor: pointer;
+  }
+  .tabs button span { font-weight: 450; font-variant-numeric: tabular-nums; }
+  .tabs button[aria-selected='true'] { color: var(--brand); border-bottom-color: var(--gold); }
+  .filters { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .filters input, .filters select, .pcat {
+    font: inherit;
+    font-size: 0.9375rem;
+    padding: 0.35rem 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--text);
+  }
+  .filters label { max-width: 100%; }
+  .filters input { width: min(22rem, 100%); }
+  .filters select { max-width: 100%; }
+  .keys { font-size: 0.8125rem; color: var(--slate); }
+  kbd {
+    font: inherit;
+    font-weight: 600;
+    padding: 0 0.3em;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--wash);
+  }
+  .count { margin: 1rem 0 0.25rem; color: var(--slate); font-size: 0.875rem; }
+
+  .plist { list-style: none; margin: 0; padding: 0; }
+  .plist :global(.paper) {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr) 13rem;
+    gap: 0.25rem 1rem;
+    padding: 0.9rem 0.5rem 0.9rem 0.75rem;
+    border-top: 1px solid var(--line);
+    border-left: 3px solid transparent;
+    scroll-margin-top: 9rem;
+  }
+  .plist :global(.paper.cur) { border-left-color: var(--gold); background: rgb(253 181 21 / 0.05); }
+  .plist :global(.paper.is-in) { background: rgb(31 64 48 / 0.05); }
+  .plist :global(.paper.is-out) { opacity: 0.55; }
+  .plist :global(.yr) { color: var(--slate); font-variant-numeric: tabular-nums; font-size: 0.9375rem; padding-top: 0.1rem; }
+  .plist :global(h3) { font-size: 1.0625rem; font-weight: 600; line-height: 1.35; }
+  .plist :global(h3 a) { text-decoration: none; color: var(--brand); }
+  .plist :global(h3 a:hover) { text-decoration: underline; }
+  .plist :global(.authors) { margin-top: 0.25rem; font-size: 0.9375rem; line-height: 1.45; color: var(--text); }
+  .plist :global(.rw) { font-weight: 650; color: var(--text); }
+  .plist :global(.more) { color: var(--slate); }
+  .plist :global(.meta) { margin-top: 0.2rem; font-size: 0.875rem; color: var(--slate); }
+  .plist :global(.why) { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+  .plist :global(.why span) {
+    font-size: 0.75rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 999px;
+    background: var(--wash);
+    color: var(--slate);
+  }
+  .plist :global(.why span.auto) { background: rgb(253 181 21 / 0.18); color: var(--text); }
+  .plist :global(.versions) { margin-top: 0.3rem; font-size: 0.8125rem; color: var(--slate); font-style: italic; }
+  .plist :global(.extras) { margin-top: 0.3rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
+  .plist :global(.lnk) {
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--brand);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+  }
+  .plist :global(.drawer) {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--wash);
+    border-radius: 4px;
+    font-size: 0.9375rem;
+  }
+  .plist :global(.drawer p) { font-family: var(--serif); line-height: 1.55; max-width: 72ch; }
+  .plist :global(.drawer ul) { margin: 0; padding-left: 1.1rem; }
+  .plist :global(.drawer li + li) { margin-top: 0.2rem; }
+  .plist :global(.drawer li span) { color: var(--slate); font-size: 0.8125rem; }
+  .plist :global(.ctl) { display: flex; flex-direction: column; align-items: stretch; gap: 0.5rem; }
+  .plist :global(.pcat) { font-size: 0.8125rem; width: 100%; }
+  .plist :global(.tag) { font-size: 0.8125rem; color: var(--slate); }
+  .plist :global(.decide) { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; }
+  .plist :global(.decide button) {
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.35rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fff;
+  }
+  .plist :global([data-set='in']) { border: 1.5px solid var(--brand); color: var(--brand); }
+  .plist :global([data-set='in'][aria-pressed='true']) { background: var(--brand); color: #fff; }
+  .plist :global([data-set='out']) { border: 1.5px solid #9b3d2e; color: #9b3d2e; }
+  .plist :global([data-set='out'][aria-pressed='true']) { background: #9b3d2e; color: #fff; }
+
+  @media (max-width: 760px) {
+    .plist :global(.paper) { grid-template-columns: 2.75rem minmax(0, 1fr); }
+    .plist :global(.ctl) { grid-column: 2; flex-direction: row; flex-wrap: wrap; min-width: 0; }
+    .plist :global(.pcat) { width: auto; flex: 1 1 10rem; min-width: 0; }
+    .plist :global(.decide) { flex: 1 1 9rem; }
+    .toolbar { position: static; }
+    .keys { display: none; }
+  }
+</style>

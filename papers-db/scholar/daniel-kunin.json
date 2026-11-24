@@ -1,0 +1,128 @@
+[
+ {
+  "title": "There will be a scientific theory of deep learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:0EnyYjriUFMC",
+  "authors": "J Simon, D Kunin, A Atanasov, E Boix-Adserà, B Bordelon, J Cohen, ...",
+  "venue": "arXiv preprint arXiv:2604.21691, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Sequential Group Composition: A Window into the Mechanics of Deep Learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:hqOjcs7Dif8C",
+  "authors": "GL Marchetti*, D Kunin*, A Myers, F Acosta, N Miolane",
+  "venue": "International Conference on Machine Learning (ICML), 2026",
+  "year": 2026
+ },
+ {
+  "title": "Symmetry breaking in transformers for efficient and interpretable training",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:UebtZRa9Y70C",
+  "authors": "E Silverstein, D Kunin, V Shyam",
+  "venue": "arXiv preprint arXiv:2601.22257, 2026",
+  "year": 2026
+ },
+ {
+  "title": "System and method for pruning neural networks at initialization using iteratively conserving synaptic flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:Se3iqnhoufwC",
+  "authors": "H Tanaka, D Kunin, DLK Yamins, S Ganguli",
+  "venue": "US Patent 12,406,185, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:LkGwnXOMwfcC",
+  "authors": "D Kunin, GL Marchetti, F Chen, D Karkada, JB Simon, MR DeWeese, ...",
+  "venue": "Neural Information Processing Systems (NeurIPS), 2025",
+  "year": 2025
+ },
+ {
+  "title": "Learning Mechanics of Neural Networks: Conservation Laws, Implicit Bias, and Feature Learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:roLk4NBRz8UC",
+  "authors": "D Kunin",
+  "venue": "Stanford University, 2025",
+  "year": 2025
+ },
+ {
+  "title": "From lazy to rich: Exact learning dynamics in deep linear networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:ufrVoPGSRksC",
+  "authors": "CCJ Dominé, N Anguita, AM Proca, L Braun, D Kunin, PAM Mediano, ...",
+  "venue": "International Conference on Learning Representations (ICLR), 2024",
+  "year": 2024
+ },
+ {
+  "title": "Get rich quick: exact solutions reveal how unbalanced initializations promote rapid feature learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:WF5omc3nYNoC",
+  "authors": "D Kunin*, A Raventós*, C Dominé, F Chen, D Klindt, A Saxe, S Ganguli",
+  "venue": "Neural Information Processing Systems (NeurIPS) Spotlight, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Stochastic collapse: How gradient noise attracts sgd dynamics towards simpler subnetworks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:YsMSGLbcyi4C",
+  "authors": "F Chen*, D Kunin*, A Yamamura*, S Ganguli",
+  "venue": "Journal of Statistical Mechanics: Theory and Experiment, 2024",
+  "year": 2024
+ },
+ {
+  "title": "The limiting dynamics of sgd: Modified loss, phase-space oscillations, and anomalous diffusion",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:zYLM7Y9cAGgC",
+  "authors": "D Kunin*, J Sagastuy-Brena*, L Gillespie, E Margalit, H Tanaka, ...",
+  "venue": "Neural Computation 36 (1), 151-174, 2023",
+  "year": 2023
+ },
+ {
+  "title": "The asymmetric maximum margin bias of quasi-homogeneous neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:Y0pCki6q_DkC",
+  "authors": "D Kunin*, A Yamamura*, C Ma, S Ganguli",
+  "venue": "International Conference on Learning Representations (ICLR) Spotlight, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Beyond the Quadratic Approximation: the Multiscale Structure of Neural Network Loss Landscapes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "C Ma, D Kunin, L Wu, L Ying",
+  "venue": "Journal of Machine Learning Research, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Noether’s Learning Dynamics: Role of Symmetry Breaking in Neural Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:IjCSPb-OGe4C",
+  "authors": "H Tanaka, D Kunin",
+  "venue": "Neural Information Processing Systems (NeurIPS), 2021",
+  "year": 2021
+ },
+ {
+  "title": "Neural mechanics: Symmetry and broken conservation laws in deep learning dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:9yKSN-GCB0IC",
+  "authors": "D Kunin*, J Sagastuy-Brena, S Ganguli, DLK Yamins, H Tanaka*",
+  "venue": "International Conference on Learning Representations (ICLR), 2020",
+  "year": 2020
+ },
+ {
+  "title": "Two routes to scalable credit assignment without weight symmetry",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:u-x6o8ySG0sC",
+  "authors": "D Kunin*, A Nayebi*, J Sagastuy-Brena*, S Ganguli, J Bloom, D Yamins",
+  "venue": "International Conference on Machine Learning (ICML), 2020",
+  "year": 2020
+ },
+ {
+  "title": "Pruning neural networks without any data by iteratively conserving synaptic flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:_FxGoFyzp5QC",
+  "authors": "H Tanaka*, D Kunin*, DL Yamins, S Ganguli",
+  "venue": "Advances in neural information processing systems 33, 6377-6389, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Loss landscapes of regularized linear autoencoders",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:d1gkVwhDpl0C",
+  "authors": "D Kunin*, J Bloom*, A Goeva, C Seed",
+  "venue": "International Conference on Machine Learning (ICML) Oral, 2019",
+  "year": 2019
+ },
+ {
+  "title": "A Quasistatic Derivation of Optimization Algorithms' Exploration on Minima Manifolds",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:W7OEmFMy1HYC",
+  "authors": "C Ma, D Kunin, L Ying",
+  "venue": "",
+  "year": null
+ }
+]

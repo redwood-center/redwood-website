@@ -1,0 +1,176 @@
+---
+import Base from '../layouts/Base.astro';
+import people from '../data/people.json';
+import { url } from '../lib/url';
+
+const faculty = people.filter((p) => p.group === 'Faculty');
+// Postdocs before research staff, PhD students before undergrads; by last name within each.
+const postdocs = people
+  .filter((p) => p.group === 'Postdocs and research staff')
+  .sort(byLastName)
+  .sort((a, b) => Number(!/postdoc/i.test(a.title ?? '')) - Number(!/postdoc/i.test(b.title ?? '')));
+const students = people
+  .filter((p) => p.group === 'Students')
+  .sort(byLastName)
+  .sort((a, b) => Number(a.title === 'Undergraduate') - Number(b.title === 'Undergraduate'));
+const staff = people.filter((p) => p.group === 'Staff');
+const alumni = people
+  .filter((p) => p.group === 'Alumni')
+  .sort(byLastName);
+
+function byLastName(a: { name: string }, b: { name: string }) {
+  return lastName(a.name).localeCompare(lastName(b.name));
+}
+function lastName(name: string) {
+  return name.trim().split(/\s+/).pop() ?? name;
+}
+
+const sections = [
+  { id: 'faculty', title: 'Faculty', people: faculty, size: 'lg' },
+  { id: 'postdocs', title: 'Postdocs and research staff', people: postdocs, size: 'sm' },
+  { id: 'students', title: 'Students', people: students, size: 'sm' },
+  { id: 'staff', title: 'Staff', people: staff, size: 'sm' },
+];
+---
+
+<Base title="People" current="people">
+  <section class="intro wrap">
+    <h1>People</h1>
+    <p>
+      The Redwood Center's faculty, postdocs, and students come from neuroscience, vision science,
+      physics, computer science, electrical engineering, and mathematics.
+    </p>
+    <ul class="jump">
+      {sections.map((s) => <li><a href={`#${s.id}`}>{s.title}</a></li>)}
+      <li><a href="#alumni">Alumni</a></li>
+    </ul>
+  </section>
+
+  {sections.map((s) => (
+    <section id={s.id} class="section group">
+      <div class="wrap">
+        <h2>{s.title}</h2>
+        <ul class={`grid grid--${s.size}`}>
+          {s.people.map((p) => (
+            <li class="person">
+              {p.photo ? (
+                <img src={url(p.photo)} alt="" width="300" height="350" loading="lazy" />
+              ) : (
+                <div class="no-photo" aria-hidden="true"></div>
+              )}
+              <h3>{p.name}</h3>
+              <p class="title">{p.title}</p>
+              {p.role && <p class="title">{p.role}</p>}
+              {p.affiliation && <p class="affil">{p.affiliation}</p>}
+              {p.labs && p.labs.length > 0 && <p class="labs">{p.labs.join(', ')}</p>}
+              {p.website && (
+                <a class="site" href={p.website}>
+                  Website<span class="visually-hidden"> of {p.name}</span>
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  ))}
+
+  <section id="alumni" class="section section--wash">
+    <div class="wrap">
+      <h2>Alumni</h2>
+      <ul class="alumni">
+        {alumni.map((p) => (
+          <li>{p.website ? <a href={p.website}>{p.name}</a> : p.name}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 {
+    font-size: var(--step-4);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+  .intro p {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 48ch;
+    margin-top: 1rem;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+  }
+  .jump a { font-weight: 600; }
+
+  .group + .group { padding-top: 0; }
+  h2 {
+    font-size: var(--step-3);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.75rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 2.5rem clamp(1.25rem, 2.5vw, 2rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .grid--lg { grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr)); }
+  .grid--sm { grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr)); }
+
+  .person img,
+  .no-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 6 / 7;
+    object-fit: cover;
+    background: var(--wash);
+    margin-bottom: 0.85rem;
+  }
+  .person h3 {
+    font-size: var(--step-1);
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+  .grid--sm .person h3 { font-size: 1.0625rem; }
+  .title { font-weight: 500; margin-top: 0.2rem; }
+  .title + .title { margin-top: 0; }
+  .affil, .labs { color: var(--slate); font-size: 0.9375rem; margin-top: 0.15rem; }
+  .site { display: inline-block; margin-top: 0.45rem; font-size: 0.9375rem; font-weight: 500; }
+
+  /* One compact run of names, separated by dots; names with a known personal page are links. */
+  /* Wrapping row: Astro strips whitespace between <li>s, so inline items would never wrap. */
+  .alumni {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 75rem;
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.9;
+  }
+  .alumni li { white-space: nowrap; }
+  .alumni li:not(:last-child)::after {
+    content: '·';
+    margin-inline: 0.55em;
+    color: var(--slate);
+  }
+  .alumni a {
+    color: inherit;
+    text-decoration-color: color-mix(in srgb, var(--brand) 35%, transparent);
+  }
+  .alumni a:hover { color: var(--brand); text-decoration-color: currentColor; }
+</style>

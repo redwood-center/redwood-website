@@ -1,0 +1,57 @@
+[
+ {
+  "name": "National Science Foundation",
+  "href": "https://nsf.gov",
+  "logo": "media/funders/nsf_logo_four_color_medium.jpg"
+ },
+ {
+  "name": "National Institutes of Health",
+  "href": "https://nih.gov",
+  "logo": "media/funders/nih_logo_vertical_medium.jpg"
+ },
+ {
+  "name": "Semiconductor Research Corporation",
+  "href": "https://www.src.org",
+  "logo": "media/funders/src_logo_medium_shifted-e1567643948962.png"
+ },
+ {
+  "name": "DARPA",
+  "href": "http://www.darpa.mil",
+  "logo": "media/funders/darpa_logo-e1567548323980.png"
+ },
+ {
+  "name": "Intel",
+  "href": "https://www.intel.com",
+  "logo": "media/funders/intel_logo_medium.jpg"
+ },
+ {
+  "name": "Apple",
+  "href": "https://apple.com",
+  "logo": "media/funders/apple-logo-bwc.png"
+ },
+ {
+  "name": "Gates Foundation",
+  "href": "https://www.gatesfoundation.org",
+  "logo": "media/funders/gates_foundation_logo.png"
+ },
+ {
+  "name": "Kavli Foundation",
+  "href": "https://www.kavlifoundation.org",
+  "logo": "media/funders/kavli_foundation_logo.png"
+ },
+ {
+  "name": "Swartz Foundation",
+  "href": "https://www.theswartzfoundation.org",
+  "logo": "media/funders/schwartz_foundation_logo.jpg"
+ },
+ {
+  "name": "Weill Neurohub",
+  "href": "https://www.weillneurohub.org",
+  "logo": "media/funders/weil_neurohub_logo.png"
+ },
+ {
+  "name": "Air Force Office of Scientific Research",
+  "href": "https://www.afrl.af.mil/AFOSR/",
+  "logo": "media/funders/afosr-logo-1c.png"
+ }
+]

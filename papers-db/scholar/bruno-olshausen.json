@@ -1,0 +1,1745 @@
+[
+ {
+  "title": "Inference and learning in sparse autoencoders as natural gradient flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:1lhNe0rCu4AC",
+  "authors": "H Vafaii, T Rao, D Chanin, T Fel, JL Yates, B Olshausen, D Klindt, ...",
+  "venue": "arXiv preprint arXiv:2610.07389, 2026",
+  "year": 2026
+ },
+ {
+  "title": "CoCoSys: The Co-Design of Cognitive AI from Algorithms to Systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ALROH1vI_8AC",
+  "authors": "Z Wan, YK Cao, SK Gupta, L Heck, T Krishna, YC Lin, A Naeemi, ...",
+  "venue": "IEEE Micro, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Toward a mechanistic understanding of inference in visual cortex and diffusion models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:otzGkya1bYkC",
+  "authors": "Z Yun, A Belsten, D Bi, Z Kadkhodaie, Y Chen, BA Olshausen",
+  "venue": "arXiv preprint arXiv:2607.15693, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Emergence of unique hues from sparse coding of color in natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:QD3KBmkZPeQC",
+  "authors": "A Belsten, EP Frady, BA Olshausen",
+  "venue": "Journal of the Optical Society of America A 43 (8), 1210-1223, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Sparse coding of chromatic natural images recovers universals in color naming and unique hues",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:PVgj2kMGcgYC",
+  "authors": "A Belsten, P Frady, B Olshausen",
+  "venue": "Journal of Vision 25 (9), 2734-2734, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Urlost: Unsupervised representation learning without stationarity or topology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:GFxP56DSvIMC",
+  "authors": "Z Yun, J Zhang, Y LeCun, Y Chen",
+  "venue": "International Conference on Learning Representations 2025, 1492-1516, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Emergence of strategic cone weighting from efficient coding of spatiochromatic natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:F1b5ZUV5XREC",
+  "authors": "A Belsten, BA Olshausen",
+  "venue": "Journal of the Optical Society of America A 42 (5), B495-B502, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Oscillator associative memories facilitate high-capacity, compositional inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:LgRImbQfgY4C",
+  "authors": "C Kymn, C Bybee, Z Yun, D Kleyko, B Olshausen",
+  "venue": "New Frontiers in Associative Memories, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Principled neuromorphic reservoir computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Bg7qf7VwUHIC",
+  "authors": "D Kleyko, CJ Kymn, A Thomas, BA Olshausen, FT Sommer, EP Frady",
+  "venue": "Nature Communications 16 (1), 640, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Neural manifold geometry encodes feature fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4xDN1ZYqzskC",
+  "authors": "J Yocum, C Allen, B Olshausen, S Russell",
+  "venue": "NeurIPS 2025 Workshop on Symmetry and Geometry in Neural Representations, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Sparse coding generates efficient representations for autoassociative memories",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:uDGL6kOW6j0C",
+  "authors": "Y Zhao, Z Yun, B Olshausen, C Kymn",
+  "venue": "Proceedings of the Annual Meeting of the Cognitive Science Society 47, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Binding in hippocampal-entorhinal circuits enables compositionality in cognitive maps",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tH6gc1N1XXoC",
+  "authors": "CJ Kymn, S Mazelet, A Thomas, D Kleyko, EP Frady, FT Sommer, ...",
+  "venue": "Advances in neural information processing systems 37, 39128-39157, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Computing with residue numbers in high-dimensional representation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_OXeSy2IsFwC",
+  "authors": "CJ Kymn, D Kleyko, EP Frady, C Bybee, P Kanerva, FT Sommer, ...",
+  "venue": "Neural Computation 37 (1), 1-37, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Learning internal representations of 3D transformations from 2D projected inputs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:fFSKOagxvKUC",
+  "authors": "M Connor, B Olshausen, C Rozell",
+  "venue": "Neural Computation 36 (11), 2505-2539, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Neuromorphic visual scene understanding with resonator networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:mlAyqtXpCwEC",
+  "authors": "A Renner, L Supic, A Danielescu, G Indiveri, BA Olshausen, ...",
+  "venue": "Nature Machine Intelligence 6 (6), 641-652, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Compositional factorization of visual scenes with convolutional sparse coding and resonator networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:lvd772isFD0C",
+  "authors": "CJ Kymn, S Mazelet, A Ng, D Kleyko, BA Olshausen",
+  "venue": "2024 neuro inspired computational elements conference (nice), 1-9, 2024",
+  "year": 2024
+ },
+ {
+  "title": "High-fidelity eye, head, body, and world tracking with a wearable device",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:WJVC3Jt7v1AC",
+  "authors": "V DuTell, A Gibaldi, G Focarelli, BA Olshausen, MS Banks",
+  "venue": "Behavior Research Methods 56 (1), 32-42, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Visual scene representation with hierarchical equivariant sparse coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ZzlSgRqYykMC",
+  "authors": "CA Shewmake, D Buracas, H Lillemark, J Shin, EJ Bekkers, N Miolane, ...",
+  "venue": "NeurIPS 2023 Workshop on Symmetry and Geometry in Neural Representations, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Collaborative Research: RI: Medium: Lie group representation learning for vision",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4X0JR2_MtJMC",
+  "authors": "BA Olshausen",
+  "venue": "NSF Award Number 2313149. Directorate for Computer and Information Science …, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Efficient optimization with higher-order Ising machines",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:DJbcl8HfkQkC",
+  "authors": "C Bybee, D Kleyko, DE Nikonov, A Khosrowshahi, BA Olshausen, ...",
+  "venue": "Nature Communications 14 (1), 6033, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Group equivariant sparse coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:8xutWZnSdmoC",
+  "authors": "C Shewmake, N Miolane, B Olshausen",
+  "venue": "International Conference on Geometric Science of Information, 91-101, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Emergence of Sparse Representations from Noise.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:a3BOlSfXSfwC",
+  "authors": "T Bricken, R Schaeffer, BA Olshausen, G Kreiman",
+  "venue": "ICML, 3148-3191, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Efficient decoding of compositional structure in holistic representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:r_AWSJRzSzQC",
+  "authors": "D Kleyko, C Bybee, PC Huang, CJ Kymn, BA Olshausen, EP Frady, ...",
+  "venue": "Neural Computation 35 (7), 1159-1186, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Learning and generalization of compositional representations of visual scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:3htObqc8RwsC",
+  "authors": "EP Frady, S Kent, Q Tran, P Kanerva, BA Olshausen, FT Sommer",
+  "venue": "arXiv preprint arXiv:2303.13691, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Catalyzing next-generation artificial intelligence through neuroai",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:OcBU2YAGkTUC",
+  "authors": "A Zador, S Escola, B Richards, B Ölveczky, Y Bengio, K Boahen, ...",
+  "venue": "Nature communications 14 (1), 1597, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Learning and generalization of compositional representations of visual scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:yMeIxYmEMEAC",
+  "authors": "E Paxon Frady, S Kent, Q Tran, P Kanerva, BA Olshausen, FT Sommer",
+  "venue": "arXiv e-prints, arXiv: 2303.13691, 2023",
+  "year": 2023
+ },
+ {
+  "title": "On separating long-and short-term memories in hyperdimensional computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:QYdC8u9Cj1oC",
+  "authors": "JL Teeters, D Kleyko, P Kanerva, BA Olshausen",
+  "venue": "Frontiers in Neuroscience 16, 867568, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Neuromorphic Hyperdimensional Visual Scene Factorization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:gVv57TyPmFsC",
+  "authors": "G Indiveri, FT Sommer, L Supic, BA Olshausen, A Danielescu, ...",
+  "venue": "International conference on neuromorphic, natural and physical computing, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Pim: Video coding using perceptual importance maps",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:bKqednn6t2AC",
+  "authors": "E Pergament, P Tandon, O Rippel, L Bourdev, AG Anderson, ...",
+  "venue": "arXiv preprint arXiv:2212.10674, 2022",
+  "year": 2022
+ },
+ {
+  "title": "High-density analog image storage in an analog-valued non-volatile memory array",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:HtS1dXgVpQUC",
+  "authors": "X Zheng, RV Zarcone, A Levy, WS Khwa, P Raina, BA Olshausen, ...",
+  "venue": "Neuromorphic Computing and Engineering 2 (4), 044018, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Vector symbolic architectures as a computing framework for emerging hardware",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hCrLmN-GePgC",
+  "authors": "D Kleyko, M Davies, EP Frady, P Kanerva, SJ Kent, BA Olshausen, ...",
+  "venue": "Proceedings of the IEEE 110 (10), 1538-1571, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Toward next-generation artificial intelligence: Catalyzing the neuroai revolution",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dBIO0h50nwkC",
+  "authors": "A Zador, S Escola, B Richards, Y Bengio, K Boahen, M Botvinick, ...",
+  "venue": "arXiv preprint arXiv:2210.08340, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Minimalistic unsupervised learning with the sparse manifold transform",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9c2xU6iGI7YC",
+  "authors": "Y Chen, Z Yun, Y Ma, B Olshausen, Y LeCun",
+  "venue": "arXiv preprint arXiv:2209.15261, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Bispectral neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:IUKN3-7HHlwC",
+  "authors": "S Sanborn, C Shewmake, B Olshausen, C Hillar",
+  "venue": "arXiv preprint arXiv:2209.03416, 2022",
+  "year": 2022
+ },
+ {
+  "title": "An interactive annotation tool for perceptual video compression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:umqufdRvDiIC",
+  "authors": "E Pergament, P Tandon, K Tatwawadi, O Rippel, L Bourdev, B Olshausen, ...",
+  "venue": "2022 14th International Conference on Quality of Multimedia Experience …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "RG-Flow: A hierarchical and explainable flow model based on renormalization group and sparse prior",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:S16KYo8Pm5AC",
+  "authors": "HY Hu, D Wu, YZ You, B Olshausen, Y Chen",
+  "venue": "Machine Learning: Science and Technology 3 (3), 035009, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Computing with hypervectors for efficient speaker identification",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:IRz6iEL74y4C",
+  "authors": "PC Huang, D Kleyko, JM Rabaey, BA Olshausen, P Kanerva",
+  "venue": "arXiv preprint arXiv:2208.13285, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Learning and inference in sparse coding models with Langevin dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:a9-T7VOCCH8C",
+  "authors": "MYS Fang, M Mudigonda, R Zarcone, A Khosrowshahi, BA Olshausen",
+  "venue": "Neural Computation 34 (8), 1676-1700, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Integer factorization with compositional distributed representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:HtEfBTGE9r8C",
+  "authors": "D Kleyko, C Bybee, CJ Kymn, BA Olshausen, A Khosrowshahi, ...",
+  "venue": "Proceedings of the 2022 Annual Neuro-Inspired Computational Elements …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Computing on functions using randomized vector representations (in brief)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:GtLg2Ama23sC",
+  "authors": "EP Frady, D Kleyko, CJ Kymn, BA Olshausen, FT Sommer",
+  "venue": "Proceedings of the 2022 Annual Neuro-Inspired Computational Elements …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Minimalistic unsupervised representation learning with the sparse manifold transform",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:yFnVuubrUp4C",
+  "authors": "Y Chen, Z Yun, Y Ma, B Olshausen, Y LeCun",
+  "venue": "The Eleventh International Conference on Learning Representations, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Neuromorphic Visual Scene Understanding with Resonator Networks (in brief)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:cWzG1nlazyYC",
+  "authors": "G Indiveri, L Supic, A Danielescu, B Olshausen, F Sommer, ...",
+  "venue": "NeurIPS 2022 Workshop on Symmetry and Geometry in Neural Representations, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Computing on Functions Using Randomized Vector Representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:jL-93Qbq4QoC",
+  "authors": "E Paxon Frady, D Kleyko, CJ Kymn, BA Olshausen, FT Sommer",
+  "venue": "arXiv e-prints, arXiv: 2109.03429, 2021",
+  "year": 2021
+ },
+ {
+  "title": "EAGER: Hyperdimensional computing with geometric algebra",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:AHdEip9mkN0C",
+  "authors": "BA Olshausen, J Rabaey, P Kanerva",
+  "venue": "NSF Award 21 (2147640), 47640, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Generalized learning vector quantization for classification in randomized neural networks and hyperdimensional computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:PVjk1bu6vJQC",
+  "authors": "C Diao, D Kleyko, JM Rabaey, BA Olshausen",
+  "venue": "2021 International Joint Conference on Neural Networks (IJCNN), 1-9, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:FPJr55Dyh1AC",
+  "authors": "Z Yun, Y Chen, B Olshausen, Y LeCun",
+  "venue": "Proceedings of Deep Learning Inside Out (DeeLIO): The 2nd Workshop on …, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Integrating high fidelity eye, head and world tracking in a wearable device",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ClCfbGk0d_YC",
+  "authors": "V DuTell, A Gibaldi, G Focarelli, B Olshausen, MS Banks",
+  "venue": "ACM Symposium on Eye Tracking Research and Applications, 1-4, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Energy Efficient Communication Links for Smart Devices",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XvxMoLDsR5gC",
+  "authors": "N Narevsky",
+  "venue": "University of California, Berkeley, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Disentangling images with lie group transformations and sparse coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:foquWX3nUaYC",
+  "authors": "HY Chau, F Qiu, Y Chen, B Olshausen",
+  "venue": "arXiv preprint arXiv:2012.12071, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Resonator networks, 1: An efficient solution for factoring high-dimensional, distributed representations of data structures",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:SpbeaW3--B0C",
+  "authors": "EP Frady, SJ Kent, BA Olshausen, FT Sommer",
+  "venue": "Neural computation 32 (12), 2311-2331, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Resonator networks, 2: Factorization performance and capacity compared to optimization-based methods",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:i2xiXl-TujoC",
+  "authors": "SJ Kent, EP Frady, FT Sommer, BA Olshausen",
+  "venue": "Neural computation 32 (12), 2332-2388, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Selectivity and robustness of sparse coding networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:xtoqd-5pKcoC",
+  "authors": "DM Paiton, CG Frye, SY Lundquist, JD Bowen, R Zarcone, BA Olshausen",
+  "venue": "Journal of vision 20 (12), 10-10, 2020",
+  "year": 2020
+ },
+ {
+  "title": "The spatiotemporal power spectrum of natural human vision",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:PoWvk5oyLR8C",
+  "authors": "V DuTell, A Gibaldi, G Focarelli, B Olshausen, M Banks",
+  "venue": "Journal of Vision 20 (11), 1661-1661, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Resonator networks for factoring distributed representations of data structures",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:M7yex6snE4oC",
+  "authors": "EP Frady, S Kent, BA Olshausen, FT Sommer",
+  "venue": "arXiv preprint arXiv:2007.03748, 2020",
+  "year": 2020
+ },
+ {
+  "title": "High-acuity vision from retinal image motion",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:oNZyr7d5Mn4C",
+  "authors": "AG Anderson, K Ratnam, A Roorda, BA Olshausen",
+  "venue": "Journal of vision 20 (7), 34-34, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Resonator networks for factoring distributed representations of data structures",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:kz9GbA2Ns4gC",
+  "authors": "E Paxon Frady, S Kent, BA Olshausen, FT Sommer",
+  "venue": "arXiv e-prints, arXiv: 2007.03748, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Tent: Fully test-time adaptation by entropy minimization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:k8Z6L05lTy4C",
+  "authors": "D Wang, E Shelhamer, S Liu, B Olshausen, T Darrell",
+  "venue": "arXiv preprint arXiv:2006.10726, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Analog coding in emerging memory systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:lmc2jWPfTJgC",
+  "authors": "RV Zarcone, JH Engel, S Burc Eryilmaz, W Wan, SB Kim, M BrightSky, ...",
+  "venue": "Scientific reports 10 (1), 6831, 2020",
+  "year": 2020
+ },
+ {
+  "title": "The cognitive neurosciences",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:KbBQZpvPDL4C",
+  "authors": "D Poeppel, GR Mangun, MS Gazzaniga",
+  "venue": "MIT Press, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Subspace locally competitive algorithms",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:LI9QrySNdTsC",
+  "authors": "DM Paiton, S Shepard, KHR Chan, BA Olshausen",
+  "venue": "Proceedings of the 2020 annual neuro-inspired computational elements …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Selectivity and robustness",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Ak0FvsSvgGUC",
+  "authors": "DM Paiton, CG Frye, SY Lundquist, JD Bowen, R Zarcone, BA Olshausen",
+  "venue": "",
+  "year": 2020
+ },
+ {
+  "title": "Vector symbolic visual analogies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Dip1O2bNi0gC",
+  "authors": "N Maudgalya, BA Olshausen, SJ Kent",
+  "venue": "Proceedings of the AAAI Symposium on Conceptual Abstraction and Analogy in …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Word embedding visualization via dictionary learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:kuK5TVdYjLIC",
+  "authors": "J Zhang, Y Chen, B Cheung, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1910.03833, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Dynamic scale inference by entropy minimization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:gsN89kCJA0AC",
+  "authors": "D Wang, E Shelhamer, B Olshausen, T Darrell",
+  "venue": "arXiv preprint arXiv:1908.03182, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Resonator Networks outperform optimization methods at solving high-dimensional vector factorization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:q3CdL3IzO_QC",
+  "authors": "SJ Kent, EP Frady, FT Sommer, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1906.11684, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Resonator circuits for factoring high-dimensional vectors",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:TIZ-Mc8IlK0C",
+  "authors": "SJ Kent, EP Frady, FT Sommer, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1906.11684, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Auditory separation of a conversation from background via attentional gating",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:g3aElNc5_aQC",
+  "authors": "S Mobin, B Olshausen",
+  "venue": "arXiv preprint arXiv:1905.10751, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Automatically inferring task context for continual learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9pM33mqn1YgC",
+  "authors": "J Collins, K Xu, BA Olshausen, B Cheung",
+  "venue": "Conference on cognitive computational neuroscience (ccn), 2019",
+  "year": 2019
+ },
+ {
+  "title": "Superposition of many models into one",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ILKRHgRFtOwC",
+  "authors": "B Cheung, A Terekhov, Y Chen, P Agrawal, B Olshausen",
+  "venue": "Advances in neural information processing systems 32, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Error-resilient analog image storage and compression with analog-valued RRAM arrays: an adaptive joint source-channel coding approach",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Z5m8FVwuT1cC",
+  "authors": "X Zheng, R Zarcone, D Paiton, J Sohn, W Wan, B Olshausen, HSP Wong",
+  "venue": "2018 IEEE International Electron Devices Meeting (IEDM), 3.5. 1-3.5. 4, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Joint source-channel coding with neural networks for analog data compression and storage",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ipzZ9siozwsC",
+  "authors": "R Zarcone, D Paiton, A Anderson, J Engel, HSP Wong, B Olshausen",
+  "venue": "2018 Data Compression Conference, 147-156, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Generalization challenges for neural architectures in audio source separation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hMsQuOkrut0C",
+  "authors": "S Mobin, B Cheung, B Olshausen",
+  "venue": "arXiv preprint arXiv:1803.08629, 2018",
+  "year": 2018
+ },
+ {
+  "title": "The sparse manifold transform",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:vDijr-p_gm4C",
+  "authors": "Y Chen, D Paiton, B Olshausen",
+  "venue": "Advances in neural information processing systems 31, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Convolutional vs. recurrent neural networks for audio source separation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:uc_IGeMz5qoC",
+  "authors": "S Mobin, B Cheung, B Olshausen",
+  "venue": "",
+  "year": 2018
+ },
+ {
+  "title": "RI: Small: Extracting and Understanding Sparse Structure in Spatiotemporal Data in Neuroscience and Other Applications",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:v1_lew4L6wgC",
+  "authors": "FT Sommer, BA Olshausen",
+  "venue": "NSF Award 17 (1718991), 18991, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Sparse codes from memristor grids",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:fEOibwPWpKIC",
+  "authors": "BA Olshausen, CJ Rozell",
+  "venue": "Nat. Nanotechnol 12, 722-723, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Human-centric computing—The case for a hyper-dimensional approach",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XD-gHx7UXLsC",
+  "authors": "J Rabaey, A Rahimi, S Datta, M Rusch, P Kanerva, B Olshausen",
+  "venue": "2017 7th IEEE International Workshop on Advances in Sensors and Interfaces …, 2017",
+  "year": 2017
+ },
+ {
+  "title": "High-dimensional computing as a nanoscalable paradigm",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:uJ-U7cs_P_0C",
+  "authors": "A Rahimi, S Datta, D Kleyko, EP Frady, B Olshausen, P Kanerva, ...",
+  "venue": "IEEE Transactions on Circuits and Systems I: Regular Papers 64 (9), 2508-2521, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Opportunities for analog coding in emerging memory systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ZfRJV9d4-WMC",
+  "authors": "JH Engel, SB Eryilmaz, SB Kim, M BrightSky, C Lam, HL Lung, ...",
+  "venue": "arXiv preprint arXiv:1701.06063, 2017",
+  "year": 2017
+ },
+ {
+  "title": "A vector symbolic approach to scene transformation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Ug5p-4gJ2f0C",
+  "authors": "SJ Kent, BA Olshausen",
+  "venue": "Proceedings of the Annual Conference on Cognitive Computational Neuroscience …, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Emergence of foveal image sampling from learning to attend in visual scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_Ybze24A_UAC",
+  "authors": "B Cheung, E Weiss, B Olshausen",
+  "venue": "arXiv preprint arXiv:1611.09430, 2016",
+  "year": 2016
+ },
+ {
+  "title": "A neural model of high-acuity vision in the presence of fixational eye movements",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tzM49s52ZIMC",
+  "authors": "AG Anderson, BA Olshausen, K Ratnam, A Roorda",
+  "venue": "2016 50th Asilomar Conference on Signals, Systems and Computers, 588-592, 2016",
+  "year": 2016
+ },
+ {
+  "title": "E2CDA: Type I: Collaborative Research: Energy Efficient Learning Machines (ENIGMA)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:U4n9YNQMCAIC",
+  "authors": "S Salahuddin, J Rabaey, BA Olshausen",
+  "venue": "NSF Award 16 (1640060), 40060, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Deepmovie: Using optical flow and deep neural networks to stylize movies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:VL0QpB8kHFEC",
+  "authors": "AG Anderson, CP Berg, DP Mossing, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1605.08153, 2016",
+  "year": 2016
+ },
+ {
+  "title": "A neural architecture for representing and reasoning about spatial relationships",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:-_dYPAW6P2MC",
+  "authors": "E Weiss, B Cheung, B Olshausen",
+  "venue": "",
+  "year": 2016
+ },
+ {
+  "title": "Learning Retinal Tiling in a Model of Visual Attention",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:35r97b3x0nAC",
+  "authors": "B Cheung, E Weiss, B Olshausen",
+  "venue": "",
+  "year": 2016
+ },
+ {
+  "title": "Computational issues in natural auditory scene analysis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:WA5NYHcadZ8C",
+  "authors": "MS Lewicki, BA Olshausen, A Surlykke, CF Moss",
+  "venue": "Journal of the Acoustical Society of America 137 (4_Supplement), 2249-2249, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Discovering hidden factors of variation in deep networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XiVPGOgt02cC",
+  "authors": "B Cheung, JA Livezey, AK Bansal, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1412.6583, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Capacity optimization of emerging memory systems: A shannon-inspired approach to device characterization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hkOj_22Ku90C",
+  "authors": "JH Engel, SB Eryilmaz, SB Kim, M BrightSky, C Lam, HL Lung, ...",
+  "venue": "2014 IEEE International Electron Devices Meeting, 29.4. 1-29.4. 4, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Perception as an inference problem",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tS2w5q8j5-wC",
+  "authors": "BA Olshausen, G Mangun, M Gazzaniga",
+  "venue": "The cognitive neurosciences, 295-304, 2014",
+  "year": 2014
+ },
+ {
+  "title": "\" Scene analysis in the natural environment\": Corrigendum.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:b1wdh0AR-JQC",
+  "authors": "MS Lewicki, BA Olshausen, A Surlykke, CF Moss",
+  "venue": "Frontiers Media SA, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Modeling higher-order correlations within cortical microcolumns",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:mvPsJ3kp5DgC",
+  "authors": "U Köster, J Sohl-Dickstein, CM Gray, BA Olshausen",
+  "venue": "PLoS computational biology 10 (7), e1003684, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Scene analysis in the natural environment",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:B3FOqHPlNUQC",
+  "authors": "MS Lewicki, BA Olshausen, A Surlykke, CF Moss",
+  "venue": "Frontiers in psychology 5, 199, 2014",
+  "year": 2014
+ },
+ {
+  "title": "What natural scene statistics can tell us about cortical representation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:cFHS6HbyZ2cC",
+  "authors": "BA Olshausen, MS Lewicki",
+  "venue": "The New Visual Neurosciences,(London), 1247-1262, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Testing our conceptual understanding of V1 function",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tOudhMTPpwUC",
+  "authors": "U Köster, B Olshausen",
+  "venue": "arXiv preprint arXiv:1311.0778, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Modeling neural population data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:BrmTIyaxlBUC",
+  "authors": "U Köster, B Olshausen, C Gray",
+  "venue": "2013 Asilomar Conference on Signals, Systems and Computers, 358-361, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Sparse coding model captures V1 population response statistics to natural movies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:738O_yMBCRsC",
+  "authors": "M Zhu, I Stevenson, U Köster, CM Gray, BA Olshausen, CJ Rozell",
+  "venue": "BMC Neuroscience 14 (Suppl 1), P334, 2013",
+  "year": 2013
+ },
+ {
+  "title": "20 years of learning about vision: Questions answered, questions unanswered, and questions not yet asked",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Tyk-4Ss8FVUC",
+  "authors": "BA Olshausen",
+  "venue": "20 Years of Computational Neuroscience, 243-270, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Highly overcomplete sparse coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hqOjcs7Dif8C",
+  "authors": "BA Olshausen",
+  "venue": "Human vision and electronic imaging XVIII 8651, 168-176, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Higher order correlations within cortical layers dominate functional connectivity in microcolumns",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:UeHWp8X0CEIC",
+  "authors": "U Köster, J Sohl-Dickstein, CM Gray, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1301.0050, 2013",
+  "year": 2013
+ },
+ {
+  "title": "DISTINGUISHED SPEAKER SERIES 2011-2012",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:1yQoGdGgb4wC",
+  "authors": "S CAREY, B OLSHAUSEN, AM DALE",
+  "venue": "",
+  "year": 2012
+ },
+ {
+  "title": "Learning intermediate-level representations of form and motion from natural movies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NMxIlDl6LWMC",
+  "authors": "CF Cadieu, BA Olshausen",
+  "venue": "Neural computation 24 (4), 827-866, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Building a better probabilistic model of images by factorization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ldfaerwXgEUC",
+  "authors": "BJ Culpepper, J Sohl-Dickstein, BA Olshausen",
+  "venue": "2011 International Conference on Computer Vision, 2011",
+  "year": 2011
+ },
+ {
+  "title": "RI: Large: Collaborative Research: 3D Structure and Motion in Dynamic Natural Scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:sJsF-0ZLhtgC",
+  "authors": "BA Olshausen",
+  "venue": "NSF Award Number 1111765. Directorate for Computer and Information Science …, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Learning sparse representations of depth",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:UebtZRa9Y70C",
+  "authors": "I Tosic, BA Olshausen, BJ Culpepper",
+  "venue": "IEEE journal of selected topics in signal processing 5 (5), 941-952, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Learning sparse codes for hyperspectral imagery",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:maZDTaKrznsC",
+  "authors": "AS Charles, BA Olshausen, CJ Rozell",
+  "venue": "IEEE Journal of Selected Topics in Signal Processing 5 (5), 963-978, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Lie group transformation models for predictive video coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:zYLM7Y9cAGgC",
+  "authors": "CM Wang, J Shol-Dickstein, I Tošić, BA Olshausen",
+  "venue": "2011 Data Compression Conference, 83-92, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Hierarchical inference of disparity: COSYNE 2011",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:u-x6o8ySG0sC",
+  "authors": "I Tosic, B Olshausen",
+  "venue": "Nature Precedings, 1-1, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Does the brain de-jitter retinal images?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NhqRSupF_l8C",
+  "authors": "BA Olshausen, CH Anderson",
+  "venue": "Proceedings of the National Academy of Sciences 107 (46), 19607-19608, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Sparse coding for spectral signatures in hyperspectral images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:35N4QoGY0k4C",
+  "authors": "A Charles, B Olshausen, CJ Rozell",
+  "venue": "2010 Conference Record of the Forty Fourth Asilomar Conference on Signals …, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Analog system for computing sparse codes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Aul-kAQHnToC",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen, RL Ortman",
+  "venue": "",
+  "year": 2010
+ },
+ {
+  "title": "The statistics of style",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:RYcK_YlVTxYC",
+  "authors": "BA Olshausen, MR DeWeese",
+  "venue": "Nature 463 (7284), 1027-1028, 2010",
+  "year": 2010
+ },
+ {
+  "title": "An unsupervised algorithm for learning lie group transformations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:HoB7MX3m0LUC",
+  "authors": "J Sohl-Dickstein, CM Wang, BA Olshausen",
+  "venue": "arXiv preprint arXiv:1001.1027, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Group sparse coding with a laplacian scale mixture prior",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:r0BpntZqJG4C",
+  "authors": "P Garrigues, B Olshausen",
+  "venue": "Advances in neural information processing systems 23, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Learning real and complex overcomplete representations from the statistics of natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:blknAaTinKkC",
+  "authors": "BA Olshausen, CF Cadieu, DK Warland",
+  "venue": "Wavelets XIII 7446, 236-246, 2009",
+  "year": 2009
+ },
+ {
+  "title": "CI-ADDO-NEW: CRCNS. ORG-online repository for high-quality neuroscience data and resources for computational neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:BzfGm06jWhQC",
+  "authors": "FT Sommer, BA Olshausen",
+  "venue": "NSF Award 8 (855272), 55272, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Small: RI: Multivariate Phase Models for Image and Signal Processing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:43bX7VzcjpAC",
+  "authors": "K Koepsell, BA Olshausen",
+  "venue": "NSF Award 9 (917342), 17342, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Unsupervised learning of disparity maps from stereo images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:l7t_Zn2s7bgC",
+  "authors": "JP Lies, J Wang, J Sohl-Dickstein, BA Olshausen, M Bethge",
+  "venue": "Bernstein Conference on Computational Neuroscience (BCCN 2009), 113, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Higher-order scene statistics of breast images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:pqnbT2bcN3wC",
+  "authors": "CK Abbey, JN Sohl-Dickstein, BA Olshausen, MP Eckstein, JM Boone",
+  "venue": "Proc. of SPIE Vol 7263, 726317-1, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Unsupervised learning of lie group operators from image sequences",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:K3LRdlH-MEoC",
+  "authors": "J Wang, J Sohl-Dickstein, B Olshausen",
+  "venue": "Frontiers in systems neuroscience. Conference abstract: Computational and …, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Learning transport operators for image manifolds",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:BqipwSGYUEgC",
+  "authors": "B Culpepper, B Olshausen",
+  "venue": "Advances in neural information processing systems 22, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Sparse coding and ‘ICA’",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XoXfffV-tXoC",
+  "authors": "BA Olshausen",
+  "venue": "Tech. rep, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Analog system for computing sparse codes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:u_35RYKgDlwC",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen, RL Ortman",
+  "venue": "US Patent App. 12/035,424, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Sparse coding via thresholding and local competition in neural circuits",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:mVmsd5A6BfQC",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen",
+  "venue": "Neural computation 20 (10), 2526-2563, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Data sharing for computational neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:IWHjjKOFINEC",
+  "authors": "JL Teeters, KD Harris, KJ Millman, BA Olshausen, FT Sommer",
+  "venue": "Neuroinformatics 6 (1), 47-55, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Network: Computation in Neural Systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:VLnqNzywnoUC",
+  "authors": "G Goodhill, C Baker, V Balasubramanian, M Bazhenov, J Beck, S Becker, ...",
+  "venue": "Network: Computation in Neural Systems 19 (1), 1-2, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Predicting response variability in the primary visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dTyEYWd-f8wC",
+  "authors": "TJ Blanche, K Koepsell, N Swindale, BA Olshausen",
+  "venue": "Proc. Computational and Systems Neuroscience, COSYNE’08, 447, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Modeling the influence of local network activity on neuron spiking responses in primary visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:HE397vMXCloC",
+  "authors": "K Koepsell, TJ Blanche, N Swindale, BA Olshausen",
+  "venue": "Computational and Systems Neuroscience, 2008",
+  "year": 2008
+ },
+ {
+  "title": "A sparse subspace model of higher-level sound structure",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:8AbLer7MMksC",
+  "authors": "J Wang, B Olshausen, V Ming",
+  "venue": "COSYNE Proceedings, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Neurally plausible sparse coding via thresholding and local competition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:2P1L_qKh6hAC",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen",
+  "venue": "Neural Comput 20 (10), 2526-2563, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Learning transformational invariants from natural movies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hC7cP41nSMkC",
+  "authors": "C Cadieu, B Olshausen",
+  "venue": "Advances in neural information processing systems 21, 2008",
+  "year": 2008
+ },
+ {
+  "title": "CRCNS data sharing: Central facility and services",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:jgBuDB5drN8C",
+  "authors": "FT Sommer, BA Olshausen",
+  "venue": "NSF Award 7 (749049), 49049, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Locally competitive algorithms for sparse approximation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:k_IJM867U9cC",
+  "authors": "C Rozell, D Johnson, R Baraniuk, B Olshausen",
+  "venue": "2007 IEEE International Conference on Image Processing 4, IV-169-IV-172, 2007",
+  "year": 2007
+ },
+ {
+  "title": "RI: Collaborative Research: Hierarchical Models of Time-Varying Natural Images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:2tRrZ1ZAMYUC",
+  "authors": "BA Olshausen",
+  "venue": "NSF Award Number 0705939. Directorate for Computer and Information Science …, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Learning invariant and variant components of time-varying natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:abG-DnoFyZgC",
+  "authors": "B Olshausen, C Cadieu",
+  "venue": "Journal of Vision 7 (9), 964-964, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Bilinear models of natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9vf0nzSNQJEC",
+  "authors": "BA Olshausen, C Cadieu, J Culpepper, DK Warland",
+  "venue": "Human Vision and Electronic Imaging XII 6492, 67-76, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Bilinear models of natural images (Invited Paper)[6492-04]",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4MWp96NkSFoC",
+  "authors": "BA Olshausen, C Cadieu, J Culpepper, DK Warland",
+  "venue": "PROCEEDINGS-SPIE THE INTERNATIONAL SOCIETY FOR OPTICAL ENGINEERING 6492, 649206, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Neurally plausible sparse coding via competitive algorithms",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:3s1wT3WcHBgC",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen",
+  "venue": "Proceedings of the Computational and Systems Neuroscience (Cosyne) meeting, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Learning horizontal connections in a sparse coding model of natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hFOr9nPyWt4C",
+  "authors": "P Garrigues, B Olshausen",
+  "venue": "Advances in neural information processing systems 20, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Bayesian probability theory and generative models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NJ774b8OgUMC",
+  "authors": "BA Olshausen",
+  "venue": "retrieved from, 2006",
+  "year": 2006
+ },
+ {
+  "title": "Planning Workshop: Corpora for Computational Neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ubry08Y2EpUC",
+  "authors": "KD Harris, BA Olshausen, MJ Black",
+  "venue": "NSF Award 6 (636838), 36838, 2006",
+  "year": 2006
+ },
+ {
+  "title": "SGER Collaborative Research: Hierarchical Models of Time-Varying Natural Images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:6yz0xqPARnAC",
+  "authors": "BA Olshausen",
+  "venue": "NSF Award Number 0625717. Directorate for Computer and Information Science …, 2006",
+  "year": 2006
+ },
+ {
+  "title": "Brain mapping using topology graphs obtained by surface segmentation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:O3NaXMp0MMsC",
+  "authors": "F Vivodtzev, L Linsen, B Hamann, KI Joy, BA Olshausen",
+  "venue": "Scientific Visualization: The Visual Extraction of Knowledge from Data, 35-48, 2006",
+  "year": 2006
+ },
+ {
+  "title": "What is the other 85 percent of V1 doing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:e5wmG9Sq2KIC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "L. van Hemmen, & T. Sejnowski (Eds.) 23, 182-211, 2006",
+  "year": 2006
+ },
+ {
+  "title": "Do we know what the early visual system does?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ULOm3_A8WrAC",
+  "authors": "M Carandini, JB Demb, V Mante, DJ Tolhurst, Y Dan, BA Olshausen, ...",
+  "venue": "The Journal of neuroscience 25 (46), 10577-10597, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Brain Mapping Using Topology Graphs Obtained by Surface Segmentation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NyGDZy8z5eUC",
+  "authors": "B Hamann, KI Joy, BA Olshausen",
+  "venue": "Scientific Visualization: The Visual Extraction of Knowledge from Data, 35, 2005",
+  "year": 2005
+ },
+ {
+  "title": "The recognition of partially visible natural objects in the presence and absence of their occluders",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:bEWYMUwI8FkC",
+  "authors": "JS Johnson, BA Olshausen",
+  "venue": "Vision research 45 (25-26), 3262-3276, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Collaborative Research: NeTS-NBD: Intelligent and Adaptive Networking for the Next Generation Internet",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:kVjdVfd2voEC",
+  "authors": "SJ Yoo, SF Wu, BA Olshausen, CN Chuah, J Rowe",
+  "venue": "NSF Award 5 (520333), 20333, 2005",
+  "year": 2005
+ },
+ {
+  "title": "How close are we to understanding V1?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_kc_bZDykSQC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Neural computation 17 (8), 1665-1699, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Neuroanatomical image alignment.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:qjMakFHDy7sC",
+  "authors": "IJ Trotts, BA Olshausen, E Jones",
+  "venue": "IEEE Visualization, 92, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Minds must unite: it's time for experimentalists to stop ignoring computational modelers",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:rO6llkc54NcC",
+  "authors": "DL Donoho, D Mumford, BA Olshausen",
+  "venue": "The Scientist 19 (11), 18-20, 2005",
+  "year": 2005
+ },
+ {
+  "title": "The earliest EEG signatures of object recognition in a cued-target task are postsensory",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:mB3voiENLucC",
+  "authors": "JS Johnson, BA Olshausen",
+  "venue": "Journal of Vision 5 (4), 2-2, 2005",
+  "year": 2005
+ },
+ {
+  "title": "0954-898X",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:wMgC3FpKEyYC",
+  "authors": "BA Olshausen",
+  "venue": "Network: Computation in Neural Systems 16 (2/3), 119, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Field.“What Is the Other 85 Percent of V1 Doing?” In 23 Problems in Systems Neuroscience, ed. J. Leo Van Hemmen and Terrence J. Sejnowski, 182–211",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:sNmaIFBj_lkC",
+  "authors": "BA Olshausen, J David",
+  "venue": "New York: Oxford University Press, 2005",
+  "year": 2005
+ },
+ {
+  "title": "DoWeKnowWhattheEarlyVisualSystemDoes?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:p__nRnzSRKYC",
+  "authors": "M Carandini, JB Demb, V Mante, DJ Tolhurst, Y Dan, BA Olshausen, ...",
+  "venue": "",
+  "year": 2005
+ },
+ {
+  "title": "Directed visual attention and the dynamic control of information flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:iH-uZ7U-co4C",
+  "authors": "CH Anderson, DC Van Essen, BA Olshausen",
+  "venue": "Neurobiology of attention, 11-17, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Sparse coding of sensory inputs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:3fE2CSJIrl8C",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Current opinion in neurobiology 14 (4), 481-487, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Convergent evidence for the visual analysis of optic flow through anisotropic attenuation of high spatial frequencies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:TQgYirikUcIC",
+  "authors": "HB Barlow, BA Olshausen",
+  "venue": "Journal of vision 4 (6), 1-1, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Bayesian probability theory",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:LPZeul_q3PIC",
+  "authors": "BA Olshausen",
+  "venue": "The Redwood Center for Theoretical Neuroscience, Helen Wills Neuroscience …, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Receptive field models fail to predict responses of V1 neurons to natural movies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:SeFeTyx0c_EC",
+  "authors": "BA Olshausen, J Baker, S Yen, CM Gray",
+  "venue": "Soc Neurosci Abstr 984, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Adapting overcomplete wavelet models to natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:IjCSPb-OGe4C",
+  "authors": "P Sallee, BA Olshausen",
+  "venue": "Wavelets: Applications in Signal and Image Processing X 5207, 112-119, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Image denoising using learned overcomplete representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:g5m5HwL7SMYC",
+  "authors": "P Sallee, BA Olshausen",
+  "venue": "Proceedings 2003 International Conference on Image Processing (Cat. No …, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Learning sparse, overcomplete representations of time-varying natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:qUcmZB5y_30C",
+  "authors": "BA Olshausen",
+  "venue": "Proceedings 2003 International Conference on Image Processing (Cat. No …, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Spontaneous activity of morphologically identified ganglion cells in the developing ferret retina",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:isC4tDSrTZIC",
+  "authors": "LC Liets, BA Olshausen, GY Wang, LM Chalupa",
+  "venue": "The Journal of neuroscience 23 (19), 7343-7350, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Sensory coding in the natural environment",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:fPk4N6BV_jEC",
+  "authors": "B Olshausen, P Reinagel",
+  "venue": "Network: Computation in Neural Systems 14 (3), 001, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Timecourse of neural signatures of object recognition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4TOpqqG69KYC",
+  "authors": "JS Johnson, BA Olshausen",
+  "venue": "Journal of vision 3 (7), 4-4, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Processing shape, motion and three-dimensional shape-from-motion in the human cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Wp0gIr-vW9MC",
+  "authors": "SO Murray, BA Olshausen, DL Woods",
+  "venue": "Cerebral cortex 13 (5), 508-516, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Principles of image representation in visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9ZlFYXVOiuMC",
+  "authors": "BA Olshausen",
+  "venue": "The visual neurosciences 2, 1603-1615, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Review of Theoretical Neuroscience: Computational Modeling of Neural Systems and Mathematical.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:zCSUwVk65WsC",
+  "authors": "BA Olshausen",
+  "venue": "Journal of Cognitive Neuroscience 15 (1), 154, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Review of Theoretical Neuroscience: Computational and Mathematical Modeling of Neural Systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:lgwcVrK6X84C",
+  "authors": "Staff",
+  "venue": "Journal of Cognitive Neuroscience 15 (1), 154-155, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Principles of image representation in visual cortex. The Visual Neurosciences",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:fQNAKQ3IYiAC",
+  "authors": "B Olshausen",
+  "venue": "Cambridge, Massachusetts: MIT Press, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Hierachical isosurface segmentation based on discrete curvature",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:j3f4tGmQtD8C",
+  "authors": "F Vivodtzev, L Linsen, GP Bonneau, B Hamann, K Joy, BA Olshausen",
+  "venue": "",
+  "year": 2003
+ },
+ {
+  "title": "Shape perception reduces activity in human primary visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Zph67rFs4hoC",
+  "authors": "SO Murray, D Kersten, BA Olshausen, P Schrater, DL Woods",
+  "venue": "Proceedings of the National Academy of Sciences 99 (23), 15164-15169, 2002",
+  "year": 2002
+ },
+ {
+  "title": "Early target related processing in the discrimination of natural objects",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:KxtntwgDAa4C",
+  "authors": "JS Johnson, BA Olshausen",
+  "venue": "Journal of Vision 2 (7), 690-690, 2002",
+  "year": 2002
+ },
+ {
+  "title": "A new window on sound",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:TFP_iSt0sucC",
+  "authors": "BA Olshausen, KN O'Connor",
+  "venue": "nature neuroscience 5 (4), 292-294, 2002",
+  "year": 2002
+ },
+ {
+  "title": "Probabilistic models of the brain: Perception and neural function",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:YOwf2qJgpHMC",
+  "authors": "RPN Rao, BA Olshausen, MS Lewicki",
+  "venue": "MIT press, 2002",
+  "year": 2002
+ },
+ {
+  "title": "13 sparse codes and spikes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:W7OEmFMy1HYC",
+  "authors": "BA Olshausen",
+  "venue": "Probabilistic models of the brain, 257, 2002",
+  "year": 2002
+ },
+ {
+  "title": "Probabilistic models of the brain: Perception and neural function. Neural information processing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:L7CI7m0gUJcC",
+  "authors": "RPN Rao, BA Olshausen, MS Lewicki",
+  "venue": "Cambridge, MA: The MIT Press, 2002",
+  "year": 2002
+ },
+ {
+  "title": "Probabilistic models of the brain: perception and neural function edited by Rajesh PN Rao, Bruno A. Olshausen, Michael S. Lewicki",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:70eg2SAEIzsC",
+  "authors": "RPN Rao, BA Olshausen, MS Lewicki",
+  "venue": "MIT Press, 2002",
+  "year": 2002
+ },
+ {
+  "title": "Learning sparse multiscale image representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:L8Ckcad2t8MC",
+  "authors": "P Sallee, B Olshausen",
+  "venue": "Advances in neural information processing systems 15, 2002",
+  "year": 2002
+ },
+ {
+  "title": "A graphical anatomical database of neural connectivity",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:M3NEmzRMIkIC",
+  "authors": "WA Press, BA Olshausen, DC Van Essen",
+  "venue": "Philosophical Transactions of the Royal Society of London. Series B 356 …, 2001",
+  "year": 2001
+ },
+ {
+  "title": "Natural image statistics and neural representation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:8k81kl-MbHgC",
+  "authors": "EP Simoncelli, BA Olshausen",
+  "venue": "Annual review of neuroscience 24 (1), 1193-1216, 2001",
+  "year": 2001
+ },
+ {
+  "title": "Learning sparse wavelet codes for natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:lSLTfruPkqcC",
+  "authors": "BA Olshausen, P Sallee, MS Lewicki",
+  "venue": "Wavelet Applications in Signal and Image Processing VIII 4119, 200-207, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Learning sparse overcomplete image representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Se3iqnhoufwC",
+  "authors": "BA Olshausen, KJ Millman",
+  "venue": "Wavelet Applications in Signal and Image Processing VIII 4119, 445-452, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Sparse coding of time-varying natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:RHpTSmoSYBkC",
+  "authors": "BA Olshausen",
+  "venue": "Proc. of the Int. Conf. on Independent Component Analysis and Blind Source …, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Vision and the coding of natural images: The human brain may hold the secrets to the best image-compression algorithms",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:QIV2ME_5wuYC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "American Scientist 88 (3), 238-245, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Learning sparse image codes using a wavelet pyramid architecture",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dhFuZR0502QC",
+  "authors": "B Olshausen, P Sallee, M Lewicki",
+  "venue": "Advances in neural information processing systems 13, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Efficient coding of natural images in space and time",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:YsMSGLbcyi4C",
+  "authors": "BA Olshausen",
+  "venue": "Neuroscience Research 38, S13-S13, 2000",
+  "year": 2000
+ },
+ {
+  "title": "Probabilistic framework for the adaptation and comparison of image codes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:KlAtU1dfN6UC",
+  "authors": "MS Lewicki, BA Olshausen",
+  "venue": "Journal of the Optical Society of America A 16 (7), 1587-1601, 1999",
+  "year": 1999
+ },
+ {
+  "title": "Differential Effects of Apamin- and Charybdotoxin-Sensitive K+ Conductances on Spontaneous Discharge Patterns of Developing Retinal Ganglion Cells",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4JMBOYKVnBMC",
+  "authors": "GY Wang, BA Olshausen, LM Chalupa",
+  "venue": "The Journal of neuroscience 19 (7), 2609-2618, 1999",
+  "year": 1999
+ },
+ {
+  "title": "Early visual processing of natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XiSMed-E-HIC",
+  "authors": "JS Johnson, JJ Guirao-Garcia, BA Olshausen",
+  "venue": "INVESTIGATIVE OPHTHALMOLOGY & VISUAL SCIENCE 40 (4), S822-S822, 1999",
+  "year": 1999
+ },
+ {
+  "title": "Learning sparse codes with a mixture-of-Gaussians prior",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4DMP91E08xMC",
+  "authors": "B Olshausen, K Millman",
+  "venue": "Advances in neural information processing systems 12, 1999",
+  "year": 1999
+ },
+ {
+  "title": "Routing networks in visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:vV6vV6tmYwMC",
+  "authors": "CH Anderson, BA Olshausen, D Van Essen",
+  "venue": "The handbook of brain theory and neural networks, 823-826, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Selective visual attention",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:hMod-77fHWUC",
+  "authors": "BA Olshausen, C Koch",
+  "venue": "The Handbook of brain theory and neural networks, 837-840, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Inferring sparse, overcomplete image codes using an efficient coding framework",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ZeXyd9-uunAC",
+  "authors": "MS Lewicki, BA Olshausen",
+  "venue": "Advances in neural information processing systems, 815-821, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Linear Hebbian learning and PCA",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:yB1At4FlUx8C",
+  "authors": "BA Olshausen",
+  "venue": "Redwood Center for Theoretical Neuroscience at the University of California …, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Sparse coding with an overcomplete basis set: A strategy employed by V1?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:5nxA0vEk-isC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Vision research 37 (23), 3311-3325, 1997",
+  "year": 1997
+ },
+ {
+  "title": "Learning linear, sparse, factorial codes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:7PzlFSSx8tAC",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": 1996
+ },
+ {
+  "title": "Emergence of simple-cell receptive field properties by learning a sparse code for natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:0EnyYjriUFMC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Nature 381 (6583), 607-609, 1996",
+  "year": 1996
+ },
+ {
+  "title": "Natural image statistics and efficient coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:kNdYIx-mwKoC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Network: computation in neural systems 7 (2), 333, 1996",
+  "year": 1996
+ },
+ {
+  "title": "W avelet-like receptive fields em erge from",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:P5F9QuxV20EC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "",
+  "year": 1996
+ },
+ {
+  "title": "Wavelet-like receptive fields emerge from a network that learns sparse codes for natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:HDshCWvjkbEC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Nature 381, 607-609, 1996",
+  "year": 1996
+ },
+ {
+  "title": "Wavelets, blur, and the sources of variability in the amplitude spectra of natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:M05iB0D1s5AC",
+  "authors": "DJ Field, BA Olshausen, N Brady",
+  "venue": "Human Vision and Electronic Imaging 2657, 108-119, 1996",
+  "year": 1996
+ },
+ {
+  "title": "Learning efficient linear codes for natural images: the roles of sparseness, overcompleteness, and statistical independence",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:YFjsv_pBGBYC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Human Vision and Electronic Imaging 2657, 132-138, 1996",
+  "year": 1996
+ },
+ {
+  "title": "A nonlinear Hebbian network that learns to detect disparity in random-dot stereograms",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:RGFaLdJalmkC",
+  "authors": "CW Lee, BA Olshausen",
+  "venue": "Neural computation 8 (3), 545-566, 1996",
+  "year": 1996
+ },
+ {
+  "title": "Insights into visual coding gained from an understanding of the statistics of natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:p2g8aNsByqUC",
+  "authors": "DJ Field, B Olshausen",
+  "venue": "Investigative Ophthalmology & Visual Science 37 (3), 3088-3088, 1996",
+  "year": 1996
+ },
+ {
+  "title": "Relations between the “association field” and the statistics of natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:OU6Ihb5iCvQC",
+  "authors": "BA Olshausen",
+  "venue": "Investigative Ophthalmology & Visual Science 37, 2370, 1996",
+  "year": 1996
+ },
+ {
+  "title": "CENTER FOR BIOLOGICAL AND COMPUTATIONAL LEARNING DEPARTMENT OF BRAIN AND COGNITIVE SCIENCES",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:yD5IFk8b50cC",
+  "authors": "F SPARSE, BA OLSHAUSEN",
+  "venue": "",
+  "year": 1996
+ },
+ {
+  "title": "Sparse coding of natural images produces localized, oriented, bandpass receptive fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_Qo2XoVZTnwC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "Submitted to Nature. Available electronically as ftp://redwood. psych …, 1995",
+  "year": 1995
+ },
+ {
+  "title": "LEARNING WAVELET CODES FROM THE STATISTICS OF NATURAL SCENES",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:SP6oXDckpogC",
+  "authors": "BA OLSHAUSEN, DJ FIELD",
+  "venue": "INVESTIGATIVE OPHTHALMOLOGY & VISUAL SCIENCE 36 (4), S463-S463, 1995",
+  "year": 1995
+ },
+ {
+  "title": "A multiscale dynamic routing circuit for forming size-and position-invariant object representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:qxL8FJ1GzNcC",
+  "authors": "BA Olshausen, CH Anderson, DC Van Essen",
+  "venue": "Journal of computational neuroscience 2 (1), 45-62, 1995",
+  "year": 1995
+ },
+ {
+  "title": "Gestalten lernen: a network that develops cortical receptive-field structure from natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dshw04ExmUIC",
+  "authors": "BA Olshausen, DJ Field",
+  "venue": "PERCEPTION 24, 8-8, 1995",
+  "year": 1995
+ },
+ {
+  "title": "A model of the spatial-frequency organization in primate striate cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NaGl4SEjCO4C",
+  "authors": "BA Olshausen, CH Anderson",
+  "venue": "The neurobiology of computation: Proceedings of the Third Annual Computation …, 1995",
+  "year": 1995
+ },
+ {
+  "title": "Neural routing circuits for forming invariant representations of visual objects",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:JV2RwH3_ST0C",
+  "authors": "BA Olshausen",
+  "venue": "California Institute of Technology, 1994",
+  "year": 1994
+ },
+ {
+  "title": "Dynamic routing strategies in sensory, motor, and cognitive processing.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:-f6ydRqryjwC",
+  "authors": "DC Van Essen, CH Anderson, BA Olshausen",
+  "venue": "The MIT Press, 1994",
+  "year": 1994
+ },
+ {
+  "title": "A neurobiological model of visual attention and invariant pattern recognition based on dynamic routing of information",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:MXK_kJrjxJIC",
+  "authors": "BA Olshausen, CH Anderson, DC Van Essen",
+  "venue": "The Journal of Neuroscience 13 (11), 4700-4719, 1993",
+  "year": 1993
+ },
+ {
+  "title": "Neurobiology, Psychophysics, and Computational Models of Visual Attention",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:q3oQSFYPqjQC",
+  "authors": "E Niebur, B Olshausen",
+  "venue": "Advances in Neural Information Processing Systems 6, 1993",
+  "year": 1993
+ },
+ {
+  "title": "Computer-simulation of a dynamic routing model of visual-attention",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:UxriW0iASnsC",
+  "authors": "BA Olshausen, CH Anderson, DC Vanessen",
+  "venue": "INVESTIGATIVE OPHTHALMOLOGY & VISUAL SCIENCE 33 (4), 1263-1263, 1992",
+  "year": 1992
+ },
+ {
+  "title": "Pattern recognition, attention, and information bottlenecks in the primate visual system",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:roLk4NBRz8UC",
+  "authors": "D Van Essen, BA Olshausen, CH Anderson, JTL Gallant",
+  "venue": "Visual information processing: From neurons to chips 1473, 17-28, 1991",
+  "year": 1991
+ },
+ {
+  "title": "Visual motion compensation using a neural shifter circuit",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:xtRiw3GOFMkC",
+  "authors": "BA Olshausen",
+  "venue": "1990 IEEE International Conference on Systems, Man, and Cybernetics …, 1990",
+  "year": 1990
+ },
+ {
+  "title": "Two-dimensional shape recognition using sparse distributed memory",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:t6usbXjVLHcC",
+  "authors": "P Kanerva, B Olshausen",
+  "venue": "Vision Science and Technology at NASA: Results of a Workshop, 1990",
+  "year": 1990
+ },
+ {
+  "title": "The Cortex Transform as an image preprocessor for sparse distributed memory: An initial study",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:LkGwnXOMwfcC",
+  "authors": "B Olshausen, A Watson",
+  "venue": "",
+  "year": 1990
+ },
+ {
+  "title": "Two-dimensional shape recognition using sparse distributed memory(Abstract Only)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:d1gkVwhDpl0C",
+  "authors": "P KANERVA, B OLSHAUSEN",
+  "venue": "Vision Science and Technology at NASA: Results of a Workshop p 33(SEE N 90 …, 1990",
+  "year": 1990
+ },
+ {
+  "title": "A survey of visual preprocessing and shape representation techniques",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ns9cj8rnVeAC",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": 1988
+ },
+ {
+  "title": "Emergence of unique hues from sparse coding of color in natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:48xauSegjOkC",
+  "authors": "A Belsten, EP Frady, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "On separating long-and short-term memories in hyperdimensional computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:0CzhzZyukY4C",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "The Genesis of Modern Computing and AI",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:5icHVeHT4IsC",
+  "authors": "B Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Silkman Statistical Journal",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nVrZBo8bIpAC",
+  "authors": "EP Simoncelli, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Noise Transforms Feed-Forward Networks into Sparse Coding Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:OR75R8vi5nAC",
+  "authors": "T Bricken, B Olshausen, G Kreiman",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Toward Next-Generation Artificial Intelligence: Catalyzing the NeuroAI Revolution",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:mNrWkgRL2YcC",
+  "authors": "AM Lillicrap, B Olshausen, A Pouget, C Savin, T Sejnowski, E Simoncelli, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "REGULAR PAPERS ISSUE",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4vMrXwiscB8C",
+  "authors": "D Kleyko, M Davies, EP Frady, P Kanerva, SJ Kent, BA Olshausen, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "CENTER FOR BIOLOGICAL AND COMPUTATIONAL LEARNING DEPARTMENT OF BRAIN AND COGNITIVE SCIENCES AI Memo No. 1580 September 6, 1996 CBCL Paper No. 138 LEARNING LINEAR, SPARSE …",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NXb4pA-qfm4C",
+  "authors": "BA OLSHAUSEN",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Resonator circuits: a neural network for efficiently solving factorization problems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:FAceZFleit8C",
+  "authors": "EP Frady, S Kent, BA Olshausen, FT Sommer",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Generalized Learning Vector Quantization for Classification in Randomized Neural Networks and Hyperdimensional Computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:0N-VGjzr574C",
+  "authors": "D Kleyko, JM Rabaey, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Monthly Archives: September 2018",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tuHXwOkdijsC",
+  "authors": "Y Chen, D Paiton, B Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "The translation invariant bispectrum for feature analysis in complex cells",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ML0RJ9NH7IQC",
+  "authors": "S Sanborn, R Zarcone, B Olshausen, C Hillar",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Vector-Symbolic Representations for Visual Scene Analysis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nrtMV_XWKgEC",
+  "authors": "SE Weiss",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "From natural scene statistics to models of neural coding and representation (part 2)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9Nmd_mFXekcC",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Learning Horizontal Connections from the Statistics of Natural Images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:W5xh706n7nkC",
+  "authors": "PJ Garrigues, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Learning Invariant and Variant Components of Time Varying Natural Images Using a Sparse, Multiplicative Model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:JQOojiI6XY0C",
+  "authors": "CF Cadieu, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Okinawa Computational Neuroscience Course 2004",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:PR6Y55bgFSsC",
+  "authors": "J Bilems, P Latham, R Zemel, E Todorov, A Pouget, K Friston, W Party, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Conference Presentation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nb7KW1ujOQ8C",
+  "authors": "IJ Trotts, BA Olshausen, EG Jones, D Fellowship, BW Fellowship",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Learning sparse codes for large images via convolution",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:b0M2c_1WBrUC",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Forward to Map-seeking circuits in visual cognition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dfsIfKJdRG4C",
+  "authors": "BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Learning transport operators for image manifolds: supplement",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_FxGoFyzp5QC",
+  "authors": "BJ Culpepper, BA Olshausen",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Activation of Human Visual Cortex by Motion-defined Three-dimensional Shape",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ufrVoPGSRksC",
+  "authors": "SO Murray, BA Olshausen, DL Woods",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "David C. Van Essen, Charles H. Anderson, and",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Y0pCki6q_DkC",
+  "authors": "BA Olshausen",
+  "venue": "OF THE JBRAIN, 271, 0",
+  "year": null
+ },
+ {
+  "title": "Conference Poster",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9yKSN-GCB0IC",
+  "authors": "IJ Trotts, BA Olshausen, EG Jones",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Neurally plausible sparse coding via local competition and thresholding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:u5HHmVD_uO8C",
+  "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen",
+  "venue": "",
+  "year": null
+ }
+]

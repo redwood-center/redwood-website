@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+
+<Base title="About" current="about">
+  <section class="about wrap">
+    <h1>About</h1>
+    <p class="lead">
+      The Redwood Center for Theoretical Neuroscience is a research institute at UC Berkeley that
+      seeks the fundamental scientific principles of natural and artificial intelligence. We're housed
+      in Warren Hall within the <a href="https://neuroscience.berkeley.edu">Helen Wills Neuroscience Institute</a>.
+    </p>
+    <figure class="photo">
+      <img
+        src={url('media/site/redwood_group_photo_2022_crop-1536x869.jpg')}
+        alt="Members of the Redwood Center gathered outdoors for a group photo"
+        width="1536"
+        height="869"
+      />
+    </figure>
+  </section>
+</Base>
+
+<style>
+  .about { padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 7vw, 5.5rem); }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 58ch;
+    margin-top: 1rem;
+  }
+  .photo { margin: clamp(2rem, 5vw, 3rem) 0 0; }
+  .photo img { width: 100%; height: auto; }
+</style>

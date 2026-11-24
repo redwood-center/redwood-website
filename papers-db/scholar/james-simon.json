@@ -1,0 +1,219 @@
+[
+ {
+  "title": "A\" feature ODE\" describing the learning behavior of shallow MLPs on simple functions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:hC7cP41nSMkC",
+  "authors": "J Turnbull, B Ottlik, J Simon",
+  "venue": "arXiv preprint arXiv:2610.25652, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Muon learns balanced solutions in matrix factorization without slow saddle-to-saddle dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:-f6ydRqryjwC",
+  "authors": "M Rhee, J Simon, D Karkada",
+  "venue": "arXiv preprint arXiv:2606.30509, 2026",
+  "year": 2026
+ },
+ {
+  "title": "There will be a scientific theory of deep learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:qUcmZB5y_30C",
+  "authors": "J Simon, D Kunin, A Atanasov, E Boix-Adserà, B Bordelon, J Cohen, ...",
+  "venue": "arXiv preprint arXiv:2604.21691, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Closed-form training dynamics reveal learned features and linear structure in word2vec-like models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:9ZlFYXVOiuMC",
+  "authors": "D Karkada, J Simon, Y Bahri, M Deweese",
+  "venue": "Advances in neural information processing systems 38, 3967-4000, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Alternating gradient flows: A theory of feature learning in two-layer neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:mVmsd5A6BfQC",
+  "authors": "D Kunin, GL Marchetti, F Chen, D Karkada, J Simon, M Deweese, ...",
+  "venue": "Advances in Neural Information Processing Systems 38, 4377-4424, 2026",
+  "year": 2026
+ },
+ {
+  "title": "FACT: a first-principles alternative to the neural feature ansatz for how networks learn representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:IWHjjKOFINEC",
+  "authors": "E Adserà, N Mallinar, J Simon, M Belkin",
+  "venue": "International Conference on Learning Representations 2026, 67604-67626, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Predicting kernel regression learning curves from only raw data statistics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:7PzlFSSx8tAC",
+  "authors": "D Karkada, J Turnbull, Y Liu, J Simon",
+  "venue": "International Conference on Learning Representations 2026, 118355-118425, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Saddle-to-saddle dynamics in deep relu networks: Low-rank bias in the first saddle escape",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:4DMP91E08xMC",
+  "authors": "I Bantzis, J Simon, A Jacot",
+  "venue": "International Conference on Learning Representations 2026, 80213-80241, 2026",
+  "year": 2026
+ },
+ {
+  "title": "The Features at Convergence Theorem: a first-principles alternative to the Neural Feature Ansatz for how networks learn representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:dhFuZR0502QC",
+  "authors": "E Boix-Adsera, N Mallinar, JB Simon, M Belkin",
+  "venue": "arXiv preprint arXiv:2507.05644, 2025",
+  "year": 2025
+ },
+ {
+  "title": "The optimization landscape of sgd across the feature learning strength",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:4TOpqqG69KYC",
+  "authors": "A Atanasov, A Meterez, J Simon, C Pehlevan",
+  "venue": "International Conference on Learning Representations 2025, 5740-5779, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Les Houches lectures on deep learning at large and infinite width",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:_kc_bZDykSQC",
+  "authors": "Y Bahri, B Hanin, A Brossollet, V Erba, C Keup, R Pacelli, JB Simon",
+  "venue": "Journal of Statistical Mechanics: Theory and Experiment 2024 (10), 104012, 2024",
+  "year": 2024
+ },
+ {
+  "title": "An agnostic view on the cost of overfitting in (kernel) ridge regression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:kNdYIx-mwKoC",
+  "authors": "L Zhou, J Simon, G Vardi, N Srebro",
+  "venue": "International Conference on Learning Representations 2024, 37604-37622, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Discretized Theories of Deep Learning at Large Width: an Eigenthesis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:aqlVkmm33-oC",
+  "authors": "J Simon",
+  "venue": "University of California, Berkeley, 2024",
+  "year": 2024
+ },
+ {
+  "title": "More is better in modern machine learning: when infinite overparameterization is optimal and overfitting is obligatory",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:ULOm3_A8WrAC",
+  "authors": "JB Simon, D Karkada, N Ghosh, M Belkin",
+  "venue": "arXiv preprint arXiv:2311.14646, 2023",
+  "year": 2023
+ },
+ {
+  "title": "A spectral condition for feature learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:Zph67rFs4hoC",
+  "authors": "G Yang, JB Simon, J Bernstein",
+  "venue": "arXiv preprint arXiv:2310.17813, 2023",
+  "year": 2023
+ },
+ {
+  "title": "On the stepwise nature of self-supervised learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:MXK_kJrjxJIC",
+  "authors": "JB Simon, M Knutins, L Ziyin, D Geisz, AJ Fetterman, J Albrecht",
+  "venue": "International Conference on Machine Learning, 31852-31876, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Tune as you scale: Hyperparameter optimization for compute efficient training",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:3fE2CSJIrl8C",
+  "authors": "AJ Fetterman, E Kitanidis, J Albrecht, Z Polizzi, B Fogelman, M Knutins, ...",
+  "venue": "arXiv preprint arXiv:2306.08055, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Benign, tempered, or catastrophic: Toward a refined taxonomy of overfitting",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:qxL8FJ1GzNcC",
+  "authors": "N Mallinar, J Simon, A Abedsoltan, P Pandit, M Belkin, P Nakkiran",
+  "venue": "Advances in neural information processing systems 35, 1182-1195, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Avalon: A benchmark for rl generalization using procedurally generated worlds",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:Se3iqnhoufwC",
+  "authors": "J Albrecht, A Fetterman, B Fogelman, E Kitanidis, B Wróblewski, N Seo, ...",
+  "venue": "Advances in Neural Information Processing Systems 35, 12813-12825, 2022",
+  "year": 2022
+ },
+ {
+  "title": "On kernel regression with data-dependent kernels",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:hqOjcs7Dif8C",
+  "authors": "JB Simon",
+  "venue": "arXiv preprint arXiv:2209.01691, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Reverse engineering the neural tangent kernel",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:LkGwnXOMwfcC",
+  "authors": "JB Simon, S Anand, M Deweese",
+  "venue": "International Conference on Machine Learning, 20215-20231, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Beyond the imitation game: Quantifying and extrapolating the capabilities of language models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:roLk4NBRz8UC",
+  "authors": "A Srivastava, A Rastogi, A Rao, AAM Shoeb, A Abid, A Fisch, AR Brown, ...",
+  "venue": "arXiv preprint arXiv:2206.04615, 2022",
+  "year": 2022
+ },
+ {
+  "title": "The eigenlearning framework: A conservation law perspective on kernel regression and wide neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:KlAtU1dfN6UC",
+  "authors": "JB Simon, M Dickens, D Karkada, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2110.03922, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Interleaved electro-optic dual comb generation to expand bandwidth and scan rate for molecular spectroscopy and dynamics studies near 1.6 µm",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:zYLM7Y9cAGgC",
+  "authors": "JR Stroud, JB Simon, GA Wagner, DF Plusquellic",
+  "venue": "Optics Express 29 (21), 33155-33170, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Sgd with a constant large learning rate can converge to local maxima",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:_FxGoFyzp5QC",
+  "authors": "L Ziyin, B Li, JB Simon, M Ueda",
+  "venue": "arXiv preprint arXiv:2107.11774, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Critical point-finding methods reveal gradient-flat regions of deep network losses",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:u5HHmVD_uO8C",
+  "authors": "CG Frye, J Simon, NS Wadia, A Ligeralde, MR DeWeese, KE Bouchard",
+  "venue": "Neural computation 33 (6), 1469-1497, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Rapid Passage Signals from CO2 at 1.6 µm Using a Dual Chirped-Pulse Electro-Optic Comb System with High-Order Interleaving",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "JR Stroud, J Simon, GA Wagner, DF Plusquellic",
+  "venue": "CLEO: Science and Innovations, SM3A. 1, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Simplified Josephson-junction fabrication process for reproducibly high-performance superconducting qubits",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:2osOgNQ5qMEC",
+  "authors": "A Osman, J Simon, A Bengtsson, S Kosen, P Krantz, D P Lozano, ...",
+  "venue": "Applied Physics Letters 118 (6), 2021",
+  "year": 2021
+ },
+ {
+  "title": "Fast noise-resistant control of donor nuclear spin qubits in silicon",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:d1gkVwhDpl0C",
+  "authors": "J Simon, FA Calderon-Vargas, E Barnes, SE Economou",
+  "venue": "Physical Review B 101 (20), 205307, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Closed-Loop Control of the Frequency Response of the Virtual Brain Model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:9yKSN-GCB0IC",
+  "authors": "C Beauchene, A Leonessa, S Roy, J Simon, N Abaid",
+  "venue": "Dynamic Systems and Control Conference 58271, V001T37A001, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Scientific Methods for Understanding Deep Learning (Sci4DL)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:ZeXyd9-uunAC",
+  "authors": "Z Kadkhodaie, F Guth, S Lotfi, D Brown, A Sclocchi, S Vadgama, ...",
+  "venue": "ICLR 2026 Workshop Proposals, 0",
+  "year": null
+ }
+]

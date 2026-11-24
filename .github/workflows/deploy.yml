@@ -1,0 +1,52 @@
+# Build the Astro site in site/ and publish it to GitHub Pages on every push to main.
+# The site reads papers-db/ at build time, so the whole repo is checked out.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Until redwood.berkeley.edu points here: project-site address, and ask search engines not to index it.
+      SITE: https://redwood-center.github.io
+      BASE: /redwood-website
+      PUBLIC_NOINDEX: 'true'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+        working-directory: site
+      - run: npx astro build
+        working-directory: site
+      # The paper review page is an internal tool for the dev server; keep it off the public site.
+      - run: rm -rf site/dist/papers/review
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import { pillars } from '../data/research';
+import { url } from '../lib/url';
+---
+
+<Base title="Work here" current="work-here">
+  <section class="intro wrap">
+    <h1>Work here</h1>
+    <p class="lead">
+      We're looking for postdocs and PhD students who want to build a quantitative science of
+      intelligence, in brains and in machines.
+    </p>
+    <ul class="jump">
+      <li><a href="#postdocs">Postdoctoral positions</a></li>
+      <li><a href="#phd">Prospective PhD students</a></li>
+    </ul>
+  </section>
+
+  <section id="postdocs" class="section" aria-labelledby="postdocs-title">
+    <div class="wrap prose">
+      <p class="placeholder-note" role="note">
+        <strong>Placeholder postdoc call.</strong> This is not a real posting. The requirements,
+        terms and application details below are dummy text.
+      </p>
+
+      <h2 id="postdocs-title">Postdoctoral positions</h2>
+      <p>
+        The Redwood Center invites applications for postdoctoral positions in the science of
+        intelligence. Postdocs join one or more of our five research pillars and work across the
+        Center's labs, with the freedom to set their own research direction.
+      </p>
+
+      <h3>Research areas</h3>
+      <ol class="areas">
+        {pillars.map((p) => (
+          <li><a href={url(`research/#${p.id}`)}>{p.name}</a></li>
+        ))}
+      </ol>
+
+      <h3>Requirements</h3>
+      <ul>
+        <li>A PhD in physics, computer science, neuroscience, mathematics, statistics or a related field, completed by the start date.</li>
+        <li>A strong quantitative background and a record of independent research.</li>
+        <li>Interest in at least one of the research areas above, and in working across them.</li>
+        <li>Experience with theory, large-scale experiments, or both.</li>
+      </ul>
+
+      <h3>Terms</h3>
+      <ul>
+        <li>Two-year appointment, renewable for a third year.</li>
+        <li>Flexible start date.</li>
+        <li>Salary and benefits follow the University of California postdoctoral scale.</li>
+      </ul>
+
+      <h3>How to apply</h3>
+      <p>
+        Email a single PDF to <span class="tbd">[address to be announced]</span> containing your
+        CV, a research statement of up to two pages naming the area or areas you'd work in, and the
+        names of three references. Review begins <span class="tbd">[date to be announced]</span> and
+        continues until positions are filled.
+      </p>
+    </div>
+  </section>
+
+  <section id="phd" class="section section--wash" aria-labelledby="phd-title">
+    <div class="wrap prose">
+      <h2 id="phd-title">Prospective PhD students</h2>
+      <p>
+        The Redwood Center doesn't admit graduate students directly. Our faculty advise students
+        through UC Berkeley's PhD programs, including Neuroscience, Physics, Vision Science, and
+        Electrical Engineering and Computer Sciences. To work with us, apply to one of these
+        programs and name the Redwood faculty you'd like to work with in your statement.
+      </p>
+      <p>
+        See our <a href={url('people/#faculty')}>faculty</a> and their labs, and read about
+        our <a href={url('research/')}>research</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 52ch;
+    margin-top: 1rem;
+  }
+  .jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    font-weight: 500;
+  }
+
+  .prose > * { max-width: 46rem; }
+  .prose > p, .prose li { font-family: var(--serif); line-height: 1.6; }
+  .prose > p + p { margin-top: 0.9rem; }
+  h2 { font-size: var(--step-3); font-weight: 650; letter-spacing: -0.01em; margin-bottom: 1rem; }
+  h3 { font-size: var(--step-1); font-weight: 650; margin: 2rem 0 0.6rem; }
+  .prose ul, .prose ol { margin: 0; padding-left: 1.25rem; }
+  .prose li + li { margin-top: 0.35rem; }
+  .areas li::marker { color: var(--slate); font-weight: 600; }
+
+  .placeholder-note {
+    margin-bottom: 2rem;
+    padding: 0.9rem 1.1rem;
+    border: 2px dashed var(--gold);
+    border-radius: 4px;
+    background: rgb(253 181 21 / 0.08);
+    font-family: var(--sans);
+  }
+  .tbd { color: var(--slate); font-style: italic; }
+</style>

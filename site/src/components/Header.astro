@@ -1,0 +1,113 @@
+---
+import { url } from '../lib/url';
+
+interface Props {
+  current?: string;
+}
+const { current } = Astro.props;
+
+const nav = [
+  { key: 'research', label: 'Research', href: url('research/') },
+  { key: 'people', label: 'People', href: url('people/') },
+  { key: 'papers', label: 'Papers', href: url('papers/') },
+  { key: 'seminars', label: 'Seminars', href: url('seminars/') },
+  { key: 'blog', label: 'Blog', href: url('blog/') },
+  { key: 'work-here', label: 'Work here', href: url('work-here/') },
+  { key: 'about', label: 'About', href: url('about/') },
+];
+---
+
+<header class="site-header forest-bg">
+  <div class="wrap bar">
+    <a class="wordmark" href={url()}>
+      <span class="wordmark-name">Redwood Center</span>
+      <span class="wordmark-sub">for Theoretical Neuroscience</span>
+      <span class="wordmark-sub">at UC Berkeley</span>
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        {nav.map((item) => (
+          <li>
+            <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  /* The nav carries the top strip of the forest backdrop (.forest-bg) on every page, darkened 30%.
+     On the homepage it's clear and floats over the hero, which shows the same strip. */
+  .site-header {
+    position: relative;
+    border-bottom: 1px solid rgb(255 255 255 / 0.2);
+    color: #fff;
+  }
+  /* Homepage: float over the hero (which carries the same forest strip). */
+  :global(.overlay-header) .site-header {
+    position: absolute;
+    inset: 0 0 auto 0;
+    z-index: 20;
+    background: none;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(10 22 16 / 0.3);
+    pointer-events: none;
+  }
+  :global(.overlay-header) .site-header::before { background: none; }
+  .bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 4.5rem;
+    padding-block: 0.75rem;
+  }
+  .wordmark {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .wordmark-name {
+    font-size: 1.3rem;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+  }
+  .wordmark-sub {
+    font-size: var(--step--1);
+    color: rgb(255 255 255 / 0.75);
+    font-weight: 450;
+  }
+  nav ul {
+    display: flex;
+    gap: clamp(0.9rem, 2vw, 1.75rem);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    display: block;
+    padding-block: 0.4rem;
+    color: rgb(255 255 255 / 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: #fff; border-bottom-color: rgb(255 255 255 / 0.35); }
+  nav a[aria-current='page'] { color: #fff; border-bottom-color: var(--gold); }
+  :focus-visible { outline-color: #fff; }
+
+  @media (max-width: 760px) {
+    .bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    nav { width: 100%; }
+    nav ul { flex-wrap: wrap; gap: 0 1.1rem; }
+    nav a { white-space: nowrap; }
+  }
+</style>

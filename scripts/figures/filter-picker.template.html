@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filter picker</title>
+<style>
+  :root { --brand: #1f4030; --bg: #16271f; --text: #e8efe9; --muted: #9db2a5; --pick: #f2c94c; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, sans-serif; }
+  header { padding: 20px 24px 8px; }
+  h1 { margin: 0 0 4px; font-size: 22px; }
+  header p { margin: 0; color: var(--muted); max-width: 70ch; }
+  .controls { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+  button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid #5d7a68; background: #24392e; color: var(--text); cursor: pointer; }
+  button:hover { background: #2d4739; }
+  .count { font-weight: 600; }
+  .count.ok { color: #8fe0a6; }
+  main { padding: 12px 24px 340px; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 14px; }
+  .tile { position: relative; background: none; border: 0; padding: 6px; border-radius: 8px; cursor: pointer; color: var(--muted); text-align: center; }
+  .tile:hover { background: #20352a; }
+  .tile canvas { display: block; width: 88px; height: 88px; margin: 0 auto; image-rendering: pixelated; outline: 1px solid #000; }
+  .tile.on { background: #2a3f22; }
+  .tile.on canvas { outline: 3px solid var(--pick); }
+  .tile .label { display: block; margin-top: 4px; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .tile .badge { position: absolute; top: 2px; right: 4px; background: var(--pick); color: #222; font-size: 11px; font-weight: 700; border-radius: 9px; padding: 0 6px; display: none; }
+  .tile.on .badge { display: block; }
+  footer { position: fixed; left: 0; right: 0; bottom: 0; background: #0f1c16ee; border-top: 1px solid #355344; padding: 14px 24px; display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; backdrop-filter: blur(6px); }
+  #preview { display: block; background: var(--brand); image-rendering: pixelated; }
+  .out label { display: block; font-weight: 600; margin-bottom: 6px; }
+  textarea { width: 100%; height: 150px; font: 13px/1.5 ui-monospace, Menlo, monospace; background: #0b1510; color: var(--text); border: 1px solid #355344; border-radius: 6px; padding: 8px; resize: vertical; }
+  .out .row { display: flex; gap: 10px; align-items: center; margin-top: 8px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title"></h1>
+  <p><span id="blurb"></span> My top picks are preselected. Click a filter to add or remove it; the
+    list at the bottom follows your click order, which is also the order on the page.</p>
+  <div class="controls">
+    <span class="count" id="count"></span>
+    <button type="button" id="reset">Reset to my picks</button>
+    <button type="button" id="clear">Clear all</button>
+  </div>
+</header>
+<main id="grid"></main>
+<footer>
+  <canvas id="preview" aria-label="Preview of the selected filters as an 8 by 6 grid"></canvas>
+  <div class="out">
+    <label for="ids">Selected IDs (copy this and paste it to Claude; you can also edit it)</label>
+    <textarea id="ids" spellcheck="false"></textarea>
+    <div class="row"><button type="button" id="copy">Copy</button><span id="copied"></span></div>
+  </div>
+</footer>
+<script>
+  const DATA = /*__DATA__*/null;
+  document.getElementById('title').textContent = DATA.title;
+  document.getElementById('blurb').textContent = DATA.blurb;
+  document.title = DATA.title;
+  const N = DATA.size, SCALE = 8, COLS = 8, ROWS = 6;
+  const byId = new Map(DATA.candidates.map((c) => [c.id, c]));
+  let selected = [...DATA.preselected];
+
+  function paint(ctx, c, x0, y0, unit) {
+    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+      const g = Math.round(128 + 127 * c.gray[y * N + x]);
+      ctx.fillStyle = `rgb(${g},${g},${g})`;
+      ctx.fillRect(x0 + x * unit, y0 + y * unit, unit, unit);
+    }
+  }
+
+  const grid = document.getElementById('grid');
+  const tiles = new Map();
+  DATA.candidates.forEach((c, rank) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tile';
+    const cv = document.createElement('canvas');
+    cv.width = cv.height = N * SCALE;
+    paint(cv.getContext('2d'), c, 0, 0, SCALE);
+    b.append(cv);
+    b.insertAdjacentHTML('beforeend', `<span class="label">${rank + 1}. ${c.id}</span><span class="badge"></span>`);
+    b.addEventListener('click', () => {
+      selected = selected.includes(c.id) ? selected.filter((s) => s !== c.id) : [...selected, c.id];
+      render();
+    });
+    grid.append(b);
+    tiles.set(c.id, b);
+  });
+
+  const preview = document.getElementById('preview');
+  const pctx = preview.getContext('2d');
+  const U = 3; // preview pixels per filter pixel
+  preview.width = COLS * (N + 1) * U + U;
+  preview.height = ROWS * (N + 1) * U + U;
+
+  const ids = document.getElementById('ids');
+  function render(fromText = false) {
+    tiles.forEach((t, id) => {
+      const i = selected.indexOf(id);
+      t.classList.toggle('on', i >= 0);
+      t.querySelector('.badge').textContent = i >= 0 ? i + 1 : '';
+    });
+    const count = document.getElementById('count');
+    count.textContent = `${selected.length} selected (target ${DATA.target})`;
+    count.classList.toggle('ok', selected.length === DATA.target);
+    pctx.clearRect(0, 0, preview.width, preview.height);
+    selected.slice(0, COLS * ROWS).forEach((id, k) => {
+      const r = Math.floor(k / COLS), col = k % COLS;
+      paint(pctx, byId.get(id), U + col * (N + 1) * U, U + r * (N + 1) * U, U);
+    });
+    if (!fromText) ids.value = selected.join(' ');
+  }
+
+  ids.addEventListener('input', () => {
+    selected = [...new Set(ids.value.split(/[\s,]+/).filter((s) => byId.has(s)))];
+    render(true);
+  });
+  document.getElementById('reset').onclick = () => { selected = [...DATA.preselected]; render(); };
+  document.getElementById('clear').onclick = () => { selected = []; render(); };
+  document.getElementById('copy').onclick = async () => {
+    try { await navigator.clipboard.writeText(ids.value); } catch { ids.select(); document.execCommand('copy'); }
+    document.getElementById('copied').textContent = 'Copied.';
+    setTimeout(() => (document.getElementById('copied').textContent = ''), 1500);
+  };
+  render();
+</script>
+</body>
+</html>

@@ -1,0 +1,583 @@
+[
+ {
+  "title": "WinSyn: An Automated Pipeline for Realistic Enterprise Question-Answering Evaluation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:geHnlv5EZngC",
+  "authors": "A Varhade, A Sutradhar, R Krishnaswamy, N Goyal",
+  "venue": "arXiv preprint arXiv:2609.12171, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Exploring Two-Phase Continual Instruction Fine-tuning for Multilingual Adaptation in Large Language Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:p2g8aNsByqUC",
+  "authors": "D Aggarwal, S Damle, N Goyal, S Lokam, S Sitaram",
+  "venue": "Findings of the Association for Computational Linguistics: ACL 2026, 31882-31904, 2026",
+  "year": 2026
+ },
+ {
+  "title": "For Better or for Worse, Transformers Seek Patterns for Memorization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:P5F9QuxV20EC",
+  "authors": "M Panwar, G Weiss, N Goyal, A Bosselut",
+  "venue": "Advances in Neural Information Processing Systems 38, 104001-104031, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Characterizing deep research: A benchmark and formal definition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:xtRiw3GOFMkC",
+  "authors": "A Java, A Khandelwal, S Midigeshi, A Halfaker, AJ Deshpande, N Goyal, ...",
+  "venue": "International Conference on Learning Representations 2026, 10315-10349, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Shape of thought: When distribution matters more than correctness in reasoning tasks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:UxriW0iASnsC",
+  "authors": "A Chandra, A Agrawal, A Hosseini, S Fischmeister, R Agarwal, N Goyal, ...",
+  "venue": "arXiv preprint arXiv:2512.22255, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Monitor-guided decoding of code language models with static analysis of repository context",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:dshw04ExmUIC",
+  "authors": "A KANADE, N Goyal, S Rajamani, S Lahiri, LA AGRAWAL",
+  "venue": "US Patent App. 18/680,100, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Towards understanding the optimization landscape of grpo and its variants",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:KxtntwgDAa4C",
+  "authors": "S Jain, A Agrawal, N Goyal",
+  "venue": "First Workshop on Foundations of Reasoning in Language Models, 2025",
+  "year": 2025
+ },
+ {
+  "title": "CurLL: A Developmental Framework to Evaluate Continual Learning in Language Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:CHSYGLWDkRkC",
+  "authors": "P Kalyan, S Mishra, S Lokam, N Goyal",
+  "venue": "arXiv preprint arXiv:2510.13008, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Learning syntax without planting trees: Understanding hierarchical generalization in transformers",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:NhqRSupF_l8C",
+  "authors": "K Ahuja, V Balachandran, M Panwar, T He, NA Smith, N Goyal, ...",
+  "venue": "Transactions of the Association for Computational Linguistics 13, 121-141, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Inversionview: A general-purpose method for reading information from neural activations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:f2IySw72cVMC",
+  "authors": "X Huang, M Panwar, N Goyal, M Hahn",
+  "venue": "Advances in Neural Information Processing Systems 37, 137903-137964, 2024",
+  "year": 2024
+ },
+ {
+  "title": "In-context learning through the bayesian prism",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:yD5IFk8b50cC",
+  "authors": "M Panwar, K Ahuja, N Goyal",
+  "venue": "International Conference on Learning Representations 2024, 49789-49843, 2024",
+  "year": 2024
+ },
+ {
+  "title": "How do active dendrite networks mitigate catastrophic forgetting?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:abG-DnoFyZgC",
+  "authors": "S Damle, S Lokam, N Goyal",
+  "venue": "The First Workshop on NeuroAI@ NeurIPS2024, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Monitor-guided decoding of code lms with static analysis of repository context",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:4OULZ7Gr8RgC",
+  "authors": "LA Agrawal, A Kanade, N Goyal, S Lahiri, S Rajamani",
+  "venue": "Advances in Neural Information Processing Systems 36, 32270-32298, 2023",
+  "year": 2023
+ },
+ {
+  "title": "A theory of emergent in-context learning as implicit structure induction",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:SeFeTyx0c_EC",
+  "authors": "M Hahn, N Goyal",
+  "venue": "arXiv preprint arXiv:2303.07971, 2023",
+  "year": 2023
+ },
+ {
+  "title": "When can transformers ground and compose: Insights from compositional generalization benchmarks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:2P1L_qKh6hAC",
+  "authors": "A Sikarwar, A Patel, N Goyal",
+  "venue": "Proceedings of the 2022 Conference on Empirical Methods in Natural Language …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Towards a mathematics formalisation assistant using large language models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:ldfaerwXgEUC",
+  "authors": "A Agrawal, S Gadgil, N Goyal, A Narayanan, A Tadipatri",
+  "venue": "arXiv preprint arXiv:2211.07524, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Robust identifiability in linear structural equation models of causal inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:qjMakFHDy7sC",
+  "authors": "KA Sankararaman, A Louis, N Goyal",
+  "venue": "Uncertainty in Artificial Intelligence, 1728-1737, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Learning and Generalization in Overparameterized Normalizing Flows",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:GnPB-g6toBAC",
+  "authors": "K Shah, A Deshpande, N Goyal",
+  "venue": "International Conference on Artificial Intelligence and Statistics, 9430-9504, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Revisiting the compositional generalization abilities of neural sequence models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:lSLTfruPkqcC",
+  "authors": "A Patel, S Bhattamishra, P Blunsom, N Goyal",
+  "venue": "Proceedings of the 60th Annual Meeting of the Association for Computational …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Learning and generalization in rnns",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:JV2RwH3_ST0C",
+  "authors": "A Panigrahi, N Goyal",
+  "venue": "Advances in Neural Information Processing Systems 34, 21112-21124, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Are NLP models really able to solve simple math word problems?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:maZDTaKrznsC",
+  "authors": "A Patel, S Bhattamishra, N Goyal",
+  "venue": "Proceedings of the 2021 conference of the North American chapter of the …, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Analyzing the nuances of transformers' polynomial simplification abilities",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:M3NEmzRMIkIC",
+  "authors": "V Agarwal, S Aditya, N Goyal",
+  "venue": "arXiv preprint arXiv:2104.14095, 2021",
+  "year": 2021
+ },
+ {
+  "title": "On the practical ability of recurrent neural networks to recognize hierarchical languages",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:YsMSGLbcyi4C",
+  "authors": "S Bhattamishra, K Ahuja, N Goyal",
+  "venue": "Proceedings of the 28th International Conference on Computational …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "On the ability and limitations of transformers to recognize formal languages",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:ns9cj8rnVeAC",
+  "authors": "S Bhattamishra, K Ahuja, N Goyal",
+  "venue": "Proceedings of the 2020 Conference on Empirical Methods in Natural Language …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "On the computational power of transformers and its implications in sequence modeling",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:_kc_bZDykSQC",
+  "authors": "S Bhattamishra, A Patel, N Goyal",
+  "venue": "Proceedings of the 24th Conference on Computational Natural Language …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Stability of linear structural equation models of causal inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:M3ejUd6NZC8C",
+  "authors": "KA Sankararaman, A Louis, N Goyal",
+  "venue": "Uncertainty in Artificial Intelligence, 323-333, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Non-Gaussianity of stochastic gradient noise",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:UeHWp8X0CEIC",
+  "authors": "A Panigrahi, R Somani, N Goyal, P Netrapalli",
+  "venue": "arXiv preprint arXiv:1910.09626, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Effect of activation functions on the training of overparametrized neural nets",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:Zph67rFs4hoC",
+  "authors": "A Panigrahi, A Shetty, N Goyal",
+  "venue": "arXiv preprint arXiv:1908.05660, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Better analysis of binary search tree on decomposable sequences",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:MXK_kJrjxJIC",
+  "authors": "N Goyal, M Gupta",
+  "venue": "Theoretical Computer Science 776, 19-42, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Sampling and optimization on convex sets in Riemannian manifolds of non-negative curvature",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:aqlVkmm33-oC",
+  "authors": "N Goyal, A Shetty",
+  "venue": "Conference on Learning Theory, 1519-1561, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Non-gaussian component analysis using entropy methods",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:TQgYirikUcIC",
+  "authors": "N Goyal, A Shetty",
+  "venue": "Proceedings of the 51st Annual ACM SIGACT Symposium on Theory of Computing …, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Learnability of learned neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:9yKSN-GCB0IC",
+  "authors": "RA Sharma, N Goyal, M Choudhury, P Netrapalli",
+  "venue": "",
+  "year": 2018
+ },
+ {
+  "title": "Depth separation and weight-width trade-offs for sigmoidal neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:IWHjjKOFINEC",
+  "authors": "A Deshpande, N Goyal, S Karmalkar",
+  "venue": "",
+  "year": 2018
+ },
+ {
+  "title": "Near-optimal regret bounds for thompson sampling",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:3fE2CSJIrl8C",
+  "authors": "S Agrawal, N Goyal",
+  "venue": "Journal of the ACM (JACM) 64 (5), 1-24, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Heavy-tailed analogues of the covariance matrix for ica",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:R3hNpaxXUhUC",
+  "authors": "J Anderson, N Goyal, A Nandi, L Rademacher",
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence 31 (1), 2017",
+  "year": 2017
+ },
+ {
+  "title": "Non-negative matrix factorization under heavy noise",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:4DMP91E08xMC",
+  "authors": "C Bhattacharya, N Goyal, R Kannan, J Pani",
+  "venue": "International Conference on Machine Learning, 1426-1434, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Heavy-tailed independent component analysis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:_Qo2XoVZTnwC",
+  "authors": "J Anderson, N Goyal, A Nandi, L Rademacher",
+  "venue": "2015 IEEE 56th Annual Symposium on Foundations of Computer Science, 290-309, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Query complexity of sampling and small geometric partitions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:L8Ckcad2t8MC",
+  "authors": "N Goyal, L Rademacher, S Vempala",
+  "venue": "Combinatorics, Probability and Computing 24 (5), 733-753, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Lower bounds for the average and smoothed number of pareto-optima",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:-f6ydRqryjwC",
+  "authors": "T Brunsch, N Goyal, L Rademacher, H Röglin",
+  "venue": "Theory of Computing 10 (1), 237-256, 2014",
+  "year": 2014
+ },
+ {
+  "title": "On computing maximal independent sets of hypergraphs in parallel",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:d1gkVwhDpl0C",
+  "authors": "IO Bercea, N Goyal, DG Harris, A Srinivasan",
+  "venue": "Proceedings of the 26th ACM symposium on Parallelism in algorithms and …, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Fourier PCA and robust tensor decomposition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:Y0pCki6q_DkC",
+  "authors": "N Goyal, S Vempala, Y Xiao",
+  "venue": "Proceedings of the forty-sixth annual ACM symposium on Theory of computing …, 2014",
+  "year": 2014
+ },
+ {
+  "title": "The more, the merrier: the blessing of dimensionality for learning large Gaussian mixtures",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:zYLM7Y9cAGgC",
+  "authors": "J Anderson, M Belkin, N Goyal, L Rademacher, J Voss",
+  "venue": "Conference on Learning Theory, 1135-1164, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Forecasting a number of impressions of a prospective advertisement listing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:QIV2ME_5wuYC",
+  "authors": "A Nath, S Mukherjee, P Jain, N Goyal, S Laxman",
+  "venue": "US Patent App. 13/590,192, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Annotations for sparse data streams",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:5nxA0vEk-isC",
+  "authors": "A Chakrabarti, G Cormode, N Goyal, J Thaler",
+  "venue": "Proceedings of the Twenty-Fifth Annual ACM-SIAM Symposium on Discrete …, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Expanders via random spanning trees",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:qxL8FJ1GzNcC",
+  "authors": "A Frieze, N Goyal, L Rademacher, S Vempala",
+  "venue": "SIAM Journal on Computing 43 (2), 497-513, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Efficient learning of simplices",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:kNdYIx-mwKoC",
+  "authors": "J Anderson, N Goyal, L Rademacher",
+  "venue": "Conference on Learning Theory, 1020-1045, 2013",
+  "year": 2013
+ },
+ {
+  "title": "The VPN conjecture is true",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:_FxGoFyzp5QC",
+  "authors": "N Goyal, N Olver, FB Shepherd",
+  "venue": "Journal of the ACM (JACM) 60 (3), 1-17, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Thompson sampling for contextual bandits with linear payoffs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:HDshCWvjkbEC",
+  "authors": "S Agrawal, N Goyal",
+  "venue": "International conference on machine learning, 127-135, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Ad impression forecasting for sponsored search",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:Se3iqnhoufwC",
+  "authors": "A Nath, S Mukherjee, P Jain, N Goyal, S Laxman",
+  "venue": "Proceedings of the 22nd international conference on World Wide Web, 943-952, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Deterministic algorithms for the Lovász local lemma",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "K Chandrasekaran, N Goyal, B Haeupler",
+  "venue": "SIAM Journal on Computing 42 (6), 2132-2155, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Analysis of thompson sampling for the multi-armed bandit problem",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:u-x6o8ySG0sC",
+  "authors": "S Agrawal, N Goyal",
+  "venue": "Conference on learning theory, 39.1-39.26, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Dynamic vs. oblivious routing in network design",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:u5HHmVD_uO8C",
+  "authors": "N Goyal, N Olver, F Bruce Shepherd",
+  "venue": "Algorithmica 61 (1), 161-173, 2011",
+  "year": 2011
+ },
+ {
+  "title": "On dynamic optimality for binary search trees",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:mVmsd5A6BfQC",
+  "authors": "N Goyal, M Gupta",
+  "venue": "arXiv preprint arXiv:1102.4523, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Rounds vs. queries tradeoff in noisy computation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:hC7cP41nSMkC",
+  "authors": "N Goyal, M Saks",
+  "venue": "Theory of Computing 6 (1), 113-134, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Enhanced flux balance analysis to model metabolic networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:RHpTSmoSYBkC",
+  "authors": "NU Nair, N Goyal, NR Chandra",
+  "venue": "Proceedings of the First ACM International Conference on Bioinformatics and …, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Satisfiability thresholds for k-CNF formula with bounded variable intersections",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:roLk4NBRz8UC",
+  "authors": "K Chandrasekaran, N Goyal, B Haeupler",
+  "venue": "arXiv preprint arXiv:1006.3030, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Learning convex bodies is hard",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:ZHo1McVdvXMC",
+  "authors": "N Goyal, L Rademacher",
+  "venue": "arXiv preprint arXiv:0904.1227, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Expanders via random spanning trees",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:Wp0gIr-vW9MC",
+  "authors": "N Goyal, L Rademacher, S Vempala",
+  "venue": "Proceedings of the twentieth annual ACM-SIAM symposium on Discrete …, 2009",
+  "year": 2009
+ },
+ {
+  "title": "Transformation Hashing: An Efficient Point Pattern Matching Scheme",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:dhFuZR0502QC",
+  "authors": "V Choi, N Goyal",
+  "venue": "arXiv preprint cs/0506019, 2008",
+  "year": 2008
+ },
+ {
+  "title": "T-hashing: An Efficient Approximation Algorithm for Point Pattern Matching Under Noise",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:8k81kl-MbHgC",
+  "authors": "V Choi, N Goyal",
+  "venue": "arXiv preprint cs/0506019, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Disorder inequality: a combinatorial approach to nearest neighbor search",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:KlAtU1dfN6UC",
+  "authors": "N Goyal, Y Lifshits, H Schütze",
+  "venue": "Proceedings of the 2008 international conference on web search and data …, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Lower bounds for the noisy broadcast problem",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:j3f4tGmQtD8C",
+  "authors": "N Goyal, G Kindler, M Saks",
+  "venue": "SIAM Journal on Computing 37 (6), 1806-1841, 2008",
+  "year": 2008
+ },
+ {
+  "title": "An algorithmic approach to the identification of rigid domains in proteins",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:ZeXyd9-uunAC",
+  "authors": "V Choi, N Goyal",
+  "venue": "Algorithmica 48 (4), 343-362, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Lower bounds for circuits with MOD_m gates.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:4JMBOYKVnBMC",
+  "authors": "A Chattopadhyay, N Goyal, P Pudlák, D Thérien",
+  "venue": "FOCS, 709-718, 2006",
+  "year": 2006
+ },
+ {
+  "title": "The Graham-Knowlton Problem Revisited",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:2osOgNQ5qMEC",
+  "authors": "N Goyal, S Lodha, S Muthukrishnan",
+  "venue": "Theory of Computing Systems 39 (3), 399-412, 2006",
+  "year": 2006
+ },
+ {
+  "title": "An efficient approximation algorithm for point pattern matching under noise",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:W7OEmFMy1HYC",
+  "authors": "V Choi, N Goyal",
+  "venue": "Latin American Symposium on Theoretical Informatics, 298-310, 2006",
+  "year": 2006
+ },
+ {
+  "title": "A parallel search game",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:ufrVoPGSRksC",
+  "authors": "N Goyal, M Saks",
+  "venue": "Random Structures & Algorithms 27 (2), 227-234, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Information theoretic limitations on computation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:hqOjcs7Dif8C",
+  "authors": "N Goyal",
+  "venue": "Rutgers The State University of New Jersey, School of Graduate Studies, 2005",
+  "year": 2005
+ },
+ {
+  "title": "A combinatorial shape matching algorithm for rigid protein docking",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:0EnyYjriUFMC",
+  "authors": "V Choi, N Goyal",
+  "venue": "Annual Symposium on Combinatorial Pattern Matching, 285-296, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Letter to Editor-Osteoma mimicking a partly calcified meningioma",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:sSrBHYA8nusC",
+  "authors": "N Chitkara, NK Sharma, N Goyal",
+  "venue": "Medknow Publications on behalf of the Neurological Society of India, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Optimal separation of EROW and CROW PRAMs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:LkGwnXOMwfcC",
+  "authors": "N Goyal, M Saks, S Venkatesh",
+  "venue": "18th IEEE Annual Conference on Computational Complexity, 2003. Proceedings …, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Osteoma mimicking a partly calcified meningioma",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:B3FOqHPlNUQC",
+  "authors": "N Chitkara, NK Sharma, N Goyal",
+  "venue": "Neurology India 51 (2), 287-288, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Optimal bandwidth reservation schedule in cellular networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:9ZlFYXVOiuMC",
+  "authors": "S Ganguly, B Nath, N Goyal",
+  "venue": "IEEE INFOCOM 2003. Twenty-second Annual Joint Conference of the IEEE …, 2003",
+  "year": 2003
+ },
+ {
+  "title": "NP-completeness of undirected Grundy numbering and related problems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:k_IJM867U9cC",
+  "authors": "N Goyal, S Vishwanathan",
+  "venue": "Manuscript, Bombay, 1997",
+  "year": 1997
+ },
+ {
+  "title": "Deep Learning Techniques for thePrediction of Heart Disease",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:tS2w5q8j5-wC",
+  "authors": "SK Sinha, S Prabha, NK Goyal, N Srivastava",
+  "venue": "Intelligent Systems Using Semiconductors for Robotics and IoT, 371-374, 0",
+  "year": null
+ },
+ {
+  "title": "Quantum Optical Sensing: Harnessing Quantum Properties for Sensing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:XiSMed-E-HIC",
+  "authors": "B Keswani, SL Peng, AG Mohapatra, NK Goyal, JA Qurashi, R Kumawaf",
+  "venue": "Optical Sensors and Distributed Sensing, 222-232, 0",
+  "year": null
+ },
+ {
+  "title": "Examining the Detection of Faux user Opinions: Challenges and Insights in AI Based Techniques",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:u9iWguZQMMsC",
+  "authors": "NK Goyal, P Bansal",
+  "venue": "Intelligent Systems Using Semiconductors for Robotics and IoT, 264-269, 0",
+  "year": null
+ },
+ {
+  "title": "Towards demystifying the optimization landscape of RLVR methods",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:uWQEDVKXjbEC",
+  "authors": "S Jain, A Agrawal, N Goyal",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "CurLL: Curriculum Learning of Language Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:nb7KW1ujOQ8C",
+  "authors": "PK Tankala, S Mishra, S Lokam, N Goyal",
+  "venue": "First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models, 0",
+  "year": null
+ },
+ {
+  "title": "Towards Analyzing Self-attention via Linear Neural Network",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:a0OBvERweLwC",
+  "authors": "P Chandra, TK Sinha, K Ahuja, A Garg, N Goyal",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Universality Patterns in the Training of Neural Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:HoB7MX3m0LUC",
+  "authors": "R Somani, N Goyal, P Jain, P Netrapalli",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Robust Identifiability in Linear Structural Equation Models of Causal Inference (Supplementary)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:70eg2SAEIzsC",
+  "authors": "KA Sankararaman, A Louis, N Goyal",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Efficiency of the floating body as a robust measure of dispersion",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=w8WJCnkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=w8WJCnkAAAAJ:NaGl4SEjCO4C",
+  "authors": "L Rademacher, N Goyal, A Nandi",
+  "venue": "",
+  "year": null
+ }
+]

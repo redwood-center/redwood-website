@@ -1,0 +1,120 @@
+@import '@fontsource-variable/schibsted-grotesk';
+@import '@fontsource-variable/source-serif-4';
+
+:root {
+  --brand: #1f4030;
+  --brand-soft: #5a7d66;
+  --gold: #fdb515;
+  --paper: #ffffff;
+  --wash: #eef3ef;
+  --text: #26302a;
+  --slate: #59665e;
+  --line: #d3ddd6;
+
+  --sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+  --serif: 'Source Serif 4 Variable', Georgia, serif;
+
+  /* Modular scale, ratio 1.25 from 1rem */
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5625rem;
+  --step-3: 1.953rem;
+  --step-4: clamp(2.2rem, 1.6rem + 2.4vw, 3.05rem);
+
+  --measure: 66ch;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --max: 76rem;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--sans);
+  color: var(--brand);
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+
+.prose p {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  max-width: var(--measure);
+}
+.prose p + p { margin-top: 0.9em; }
+
+a { color: var(--brand); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--brand-soft); outline-offset: 2px; border-radius: 2px; }
+
+img { max-width: 100%; display: block; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+.section--wash { background: var(--wash); }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.section-head h2 { font-size: var(--step-3); font-weight: 650; letter-spacing: -0.01em; }
+.section-head a { font-weight: 500; white-space: nowrap; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 1rem; top: -3rem; z-index: 30;
+  background: var(--paper); padding: 0.5rem 0.75rem;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Pages with a full-bleed hero: the header floats over it (rule in Header.astro) so the hero runs to
+   the top of the page. The hero pads its content by --header-h (measured in Base; fallbacks here). */
+:root { --header-h: 4.75rem; }
+@media (max-width: 760px) { :root { --header-h: 9.5rem; } }
+
+/* The misty-forest backdrop, shared by the homepage hero and the nav bar on every other page.
+   Sized from the viewport width only (never from the box), pinned to the top, so any box using it
+   shows the same strip at the top: the nav looks identical from page to page. The image (3000x1688)
+   is stretched at most 10% vertically (1.7773 / 1.1 = 1.6157 width:height); below it, it fades
+   into the color of its bottom edge. The tint uses absolute stops for the same reason. */
+:root {
+  --forest-h: max(62vw, 52rem);
+  --forest-fill: #202631;
+}
+.forest-bg {
+  background:
+    linear-gradient(to bottom, rgb(16 40 27 / 0.62), rgb(22 52 35 / 0.4) calc(var(--forest-h) * 0.55), rgb(16 40 27 / 0.22) var(--forest-h)),
+    linear-gradient(to bottom, transparent calc(var(--forest-h) - 10rem), var(--forest-fill) var(--forest-h)),
+    url('../assets/misty-forest.jpg') center top / calc(var(--forest-h) * 1.6157) var(--forest-h) no-repeat,
+    var(--forest-fill);
+}

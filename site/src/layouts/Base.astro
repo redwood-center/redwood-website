@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: string;
+  /** Header floats over the page's first section (used where a full-bleed hero sits at the top). */
+  overlayHeader?: boolean;
+}
+const {
+  title,
+  description = 'The Redwood Center for Theoretical Neuroscience at UC Berkeley seeks the scientific principles behind natural and artificial intelligence.',
+  current,
+  overlayHeader = false,
+} = Astro.props;
+const fullTitle = title ? `${title} | Redwood Center for Theoretical Neuroscience` : 'Redwood Center for Theoretical Neuroscience';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {import.meta.env.PUBLIC_NOINDEX === 'true' && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" href={url('favicon.png')} />
+  </head>
+  <body class:list={{ 'overlay-header': overlayHeader }}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header current={current} />
+    {overlayHeader && (
+      <script is:inline>
+        // Expose the floating header's height so the hero can pad its content below it.
+        (() => {
+          const h = document.querySelector('.site-header');
+          const set = () => document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px');
+          set();
+          new ResizeObserver(set).observe(h);
+        })();
+      </script>
+    )}
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

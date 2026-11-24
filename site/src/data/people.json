@@ -1,0 +1,1206 @@
+[
+ {
+  "slug": "jacob-yates",
+  "name": "Jacob Yates",
+  "group": "Faculty",
+  "order": 0,
+  "title": "Assistant Professor",
+  "affiliation": "School of Optometry",
+  "labs": [
+   "Yates Lab"
+  ],
+  "website": null,
+  "photo": "media/people/jacob_yates_headshot_2025-300x350.jpg",
+  "role": "Co-Director"
+ },
+ {
+  "slug": "mike-deweese",
+  "name": "Mike DeWeese",
+  "group": "Faculty",
+  "order": 1,
+  "title": "Professor",
+  "affiliation": "Helen Wills Neuroscience Institute and Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "http://physics.berkeley.edu/people/faculty/michael-deweese",
+  "photo": "media/people/mike_deweese_profile_pic-300x350.jpg",
+  "role": "Co-Director"
+ },
+ {
+  "slug": "bruno-olshausen",
+  "name": "Bruno Olshausen",
+  "group": "Faculty",
+  "order": 2,
+  "title": "Professor",
+  "affiliation": "Helen Wills Neuroscience Institute and School of Optometry",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": "https://www.rctn.org/bruno",
+  "photo": "media/people/bruno.jpg"
+ },
+ {
+  "slug": "fritz-sommer",
+  "name": "Fritz Sommer",
+  "group": "Faculty",
+  "order": 3,
+  "title": "Adjunct Professor",
+  "affiliation": "Helen Wills Neuroscience Institute",
+  "labs": [
+   "Sommer Lab"
+  ],
+  "website": "https://www.rctn.org/wiki/Fritz_Sommer",
+  "photo": "media/people/Fritz_Sommer_2026_headshot-300x350.jpg"
+ },
+ {
+  "slug": "kristofer-bouchard",
+  "name": "Kristofer Bouchard",
+  "group": "Faculty",
+  "order": 4,
+  "title": "Adjunct Professor",
+  "affiliation": "Helen Wills Neuroscience Institute",
+  "labs": [
+   "Bouchard Lab"
+  ],
+  "website": "https://bouchardlab.lbl.gov/",
+  "photo": "media/people/kris_bouchard_profile_pic-300x350.jpg"
+ },
+ {
+  "slug": "jorge-otero-millan",
+  "name": "Jorge Otero-Millan",
+  "group": "Faculty",
+  "order": 5,
+  "title": "Assistant Professor",
+  "affiliation": "School of Optometry",
+  "labs": [
+   "Otero-Millan Lab"
+  ],
+  "website": "https://omlab.berkeley.edu/",
+  "photo": "media/people/jorge_otero_millan_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "deepthi-bannai",
+  "name": "Deepthi Bannai",
+  "group": "Students",
+  "order": 6,
+  "title": "PhD Student",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "Olshausen Lab",
+   "Yates Lab"
+  ],
+  "website": "https://dbannai.github.io/",
+  "photo": "media/people/deepthi_bannai_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "alex-belsten",
+  "name": "Alexander Belsten",
+  "group": "Students",
+  "order": 7,
+  "title": "PhD Student",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": "https://belsten.github.io",
+  "photo": "media/people/Alexander_Belsten_profile_pic-300x350.jpg"
+ },
+ {
+  "slug": "dasheng-bi",
+  "name": "Dasheng Bi",
+  "group": "Students",
+  "order": 8,
+  "title": "PhD Student",
+  "affiliation": "Computer Science",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": "https://d-bi.github.io",
+  "photo": "media/people/dasheng_bi_profile_picture-300x350.jpg"
+ },
+ {
+  "slug": "connor-bybee",
+  "name": "Connor Bybee",
+  "group": "Alumni",
+  "order": 9,
+  "title": "Postdoctoral Fellow",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "Olshausen Lab",
+   "Sommer Lab"
+  ],
+  "website": "https://scholar.google.com/citations?user=Wlx0op4AAAAJ&hl=en",
+  "photo": "media/people/connor_bybee_profile_pic-300x350.jpg"
+ },
+ {
+  "slug": "galen-chuang",
+  "name": "Galen Chuang",
+  "group": "Students",
+  "order": 10,
+  "title": "PhD Student",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": null,
+  "photo": "media/people/galen_chuang_profile_picture-300x350.jpeg"
+ },
+ {
+  "slug": "sam-dambrosia",
+  "name": "Sam D’Ambrosia",
+  "group": "Students",
+  "order": 11,
+  "title": "PhD Student",
+  "affiliation": "Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": null,
+  "photo": "media/people/sam_dambrosia_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "yasemin-ersoy",
+  "name": "Yasemin Ersoy",
+  "group": "Alumni",
+  "order": 12,
+  "title": "Researcher",
+  "affiliation": null,
+  "labs": [
+   "Sommer Lab"
+  ],
+  "website": "https://www.linkedin.com/in/yasersoy/",
+  "photo": "media/people/yasemin_ersoy_headshot_2025-300x350.jpeg"
+ },
+ {
+  "slug": "dekel-galor",
+  "name": "Dekel Galor",
+  "group": "Students",
+  "order": 13,
+  "title": "PhD Student",
+  "affiliation": "Electrical Engineering and Computer Science",
+  "labs": [
+   "Yates Lab"
+  ],
+  "website": "https://www.dekelgalor.com/",
+  "photo": "media/people/dekel_redwood_profile_500px-300x350.jpg"
+ },
+ {
+  "slug": "chad-harper",
+  "name": "Chad Harper",
+  "group": "Students",
+  "order": 14,
+  "title": "PhD Student",
+  "affiliation": null,
+  "labs": [
+   "DeWeese Lab",
+   "Bouchard Lab"
+  ],
+  "website": "https://chadharper.github.io/",
+  "photo": "media/people/chad-harper-2026-300x350.jpg"
+ },
+ {
+  "slug": "kylie-huch",
+  "name": "Kylie Huch",
+  "group": "Students",
+  "order": 15,
+  "title": "PhD Student",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "Sommer Lab"
+  ],
+  "website": null,
+  "photo": "media/people/kylie_huch_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "pentti-kanerva",
+  "name": "Pentti Kanerva",
+  "group": "Postdocs and research staff",
+  "order": 16,
+  "title": "Research Scientist",
+  "affiliation": null,
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": "http://www.rctn.org/wiki/Pentti_Kanerva",
+  "photo": "media/people/pentti_kanerva_profile_pic-300x350.jpg"
+ },
+ {
+  "slug": "dhruva-karkada",
+  "name": "Dhruva Karkada",
+  "group": "Students",
+  "order": 17,
+  "title": "PhD Student",
+  "affiliation": "Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://dkarkada.xyz",
+  "photo": "media/people/Dhruva_Karkada_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "tejasvi-kothapalli",
+  "name": "Tejasvi Kothapalli",
+  "group": "Students",
+  "order": 18,
+  "title": "PhD Student",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Yates Lab"
+  ],
+  "website": "https://tejasvikothapalli.github.io/",
+  "photo": "media/people/tejasvi_kothapalli_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "daniel-kunin",
+  "name": "Daniel Kunin",
+  "group": "Postdocs and research staff",
+  "order": 19,
+  "title": "Postdoc",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://daniel-kunin.com/",
+  "photo": "media/people/daniel_kunin_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "chris-kymn",
+  "name": "Chris Kymn",
+  "group": "Students",
+  "order": 20,
+  "title": "PhD Student",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": null,
+  "photo": "media/people/chris_kymn_headshot-300x350.png"
+ },
+ {
+  "slug": "wanyu-lei",
+  "name": "Wanyu Lei",
+  "group": "Postdocs and research staff",
+  "order": 21,
+  "title": "Postdoc",
+  "affiliation": null,
+  "labs": [
+   "Sommer Lab"
+  ],
+  "website": null,
+  "photo": "media/people/wanyu_lei_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "hana-mir",
+  "name": "Hana Mir",
+  "group": "Students",
+  "order": 22,
+  "title": "PhD Student",
+  "affiliation": "Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": null,
+  "photo": "media/people/hana_mir_2025_headshot-300x350.jpg"
+ },
+ {
+  "slug": "dennis-perez",
+  "name": "Dennis Perez",
+  "group": "Students",
+  "order": 23,
+  "title": "PhD Student",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Yates Lab"
+  ],
+  "website": null,
+  "photo": "media/people/Dennis_Perez_headshot_2025-300x350.jpeg"
+ },
+ {
+  "slug": "eduardo-sandoval",
+  "name": "Eduardo Sandoval",
+  "group": "Students",
+  "order": 24,
+  "title": "PhD Student",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": null,
+  "photo": "media/people/eduardo-e1693439683666-300x350.jpg"
+ },
+ {
+  "slug": "james-simon",
+  "name": "Jamie Simon",
+  "group": "Postdocs and research staff",
+  "order": 25,
+  "title": "Postdoc",
+  "affiliation": "Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://james-simon.github.io",
+  "photo": "media/people/jamie-simon.jpg"
+ },
+ {
+  "slug": "jeff-teeters",
+  "name": "Jeff Teeters",
+  "group": "Staff",
+  "order": 26,
+  "title": "Staff",
+  "affiliation": null,
+  "labs": [],
+  "website": null,
+  "photo": "media/people/jeff_teeters_profile_pic-300x350.jpg"
+ },
+ {
+  "slug": "terence-tyson",
+  "name": "Terence Tyson",
+  "group": "Students",
+  "order": 27,
+  "title": "PhD Student",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Otero-Millan Lab"
+  ],
+  "website": "https://scholar.google.com/citations?user=69D12yYAAAAJ&hl=en",
+  "photo": "media/people/terence_tyson_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "hadi-vafaii",
+  "name": "Hadi Vafaii",
+  "group": "Alumni",
+  "order": 28,
+  "title": "Postdoc",
+  "affiliation": "Vision Science",
+  "labs": [
+   "Yates Lab"
+  ],
+  "website": "https://mysterioustune.com/",
+  "photo": "media/people/hadi_vafaii_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "zeyu-yun",
+  "name": "Zeyu Yun",
+  "group": "Students",
+  "order": 29,
+  "title": "PhD Student",
+  "affiliation": "Electrical Engineering and Computer Science",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": "https://zeyuyun1.github.io/",
+  "photo": "media/people/zeyu_yun_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "adrianne-zhong",
+  "name": "Adrianne Zhong",
+  "group": "Alumni",
+  "order": 30,
+  "title": "PhD Student",
+  "affiliation": "Physics",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://adrizhong.com/",
+  "photo": "media/people/Adrianne_Zhong_headshot_2025-300x350.png"
+ },
+ {
+  "slug": "kailin-zhuang",
+  "name": "Kailin Zhuang",
+  "group": "Students",
+  "order": 31,
+  "title": "PhD Student",
+  "affiliation": "Neuroscience",
+  "labs": [
+   "Olshausen Lab"
+  ],
+  "website": null,
+  "photo": "media/people/kailin_zhuang_headshot_2025-300x350.jpg"
+ },
+ {
+  "slug": "gautam-agarwal",
+  "name": "Gautam Agarwal",
+  "group": "Alumni",
+  "order": 32,
+  "current_affiliation": "Keck School of Science, Claremont Colleges",
+  "website": "https://www.cmc.edu/academic/faculty/profile/gautam-agarwal"
+ },
+ {
+  "slug": "badr-faisal-albanna",
+  "name": "Badr Faisal Albanna",
+  "group": "Alumni",
+  "order": 33,
+  "current_affiliation": "University of Pittsburgh",
+  "website": "https://www.neuroscience.pitt.edu/people/badr-albanna"
+ },
+ {
+  "slug": "alex-anderson",
+  "name": "Alex Anderson",
+  "group": "Alumni",
+  "order": 34,
+  "current_affiliation": "WaveOne",
+  "website": "https://alexanderganderson.github.io/"
+ },
+ {
+  "slug": "alfonso-apicella",
+  "name": "Alfonso Apicella",
+  "group": "Alumni",
+  "order": 35,
+  "current_affiliation": "University of Texas, San Antonio",
+  "website": "https://sciences.utsa.edu/labs/alfonso-apicella/"
+ },
+ {
+  "slug": "james-arnemann",
+  "name": "James Arnemann",
+  "group": "Alumni",
+  "order": 36,
+  "current_affiliation": "TWOSENSE.AI",
+  "website": "https://github.com/arnemann"
+ },
+ {
+  "slug": "vivek-ayer",
+  "name": "Vivek Ayer",
+  "group": "Alumni",
+  "order": 37,
+  "current_affiliation": null
+ },
+ {
+  "slug": "ji-hyun-bak",
+  "name": "Ji Hyun Bak",
+  "group": "Alumni",
+  "order": 38,
+  "current_affiliation": "UCSF/LBL",
+  "website": "https://jihyunbak.github.io/"
+ },
+ {
+  "slug": "vyassa-baratham",
+  "name": "Vyassa Baratham",
+  "group": "Alumni",
+  "order": 39,
+  "current_affiliation": "Amazon Web Services",
+  "website": "https://github.com/VBaratham"
+ },
+ {
+  "slug": "peter-battaglino",
+  "name": "Peter Battaglino",
+  "group": "Alumni",
+  "order": 40,
+  "current_affiliation": "Google"
+ },
+ {
+  "slug": "tony-bell",
+  "name": "Tony Bell",
+  "group": "Alumni",
+  "order": 41,
+  "current_affiliation": null,
+  "website": "https://www.rctn.org/wiki/Tony_Bell"
+ },
+ {
+  "slug": "matthias-bethge",
+  "name": "Matthias Bethge",
+  "group": "Alumni",
+  "order": 42,
+  "current_affiliation": "Universität Tübingen",
+  "website": "https://bethgelab.org/"
+ },
+ {
+  "slug": "tim-blanche",
+  "name": "Tim Blanche",
+  "group": "Alumni",
+  "order": 43,
+  "current_affiliation": "White Matter LLC"
+ },
+ {
+  "slug": "alex-bujan",
+  "name": "Alex Bujan",
+  "group": "Alumni",
+  "order": 44,
+  "current_affiliation": "Apple",
+  "website": "https://afbujan.github.io/"
+ },
+ {
+  "slug": "charles-cadieu",
+  "name": "Charles Cadieu",
+  "group": "Alumni",
+  "order": 45,
+  "current_affiliation": "Caption Health"
+ },
+ {
+  "slug": "nicole-carlson",
+  "name": "Nicole Carlson",
+  "group": "Alumni",
+  "order": 46,
+  "current_affiliation": "ShopRunner",
+  "website": "https://www.parsingscience.com/"
+ },
+ {
+  "slug": "ho-yin-chau",
+  "name": "Ho Yin Chau",
+  "group": "Alumni",
+  "order": 47,
+  "current_affiliation": "Columbia University",
+  "website": "https://ctn.zuckermaninstitute.columbia.edu/people/ho-yin-chau"
+ },
+ {
+  "slug": "yubei-chen",
+  "name": "Yubei Chen",
+  "group": "Alumni",
+  "order": 48,
+  "current_affiliation": "Electrical and Computer Engineering Department, UC Davis",
+  "website": "https://yubeichen.com/"
+ },
+ {
+  "slug": "brian-cheung",
+  "name": "Brian Cheung",
+  "group": "Alumni",
+  "order": 49,
+  "current_affiliation": "MIT",
+  "website": "https://bcs.mit.edu/directory/brian-cheung"
+ },
+ {
+  "slug": "jasmine-collins",
+  "name": "Jasmine Collins",
+  "group": "Alumni",
+  "order": 50,
+  "current_affiliation": "Databricks",
+  "website": "https://jazcollins.github.io/"
+ },
+ {
+  "slug": "sharif-corinaldi",
+  "name": "Sharif Corinaldi",
+  "group": "Alumni",
+  "order": 51,
+  "current_affiliation": "Stripe"
+ },
+ {
+  "slug": "will-coulter",
+  "name": "Will Coulter",
+  "group": "Alumni",
+  "order": 52,
+  "current_affiliation": null
+ },
+ {
+  "slug": "jack-culpepper",
+  "name": "Jack Culpepper",
+  "group": "Alumni",
+  "order": 53,
+  "current_affiliation": "Yahoo!"
+ },
+ {
+  "slug": "mohammad-dastjerdi",
+  "name": "Mohammad Dastjerdi",
+  "group": "Alumni",
+  "order": 54,
+  "current_affiliation": "Stanford University"
+ },
+ {
+  "slug": "eric-mcvoy-dodds",
+  "name": "Eric McVoy Dodds",
+  "group": "Alumni",
+  "order": 55,
+  "current_affiliation": "Verizon Media Group",
+  "website": "https://emdodds.github.io/"
+ },
+ {
+  "slug": "vasha-dutell",
+  "name": "Vasha DuTell",
+  "group": "Alumni",
+  "order": 56,
+  "current_affiliation": "Massachusetts Institute of Technology",
+  "website": "https://vashadutell.com/"
+ },
+ {
+  "slug": "michael-fang",
+  "name": "Michael Fang",
+  "group": "Alumni",
+  "order": 57,
+  "current_affiliation": "Use your imagination"
+ },
+ {
+  "slug": "alyson-fletcher",
+  "name": "Alyson Fletcher",
+  "group": "Alumni",
+  "order": 58,
+  "current_affiliation": "UCLA",
+  "website": "https://samueli.ucla.edu/people/alyson-fletcher/"
+ },
+ {
+  "slug": "e-paxon-frady",
+  "name": "E. Paxon Frady",
+  "group": "Alumni",
+  "order": 59,
+  "current_affiliation": "Intel Labs",
+  "website": "https://github.com/epaxon"
+ },
+ {
+  "slug": "charles-frye",
+  "name": "Charles Frye",
+  "group": "Alumni",
+  "order": 60,
+  "current_affiliation": "Modal",
+  "website": "https://charlesfrye.github.io/"
+ },
+ {
+  "slug": "charles-garfinkle",
+  "name": "Charles Garfinkle",
+  "group": "Alumni",
+  "order": 61,
+  "current_affiliation": "Awecom, Inc"
+ },
+ {
+  "slug": "pierre-garrigues",
+  "name": "Pierre Garrigues",
+  "group": "Alumni",
+  "order": 62,
+  "current_affiliation": "Twitter"
+ },
+ {
+  "slug": "joe-goldbeck",
+  "name": "Joe Goldbeck",
+  "group": "Alumni",
+  "order": 63,
+  "current_affiliation": "TetraScience"
+ },
+ {
+  "slug": "nicol-harper",
+  "name": "Nicol Harper",
+  "group": "Alumni",
+  "order": 64,
+  "current_affiliation": "University of Oxford"
+ },
+ {
+  "slug": "john-hermiz",
+  "name": "John Hermiz",
+  "group": "Alumni",
+  "order": 65,
+  "current_affiliation": "Form Energy",
+  "website": "https://github.com/jthermiz"
+ },
+ {
+  "slug": "chris-hillar",
+  "name": "Chris Hillar",
+  "group": "Alumni",
+  "order": 66,
+  "current_affiliation": "Awecom, Inc",
+  "website": "https://qualiaphile.com/"
+ },
+ {
+  "slug": "pingchen-huang",
+  "name": "Ping-Chen Huang",
+  "group": "Alumni",
+  "order": 67,
+  "current_affiliation": "SLAC National Accelerator Laboratory"
+ },
+ {
+  "slug": "guy-isely",
+  "name": "Guy Isely",
+  "group": "Alumni",
+  "order": 68,
+  "current_affiliation": null,
+  "website": "https://gisely.github.io/"
+ },
+ {
+  "slug": "kohta-ishikawa",
+  "name": "Kohta Ishikawa",
+  "group": "Alumni",
+  "order": 69,
+  "current_affiliation": "Denso"
+ },
+ {
+  "slug": "paul-ivanov",
+  "name": "Paul Ivanov",
+  "group": "Alumni",
+  "order": 70,
+  "current_affiliation": "Bloomberg",
+  "website": "https://pirsquared.org/"
+ },
+ {
+  "slug": "petr-jezek",
+  "name": "Petr Jezek",
+  "group": "Alumni",
+  "order": 71,
+  "current_affiliation": "University of West Bohemia"
+ },
+ {
+  "slug": "louis-kang",
+  "name": "Louis Kang",
+  "group": "Alumni",
+  "order": 72,
+  "current_affiliation": "RIKEN Center for Brain Science",
+  "website": "https://louiskang.group/"
+ },
+ {
+  "slug": "spencer-kent",
+  "name": "Spencer Kent",
+  "group": "Alumni",
+  "order": 73,
+  "current_affiliation": "A pre-launch startup",
+  "website": "https://www.spencerkent.com/"
+ },
+ {
+  "slug": "amir-khosrowshahi",
+  "name": "Amir Khosrowshahi",
+  "group": "Alumni",
+  "order": 74,
+  "current_affiliation": "Pre-stealth"
+ },
+ {
+  "slug": "paul-king",
+  "name": "Paul King",
+  "group": "Alumni",
+  "order": 75,
+  "current_affiliation": "Uber",
+  "website": "https://www.pking.org/"
+ },
+ {
+  "slug": "denis-kleyko",
+  "name": "Denis Kleyko",
+  "group": "Alumni",
+  "order": 76,
+  "current_affiliation": "Örebro University",
+  "website": "https://www.oru.se/english/employee/denis_kleyko"
+ },
+ {
+  "slug": "kilian-koepsell",
+  "name": "Kilian Koepsell",
+  "group": "Alumni",
+  "order": 77,
+  "current_affiliation": "Caption Health"
+ },
+ {
+  "slug": "urs-koster",
+  "name": "Urs Köster",
+  "group": "Alumni",
+  "order": 78,
+  "current_affiliation": "Cerebras Systems"
+ },
+ {
+  "slug": "ankit-kumar",
+  "name": "Ankit Kumar",
+  "group": "Alumni",
+  "order": 79,
+  "current_affiliation": null
+ },
+ {
+  "slug": "mika-laiho",
+  "name": "Mika Laiho",
+  "group": "Alumni",
+  "order": 80,
+  "current_affiliation": "Kovilta Oy",
+  "website": "https://www.utu.fi/en/people/mika-laiho"
+ },
+ {
+  "slug": "thomas-lauritzen",
+  "name": "Thomas Lauritzen",
+  "group": "Alumni",
+  "order": 81,
+  "current_affiliation": "Proteus Digital Health"
+ },
+ {
+  "slug": "eero-lehtonen",
+  "name": "Eero Lehtonen",
+  "group": "Alumni",
+  "order": 82,
+  "current_affiliation": null
+ },
+ {
+  "slug": "mat-leonard",
+  "name": "Mat Leonard",
+  "group": "Alumni",
+  "order": 83,
+  "current_affiliation": "Udacity",
+  "website": "http://matatat.org"
+ },
+ {
+  "slug": "zengyi-li",
+  "name": "Zengyi Li",
+  "group": "Alumni",
+  "order": 84,
+  "current_affiliation": "AIZIP"
+ },
+ {
+  "slug": "andrew-ligeralde",
+  "name": "Andrew Ligeralde",
+  "group": "Alumni",
+  "order": 85,
+  "current_affiliation": null
+ },
+ {
+  "slug": "daniel-little",
+  "name": "Daniel Little",
+  "group": "Alumni",
+  "order": 86,
+  "current_affiliation": "Shiftgig"
+ },
+ {
+  "slug": "jesse-livezey",
+  "name": "Jesse Livezey",
+  "group": "Alumni",
+  "order": 87,
+  "current_affiliation": "Dandelion Science Corp",
+  "website": "https://jesselivezey.com/"
+ },
+ {
+  "slug": "sean-mackesey",
+  "name": "Sean Mackesey",
+  "group": "Alumni",
+  "order": 88,
+  "current_affiliation": "Dagster Labs",
+  "website": "https://github.com/smackesey"
+ },
+ {
+  "slug": "sylvia-madhow",
+  "name": "Sylvia Madhow",
+  "group": "Alumni",
+  "order": 89,
+  "current_affiliation": "Teledyne FLIR"
+ },
+ {
+  "slug": "thomas-martinetz",
+  "name": "Thomas Martinetz",
+  "group": "Alumni",
+  "order": 90,
+  "current_affiliation": "University of Lübeck",
+  "website": "https://www.inb.uni-luebeck.de/en/mitarbeiter/mitarbeiter/professoren/thomas-martinetz-english"
+ },
+ {
+  "slug": "sarah-marzen",
+  "name": "Sarah Marzen",
+  "group": "Alumni",
+  "order": 91,
+  "current_affiliation": "Keck Science Center at the Claremont Colleges",
+  "website": "https://www.sarahmarzen.com/"
+ },
+ {
+  "slug": "navneedh-maudgalya",
+  "name": "Navneedh Maudgalya",
+  "group": "Alumni",
+  "order": 92,
+  "current_affiliation": "Synopsys Inc",
+  "website": "https://github.com/navneedh"
+ },
+ {
+  "slug": "rui-meng",
+  "name": "Rui Meng",
+  "group": "Alumni",
+  "order": 93,
+  "current_affiliation": "Amazon"
+ },
+ {
+  "slug": "vivienne-lecuyer-ming",
+  "name": "Vivienne L’Ecuyer Ming",
+  "group": "Alumni",
+  "order": 94,
+  "current_affiliation": "Socos Labs",
+  "website": "https://socos.org/"
+ },
+ {
+  "slug": "shariq-mobin",
+  "name": "Shariq Mobin",
+  "group": "Alumni",
+  "order": 95,
+  "current_affiliation": "AudioFocus"
+ },
+ {
+  "slug": "gianluca-monaci",
+  "name": "Gianluca Monaci",
+  "group": "Alumni",
+  "order": 96,
+  "current_affiliation": "Naver Labs",
+  "website": "https://europe.naverlabs.com/people_user_naverlabs/gianluca-monaci/"
+ },
+ {
+  "slug": "ryan-moughan",
+  "name": "Ryan Moughan",
+  "group": "Alumni",
+  "order": 97,
+  "current_affiliation": "Lawrence Livermore National Laboratory"
+ },
+ {
+  "slug": "mayur-mudigonda",
+  "name": "Mayur Mudigonda",
+  "group": "Alumni",
+  "order": 98,
+  "current_affiliation": "Terrafuse",
+  "website": "https://mudigonda.github.io/"
+ },
+ {
+  "slug": "chetan-nandakumar",
+  "name": "Chetan Nandakumar",
+  "group": "Alumni",
+  "order": 99,
+  "current_affiliation": "Unifyre"
+ },
+ {
+  "slug": "brett-nelson",
+  "name": "Brett Nelson",
+  "group": "Alumni",
+  "order": 100,
+  "current_affiliation": null
+ },
+ {
+  "slug": "dylan-paiton",
+  "name": "Dylan Paiton",
+  "group": "Alumni",
+  "order": 101,
+  "current_affiliation": "Element Finance",
+  "website": "https://dpaiton.github.io/"
+ },
+ {
+  "slug": "martin-rehn",
+  "name": "Martin Rehn",
+  "group": "Alumni",
+  "order": 102,
+  "current_affiliation": null,
+  "website": "https://www.csc.kth.se/~rehn/"
+ },
+ {
+  "slug": "chris-rodgers",
+  "name": "Chris Rodgers",
+  "group": "Alumni",
+  "order": 103,
+  "current_affiliation": "Postdoctoral Fellow",
+  "website": "https://lab.chris-rodgers.com/"
+ },
+ {
+  "slug": "christopher-rozell",
+  "name": "Christopher Rozell",
+  "group": "Alumni",
+  "order": 104,
+  "current_affiliation": "Georgia Institute of Technology",
+  "website": "https://siplab.gatech.edu/"
+ },
+ {
+  "slug": "pratik-sachdeva",
+  "name": "Pratik Sachdeva",
+  "group": "Alumni",
+  "order": 105,
+  "current_affiliation": "Social Sciences D-Lab",
+  "website": "https://www.pratiksachdeva.com/"
+ },
+ {
+  "slug": "sophia-sanborn",
+  "name": "Sophia Sanborn",
+  "group": "Alumni",
+  "order": 106,
+  "current_affiliation": null,
+  "website": "https://www.sophiasanborn.com/"
+ },
+ {
+  "slug": "saeed-saremi",
+  "name": "Saeed Saremi",
+  "group": "Alumni",
+  "order": 107,
+  "current_affiliation": "Naissence",
+  "website": "https://saeedsaremi.github.io/"
+ },
+ {
+  "slug": "viansa-schmulbach",
+  "name": "Viansa Schmulbach",
+  "group": "Alumni",
+  "order": 108,
+  "current_affiliation": "Computer Science"
+ },
+ {
+  "slug": "steven-shepard",
+  "name": "Steven Shepard",
+  "group": "Alumni",
+  "order": 109,
+  "current_affiliation": "Vision Science",
+  "website": "https://vision.berkeley.edu/people/steven-shepard/"
+ },
+ {
+  "slug": "jascha-sohl-dickstein",
+  "name": "Jascha Sohl-Dickstein",
+  "group": "Alumni",
+  "order": 110,
+  "current_affiliation": "Anthropic",
+  "website": "https://sohldickstein.com/"
+ },
+ {
+  "slug": "ian-stevenson",
+  "name": "Ian Stevenson",
+  "group": "Alumni",
+  "order": 111,
+  "current_affiliation": "University of Connecticut",
+  "website": "https://stevenson.lab.uconn.edu/"
+ },
+ {
+  "slug": "alex-terekhov",
+  "name": "Alex Terekhov",
+  "group": "Alumni",
+  "order": 112,
+  "current_affiliation": null
+ },
+ {
+  "slug": "chayut-thanapirom",
+  "name": "Chayut Thanapirom",
+  "group": "Alumni",
+  "order": 113,
+  "current_affiliation": "Google"
+ },
+ {
+  "slug": "ivana-tosic",
+  "name": "Ivana Tošić",
+  "group": "Alumni",
+  "order": 114,
+  "current_affiliation": "Google VR",
+  "website": "http://ivanatosic.net/Home.html"
+ },
+ {
+  "slug": "neha-wadia",
+  "name": "Neha Wadia",
+  "group": "Alumni",
+  "order": 115,
+  "current_affiliation": "Flatiron Institute",
+  "website": "https://neha-wadia.github.io/"
+ },
+ {
+  "slug": "jimmy-wang",
+  "name": "Jimmy Wang",
+  "group": "Alumni",
+  "order": 116,
+  "current_affiliation": "Zendar"
+ },
+ {
+  "slug": "chris-warner",
+  "name": "Chris Warner",
+  "group": "Alumni",
+  "order": 117,
+  "current_affiliation": "Outta Thin Air"
+ },
+ {
+  "slug": "eric-weiss",
+  "name": "Eric Weiss",
+  "group": "Alumni",
+  "order": 118,
+  "current_affiliation": null
+ },
+ {
+  "slug": "ryan-zarcone",
+  "name": "Ryan Zarcone",
+  "group": "Alumni",
+  "order": 119,
+  "current_affiliation": "Fountain Therapeutics",
+  "website": "https://github.com/rzarcone"
+ },
+ {
+  "slug": "rich-zemel",
+  "name": "Rich Zemel",
+  "group": "Alumni",
+  "order": 120,
+  "current_affiliation": "University of Toronto",
+  "website": "https://www.cs.columbia.edu/~zemel/"
+ },
+ {
+  "slug": "shengping-zhang",
+  "name": "Shengping Zhang",
+  "group": "Alumni",
+  "order": 121,
+  "current_affiliation": "Harbin Institute of Technology",
+  "website": "https://sites.google.com/site/shengpingzhang/"
+ },
+ {
+  "slug": "yazhou-zhao",
+  "name": "Yazhou Zhao",
+  "group": "Alumni",
+  "order": 122,
+  "current_affiliation": "NYU",
+  "website": "https://yazhou-z.github.io/"
+ },
+ {
+  "slug": "karl-zipser",
+  "name": "Karl Zipser",
+  "group": "Alumni",
+  "order": 123,
+  "current_affiliation": null,
+  "website": "https://github.com/karlzipser"
+ },
+ {
+  "slug": "david-zipser",
+  "name": "David Zipser",
+  "group": "Alumni",
+  "order": 124,
+  "current_affiliation": "UC San Diego",
+  "website": "https://profiles.ucsd.edu/david.zipser"
+ },
+ {
+  "slug": "joel-zylberberg",
+  "name": "Joel Zylberberg",
+  "group": "Alumni",
+  "order": 125,
+  "current_affiliation": "UCLA",
+  "website": "http://www.jzlab.org/"
+ },
+ {
+  "group": "Students",
+  "order": 999,
+  "affiliation": null,
+  "slug": "joey-turnbull",
+  "name": "Joey Turnbull",
+  "title": "PhD Student",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://joeyturn.github.io/",
+  "photo": null
+ },
+ {
+  "group": "Students",
+  "order": 999,
+  "affiliation": null,
+  "slug": "mark-rhee",
+  "name": "Mark Rhee",
+  "title": "Undergraduate",
+  "labs": [
+   "DeWeese Lab"
+  ],
+  "website": "https://mrkdh16.github.io/",
+  "photo": "media/people/mark-rhee.jpg"
+ },
+ {
+  "group": "Postdocs and research staff",
+  "order": 999,
+  "affiliation": null,
+  "slug": "raymond-fan",
+  "name": "Raymond Fan",
+  "title": "Postdoc",
+  "labs": [],
+  "website": "https://rfangit.github.io/",
+  "photo": "media/people/raymond-fan.jpg"
+ },
+ {
+  "group": "Students",
+  "order": 999,
+  "affiliation": null,
+  "slug": "samyak-jain",
+  "name": "Samyak Jain",
+  "title": "PhD Student",
+  "labs": [],
+  "website": "https://samyakjain0112.github.io/",
+  "photo": "media/people/samyak-jain.jpg"
+ },
+ {
+  "group": "Students",
+  "order": 999,
+  "affiliation": null,
+  "slug": "sultan-daniels",
+  "name": "Sultan Daniels",
+  "title": "PhD Student",
+  "labs": [],
+  "website": null,
+  "photo": "media/people/sultan-daniels.jpg"
+ },
+ {
+  "group": "Students",
+  "order": 999,
+  "affiliation": null,
+  "slug": "thelonious-cooper",
+  "name": "Thelonious Cooper",
+  "title": "PhD Student",
+  "labs": [],
+  "website": "https://theloniouscoop.dev/",
+  "photo": "media/people/thelonious-cooper.jpg"
+ }
+]

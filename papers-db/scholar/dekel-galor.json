@@ -1,0 +1,79 @@
+[
+ {
+  "title": "System and method for noise-enabled static imaging using event cameras",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:5nxA0vEk-isC",
+  "authors": "D Galor, R Cao, L Waller, J Yates",
+  "venue": "US Patent App. 19/445,771, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Hist2Style: Histogram-Guided Stylization with Bilateral Grids",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:0EnyYjriUFMC",
+  "authors": "D Galor, A Pikielny, Z Zhang, K Wang, L Waller, J Chen, I Chugunov",
+  "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern …, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Active sensing explains cortical variability and improves visual information",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:8k81kl-MbHgC",
+  "authors": "RA Ressmeyer, DP Rowley, T Kothapalli, D Galor, RJ Wu, M Rucci, ...",
+  "venue": "bioRxiv, 2026.10. 12.758571, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Brain-Like Variational Inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "H Vafaii*, D Galor*, JL Yates",
+  "venue": "The Thirty-Ninth Annual Conference on Neural Information Processing Systems, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Event2audio: Event-based optical vibration sensing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:roLk4NBRz8UC",
+  "authors": "M Cai*, D Galor*, APS Kohli, JL Yates, L Waller",
+  "venue": "2025 IEEE International Conference on Computational Photography (ICCP), 1-12, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Noise2Image: Noise-Enabled Static Scene Recovery for Event Cameras",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:2osOgNQ5qMEC",
+  "authors": "R Cao*, D Galor*, A Kohli, JL Yates, L Waller",
+  "venue": "Optica 12 (1), 46-55, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Poisson Variational Autoencoder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:qjMakFHDy7sC",
+  "authors": "H Vafaii, D Galor, JL Yates",
+  "venue": "The Thirty-eighth Annual Conference on Neural Information Processing Systems, 2024",
+  "year": 2024
+ },
+ {
+  "title": "BiPMAP: A Toolbox for Predictions of Perceived Motion Artifacts on Modern Displays",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:9yKSN-GCB0IC",
+  "authors": "G Meng*, D Galor*, L Waller, MS Banks",
+  "venue": "Optics Express 32 (7), 12181-12199, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Leveraging noise statistics in event cameras for imaging static scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:W7OEmFMy1HYC",
+  "authors": "D Galor, R Cao, L Waller, J Yates",
+  "venue": "Proceedings of the International Conference on Computational Photography …, 2023",
+  "year": 2023
+ },
+ {
+  "title": "A physiological instability displayed in hippocampal neurons derived from lithium-nonresponsive bipolar disorder patients",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:u-x6o8ySG0sC",
+  "authors": "S Stern, A Sarkar, D Galor, T Stern, A Mei, Y Stern, APD Mendes, ...",
+  "venue": "Biological psychiatry 88 (2), 150-158, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Mechanisms underlying the hyperexcitability of CA3 and dentate gyrus hippocampal neurons derived from patients with bipolar disorder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:u5HHmVD_uO8C",
+  "authors": "S Stern, A Sarkar, T Stern, A Mei, APD Mendes, Y Stern, G Goldberg, ...",
+  "venue": "Biological psychiatry 88 (2), 139-149, 2020",
+  "year": 2020
+ }
+]

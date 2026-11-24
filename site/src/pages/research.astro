@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import { mission, missionHtml, pillars } from '../data/research';
+import { url } from '../lib/url';
+
+---
+
+<Base title="Research" current="research" description={mission}>
+  <section class="intro wrap">
+    <h1>Toward a science of intelligence</h1>
+    <p class="lead" set:html={missionHtml} />
+  </section>
+
+  <section class="section" aria-labelledby="pillars-title">
+    <div class="wrap">
+      <h2 id="pillars-title">Research pillars</h2>
+      <p class="pillars-intro">The Redwood Center's research agenda has five interrelated pillars.</p>
+      <ol class="pillars">
+        {pillars.map((p, i) => (
+          <li id={p.id}>
+            <span class="num" aria-hidden="true">{i + 1}</span>
+            <div>
+              <h3>{p.name}</h3>
+              <p class="question">{p.question}</p>
+              <p class="summary" set:html={p.summary} />
+              {(p.more.length > 0 || p.topics.length > 0) && (
+                <p class="more">
+                  Read more: {p.more.map((m, j) => <>{j > 0 && ', '}<a href={m.url}>{m.label}</a></>)}
+                  {p.topics.length > 0 && (
+                    <>
+                      {p.more.length > 0 && ', '}papers tagged{' '}
+                      {p.topics.map((t, j) => <>{j > 0 && ', '}<a href={url(`papers/?topic=${t.key}`)}>{t.label}</a></>)}
+                    </>
+                  )}
+                </p>
+              )}
+              {p.note && <p class="more" set:html={p.note} />}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--wash">
+    <div class="wrap next">
+      <p>
+        <a href={url('papers/')}>Explore our papers</a>, or
+        meet the <a href={url('people/')}>people</a> of the Redwood Center.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+    line-height: 1.4;
+    max-width: 62ch;
+    margin-top: 1rem;
+  }
+
+  #pillars-title { font-size: var(--step-3); font-weight: 650; letter-spacing: -0.01em; }
+  .pillars-intro { margin-top: 0.5rem; color: var(--slate); font-size: var(--step-1); }
+
+  .pillars { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+  .pillars li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0 1rem;
+    padding-block: 1.25rem;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 1.5rem;
+  }
+  .pillars li:last-child { border-bottom: 1px solid var(--line); }
+  .num {
+    font-size: var(--step-3);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+  }
+  .pillars h3 { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+  .question {
+    margin-top: 0.3rem;
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    font-style: italic;
+    max-width: 54rem;
+  }
+  .summary {
+    margin-top: 0.4rem;
+    font-family: var(--serif);
+    line-height: 1.55;
+    color: var(--text);
+    max-width: 54rem; /* same right edge as the question above */
+  }
+  .more { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--slate); }
+  .pillars li:target h3 { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 3px; }
+
+  .next p { font-size: var(--step-1); font-weight: 600; }
+</style>

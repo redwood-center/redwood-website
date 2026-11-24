@@ -1,0 +1,338 @@
+[
+ {
+  "title": "Inference and learning in sparse autoencoders as natural gradient flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:rO6llkc54NcC",
+  "authors": "H Vafaii, T Rao, D Chanin, T Fel, JL Yates, B Olshausen, D Klindt, ...",
+  "venue": "arXiv preprint arXiv:2610.07389, 2026",
+  "year": 2026
+ },
+ {
+  "title": "System and method for noise-enabled static imaging using event cameras",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:zA6iFVUQeVQC",
+  "authors": "D Galor, R Cao, L Waller, J Yates",
+  "venue": "US Patent App. 19/445,771, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Brain-like variational inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:J_g5lzvAfSwC",
+  "authors": "H Vafaii, D Galor, J Yates",
+  "venue": "Advances in Neural Information Processing Systems 38, 163700-163778, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Metabolic cost of information processing in Poisson variational autoencoders",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:SeFeTyx0c_EC",
+  "authors": "H Vafaii, JL Yates",
+  "venue": "arXiv preprint arXiv:2602.13421, 2026",
+  "year": 2026
+ },
+ {
+  "title": "A hitchhiker's guide to Poisson gradient estimation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:g5m5HwL7SMYC",
+  "authors": "M Ibrahim, H Zhao, E Sennesh, Z Li, A Wu, JL Yates, C Li, H Vafaii",
+  "venue": "arXiv preprint arXiv:2602.03896, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Spatiotemporal integration of motion signals in MT neurons shapes perceptual decisions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:ZHo1McVdvXMC",
+  "authors": "L Arancibia, JL Yates, AC Huk, K Wimmer, A Hyafil",
+  "venue": "JOURNAL OF COMPUTATIONAL NEUROSCIENCE 54 (SUPPL 1), 2026",
+  "year": 2026
+ },
+ {
+  "title": "OpenIrisDPI: An open-source digital dual Purkinje image eye tracker for visual neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:NaGl4SEjCO4C",
+  "authors": "RA Ressmeyer, J Otero-Millan, GD Horwitz, JL Yates",
+  "venue": "Journal of neuroscience methods, 110693, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Active sensing explains cortical variability and improves visual information",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:u_35RYKgDlwC",
+  "authors": "RA Ressmeyer, DP Rowley, T Kothapalli, D Galor, RJ Wu, M Rucci, ...",
+  "venue": "bioRxiv, 2026.10. 12.758571, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Inferring response times of perceptual decisions with Poisson variational autoencoders",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:ldfaerwXgEUC",
+  "authors": "HR Johnson, AN Krouglova, H Vafaii, JL Yates, PJ Gonçalves",
+  "venue": "arXiv preprint arXiv:2511.11480, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Event2audio: Event-based optical vibration sensing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:lSLTfruPkqcC",
+  "authors": "M Cai, D Galor, APS Kohli, JL Yates, L Waller",
+  "venue": "2025 IEEE International Conference on Computational Photography (ICCP), 1-12, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Pronounced modulation of activity in primate early visual cortex by internal state",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:vV6vV6tmYwMC",
+  "authors": "BC Talluri, I Kang, JL Yates, DA Butts, H Nienborg",
+  "venue": "Journal of Vision 25 (9), 1966-1966, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Noise2Image: noise-enabled static scene recovery for event cameras",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:NMxIlDl6LWMC",
+  "authors": "R Cao, D Galor, A Kohli, JL Yates, L Waller",
+  "venue": "Optica 12 (1), 46-55, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Is the impact of spontaneous movements on early visual cortex species specific?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:ns9cj8rnVeAC",
+  "authors": "I Kang, BC Talluri, JL Yates, CM Niell, H Nienborg",
+  "venue": "Trends in neurosciences 48 (1), 7-21, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Poisson variational autoencoder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:hMod-77fHWUC",
+  "authors": "H Vafaii, D Galor, JL Yates",
+  "venue": "Advances in Neural Information Processing Systems 37, 44871-44906, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Running modulates primate and rodent visual cortex differently",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:maZDTaKrznsC",
+  "authors": "JP Liska, DP Rowley, TTK Nguyen, JO Muthmann, DA Butts, J Yates, ...",
+  "venue": "Elife 12, RP87736, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Activity in the peripheral representation within primate V1 is substantially modulated during running",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:GnPB-g6toBAC",
+  "authors": "DP Rowley, AC Huk, JL Yates",
+  "venue": "bioRxiv, 2024.10. 10.617723, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Neurophysiological mechanisms of vision at the center-of-gaze in macaque V1",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:BqipwSGYUEgC",
+  "authors": "F Bartsch, RB Orozco, E Lott, J Yates, D Butts, B Conway",
+  "venue": "Journal of Vision 24 (10), 963-963, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Open Iris-an open source framework for video-based eye-tracking research and development",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:blknAaTinKkC",
+  "authors": "R Sadeghi, R Ressmeyer, J Yates, J Otero-Millan",
+  "venue": "Proceedings of the 2024 symposium on eye tracking research and applications, 1-7, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Pre-saccadic neural enhancements in marmoset area MT",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:4JMBOYKVnBMC",
+  "authors": "SH Coop, JL Yates, JF Mitchell",
+  "venue": "The Journal of Neuroscience 44 (4), e2034222023, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Efficient decoding of large-scale neural population responses with Gaussian-process multiclass regression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:ZeXyd9-uunAC",
+  "authors": "CD Greenidge, B Scholl, JL Yates, JW Pillow",
+  "venue": "Neural computation 36 (2), 175-226, 2024",
+  "year": 2024
+ },
+ {
+  "title": "How to optimize neuroscience data utilization and experiment design for advancing brain models of visual and linguistic cognition?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:RGFaLdJalmkC",
+  "authors": "G Tuckute, D Finzi, E Margalit, J Zylberberg, SY Chung, A Fyshe, ...",
+  "venue": "arXiv preprint arXiv:2401.03376, 2024",
+  "year": 2024
+ },
+ {
+  "title": "How to optimize neuroscience data utilization and experiment design for advancing primate visual and linguistic brain models?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:HoB7MX3m0LUC",
+  "authors": "G Tuckute, D Finzi, E Margalit, J Zylberberg, S Chung, A Fyshe, ...",
+  "venue": "arXiv, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Hierarchical VAEs provide a normative account of motion processing in the primate brain",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:isC4tDSrTZIC",
+  "authors": "H Vafaii, J Yates, D Butts",
+  "venue": "Advances in Neural Information Processing Systems 36, 46152-46190, 2023",
+  "year": 2023
+ },
+ {
+  "title": "A dynamic sequence of visual processing initiated by gaze shifts",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:TQgYirikUcIC",
+  "authors": "PRL Parker, DM Martins, ESP Leonard, NM Casey, SL Sharp, ETT Abe, ...",
+  "venue": "Nature neuroscience 26 (12), 2192-2202, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Activity in primate visual cortex is minimally driven by spontaneous movements",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:R3hNpaxXUhUC",
+  "authors": "BC Talluri, I Kang, A Lazere, KR Quinn, N Kaliss, JL Yates, DA Butts, ...",
+  "venue": "Nature Neuroscience 26 (11), 1953-1959, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Detailed characterization of neural selectivity in free viewing primates",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:r0BpntZqJG4C",
+  "authors": "JL Yates, SH Coop, GH Sarch, RJ Wu, DA Butts, M Rucci, JF Mitchell",
+  "venue": "Nature Communications 14 (1), 3656, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Unraveling functional diversity of cortical synaptic architecture through the lens of population coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:mB3voiENLucC",
+  "authors": "JL Yates, B Scholl",
+  "venue": "Frontiers in Synaptic Neuroscience 14, 888214, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Accumulation of Evidence in Decision-Making",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:zYLM7Y9cAGgC",
+  "authors": "AC Huk, LN Katz, JL Yates",
+  "venue": "Encyclopedia of computational neuroscience, 143-147, 2022",
+  "year": 2022
+ },
+ {
+  "title": "A confirmation bias in perceptual decision-making due to hierarchical approximate inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:KlAtU1dfN6UC",
+  "authors": "RD Lange, A Chattoraj, JM Beck, JL Yates, RM Haefner",
+  "venue": "PLoS Computational Biology 17 (11), e1009517, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Stimulus-choice (mis) alignment in primate area MT",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:4DMP91E08xMC",
+  "authors": "Y Zhao, JL Yates, AJ Levi, AC Huk, IM Park",
+  "venue": "PLoS computational biology 16 (5), e1007614, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Motion perception in the common marmoset",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:Zph67rFs4hoC",
+  "authors": "SL Cloherty, JL Yates, D Graf, GC DeAngelis, JF Mitchell",
+  "venue": "Cerebral Cortex 30 (4), 2659-2673, 2020",
+  "year": 2020
+ },
+ {
+  "title": "A simple linear readout of MT supports motion direction-discrimination performance",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:M3ejUd6NZC8C",
+  "authors": "JL Yates, LN Katz, AJ Levi, JW Pillow, AC Huk",
+  "venue": "Journal of neurophysiology 123 (2), 682-694, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Discrete stepping and nonlinear ramping dynamics underlie spiking responses of LIP neurons during decision-making",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:kNdYIx-mwKoC",
+  "authors": "DM Zoltowski, KW Latimer, JL Yates, AC Huk, JW Pillow",
+  "venue": "Neuron 102 (6), 1249-1258. e10, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Gaze and the control of foot placement when walking in natural terrain",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:8k81kl-MbHgC",
+  "authors": "JS Matthis, JL Yates, MM Hayhoe",
+  "venue": "Current Biology 28 (8), 1224-1233. e5, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Strategic and dynamic temporal weighting for perceptual decisions in humans and macaques",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:3fE2CSJIrl8C",
+  "authors": "AJ Levi, JL Yates, AC Huk, LN Katz",
+  "venue": "eneuro 5 (5), ENEURO. 0169-18.2018, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Functional dissection of signal and noise in MT and LIP during decision-making",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:0EnyYjriUFMC",
+  "authors": "JL Yates, IM Park, LN Katz, JW Pillow, AC Huk",
+  "venue": "Nature neuroscience 20 (9), 1285-1292, 2017",
+  "year": 2017
+ },
+ {
+  "title": "The role of the lateral intraparietal area in (the study of) decision making",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:UebtZRa9Y70C",
+  "authors": "AC Huk, LN Katz, JL Yates",
+  "venue": "Annual review of neuroscience 40, 349-372, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Dissociated functional significance of decision-related activity in the primate dorsal stream",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:eQOLeE2rZwMC",
+  "authors": "LN Katz, JL Yates, JW Pillow, AC Huk",
+  "venue": "Nature 535 (7611), 285-288, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Response to Comment on “Single-trial spike trains in parietal cortex reveal discrete steps during decision-making”",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:-f6ydRqryjwC",
+  "authors": "KW Latimer, JL Yates, MLR Meister, AC Huk, JW Pillow",
+  "venue": "Science 351 (6280), 1406-1406, 2016",
+  "year": 2016
+ },
+ {
+  "title": "The Creation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:YsMSGLbcyi4C",
+  "authors": "R Yates",
+  "venue": "Genesis 1, 1-2, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Single-trial spike trains in parietal cortex reveal discrete steps during decision-making",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "KW Latimer, JL Yates, MLR Meister, AC Huk, JW Pillow",
+  "venue": "Science 349 (6244), 184-187, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Continuous psychophysics: Target-tracking to measure visual sensitivity",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:qjMakFHDy7sC",
+  "authors": "K Bonnen, J Burge, J Yates, J Pillow, LK Cormack",
+  "venue": "Journal of vision 15 (3), 14-14, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Quantifying contributions of natural image variability to neural representations of speed in Area MT",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:2osOgNQ5qMEC",
+  "authors": "K Mitchell, J Yates, A Huk, J Burge",
+  "venue": "Journal of Vision 14 (15), 48-48, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Inferring sparse representations of continuous signals with continuous orthogonal matching pursuit",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:d1gkVwhDpl0C",
+  "authors": "KC Knudson, JL Yates, AC Huk, JW Pillow",
+  "venue": "Advances in neural information processing systems 27, 2014",
+  "year": 2014
+ },
+ {
+  "title": "On determining the intracranial sources of visual evoked potentials from scalp topography: A reply to Kelly et al.(this issue)",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:u-x6o8ySG0sC",
+  "authors": "JM Ales, JL Yates, AM Norcia",
+  "venue": "NeuroImage 64, 703-711, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Psychophysical reverse correlation of motion perception",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:9yKSN-GCB0IC",
+  "authors": "J Yates, A Huk, L Cormack, J Pillow",
+  "venue": "Journal of Vision 12 (9), 746-746, 2012",
+  "year": 2012
+ },
+ {
+  "title": "V1 is not uniquely identified by polarity reversals of responses to upper and lower visual field stimuli",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:u5HHmVD_uO8C",
+  "authors": "JM Ales, JL Yates, AM Norcia",
+  "venue": "Neuroimage 52 (4), 1401-1409, 2010",
+  "year": 2010
+ },
+ {
+  "title": "PoissonVAE: combining Bayesian Inference with Predictive Coding results in Amortized Sparse Coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:YFjsv_pBGBYC",
+  "authors": "H Vafaii, JL Yates",
+  "venue": "",
+  "year": null
+ }
+]

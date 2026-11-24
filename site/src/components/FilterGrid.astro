@@ -1,0 +1,151 @@
+---
+// A grid of real receptive fields / filters (grayscale, values in [-1, 1]), drawn as crisp pixels
+// on the brand-green background and revealed in one diagonal sweep. The layout is measured in units of
+// an 11-pixel patch plus a 1-unit gutter whatever the patch size, so grids of different resolutions
+// (e.g. 11x11 model filters, 44x44 measured fields) come out the same size with the same gutters. Grids can be chained: a grid
+// with `after` waits for the grid whose `name` matches before starting its own sweep. If the data
+// has `colors` (HWC RGB per filter), a `filtergrid:color` event ({ name, on }) switches to color.
+interface Props {
+  data: { size: number; filters: number[][]; colors?: number[][] };
+  cols?: number;
+  rows?: number;
+  name: string;
+  after?: string;
+  label: string;
+}
+const { data, cols = 8, rows = 6, name, after, label } = Astro.props;
+const n = data.size;
+// Pack as one byte per pixel (0..255, 128 = zero) to keep the inline payload small.
+const pack = (rows_: number[][]) =>
+  Buffer.from(Uint8Array.from(rows_.slice(0, cols * rows).flat(), (v) => Math.round(128 + 127 * v))).toString('base64');
+const packed = pack(data.filters);
+const packedColors = data.colors ? pack(data.colors) : undefined;
+---
+
+<figure class="filter-grid">
+  <canvas
+    data-cols={cols}
+    data-rows={rows}
+    data-patch={n}
+    data-pixels={packed}
+    data-colors={packedColors}
+    data-name={name}
+    data-after={after}
+    style={`aspect-ratio: ${cols * 12 + 1} / ${rows * 12 + 1}`}
+    role="img"
+    aria-label={label}
+  ></canvas>
+  <figcaption><slot /></figcaption>
+</figure>
+
+<style>
+  .filter-grid { margin: 0; }
+  canvas {
+    display: block;
+    width: 100%;
+    background: var(--brand);
+  }
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: var(--step--1);
+    color: var(--gabor-caption, var(--slate));
+    max-width: 52ch;
+  }
+  figcaption :global(a) { color: inherit; }
+</style>
+
+<script>
+  const doneGrids = new Set<string>();
+
+  function setup(canvas: HTMLCanvasElement) {
+    const cols = Number(canvas.dataset.cols);
+    const rows = Number(canvas.dataset.rows);
+    const n = Number(canvas.dataset.patch);
+    const name = canvas.dataset.name!;
+    const after = canvas.dataset.after;
+    const unpack = (b64: string) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+    const pixels = unpack(canvas.dataset.pixels!);
+    const colors = canvas.dataset.colors ? unpack(canvas.dataset.colors) : null;
+    let inColor = false;
+    const units = (k: number) => k * 12 + 1; // 11-unit patches plus 1-unit gutters
+    const px = 11 / n; // one data pixel, in units
+    const ctx = canvas.getContext('2d')!;
+    const total = cols * rows;
+    const order = Array.from({ length: total }, (_, i) => i)
+      .sort((a, b) => (a % cols) + Math.floor(a / cols) - ((b % cols) + Math.floor(b / cols)) || a - b);
+    let shown = 0;
+    let unit = 1;
+
+    function drawPatch(idx: number) {
+      const c = idx % cols, r = Math.floor(idx / cols);
+      const at = (cell: number, i: number) => Math.round((1 + cell * 12 + i * px) * unit);
+      for (let y = 0; y < n; y++) {
+        for (let x = 0; x < n; x++) {
+          const p = idx * n * n + y * n + x;
+          if (inColor && colors) {
+            ctx.fillStyle = `rgb(${colors[3 * p]},${colors[3 * p + 1]},${colors[3 * p + 2]})`;
+          } else {
+            const g = pixels[p];
+            ctx.fillStyle = `rgb(${g},${g},${g})`;
+          }
+          const x0 = at(c, x), y0 = at(r, y);
+          ctx.fillRect(x0, y0, at(c, x + 1) - x0, at(r, y + 1) - y0);
+        }
+      }
+    }
+
+    // Resize and redraw everything up to `upto`; the reveal adds patches with drawPatch instead.
+    function draw(upto: number) {
+      const dpr = window.devicePixelRatio || 1;
+      const w = Math.round(canvas.clientWidth * dpr);
+      unit = w / units(cols);
+      canvas.width = w;
+      canvas.height = Math.round(unit * units(rows));
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let k = 0; k < upto; k++) drawPatch(order[k]);
+    }
+
+    const done = () => {
+      doneGrids.add(name);
+      document.dispatchEvent(new CustomEvent('filtergrid:done', { detail: name }));
+    };
+
+    const start = () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        shown = total;
+        draw(shown);
+        done();
+        return;
+      }
+      const t0 = performance.now();
+      const duration = 900;
+      const step = (now: number) => {
+        const next = Math.min(total, Math.ceil(((now - t0) / duration) * total));
+        for (; shown < next; shown++) drawPatch(order[shown]);
+        if (shown < total) requestAnimationFrame(step);
+        else done();
+      };
+      requestAnimationFrame(step);
+    };
+
+    draw(0);
+    if (!after || doneGrids.has(after)) start();
+    else {
+      const onDone = (e: Event) => {
+        if ((e as CustomEvent).detail !== after) return;
+        document.removeEventListener('filtergrid:done', onDone);
+        start();
+      };
+      document.addEventListener('filtergrid:done', onDone);
+    }
+    new ResizeObserver(() => draw(shown)).observe(canvas);
+    document.addEventListener('filtergrid:color', (e) => {
+      const { name: target, on } = (e as CustomEvent).detail;
+      if (target !== name || !colors) return;
+      inColor = on;
+      draw(shown);
+    });
+  }
+
+  document.querySelectorAll<HTMLCanvasElement>('.filter-grid canvas').forEach(setup);
+</script>

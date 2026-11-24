@@ -1,0 +1,906 @@
+{
+ "mike-deweese": [
+  {
+   "title": "Optimal nonequilibrium engines obey the thermodynamic Lorentz force law",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:WA5NYHcadZ8C",
+   "authors": "A Zhong, AG Frim, MR DeWeese",
+   "venue": "APS Global Physics Summit 2026, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Higher-order response theory in stochastic thermodynamics and optimal control",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:HE397vMXCloC",
+   "authors": "SH DAmbrosia, A Zhong, MR DeWeese",
+   "venue": "arXiv e-prints, arXiv: 2512.24540, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Generalizing linear response to higher orders in minimal-work finite-time protocols",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:olpn-zPbct0C",
+   "authors": "HD Samuel, A Zhong, MR DeWeese",
+   "venue": "APS Global Physics Summit 2025, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Solvable dynamics of self-supervised word embeddings and the emergence of analogical reasoning",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:1qzjygNMrQYC",
+   "authors": "D Karkada, JB Simon, Y Bahri, MR DeWeese",
+   "venue": "arXiv preprint arXiv:2502.09863, 2025",
+   "year": 2025
+  },
+  {
+   "title": "QGASS: a gradient-free stochastic feedback control approach for arbitrary open quantum systems",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:mvPsJ3kp5DgC",
+   "authors": "E Evans, A Frim, Z Wang, E Theodorou, M Deweese",
+   "venue": "APS March Meeting Abstracts 2024, S50. 005, 2024",
+   "year": 2024
+  },
+  {
+   "title": "Symmetries and isometries of the thermodynamic metric",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:geHnlv5EZngC",
+   "authors": "A Frim, M Deweese",
+   "venue": "APS March Meeting Abstracts 2023, S02. 006, 2023",
+   "year": 2023
+  },
+  {
+   "title": "Hydrogel Actuated Carbon Fiber Microelectrode Array",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:BrmTIyaxlBUC",
+   "authors": "OW Chen",
+   "venue": "University of California, Berkeley, 2022",
+   "year": 2022
+  },
+  {
+   "title": "Engineered swift equilibration on generic configuration spaces",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:SP6oXDckpogC",
+   "authors": "A Frim, A Zhong, SF Chen, D Mandal, M Deweese",
+   "venue": "APS March Meeting Abstracts 2021, J16. 014, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Geometry, Elasticity, Growth: The Connection Between Cowrie Growth Dynamics and Shell Form",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:738O_yMBCRsC",
+   "authors": "MG Levy, MR DeWeese",
+   "venue": "APS March Meeting 2020, 2020",
+   "year": 2020
+  },
+  {
+   "title": "Emergence, Mechanics, and Development: How Behavior and Geometry Underlie Cowrie Seashell Form",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:l7t_Zn2s7bgC",
+   "authors": "MG Levy, MR DeWeese",
+   "venue": "",
+   "year": 2020
+  },
+  {
+   "title": "Bits That Count: Quantifying and Predicting Capabilities of Language Models",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_B80troHkn4C",
+   "authors": "E Donoway, H Joren, MR DeWeese, E Perez, J Schulman, F Roger, ...",
+   "venue": "Forty-third International Conference on Machine Learning, 0",
+   "year": null
+  },
+  {
+   "title": "Geometric Construction of Minimal-Dissipation Counterdiabatic Protocols for Open Quantum Systems",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:XiVPGOgt02cC",
+   "authors": "A Suryanarayanan, A Zhong, MR DeWeese",
+   "venue": "APS Global Physics Summit 2025, 0",
+   "year": null
+  },
+  {
+   "title": "Sparse coding predicts a spectral bias in the development of V1 receptive fields",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:08ZZubdj9fEC",
+   "authors": "A Ligeralde, MR DeWeese",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Past, Present, and Future: memory and choice encoding in prefrontal cortex of rats performing a double alternation task. Abbreviated title: Working memory encoding in PFC …",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:R3hNpaxXUhUC",
+   "authors": "M Leonard, MR DeWeese",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "JN-RM-4188-12R1",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:mB3voiENLucC",
+   "authors": "P King, J Zylberberg, M DeWeese",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Spectro-Temporal Models of Inferior Colliculus Neuron Receptive Fields",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:L8Ckcad2t8MC",
+   "authors": "SZ Enam, MR DeWeese",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Binary responses are not restricted to anesthetized auditory cortex.",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_kc_bZDykSQC",
+   "authors": "MR DeWeese, AM Zador",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "A visual cortical model can exhibit decreasing sparseness while learning a sparse code for natural images",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:KlAtU1dfN6UC",
+   "authors": "J Zylberberg, MR DeWeese",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "bruno-olshausen": [
+  {
+   "title": "Neural manifold geometry encodes feature fields",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4xDN1ZYqzskC",
+   "authors": "J Yocum, C Allen, B Olshausen, S Russell",
+   "venue": "NeurIPS 2025 Workshop on Symmetry and Geometry in Neural Representations, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Collaborative Research: RI: Medium: Lie group representation learning for vision",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4X0JR2_MtJMC",
+   "authors": "BA Olshausen",
+   "venue": "NSF Award Number 2313149. Directorate for Computer and Information Science …, 2023",
+   "year": 2023
+  },
+  {
+   "title": "Neuromorphic Hyperdimensional Visual Scene Factorization",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:gVv57TyPmFsC",
+   "authors": "G Indiveri, FT Sommer, L Supic, BA Olshausen, A Danielescu, ...",
+   "venue": "International conference on neuromorphic, natural and physical computing, 2023",
+   "year": 2023
+  },
+  {
+   "title": "EAGER: Hyperdimensional computing with geometric algebra",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:AHdEip9mkN0C",
+   "authors": "BA Olshausen, J Rabaey, P Kanerva",
+   "venue": "NSF Award 21 (2147640), 47640, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Energy Efficient Communication Links for Smart Devices",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:XvxMoLDsR5gC",
+   "authors": "N Narevsky",
+   "venue": "University of California, Berkeley, 2021",
+   "year": 2021
+  },
+  {
+   "title": "The cognitive neurosciences",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:KbBQZpvPDL4C",
+   "authors": "D Poeppel, GR Mangun, MS Gazzaniga",
+   "venue": "MIT Press, 2020",
+   "year": 2020
+  },
+  {
+   "title": "Selectivity and robustness",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Ak0FvsSvgGUC",
+   "authors": "DM Paiton, CG Frye, SY Lundquist, JD Bowen, R Zarcone, BA Olshausen",
+   "venue": "",
+   "year": 2020
+  },
+  {
+   "title": "Vector symbolic visual analogies",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Dip1O2bNi0gC",
+   "authors": "N Maudgalya, BA Olshausen, SJ Kent",
+   "venue": "Proceedings of the AAAI Symposium on Conceptual Abstraction and Analogy in …, 2020",
+   "year": 2020
+  },
+  {
+   "title": "RI: Small: Extracting and Understanding Sparse Structure in Spatiotemporal Data in Neuroscience and Other Applications",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:v1_lew4L6wgC",
+   "authors": "FT Sommer, BA Olshausen",
+   "venue": "NSF Award 17 (1718991), 18991, 2017",
+   "year": 2017
+  },
+  {
+   "title": "Sparse codes from memristor grids",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:fEOibwPWpKIC",
+   "authors": "BA Olshausen, CJ Rozell",
+   "venue": "Nat. Nanotechnol 12, 722-723, 2017",
+   "year": 2017
+  },
+  {
+   "title": "A vector symbolic approach to scene transformation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Ug5p-4gJ2f0C",
+   "authors": "SJ Kent, BA Olshausen",
+   "venue": "Proceedings of the Annual Conference on Cognitive Computational Neuroscience …, 2017",
+   "year": 2017
+  },
+  {
+   "title": "E2CDA: Type I: Collaborative Research: Energy Efficient Learning Machines (ENIGMA)",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:U4n9YNQMCAIC",
+   "authors": "S Salahuddin, J Rabaey, BA Olshausen",
+   "venue": "NSF Award 16 (1640060), 40060, 2016",
+   "year": 2016
+  },
+  {
+   "title": "A neural architecture for representing and reasoning about spatial relationships",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:-_dYPAW6P2MC",
+   "authors": "E Weiss, B Cheung, B Olshausen",
+   "venue": "",
+   "year": 2016
+  },
+  {
+   "title": "The Genesis of Modern Computing and AI",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:5icHVeHT4IsC",
+   "authors": "B Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Silkman Statistical Journal",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nVrZBo8bIpAC",
+   "authors": "EP Simoncelli, BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Noise Transforms Feed-Forward Networks into Sparse Coding Networks",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:OR75R8vi5nAC",
+   "authors": "T Bricken, B Olshausen, G Kreiman",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "REGULAR PAPERS ISSUE",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:4vMrXwiscB8C",
+   "authors": "D Kleyko, M Davies, EP Frady, P Kanerva, SJ Kent, BA Olshausen, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "CENTER FOR BIOLOGICAL AND COMPUTATIONAL LEARNING DEPARTMENT OF BRAIN AND COGNITIVE SCIENCES AI Memo No. 1580 September 6, 1996 CBCL Paper No. 138 LEARNING LINEAR, SPARSE …",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:NXb4pA-qfm4C",
+   "authors": "BA OLSHAUSEN",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Monthly Archives: September 2018",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:tuHXwOkdijsC",
+   "authors": "Y Chen, D Paiton, B Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Vector-Symbolic Representations for Visual Scene Analysis",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nrtMV_XWKgEC",
+   "authors": "SE Weiss",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "From natural scene statistics to models of neural coding and representation (part 2)",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9Nmd_mFXekcC",
+   "authors": "BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Learning Horizontal Connections from the Statistics of Natural Images",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:W5xh706n7nkC",
+   "authors": "PJ Garrigues, BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Learning Invariant and Variant Components of Time Varying Natural Images Using a Sparse, Multiplicative Model",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:JQOojiI6XY0C",
+   "authors": "CF Cadieu, BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Okinawa Computational Neuroscience Course 2004",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:PR6Y55bgFSsC",
+   "authors": "J Bilems, P Latham, R Zemel, E Todorov, A Pouget, K Friston, W Party, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Conference Presentation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:nb7KW1ujOQ8C",
+   "authors": "IJ Trotts, BA Olshausen, EG Jones, D Fellowship, BW Fellowship",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Learning sparse codes for large images via convolution",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:b0M2c_1WBrUC",
+   "authors": "BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Forward to Map-seeking circuits in visual cognition",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:dfsIfKJdRG4C",
+   "authors": "BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Learning transport operators for image manifolds: supplement",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:_FxGoFyzp5QC",
+   "authors": "BJ Culpepper, BA Olshausen",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Activation of Human Visual Cortex by Motion-defined Three-dimensional Shape",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:ufrVoPGSRksC",
+   "authors": "SO Murray, BA Olshausen, DL Woods",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "David C. Van Essen, Charles H. Anderson, and",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:Y0pCki6q_DkC",
+   "authors": "BA Olshausen",
+   "venue": "OF THE JBRAIN, 271, 0",
+   "year": null
+  },
+  {
+   "title": "Conference Poster",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:9yKSN-GCB0IC",
+   "authors": "IJ Trotts, BA Olshausen, EG Jones",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Neurally plausible sparse coding via local competition and thresholding",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4aqK_74AAAAJ&cstart=200&pagesize=100&sortby=pubdate&citation_for_view=4aqK_74AAAAJ:u5HHmVD_uO8C",
+   "authors": "CJ Rozell, DH Johnson, RG Baraniuk, BA Olshausen",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "fritz-sommer": [
+  {
+   "title": "Single-neuron and population contributions of hippocampal LFPs to spike prediction",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:g5Ck-dwhA_QC",
+   "authors": "R Sato, FT Sommer, G Agarwal",
+   "venue": "bioRxiv, 2026.07. 14.738489, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Parallax error in the head-direction system indicates simple cue-anchoring mechanism",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:HJSXoJQnj-YC",
+   "authors": "S Krausse, AJ Duszkiewicz, E Neftci, FT Sommer, A Renner",
+   "venue": "bioRxiv, 2025.04. 25.650191, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Recent Advances in Resonator Networks for Neurosymbolic Computing",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:LXmCCkuhhTsC",
+   "authors": "C Kymn, EP Frady, F Sommer",
+   "venue": "19th International Conference on Neurosymbolic Learning and Reasoning, 2025",
+   "year": 2025
+  },
+  {
+   "title": "The head-direction system shows systematic parallax error",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:k_7cPK9k7w8C",
+   "authors": "S Krausse, E Neftci, FT Sommer",
+   "venue": "CCN, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Neuromorphic Hyperdimensional Visual Scene Factorization",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:eO3_k5sD8BwC",
+   "authors": "G Indiveri, FT Sommer, L Supic, BA Olshausen, A Danielescu, ...",
+   "venue": "International conference on neuromorphic, natural and physical computing, 2023",
+   "year": 2023
+  },
+  {
+   "title": "Neuromorphic Visual Odometry with Resonator Networks",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:FiDNX6EVdGUC",
+   "authors": "L Supic, A Danielescu, G Indiveri, EP Frady, FT Sommer, ...",
+   "venue": "arXiv, 2209.02000 v2, 2022",
+   "year": 2022
+  },
+  {
+   "title": "eScholarship@ UMassChan",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:UmS_249rOGwC",
+   "authors": "TJ Olivier, B Baltich Nelson, KC GS",
+   "venue": "",
+   "year": 2022
+  },
+  {
+   "title": "Learning the Feedback Connections from V1 to LGN via Information Maximization",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:w1MjKQ0l0TYC",
+   "authors": "R Eghbali, F Sommer, M Sherman",
+   "venue": "NeurIPS 2022 Workshop on Information-Theoretic Principles in Cognitive Systems, 2022",
+   "year": 2022
+  },
+  {
+   "title": "Receptive fields of bursts and tonic spikes in the visual sector of thalamic reticular nucleus.",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:9Nmd_mFXekcC",
+   "authors": "UM Çiftçioglu, FT Sommer, JA Hirseh",
+   "venue": "Anatomy: International Journal of Experimental & Clinical Anatomy 14, S124, 2020",
+   "year": 2020
+  },
+  {
+   "title": "Cell Assembly Model for Retinal Ganglion Cell population",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:q3oQSFYPqjQC",
+   "authors": "C Warner, F Sommer",
+   "venue": "",
+   "year": 2019
+  },
+  {
+   "title": "2018 CRCNS Principal Investigators Meeting",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:hSRAE-fF4OAC",
+   "authors": "M Hsu, FE Theunissen, FT Sommer",
+   "venue": "NSF Award 18 (1822572), 22572, 2018",
+   "year": 2018
+  },
+  {
+   "title": "Nonlinear impact of structural plasticity on cortical information storage capacity",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:69ZgNCALVd0C",
+   "authors": "A Knoblauch, F Sommer",
+   "venue": "Cosyne Conference 01.-06.03. 2018, Denver, Colorado, 2018",
+   "year": 2018
+  },
+  {
+   "title": "RI: Small: Extracting and Understanding Sparse Structure in Spatiotemporal Data in Neuroscience and Other Applications",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:rbm3iO8VlycC",
+   "authors": "FT Sommer, BA Olshausen",
+   "venue": "NSF Award 17 (1718991), 18991, 2017",
+   "year": 2017
+  },
+  {
+   "title": "Talk by Prof. Friedrich Sommer (CSN Virtual Seminar)",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:8Xgff_V0N9gC",
+   "authors": "F Sommer",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "How the LGN forwards retinal information in the cortex},% Redundant for book",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:UuEBAcK4md4C",
+   "authors": "FT Sommer, JA Hirsch",
+   "venue": "The cerebral cortex and thalamus, 0",
+   "year": null
+  },
+  {
+   "title": "Neuromorphic Hyperdimensional Visual Scene Factorization",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:pS0ncopqnHgC",
+   "authors": "YS Olshausen, FT Sommer, EP Frady",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Neuromorphic Visual Odometry with Resonator Networks",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:mUJArPsKIAAC",
+   "authors": "EP Frady, FT Sommer, Y Sandamirskaya",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "REGULAR PAPERS ISSUE",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:F2UWTTQJPOcC",
+   "authors": "D Kleyko, M Davies, EP Frady, P Kanerva, SJ Kent, BA Olshausen, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Energy efficiency of retinothalamic transmission",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:7T2F9Uy0os0C",
+   "authors": "J Xing, X Wang, FT Sommer, JA Hirsch, T Berger, TJ Sejnowski",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Information Retrieval with Associative Memory: New Bidirectional Retrieval Method for Steinbuch's\\Lernmatrix",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:W5xh706n7nkC",
+   "authors": "FT Sommer",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Cooperative Rhythm Generation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:VL0QpB8kHFEC",
+   "authors": "AG Stascheit, FT Sommer",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Associative Data Storage and Retrieval in Neural Networks",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:ye4kPcJQO24C",
+   "authors": "G unther Palm, FT Sommer",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "epHDF–a proposed standard for storing electrophysiology data in HDF5",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lA-oLkgAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=lA-oLkgAAAAJ:XiVPGOgt02cC",
+   "authors": "JL Teeters, FT Sommer",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "kristofer-bouchard": [
+  {
+   "title": "Automated analysis of C. elegans behavior by LabGym: an open-source, AI-powered platform",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4fKUyHm3Qg0C",
+   "authors": "LA Xu, H Liu, Z Li, XZS Xu, B Ye, Y Hu, EA Ronan",
+   "venue": "G3: Genes, Genomes, Genetics 16 (7), jkag120, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Feedback controllability is a normative theory of neural population dynamics",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:K3LRdlH-MEoC",
+   "authors": "K Bouchard, A Kumar",
+   "venue": "",
+   "year": 2024
+  },
+  {
+   "title": "BIDS-specification",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:wbdj-CoPYUoC",
+   "authors": "A Oliver-Taylor, A Li, A Thomas, A Flinker, AS Wagner, A Karakuzu, ...",
+   "venue": "Zenodo, 2023",
+   "year": 2023
+  },
+  {
+   "title": "Revealing context dependence through Partially Observable Markov Model",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:b0M2c_1WBrUC",
+   "authors": "J Lu, D Jin, S Surendralal, K Bouchard",
+   "venue": "Bulletin of the American Physical Society 67, 2022",
+   "year": 2022
+  },
+  {
+   "title": "Achieving Shrinkage and Sparsity in Bayesian Vector Autoregressions with Three-Parameter-Beta-Normal Prior",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:zA6iFVUQeVQC",
+   "authors": "R Meng, H Rangarajan, K Bouchard",
+   "venue": "",
+   "year": 2021
+  },
+  {
+   "title": "HangulFonts v1. 0.0",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:pqnbT2bcN3wC",
+   "authors": "K Bouchard, J Livezey",
+   "venue": "US Department of Energy (DOE) Software, 76, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Dynamical Components Analysis (DCA) v1. 0.0",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:35N4QoGY0k4C",
+   "authors": "J Livezey, K Bouchard, D Clark",
+   "venue": "US Department of Energy (DOE) Software, 24, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Methods of decoding speech from the brain and systems for practicing the same",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:mB3voiENLucC",
+   "authors": "EF CHANG, KE BOUCHARD",
+   "venue": "US Patent 10,438,603, 2019",
+   "year": 2019
+  },
+  {
+   "title": "PyUoI v1. 0.0",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ldfaerwXgEUC",
+   "authors": "A Tritt, K Bouchard, J Livezey, P Sachdeva",
+   "venue": "US Department of Energy (DOE) Software, 246, 2019",
+   "year": 2019
+  },
+  {
+   "title": "Sparse, low-bias, and scalable estimation of high dimensional vector autoregressive models via union of intersections",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:isC4tDSrTZIC",
+   "authors": "T Ruiz, M Balasubramanian, KE Bouchard, S Bhattacharyya",
+   "venue": "arXiv preprint arXiv:1908.11464, 2019",
+   "year": 2019
+  },
+  {
+   "title": "Methods of decoding speech from the brain and systems for practicing the same",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:5nxA0vEk-isC",
+   "authors": "EF CHANG, KE BOUCHARD",
+   "venue": "US Patent 9,905,239, 2018",
+   "year": 2018
+  },
+  {
+   "title": "1Scientific Data|(2019) 6: 102| https://doi. org/10.1038/s41597-019-0105-7 www. nature. com/scientificdata iEEG-BIDS, extending the Brain Imaging Data Structure specification …",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:tkaPQYYpVKoC",
+   "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, BL Foster, KJ Gorgolewski, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "www. nature. com/scientificdata",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:eMMeJKvmdy0C",
+   "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, S D’Ambrosio, O David, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Supplemental Information",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:KlAtU1dfN6UC",
+   "authors": "KE Bouchard, N Mesgarani, K Johnson, EF Chang",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "jacob-yates": [
+  {
+   "title": "System and method for noise-enabled static imaging using event cameras",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:zA6iFVUQeVQC",
+   "authors": "D Galor, R Cao, L Waller, J Yates",
+   "venue": "US Patent App. 19/445,771, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Spatiotemporal integration of motion signals in MT neurons shapes perceptual decisions",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:ZHo1McVdvXMC",
+   "authors": "L Arancibia, JL Yates, AC Huk, K Wimmer, A Hyafil",
+   "venue": "JOURNAL OF COMPUTATIONAL NEUROSCIENCE 54 (SUPPL 1), 2026",
+   "year": 2026
+  },
+  {
+   "title": "How to optimize neuroscience data utilization and experiment design for advancing brain models of visual and linguistic cognition?",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:RGFaLdJalmkC",
+   "authors": "G Tuckute, D Finzi, E Margalit, J Zylberberg, SY Chung, A Fyshe, ...",
+   "venue": "arXiv preprint arXiv:2401.03376, 2024",
+   "year": 2024
+  },
+  {
+   "title": "How to optimize neuroscience data utilization and experiment design for advancing primate visual and linguistic brain models?",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:HoB7MX3m0LUC",
+   "authors": "G Tuckute, D Finzi, E Margalit, J Zylberberg, S Chung, A Fyshe, ...",
+   "venue": "arXiv, 2024",
+   "year": 2024
+  },
+  {
+   "title": "PoissonVAE: combining Bayesian Inference with Predictive Coding results in Amortized Sparse Coding",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=UJm-TkYAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=UJm-TkYAAAAJ:YFjsv_pBGBYC",
+   "authors": "H Vafaii, JL Yates",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "jorge-otero-millan": [
+  {
+   "title": "Neck Vibration-Evoked Nystagmus in Vestibular Migraine: Mechanistic Insights into Role of Proprioception",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Mk6qBsMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Mk6qBsMAAAAJ:LPZeul_q3PIC",
+   "authors": "FZ Maia, B Ramos, J Otero Millan, M Salmito, R Cal, S Rhouma, ...",
+   "venue": "medRxiv, 2026.03. 10.26348105, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Platform to detect patient health condition based on images of physiological activity of a patient",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Mk6qBsMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Mk6qBsMAAAAJ:EUQCXRtRnyEC",
+   "authors": "DE NEWMAN-TOKER, J Otero-Millan, TM PARKER, N Farrell",
+   "venue": "US Patent 12,266,109, 2025",
+   "year": 2025
+  },
+  {
+   "title": "The video",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Mk6qBsMAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=Mk6qBsMAAAAJ:UebtZRa9Y70C",
+   "authors": "J Otero-Millan, C Trevino, A Winnick, DS Zee, JP Carey, A Kheradmand",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "james-simon": [
+  {
+   "title": "FACT: a first-principles alternative to the neural feature ansatz for how networks learn representations",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:IWHjjKOFINEC",
+   "authors": "E Adserà, N Mallinar, J Simon, M Belkin",
+   "venue": "International Conference on Learning Representations 2026, 67604-67626, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Discretized Theories of Deep Learning at Large Width: an Eigenthesis",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:aqlVkmm33-oC",
+   "authors": "J Simon",
+   "venue": "University of California, Berkeley, 2024",
+   "year": 2024
+  },
+  {
+   "title": "Interleaved electro-optic dual comb generation to expand bandwidth and scan rate for molecular spectroscopy and dynamics studies near 1.6 µm",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:zYLM7Y9cAGgC",
+   "authors": "JR Stroud, JB Simon, GA Wagner, DF Plusquellic",
+   "venue": "Optics Express 29 (21), 33155-33170, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Rapid Passage Signals from CO2 at 1.6 µm Using a Dual Chirped-Pulse Electro-Optic Comb System with High-Order Interleaving",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:Tyk-4Ss8FVUC",
+   "authors": "JR Stroud, J Simon, GA Wagner, DF Plusquellic",
+   "venue": "CLEO: Science and Innovations, SM3A. 1, 2021",
+   "year": 2021
+  },
+  {
+   "title": "Simplified Josephson-junction fabrication process for reproducibly high-performance superconducting qubits",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:2osOgNQ5qMEC",
+   "authors": "A Osman, J Simon, A Bengtsson, S Kosen, P Krantz, D P Lozano, ...",
+   "venue": "Applied Physics Letters 118 (6), 2021",
+   "year": 2021
+  },
+  {
+   "title": "Fast noise-resistant control of donor nuclear spin qubits in silicon",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:d1gkVwhDpl0C",
+   "authors": "J Simon, FA Calderon-Vargas, E Barnes, SE Economou",
+   "venue": "Physical Review B 101 (20), 205307, 2020",
+   "year": 2020
+  },
+  {
+   "title": "Closed-Loop Control of the Frequency Response of the Virtual Brain Model",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:9yKSN-GCB0IC",
+   "authors": "C Beauchene, A Leonessa, S Roy, J Simon, N Abaid",
+   "venue": "Dynamic Systems and Control Conference 58271, V001T37A001, 2017",
+   "year": 2017
+  },
+  {
+   "title": "Scientific Methods for Understanding Deep Learning (Sci4DL)",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=zjGfh3sAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=zjGfh3sAAAAJ:ZeXyd9-uunAC",
+   "authors": "Z Kadkhodaie, F Guth, S Lotfi, D Brown, A Sclocchi, S Vadgama, ...",
+   "venue": "ICLR 2026 Workshop Proposals, 0",
+   "year": null
+  }
+ ],
+ "dhruva-karkada": [],
+ "daniel-kunin": [
+  {
+   "title": "System and method for pruning neural networks at initialization using iteratively conserving synaptic flow",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:Se3iqnhoufwC",
+   "authors": "H Tanaka, D Kunin, DLK Yamins, S Ganguli",
+   "venue": "US Patent 12,406,185, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Learning Mechanics of Neural Networks: Conservation Laws, Implicit Bias, and Feature Learning",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:roLk4NBRz8UC",
+   "authors": "D Kunin",
+   "venue": "Stanford University, 2025",
+   "year": 2025
+  },
+  {
+   "title": "A Quasistatic Derivation of Optimization Algorithms' Exploration on Minima Manifolds",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=qilW2ZMAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=qilW2ZMAAAAJ:W7OEmFMy1HYC",
+   "authors": "C Ma, D Kunin, L Ying",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "deepthi-bannai": [
+  {
+   "title": "Sex-specific changes in choroid vasculature of schizophrenia and bipolar disorder patients",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Gm8UUQEAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Gm8UUQEAAAAJ:0EnyYjriUFMC",
+   "authors": "CY Li, I Garg, M Kasetty, R Katz, D Bannai, I Adhan, J Wang, M Keshavan, ...",
+   "venue": "Investigative Ophthalmology & Visual Science 62 (8), 2479-2479, 2021",
+   "year": 2021
+  }
+ ],
+ "alexander-belsten": [],
+ "dasheng-bi": [],
+ "galen-chuang": [
+  {
+   "title": "Denoising for Manifold Extrapolation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=4EiSLrgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=4EiSLrgAAAAJ:Tyk-4Ss8FVUC",
+   "authors": "Z Yun, G Chuang, D Dong, Y Chen",
+   "venue": "NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning, 2024",
+   "year": 2024
+  }
+ ],
+ "dekel-galor": [
+  {
+   "title": "System and method for noise-enabled static imaging using event cameras",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:5nxA0vEk-isC",
+   "authors": "D Galor, R Cao, L Waller, J Yates",
+   "venue": "US Patent App. 19/445,771, 2026",
+   "year": 2026
+  },
+  {
+   "title": "Leveraging noise statistics in event cameras for imaging static scenes",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=As1WihkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=As1WihkAAAAJ:W7OEmFMy1HYC",
+   "authors": "D Galor, R Cao, L Waller, J Yates",
+   "venue": "Proceedings of the International Conference on Computational Photography …, 2023",
+   "year": 2023
+  }
+ ],
+ "tejasvi-kothapalli": [
+  {
+   "title": "Standard Models Fail to Capture Positional Invariances in Marmoset Foveal V1",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:W7OEmFMy1HYC",
+   "authors": "T Kothapalli, R Ressmeyer, D Rowley, J Mitchell, J Yates",
+   "venue": "Society for Neuroscience 2025, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Artificial intelligence models utilize lifestyle factors to predict dry eye related outcomes",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:Tyk-4Ss8FVUC",
+   "authors": "AD Graham, J Wang, T Kothapalli, JE Ding, H Tasho, A Molina, V Tse, ...",
+   "venue": "Scientific Reports 15 (1), 13378, 2025",
+   "year": 2025
+  },
+  {
+   "title": "A machine learning approach to predicting dry eye-related signs, symptoms",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:ufrVoPGSRksC",
+   "authors": "AD Graham, T Kothapalli, J Wang",
+   "venue": "Heliyon, 10 (17), 2024",
+   "year": 2024
+  },
+  {
+   "title": "A Machine Learning Approach to Predicting Dry Eye-Related Signs, Symptoms and Diagnoses from Meibography Images",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:zYLM7Y9cAGgC",
+   "authors": "AD Graham, T Kothapalli, J Wang, J Ding, V Tse, P Asbell, S Yu, MC Lin",
+   "venue": "Heliyon, 2024",
+   "year": 2024
+  },
+  {
+   "title": "Lifestyle and behaviors: predicting clinical signs and symptoms with machine learning",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:qjMakFHDy7sC",
+   "authors": "MC Lin, AD Graham, T Kothapalli, J Wang, J Ding, V Tse, SX Yu",
+   "venue": "Investigative Ophthalmology & Visual Science 64 (8), 2880-2880, 2023",
+   "year": 2023
+  },
+  {
+   "title": "Tracking the Dynamics of the Tear Film Lipid Layer",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:2osOgNQ5qMEC",
+   "authors": "T Kothapalli, C Shou, J Ding, J Wang, AD Graham, T Svitova, SX Yu, ...",
+   "venue": "Neural Information Processing Systems (NeurIPS) Medical Imaging Workshop, 2022",
+   "year": 2022
+  },
+  {
+   "title": "AI provides deeper understanding of Meibomian gland morphology and function",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=EmeMkAwAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=EmeMkAwAAAAJ:Y0pCki6q_DkC",
+   "authors": "MC Lin, J Wang, T Kothapalli, AD Graham, S Yu",
+   "venue": "American Academy of Optometry (AAOPT) Annual Meeting 2022, 26-29, 2022",
+   "year": 2022
+  }
+ ],
+ "chris-kymn": [],
+ "wanyu-lei": [],
+ "terence-tyson": [],
+ "zeyu-yun": [
+  {
+   "title": "Natural retinal cone distributions emerge from optical and neural limits to vision",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:eQOLeE2rZwMC",
+   "authors": "Y Zhao, Z Yun, R Sun, D Bi",
+   "venue": "Journal of Vision 24 (10), 1505-1505, 2024",
+   "year": 2024
+  },
+  {
+   "title": "Denoising for manifold extrapolation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:W7OEmFMy1HYC",
+   "authors": "Z Yun, G Chuang, D Dong, Y Chen",
+   "venue": "NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning, 2024",
+   "year": 2024
+  },
+  {
+   "title": "GramStatTexNet: Efficient, Interpretable, and Neuro-Inspired Spatiotemporal Texture",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:WF5omc3nYNoC",
+   "authors": "V DuTell, Z Yun, A Harrington, YS Fang, M Hamilton, C Koevesdi, ...",
+   "venue": "",
+   "year": null
+  },
+  {
+   "title": "Towards WhiteBox Generative Models: Scaling Non-Parametric Sampling with Representation",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:Tyk-4Ss8FVUC",
+   "authors": "V Lu, A Truong, Z Yun, Y Chen",
+   "venue": "",
+   "year": null
+  }
+ ],
+ "kailin-zhuang": [],
+ "joey-turnbull": [],
+ "mark-rhee": [],
+ "raymond-fan": [],
+ "samyak-jain": [],
+ "thelonious-cooper": [],
+ "sultan-daniels": [],
+ "sam-dambrosia": [
+  {
+   "title": "Higher-order response theory in stochastic thermodynamics and optimal control",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=WbEWIAkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=WbEWIAkAAAAJ:UeHWp8X0CEIC",
+   "authors": "SH DAmbrosia, A Zhong, MR DeWeese",
+   "venue": "arXiv e-prints, arXiv: 2512.24540, 2025",
+   "year": 2025
+  },
+  {
+   "title": "Generalizing linear response to higher orders in minimal-work finite-time protocols",
+   "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=WbEWIAkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=WbEWIAkAAAAJ:IjCSPb-OGe4C",
+   "authors": "HD Samuel, A Zhong, MR DeWeese",
+   "venue": "APS Global Physics Summit 2025, 2025",
+   "year": 2025
+  }
+ ],
+ "kylie-huch": [],
+ "eduardo-sandoval": []
+}

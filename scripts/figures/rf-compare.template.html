@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real receptive fields: compare sets</title>
+<style>
+  :root { --brand: #1f4030; --forest: #23402f; --ink: #fff; --muted: rgb(255 255 255 / 0.75); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--forest); color: var(--ink); font: 15px/1.45 system-ui, sans-serif; }
+  main { max-width: 84rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  h1 { font-size: 1.25rem; margin: 0 0 0.25rem; }
+  .hint { color: var(--muted); margin: 0 0 1rem; }
+  .sets { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  #res { margin-bottom: 1.5rem; }
+  .sets button, .tools button {
+    font: inherit; color: var(--ink); background: rgb(255 255 255 / 0.08);
+    border: 1px solid rgb(255 255 255 / 0.3); border-radius: 6px; padding: 0.4rem 0.8rem; cursor: pointer;
+  }
+  .sets button[aria-pressed="true"] { background: #fff; color: var(--brand); border-color: #fff; }
+  .sets button:disabled { opacity: 0.35; cursor: default; }
+  button:focus-visible { outline: 3px solid #9fc4ab; outline-offset: 2px; }
+  .hero { display: grid; grid-template-columns: repeat(3, minmax(0, 22.5rem)); justify-content: center; gap: clamp(1.5rem, 5vw, 4rem); }
+  @media (max-width: 900px) { .hero { grid-template-columns: minmax(0, 26rem); } }
+  figure { margin: 0; }
+  figcaption { margin-top: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+  canvas { display: block; width: 100%; background: var(--brand); }
+  .new canvas { outline: 2px dashed rgb(255 255 255 / 0.45); outline-offset: 6px; }
+  .tools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 2rem 0 0.75rem; }
+  .count { color: var(--muted); }
+  #ids { width: 100%; margin-top: 0.5rem; font: 12px/1.4 ui-monospace, monospace; background: rgb(0 0 0 / 0.25); color: var(--ink); border: 1px solid rgb(255 255 255 / 0.2); padding: 0.5rem; }
+  .pool { display: grid; grid-template-columns: repeat(auto-fill, minmax(56px, 1fr)); gap: 6px; }
+  .pool button { padding: 0; border: 2px solid transparent; background: none; cursor: pointer; border-radius: 3px; }
+  .pool button[aria-pressed="true"] { border-color: #fff; }
+  .pool button[aria-pressed="false"] canvas { opacity: 0.45; }
+  .pool canvas { image-rendering: pixelated; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Real receptive fields for the homepage</h1>
+  <p class="hint">Pick a set (or press 1–4, ← →) and a resolution (sets 1 and 2 only; the source maps are ~70 px across). The dashed grid is the new one; the other two are the current homepage grids, which are natively 11×11.</p>
+  <div class="sets" role="group" aria-label="Candidate sets"></div>
+  <div class="sets" role="group" aria-label="Resolution" id="res"></div>
+  <div class="hero">
+    <figure><canvas id="g-olshausen" aria-label="Sparse coding filters"></canvas><figcaption>Sparse coding (current)</figcaption></figure>
+    <figure><canvas id="g-alexnet" aria-label="AlexNet filters"></canvas><figcaption>AlexNet (current)</figcaption></figure>
+    <figure class="new"><canvas id="g-new" aria-label="Candidate receptive fields"></canvas><figcaption id="caption"></figcaption></figure>
+  </div>
+  <div class="tools">
+    <button type="button" id="edit" aria-expanded="false">Edit this set</button>
+    <button type="button" id="reset">Reset to automatic pick</button>
+    <button type="button" id="copy">Copy IDs</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div id="editor" hidden>
+    <p class="hint">Click a field to add or remove it. White border = in the grid (first 48 are shown, in the order picked).</p>
+    <div class="pool" id="pool"></div>
+    <textarea id="ids" rows="3" readonly aria-label="Chosen IDs"></textarea>
+  </div>
+</main>
+<script>
+const DATA = /*__DATA__*/null;
+const COLS = 8, ROWS = 6, TARGET = COLS * ROWS, RES = [11, 22, 44];
+let res = 11;
+const key = n => (n === 11 ? 'gray' : `gray${n}`);
+const hasRes = (i, n) => key(n) in DATA.sets[i].pool[0];
+const byId = DATA.sets.map(s => Object.fromEntries(s.pool.map(c => [c.id, c])));
+const gray = (i, id, n) => byId[i][id][key(hasRes(i, n) ? n : 11)];
+const load = () => { try { return JSON.parse(localStorage.getItem('rf-compare') || '{}'); } catch { return {}; } };
+const saved = load();
+const chosen = DATA.sets.map(s => (saved[s.key] || s.start).filter(id => id in byId[DATA.sets.indexOf(s)]));
+let cur = 0;
+
+// Layout is in units of an 11-pixel patch plus a 1-unit gutter, whatever the patch resolution, so grids
+// at different resolutions are the same size; a patch of n pixels has pixels 11/n units wide.
+function drawGrid(canvas, patches, N = 11) {
+  const units = k => k * 12 + 1, px = 11 / N;
+  const dpr = window.devicePixelRatio || 1;
+  const w = Math.round(canvas.clientWidth * dpr), unit = w / units(COLS);
+  canvas.width = w; canvas.height = Math.round(unit * units(ROWS));
+  canvas.style.aspectRatio = `${units(COLS)} / ${units(ROWS)}`;
+  const ctx = canvas.getContext('2d');
+  patches.slice(0, TARGET).forEach((g, idx) => {
+    const c = idx % COLS, r = Math.floor(idx / COLS);
+    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+      const v = Math.round(128 + 127 * g[y * N + x]);
+      ctx.fillStyle = `rgb(${v},${v},${v})`;
+      const x0 = Math.round((1 + c * 12 + x * px) * unit), y0 = Math.round((1 + r * 12 + y * px) * unit);
+      const x1 = Math.round((1 + c * 12 + (x + 1) * px) * unit), y1 = Math.round((1 + r * 12 + (y + 1) * px) * unit);
+      ctx.fillRect(x0, y0, x1 - x0, y1 - y0);
+    }
+  });
+}
+
+function drawPatch(canvas, g) {
+  const N = Math.round(Math.sqrt(g.length));
+  canvas.width = N; canvas.height = N;
+  const ctx = canvas.getContext('2d'), img = ctx.createImageData(N, N);
+  g.forEach((v, i) => { const b = Math.round(128 + 127 * v); img.data.set([b, b, b, 255], 4 * i); });
+  ctx.putImageData(img, 0, 0);
+}
+
+const setsEl = document.querySelector('.sets');
+DATA.sets.forEach((s, i) => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.textContent = `${i + 1}. ${s.title}`;
+  b.addEventListener('click', () => show(i));
+  setsEl.append(b);
+});
+
+function save() {
+  const out = {}; DATA.sets.forEach((s, i) => { out[s.key] = chosen[i]; });
+  try { localStorage.setItem('rf-compare', JSON.stringify(out)); } catch {}
+}
+
+function renderNew() {
+  const n = hasRes(cur, res) ? res : 11;
+  drawGrid(document.getElementById('g-new'), chosen[cur].map(id => gray(cur, id, n)), n);
+  document.querySelectorAll('#res button').forEach(b => {
+    b.disabled = !hasRes(cur, +b.dataset.n);
+    b.setAttribute('aria-pressed', +b.dataset.n === n);
+  });
+  document.getElementById('count').textContent = `${Math.min(chosen[cur].length, TARGET)} of ${TARGET} chosen`;
+  document.getElementById('ids').value = chosen[cur].join(' ');
+  document.querySelectorAll('#pool button').forEach(b => b.setAttribute('aria-pressed', chosen[cur].includes(b.dataset.id)));
+}
+
+function buildPool() {
+  const pool = document.getElementById('pool'); pool.replaceChildren();
+  DATA.sets[cur].pool.forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.dataset.id = c.id; b.title = `${c.id} (score ${c.score})`;
+    const cv = document.createElement('canvas'); drawPatch(cv, c[key(hasRes(cur, res) ? res : 11)]); cv.style.width = '100%';
+    b.append(cv);
+    b.addEventListener('click', () => {
+      const list = chosen[cur], k = list.indexOf(c.id);
+      if (k >= 0) list.splice(k, 1); else list.push(c.id);
+      save(); renderNew();
+    });
+    pool.append(b);
+  });
+}
+
+function show(i) {
+  cur = (i + DATA.sets.length) % DATA.sets.length;
+  setsEl.querySelectorAll('button').forEach((b, k) => b.setAttribute('aria-pressed', k === cur));
+  document.getElementById('caption').innerHTML = DATA.sets[cur].blurb;
+  buildPool(); renderNew();
+}
+
+const resEl = document.getElementById('res');
+RES.forEach(n => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.dataset.n = n; b.textContent = `${n}×${n}`;
+  b.addEventListener('click', () => { res = n; buildPool(); renderNew(); });
+  resEl.append(b);
+});
+drawGrid(document.getElementById('g-olshausen'), DATA.fixed.olshausen);
+drawGrid(document.getElementById('g-alexnet'), DATA.fixed.alexnet);
+document.getElementById('edit').addEventListener('click', e => {
+  const ed = document.getElementById('editor'); ed.hidden = !ed.hidden;
+  e.currentTarget.setAttribute('aria-expanded', !ed.hidden);
+});
+document.getElementById('reset').addEventListener('click', () => { chosen[cur] = [...DATA.sets[cur].start]; save(); renderNew(); });
+document.getElementById('copy').addEventListener('click', () => navigator.clipboard?.writeText(`${DATA.sets[cur].key}: ${chosen[cur].join(' ')}`));
+document.addEventListener('keydown', e => {
+  if (e.target.closest('textarea')) return;
+  if (e.key === 'ArrowRight') show(cur + 1);
+  else if (e.key === 'ArrowLeft') show(cur - 1);
+  else if (/^[1-9]$/.test(e.key) && +e.key <= DATA.sets.length) show(+e.key - 1);
+});
+new ResizeObserver(() => {
+  drawGrid(document.getElementById('g-olshausen'), DATA.fixed.olshausen);
+  drawGrid(document.getElementById('g-alexnet'), DATA.fixed.alexnet);
+  renderNew();
+}).observe(document.querySelector('.hero'));
+show(0);
+</script>
+</body>
+</html>

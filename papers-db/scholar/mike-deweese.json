@@ -1,0 +1,835 @@
+[
+ {
+  "title": "Optimal active engines obey the thermodynamic Lorentz force law",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:t6usbXjVLHcC",
+  "authors": "A Zhong, AG Frim, MR DeWeese",
+  "venue": "Physical Review E 114 (4), L042106, 2026",
+  "year": 2026
+ },
+ {
+  "title": "The Thermodynamic Costs of Simple Linear Regression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:dTyEYWd-f8wC",
+  "authors": "HD Samuel, SM Daniels, MR DeWeese, A Sahai",
+  "venue": "IEEE Journal on Selected Areas in Information Theory, 2026",
+  "year": 2026
+ },
+ {
+  "title": "The Thermodynamic Costs of Simple Linear Regression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:tkaPQYYpVKoC",
+  "authors": "SH D'Ambrosia, SM Daniels, MR DeWeese, A Sahai",
+  "venue": "arXiv preprint arXiv:2605.19195, 2026",
+  "year": 2026
+ },
+ {
+  "title": "The entropy of floating-point numbers",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Y5dfb0dijaUC",
+  "authors": "SM Daniels, SH D'Ambrosia, MR DeWeese, A Sahai",
+  "venue": "arXiv preprint arXiv:2605.11546, 2026",
+  "year": 2026
+ },
+ {
+  "title": "A Theory of Saddle Escape in Deep Nonlinear Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:eMMeJKvmdy0C",
+  "authors": "D Rawal, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2605.01288, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Quantifying elicitation of latent capabilities in language models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:bnK-pcrLprsC",
+  "authors": "E Donoway, H Joren, A Somani, H Sleight, J Michael, M Deweese, ...",
+  "venue": "Advances in Neural Information Processing Systems 38, 150412-150443, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Alternating gradient flows: A theory of feature learning in two-layer neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:J-pR_7NvFogC",
+  "authors": "D Kunin, GL Marchetti, F Chen, D Karkada, J Simon, M Deweese, ...",
+  "venue": "Advances in Neural Information Processing Systems 38, 4377-4424, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Optimal nonequilibrium engines obey the thermodynamic Lorentz force law",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:WA5NYHcadZ8C",
+  "authors": "A Zhong, AG Frim, MR DeWeese",
+  "venue": "APS Global Physics Summit 2026, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Higher-order response theory in optimal stochastic thermodynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:JoZmwDi-zQgC",
+  "authors": "S DAmbrosia, A Zhong, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2512.24540, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Higher-order response theory in stochastic thermodynamics and optimal control",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:HE397vMXCloC",
+  "authors": "SH DAmbrosia, A Zhong, MR DeWeese",
+  "venue": "arXiv e-prints, arXiv: 2512.24540, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Generalizing linear response to higher orders in minimal-work finite-time protocols",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:olpn-zPbct0C",
+  "authors": "HD Samuel, A Zhong, MR DeWeese",
+  "venue": "APS Global Physics Summit 2025, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Closed-Form Training Dynamics Reveal Learned Features and Linear Structure in Word2Vec-like Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:AXPGKjj_ei8C",
+  "authors": "D Karkada, JB Simon, Y Bahri, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2502.09863, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Solvable dynamics of self-supervised word embeddings and the emergence of analogical reasoning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:1qzjygNMrQYC",
+  "authors": "D Karkada, JB Simon, Y Bahri, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2502.09863, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Time-asymmetric fluctuation theorem and efficient free-energy estimation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:eJXPG6dFmWUC",
+  "authors": "A Zhong, B Kuznets-Speck, MR DeWeese",
+  "venue": "Physical Review E 110 (3), 034121, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Beyond linear response: Equivalence between thermodynamic geometry and optimal transport",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:V3AGJWp-ZtQC",
+  "authors": "A Zhong, MR DeWeese",
+  "venue": "Physical Review Letters 133 (5), 057102, 2024",
+  "year": 2024
+ },
+ {
+  "title": "QGASS: a gradient-free stochastic feedback control approach for arbitrary open quantum systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:mvPsJ3kp5DgC",
+  "authors": "E Evans, A Frim, Z Wang, E Theodorou, M Deweese",
+  "venue": "APS March Meeting Abstracts 2024, S50. 005, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Early selection of task-relevant features through population gating",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:q3oQSFYPqjQC",
+  "authors": "J Barbosa, R Proville, CC Rodgers, MR DeWeese, S Ostojic, Y Boubenec",
+  "venue": "Nature communications 14 (1), 6837, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Shortcut engineering of active matter: run-and-tumble particles",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:VOx2b1Wkg3QC",
+  "authors": "AG Frim, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2304.06023, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Symmetries and isometries of the thermodynamic metric",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:geHnlv5EZngC",
+  "authors": "A Frim, M Deweese",
+  "venue": "APS March Meeting Abstracts 2023, S02. 006, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Learning quantum-state feedback control with backpropagation-free stochastic optimization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:sSrBHYA8nusC",
+  "authors": "EN Evans, Z Wang, AG Frim, MR DeWeese, EA Theodorou",
+  "venue": "Physical Review A 106 (5), 052405, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Limited-control optimal protocols arbitrarily far from equilibrium",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:vRqMK49ujn8C",
+  "authors": "A Zhong, MR DeWeese",
+  "venue": "Physical Review E 106 (4), 044135, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Flexible selection of task-relevant features through population gating",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:8AbLer7MMksC",
+  "authors": "J Barbosa, R Proville, CC Rodgers, MR DeWeese, S Ostojic, Y Boubenec",
+  "venue": "bioRxiv, 2022.07. 21.500962, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Reverse engineering the neural tangent kernel",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:tS2w5q8j5-wC",
+  "authors": "JB Simon, S Anand, M Deweese",
+  "venue": "International Conference on Machine Learning, 20215-20231, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Geometric bound on the efficiency of irreversible thermodynamic cycles",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:WbkHhVStYXYC",
+  "authors": "AG Frim, MR DeWeese",
+  "venue": "Physical Review Letters 128 (23), 230601, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Optimal finite-time Brownian Carnot engine",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:OU6Ihb5iCvQC",
+  "authors": "AG Frim, MR DeWeese",
+  "venue": "Physical Review E 105 (5), L052103, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Sparse coding models predict a spectral bias in the development of primary visual cortex (V1) receptive fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:tOudhMTPpwUC",
+  "authors": "A Ligeralde, MR DeWeese",
+  "venue": "bioRxiv, 2022.03. 17.484705, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Solution to the Fokker-Planck equation for slowly driven Brownian motion: Emergent geometry and a formula for the corresponding thermodynamic metric",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:u9iWguZQMMsC",
+  "authors": "NS Wadia, RV Zarcone, MR DeWeese",
+  "venue": "Physical Review E 105 (3), 034130, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Hydrogel Actuated Carbon Fiber Microelectrode Array",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:BrmTIyaxlBUC",
+  "authors": "OW Chen",
+  "venue": "University of California, Berkeley, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Stochastic optimization for learning quantum state feedback control",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Tiz5es2fbqcC",
+  "authors": "EN Evans, Z Wang, AG Frim, MR DeWeese, EA Theodorou",
+  "venue": "arXiv preprint arXiv:2111.09896, 2021",
+  "year": 2021
+ },
+ {
+  "title": "The eigenlearning framework: A conservation law perspective on kernel regression and wide neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:fQNAKQ3IYiAC",
+  "authors": "JB Simon, M Dickens, D Karkada, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2110.03922, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Critical point-finding methods reveal gradient-flat regions of deep network losses",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:NhqRSupF_l8C",
+  "authors": "CG Frye, J Simon, NS Wadia, A Ligeralde, MR DeWeese, KE Bouchard",
+  "venue": "Neural computation 33 (6), 1469-1497, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Engineered swift equilibration for arbitrary geometries",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:P5F9QuxV20EC",
+  "authors": "AG Frim, A Zhong, SF Chen, D Mandal, MR DeWeese",
+  "venue": "Physical Review E 103 (3), L030102, 2021",
+  "year": 2021
+ },
+ {
+  "title": "A theory of the inductive bias and generalization of kernel regression and wide neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:5Ul4iDaHHb8C",
+  "authors": "JB Simon, M Dickens, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2110.03922, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Neural tangent kernel eigenvalues accurately predict generalization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:XiSMed-E-HIC",
+  "authors": "JB Simon, M Dickens, MR DeWeese",
+  "venue": "",
+  "year": 2021
+ },
+ {
+  "title": "Engineered swift equilibration on generic configuration spaces",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:SP6oXDckpogC",
+  "authors": "A Frim, A Zhong, SF Chen, D Mandal, M Deweese",
+  "venue": "APS March Meeting Abstracts 2021, J16. 014, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Autonomous adaptive data acquisition for scanning hyperspectral imaging",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:dshw04ExmUIC",
+  "authors": "EA Holman, YS Fang, L Chen, M DeWeese, HYN Holman, PW Sternberg",
+  "venue": "Communications biology 3 (1), 684, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Efficient sensory coding of multidimensional stimuli",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:1sJd4Hv_s6UC",
+  "authors": "TE Yerxa, E Kee, MR DeWeese, EA Cooper",
+  "venue": "PLoS computational biology 16 (9), e1008146, 2020",
+  "year": 2020
+ },
+ {
+  "title": "A new method for parameter estimation in probabilistic models: Minimum probability flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:uWQEDVKXjbEC",
+  "authors": "J Sohl-Dickstein, P Battaglino, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2007.09240, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Heterogeneous synaptic weighting improves neural coding in the presence of common noise",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_xSYboBqXhAC",
+  "authors": "PS Sachdeva, JA Livezey, MR DeWeese",
+  "venue": "Neural computation 32 (7), 1239-1276, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Geometry, Elasticity, Growth: The Connection Between Cowrie Growth Dynamics and Shell Form",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:738O_yMBCRsC",
+  "authors": "MG Levy, MR DeWeese",
+  "venue": "APS March Meeting 2020, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Design of optical neural networks with component imprecisions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:LPZeul_q3PIC",
+  "authors": "YSF Michael, S Manipatruni, C Wierzynski, A Khosrowshahi, ...",
+  "venue": "arXiv preprint arXiv:2001.01681, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Emergence, Mechanics, and Development: How Behavior and Geometry Underlie Cowrie Seashell Form",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:l7t_Zn2s7bgC",
+  "authors": "MG Levy, MR DeWeese",
+  "venue": "",
+  "year": 2020
+ },
+ {
+  "title": "Replay as wavefronts and theta sequences as bump oscillations in a grid cell attractor network",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:a0OBvERweLwC",
+  "authors": "L Kang, MR DeWeese",
+  "venue": "Elife 8, e46351, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Thermodynamic computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:abG-DnoFyZgC",
+  "authors": "T Conte, E DeBenedictis, N Ganesh, T Hylton, JP Strachan, RS Williams, ...",
+  "venue": "arXiv preprint arXiv:1911.01968, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Spatial whitening in the retina may be necessary for V1 to learn a sparse representation of natural scenes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:bFI3QPDXJZMC",
+  "authors": "EMV Dodds, JA Livezey, MR DeWeese",
+  "venue": "BioRxiv, 776799, 2019",
+  "year": 2019
+ },
+ {
+  "title": "On the sparse structure of natural sounds and natural images: Similarities, differences, and implications for neural coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:f2IySw72cVMC",
+  "authors": "EMV Dodds, MR DeWeese",
+  "venue": "Frontiers in computational neuroscience 13, 39, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Design of optical neural networks with component imprecisions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:pyW8ca7W8N0C",
+  "authors": "MYS Fang, S Manipatruni, C Wierzynski, A Khosrowshahi, MR DeWeese",
+  "venue": "Optics express 27 (10), 14009-14029, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Numerically recovering the critical points of a deep linear autoencoder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:dfsIfKJdRG4C",
+  "authors": "CG Frye, NS Wadia, MR DeWeese, KE Bouchard",
+  "venue": "arXiv preprint arXiv:1901.10603, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Spike-timing-dependent ensemble encoding by non-classically responsive cortical neurons",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:4OULZ7Gr8RgC",
+  "authors": "MN Insanally, I Carcea, RE Field, CC Rodgers, B DePasquale, K Rajan, ...",
+  "venue": "Elife 8, e42409, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Mandal, klymko, and deweese reply",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:SeFeTyx0c_EC",
+  "authors": "D Mandal, K Klymko, MR DeWeese",
+  "venue": "Physical Review Letters 121 (13), 139802, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Comment on\" Entropy Production and Fluctuation Theorems for Active Matter\" Reply",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:3s1wT3WcHBgC",
+  "authors": "D Mandal, K Klymko, MR DeWeese",
+  "venue": "PHYSICAL REVIEW LETTERS 121 (13), 2018",
+  "year": 2018
+ },
+ {
+  "title": "Nominally non-responsive frontal and sensory cortical cells encode task-relevant variables via ensemble consensus-building",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:g5m5HwL7SMYC",
+  "authors": "MN Insanally, I Carcea, RE Field, CC Rodgers, B DePasquale, K Rajan, ...",
+  "venue": "BioRxiv, 347617, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Investigating deep reinforcement learning for grasping objects with an anthropomorphic hand",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:M05iB0D1s5AC",
+  "authors": "M Mudigonda, P Agrawal, M Deweese, J Malik",
+  "venue": "",
+  "year": 2018
+ },
+ {
+  "title": "Entropy production and fluctuation theorems for active matter",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:lSLTfruPkqcC",
+  "authors": "D Mandal, K Klymko, MR DeWeese",
+  "venue": "Physical review letters 119 (25), 258001, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Selective Insulation of Carbon Nanotubes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:35N4QoGY0k4C",
+  "authors": "G Dunn, K Shen, HR Barzegar, W Shi, JN Belling, TNH Nguyen, ...",
+  "venue": "physica status solidi (b) 254 (11), 1700202, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Minimum and maximum entropy distributions for binary systems with known means and pairwise correlations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Zph67rFs4hoC",
+  "authors": "BF Albanna, C Hillar, J Sohl-Dickstein, MR DeWeese",
+  "venue": "Entropy 19 (8), 427, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Nonequilibrium work energy relation for non-Hamiltonian dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:maZDTaKrznsC",
+  "authors": "D Mandal, MR DeWeese",
+  "venue": "Physical Review E 93 (4), 042129, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Jarzynski equality for non-Hamiltonian dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:YFjsv_pBGBYC",
+  "authors": "D Mandal, MR DeWeese",
+  "venue": "APS March Meeting Abstracts 2016, A40. 001, 2016",
+  "year": 2016
+ },
+ {
+  "title": "A Markov jump process for more efficient Hamiltonian Monte Carlo",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:k_IJM867U9cC",
+  "authors": "AB Berger, M Mudigonda, MR DeWeese, J Sohl-Dickstein",
+  "venue": "arXiv preprint arXiv:1509.03808, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Equilibrium free energy from non-Hamiltonian dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:ldfaerwXgEUC",
+  "authors": "D Mandal, MR DeWeese",
+  "venue": "arXiv preprint arXiv:1509.05148, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Optimal protocols for slowly driven quantum systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:isC4tDSrTZIC",
+  "authors": "PR Zulkowski, MR DeWeese",
+  "venue": "Physical Review E 92 (3), 032113, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Optimal control of overdamped systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:4JMBOYKVnBMC",
+  "authors": "PR Zulkowski, MR DeWeese",
+  "venue": "Physical Review E 92 (3), 032117, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Time resolution dependence of information measures for spiking neurons: Scaling and universality",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:iH-uZ7U-co4C",
+  "authors": "SE Marzen, MR DeWeese, JP Crutchfield",
+  "venue": "Frontiers in Computational Neuroscience 9, 105, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Rats Exert Executive Control",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:r0BpntZqJG4C",
+  "authors": "VM Carels, MR DeWeese",
+  "venue": "Neuron 86 (6), 1324-1326, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Optimal protocols for slowly-driven quantum processes",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:yD5IFk8b50cC",
+  "authors": "PR Zulkowski, MR DeWeese",
+  "venue": "arXiv preprint arXiv:1506.03864, 2015",
+  "year": 2015
+ },
+ {
+  "title": "A device for human ultrasonic echolocation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:e5wmG9Sq2KIC",
+  "authors": "J Sohl-Dickstein, S Teng, BM Gaub, CC Rodgers, C Li, MR DeWeese, ...",
+  "venue": "IEEE Transactions on Biomedical Engineering 62 (6), 1526-1534, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Statistical Complexity of Neural Spike Trains",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:wbdj-CoPYUoC",
+  "authors": "S Marzen, MR Deweese, J Crutchfield",
+  "venue": "",
+  "year": 2014
+ },
+ {
+  "title": "Neural correlates of task switching in prefrontal cortex and primary auditory cortex in a novel stimulus selection task for rodents",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:hFOr9nPyWt4C",
+  "authors": "CC Rodgers, MR DeWeese",
+  "venue": "Neuron 82 (5), 1157-1170, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Optimal finite-time erasure of a classical bit",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:QIV2ME_5wuYC",
+  "authors": "PR Zulkowski, MR DeWeese",
+  "venue": "Physical Review E 89 (5), 052140, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Using the structure of natural scenes and sounds to predict neural response properties in the brain",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:7PzlFSSx8tAC",
+  "authors": "M DeWeese",
+  "venue": "APS March Meeting Abstracts 2014, A15. 007, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Hamiltonian Monte Carlo without detailed balance",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:NMxIlDl6LWMC",
+  "authors": "J Sohl-Dickstein, M Mudigonda, M DeWeese",
+  "venue": "International Conference on Machine Learning, 719-726, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Optimal protocols for driven quantum systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:2P1L_qKh6hAC",
+  "authors": "PR Zulkowski, MR DeWeese",
+  "venue": "arXiv preprint arXiv:1506.03864, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Optimal control of transitions between nonequilibrium steady states",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:aqlVkmm33-oC",
+  "authors": "PR Zulkowski, DA Sivak, MR DeWeese",
+  "venue": "PloS one 8 (12), e82754, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Sparse coding models can exhibit decreasing sparseness while learning sparse codes for natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Wp0gIr-vW9MC",
+  "authors": "J Zylberberg, MR DeWeese",
+  "venue": "PLoS computational biology 9 (8), e1003182, 2013",
+  "year": 2013
+ },
+ {
+  "title": "How efficient coding of binocular disparity statistics in the primary visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:kRWSkSYxWN8C",
+  "authors": "SE Marzen, J Zylberberg, MR DeWeese",
+  "venue": "BMC Neuroscience, 14 (, 2013",
+  "year": 2013
+ },
+ {
+  "title": "How efficient coding of binocular disparity statistics in the primary visual cortex influences eye rotation strategy",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:mVmsd5A6BfQC",
+  "authors": "SE Marzen, J Zylberberg, MR DeWeese",
+  "venue": "BMC Neuroscience 14 (Suppl 1), O7, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Modified visuomotor optimization theory to explain Listing's Law",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:eflP2zaiRacC",
+  "authors": "S Marzen, J Zylberberg, M DeWeese",
+  "venue": "Journal of Vision 13 (9), 519-519, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Up states are rare in awake auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:MXK_kJrjxJIC",
+  "authors": "T Hromádka, AM Zador, MR DeWeese",
+  "venue": "Journal of Neurophysiology 109 (8), 1989-1995, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Inhibitory interneurons decorrelate excitatory cells to drive sparse code formation in a spiking model of V1",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:4DMP91E08xMC",
+  "authors": "PD King, J Zylberberg, MR DeWeese",
+  "venue": "The Journal of Neuroscience 33 (13), 5475-5485, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Geometry of thermodynamic control",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:0EnyYjriUFMC",
+  "authors": "D Sivak, P Zulkowski, M DeWeese, G Crooks",
+  "venue": "APS March Meeting Abstracts 2013, B29. 005, 2013",
+  "year": 2013
+ },
+ {
+  "title": "A device for human ultrasonic echolocation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:BqipwSGYUEgC",
+  "authors": "S Teng, J Sohl-Dickstein, C Rodgers, M DeWeese, N Harper",
+  "venue": "IEEE Workshop on Multimodal and Alternative Perception for Visually Impaired …, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Dead leaves and the dirty ground: low-level image statistics in transmissive and occlusive imaging environments",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:hqOjcs7Dif8C",
+  "authors": "J Zylberberg, D Pfau, MR DeWeese",
+  "venue": "Physical Review E—Statistical, Nonlinear, and Soft Matter Physics 86 (6 …, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Geometry of thermodynamic control",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:ULOm3_A8WrAC",
+  "authors": "PR Zulkowski, DA Sivak, GE Crooks, MR DeWeese",
+  "venue": "Physical Review E—Statistical, Nonlinear, and Soft Matter Physics 86 (4 …, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Inhibitory interneurons enable sparse code formation in a spiking circuit model of V1",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:kNdYIx-mwKoC",
+  "authors": "PD King, J Zylberberg, MR DeWeese",
+  "venue": "BMC Neuroscience 13 (Suppl 1), P148, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Sparse codes for speech predict spectrotemporal receptive fields in the inferior colliculus",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:roLk4NBRz8UC",
+  "authors": "NL Carlson, VL Ming, MR DeWeese",
+  "venue": "PLoS computational biology 8 (7), e1002594, 2012",
+  "year": 2012
+ },
+ {
+  "title": "New method for parameter estimation in probabilistic models: minimum probability flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:eQOLeE2rZwMC",
+  "authors": "J Sohl-Dickstein, PB Battaglino, MR DeWeese",
+  "venue": "Physical review letters 107 (22), 220601, 2011",
+  "year": 2011
+ },
+ {
+  "title": "A sparse coding model with synaptically local plasticity and spiking neurons can account for the diverse shapes of V1 simple cell receptive fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:ufrVoPGSRksC",
+  "authors": "J Zylberberg, JT Murphy, MR DeWeese",
+  "venue": "PLoS computational biology 7 (10), e1002250, 2011",
+  "year": 2011
+ },
+ {
+  "title": "3) Helen Wills Neuroscience Institute, University of California, Berkeley CA 94720",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:D03iK_w7-QYC",
+  "authors": "J Zylberberg, JT Murphy, MR DeWeese",
+  "venue": "arXiv preprint arXiv:1109.2239, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Forming cooperative representations via solipsistic synaptic plasticity rules",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:YOwf2qJgpHMC",
+  "authors": "J Zylberberg, MR DeWeese",
+  "venue": "BMC Neuroscience 12 (Suppl 1), P69, 2011",
+  "year": 2011
+ },
+ {
+  "title": "How should prey animals respond to uncertain threats?",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Se3iqnhoufwC",
+  "authors": "J Zylberberg, MR DeWeese",
+  "venue": "Frontiers in computational neuroscience 5, 20, 2011",
+  "year": 2011
+ },
+ {
+  "title": "Minimizing Probability Flow",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:qUcmZB5y_30C",
+  "authors": "J Sohl-Dickstein, P Battaglino, MR DeWeese",
+  "venue": "",
+  "year": 2010
+ },
+ {
+  "title": "The statistics of style",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:LkGwnXOMwfcC",
+  "authors": "BA Olshausen, MR DeWeese",
+  "venue": "Nature 463 (7284), 1027-1028, 2010",
+  "year": 2010
+ },
+ {
+  "title": "Millisecond-scale differences in neural activity in auditory cortex can drive decisions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "Y Yang, M DeWeese, G Otazu, A Zador",
+  "venue": "Nature Precedings, 1-1, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Sparse representation of sounds in the unanesthetized auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:d1gkVwhDpl0C",
+  "authors": "T Hromádka, MR DeWeese, AM Zador",
+  "venue": "PLoS biology 6 (1), e16, 2008",
+  "year": 2008
+ },
+ {
+  "title": "Whole‐Cell Recording In Vivo",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:UebtZRa9Y70C",
+  "authors": "M R. DeWeese",
+  "venue": "Current Protocols in Neuroscience 38 (1), 6.22. 1-6.22. 15, 2007",
+  "year": 2007
+ },
+ {
+  "title": "Non-Gaussian membrane potential dynamics imply sparse, synchronous activity in auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:2osOgNQ5qMEC",
+  "authors": "MR DeWeese, AM Zador",
+  "venue": "The Journal of neuroscience 26 (47), 12206-12218, 2006",
+  "year": 2006
+ },
+ {
+  "title": "Efficiency measures",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_FxGoFyzp5QC",
+  "authors": "MR DeWeese, A Zador",
+  "venue": "Nature 439 (7079), 920-921, 2006",
+  "year": 2006
+ },
+ {
+  "title": "Reliability and representational bandwidth in the auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:W7OEmFMy1HYC",
+  "authors": "MR DeWeese, T Hromádka, AM Zador",
+  "venue": "Neuron 48 (3), 479-488, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Neural gallops across auditory streams",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:5nxA0vEk-isC",
+  "authors": "MR DeWeese, AM Zador",
+  "venue": "Neuron 48 (1), 5-7, 2005",
+  "year": 2005
+ },
+ {
+  "title": "Shared and private variability in the auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:Y0pCki6q_DkC",
+  "authors": "MR Deweese, AM Zador",
+  "venue": "Journal of neurophysiology 92 (3), 1840-1855, 2004",
+  "year": 2004
+ },
+ {
+  "title": "Binary spiking in auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:cFHS6HbyZ2cC",
+  "authors": "MR DeWeese, M Wehr, AM Zador",
+  "venue": "The Journal of neuroscience 23 (21), 7940-7949, 2003",
+  "year": 2003
+ },
+ {
+  "title": "Binary coding in auditory cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:u-x6o8ySG0sC",
+  "authors": "M DeWeese, A Zador",
+  "venue": "Advances in neural information processing systems 15, 2002",
+  "year": 2002
+ },
+ {
+  "title": "An optimal preparation for studying optimization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:8k81kl-MbHgC",
+  "authors": "MR DeWeese",
+  "venue": "Neuron 26 (3), 546-548, 2000",
+  "year": 2000
+ },
+ {
+  "title": "How to measure the information gained from one symbol",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:qjMakFHDy7sC",
+  "authors": "MR DeWeese, M Meister",
+  "venue": "Network: Computation in Neural Systems 10 (4), 325, 1999",
+  "year": 1999
+ },
+ {
+  "title": "Asymmetric dynamics in optimal variance adaptation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:UeHWp8X0CEIC",
+  "authors": "M DeWeese, A Zador",
+  "venue": "Neural Computation 10 (5), 1179-1202, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Efficient discrimination of temporal patterns by motion-sensitive neurons in primate visual cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:u5HHmVD_uO8C",
+  "authors": "GT Buracas, AM Zador, MR DeWeese, TD Albright",
+  "venue": "Neuron 20 (5), 959-969, 1998",
+  "year": 1998
+ },
+ {
+  "title": "Information flow in sensory neurons",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:9yKSN-GCB0IC",
+  "authors": "M DeWeese, W Bialek",
+  "venue": "Il Nuovo Cimento D 17 (7), 733-741, 1995",
+  "year": 1995
+ },
+ {
+  "title": "Random switching and optimal processing in the perception of ambiguous signals",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:YsMSGLbcyi4C",
+  "authors": "W Bialek, M DeWeese",
+  "venue": "Physical Review Letters 74 (15), 3077, 1995",
+  "year": 1995
+ },
+ {
+  "title": "Optimization principles for the neural code",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:IjCSPb-OGe4C",
+  "authors": "M DeWeese",
+  "venue": "Advances in neural information processing systems 8, 1995",
+  "year": 1995
+ },
+ {
+  "title": "Bits and brains: Information flow in the nervous system",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:zYLM7Y9cAGgC",
+  "authors": "W Bialek, M DeWeese, F Rieke, D Warland",
+  "venue": "Physica A: Statistical Mechanics and its Applications 200 (1-4), 581-593, 1993",
+  "year": 1993
+ },
+ {
+  "title": "Bits That Count: Quantifying and Predicting Capabilities of Language Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_B80troHkn4C",
+  "authors": "E Donoway, H Joren, MR DeWeese, E Perez, J Schulman, F Roger, ...",
+  "venue": "Forty-third International Conference on Machine Learning, 0",
+  "year": null
+ },
+ {
+  "title": "Geometric Construction of Minimal-Dissipation Counterdiabatic Protocols for Open Quantum Systems",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:XiVPGOgt02cC",
+  "authors": "A Suryanarayanan, A Zhong, MR DeWeese",
+  "venue": "APS Global Physics Summit 2025, 0",
+  "year": null
+ },
+ {
+  "title": "Sparse coding predicts a spectral bias in the development of V1 receptive fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:08ZZubdj9fEC",
+  "authors": "A Ligeralde, MR DeWeese",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Nominally non-responsive frontal and sensory cortical cells",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:u_35RYKgDlwC",
+  "authors": "MN Insanally, I Carcea, RE Field, CC Rodgers, B DePasquale, K Rajan, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Past, Present, and Future: memory and choice encoding in prefrontal cortex of rats performing a double alternation task. Abbreviated title: Working memory encoding in PFC …",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:R3hNpaxXUhUC",
+  "authors": "M Leonard, MR DeWeese",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "JN-RM-4188-12R1",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:mB3voiENLucC",
+  "authors": "P King, J Zylberberg, M DeWeese",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Spectro-Temporal Models of Inferior Colliculus Neuron Receptive Fields",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:L8Ckcad2t8MC",
+  "authors": "SZ Enam, MR DeWeese",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Binary responses are not restricted to anesthetized auditory cortex.",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:_kc_bZDykSQC",
+  "authors": "MR DeWeese, AM Zador",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "A visual cortical model can exhibit decreasing sparseness while learning a sparse code for natural images",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=DZ9-LmkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=DZ9-LmkAAAAJ:KlAtU1dfN6UC",
+  "authors": "J Zylberberg, MR DeWeese",
+  "venue": "",
+  "year": null
+ }
+]

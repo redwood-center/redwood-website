@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import UpcomingSeminars from '../components/UpcomingSeminars.astro';
+import { upcoming, past, seminarUrl, type Seminar } from '../lib/seminars';
+import { formatShort } from '../lib/url';
+
+const byYear = new Map<string, Seminar[]>();
+for (const s of past) {
+  const y = s.date.slice(0, 4);
+  byYear.set(y, [...(byYear.get(y) ?? []), s]);
+}
+const years = [...byYear.keys()];
+---
+
+<Base title="Seminars" current="seminars">
+  <section class="intro wrap">
+    <h1>Seminars</h1>
+    <p class="lead">
+      Talks on neuroscience, machine learning and the theory of intelligence. Recordings of past talks
+      are linked where available.
+    </p>
+  </section>
+
+  {upcoming.length > 0 && (
+    <section class="section" aria-labelledby="upcoming-title">
+      <div class="wrap">
+        <h2 id="upcoming-title">Upcoming</h2>
+        <UpcomingSeminars seminars={upcoming} showSummary />
+      </div>
+    </section>
+  )}
+
+  <script is:inline>
+    // One year at a time when JS runs; without it, every year shows.
+    document.documentElement.classList.add('years-js');
+  </script>
+  <section class="section section--wash" aria-labelledby="past-title">
+    <div class="wrap">
+      <h2 id="past-title">Past seminars</h2>
+      <nav class="years" aria-label="Choose a year">
+        {years.map((y, i) => <a href={`#y${y}`} aria-current={i === 0 ? 'true' : undefined}>{y}</a>)}
+      </nav>
+      {years.map((y, i) => (
+        <div class:list={['year', { active: i === 0 }]} id={`y${y}`}>
+          <h3>{y}</h3>
+          <ul class="talks">
+            {byYear.get(y)!.map((s) => (
+              <li>
+                <time datetime={s.date}>{formatShort(s.date)}</time>
+                <div>
+                  <a class="title" href={seminarUrl(s)}>{s.title}</a>
+                  <p class="who">{s.speaker}{s.affiliation && `, ${s.affiliation}`}</p>
+                </div>
+                {s.recording_url ? <a class="rec" href={s.recording_url}>Recording</a> : <span></span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.years a')];
+  const blocks = [...document.querySelectorAll<HTMLElement>('.year')];
+
+  function show(id: string) {
+    const target = blocks.find((b) => b.id === id) ?? blocks[0];
+    blocks.forEach((b) => b.classList.toggle('active', b === target));
+    links.forEach((a) => {
+      if (a.hash === `#${target.id}`) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
+  links.forEach((a) =>
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      history.replaceState(null, '', a.hash); // shareable, without jumping the page
+      show(a.hash.slice(1));
+    }),
+  );
+  window.addEventListener('hashchange', () => show(location.hash.slice(1))); // back/forward, pasted links
+  show(location.hash.slice(1));
+</script>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 52ch;
+    margin-top: 1rem;
+  }
+  h2 { font-size: var(--step-3); font-weight: 650; letter-spacing: -0.01em; margin-bottom: 1.75rem; }
+
+  .years {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    margin: -0.75rem 0 2rem;
+    font-weight: 500;
+  }
+  .year { scroll-margin-top: 1.5rem; }
+  .year + .year { margin-top: 2.5rem; }
+  :global(.years-js) .year:not(.active) { display: none; }
+  :global(.years-js) .year + .year { margin-top: 0; }
+  .years a[aria-current='true'] {
+    color: var(--brand);
+    font-weight: 700;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--gold);
+  }
+  .year h3 { font-size: var(--step-2); font-weight: 650; margin-bottom: 0.5rem; }
+
+  .talks { list-style: none; margin: 0; padding: 0; }
+  .talks li {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding-block: 0.8rem;
+    border-top: 1px solid var(--line);
+  }
+  .talks time { color: var(--slate); font-size: 0.9375rem; }
+  .title { font-weight: 550; text-decoration: none; }
+  .title:hover { text-decoration: underline; }
+  .who { color: var(--slate); font-size: 0.9375rem; margin-top: 0.15rem; }
+  .rec { font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+
+  @media (max-width: 640px) {
+    .talks li { grid-template-columns: 4rem minmax(0, 1fr); }
+    .rec { grid-column: 2; }
+  }
+</style>

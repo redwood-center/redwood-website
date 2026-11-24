@@ -1,0 +1,55 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url, formatDate } from '../../lib/url';
+
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<Base title="Blog" current="blog">
+  <section class="intro wrap">
+    <h1>Blog</h1>
+    <p class="lead">Writing from the Center on our research and the science of intelligence.</p>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {posts.length === 0 ? (
+        <p class="empty">No posts yet.</p>
+      ) : (
+        <ul class="posts">
+          {posts.map((p) => (
+            <li>
+              <time datetime={p.data.date.toISOString().slice(0, 10)}>{formatDate(p.data.date.toISOString())}</time>
+              <h2><a href={url(`blog/${p.id}/`)}>{p.data.title}</a></h2>
+              {p.data.authors.length > 0 && <p class="authors">{p.data.authors.join(', ')}</p>}
+              {p.data.summary && <p class="summary">{p.data.summary}</p>}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-width: 52ch;
+    margin-top: 1rem;
+  }
+  .empty { font-family: var(--serif); font-size: var(--step-1); color: var(--slate); }
+  .posts { list-style: none; margin: 0; padding: 0; display: grid; gap: 2.25rem; max-width: 46rem; }
+  .posts time { color: var(--slate); font-size: 0.9375rem; }
+  .posts h2 { font-size: var(--step-2); font-weight: 650; letter-spacing: -0.01em; margin-top: 0.25rem; }
+  .posts h2 a { text-decoration: none; }
+  .posts h2 a:hover { text-decoration: underline; }
+  .authors { margin-top: 0.3rem; font-weight: 500; }
+  .summary { margin-top: 0.5rem; font-family: var(--serif); line-height: 1.6; }
+</style>

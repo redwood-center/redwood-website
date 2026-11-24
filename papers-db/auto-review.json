@@ -1,0 +1,910 @@
+{
+ "749bf7402d0cb7f76103f90ffb0363277c066885": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "669f35b7da45c315e97c74f01e999e5abbb200fd": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c0573d896bedf5e589a5da01f17c2178678658ca": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "7d739bcc66a35a6e3f2b9fbfaa23c1096b303575": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "2d1668fb58a4b9da30ada8f19a6a0192138e6b13": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "359cb0d7e56a06eb9dd00fc0c0718682d525dcc5": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d18308dbcc21b9e88401ccc7eb80f1d61a37b63f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d2b9848f678ac95315cebc843f080653cc331cbe": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "21f9be427898a06fe85270a5ea7cd4269c41c64a": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "dadf7c7b528360f6e4c8ef403258fe38b8dbcc02": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "5760d7a240d801e963824aef176fa1c5cbd08b77": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4477758376093b52bfe00711200daa57b45aafa6": {
+  "status": "out",
+  "why": "Bouchard's LBNL work outside Redwood's science"
+ },
+ "fc69ad6423792565dea6f32268419b42a3a6d07f": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "0b5ea7ceec37dec235491551fab63d8ef9768110": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "2e93f62fda180e60988d0ab780843f166aa7a8b3": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "94aac21f222445aae8552e36e412197fa38700a7": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c406459e89eb60ba7dc39c2c1989222b2c0533dd": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "67949cbeb783954678dca83381c7a71ef5e5c42c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c34c7aafb0663ee49a212e40cd9b85264cb52a50": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "b8ec813bafaa7adc575718b92b0e61ab080442bd": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "d9cacfa4eb8feb498c61562b66eabf3f344b83ed": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "20ae686108f70dbd19c33a40a6ec253ed8af4346": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "b0dae6999a023450a5e4700c4a354a6c8085a946": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "10a7fea4fd73acf3b7f2e8046bef836d3612f3e2": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "9219d8ddff16b925a5232912fcffb602b085a219": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "77a1a786f69ed2ee3ef475c8e68476b0f62e724c": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "0de3b0bb3133ee5010ce328012f720e62e518235": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "ab19e1244f9038f65dac4da1622a6bdf4d48627d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "fce3d4134ac9fb68bbbeb737be76e9b87049e8d8": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "a8bfef7e7e944a0f3d65eada9b30ef4bf0b42ac6": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "3d6e673588220510de6c0d830f85dc0f232db9e0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "099724ee816f4f4dfc65f8ebfc87b40a3bf8dcd4": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "f5675f774254a9228cda72dd1f32c52e2bc5d5ac": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "5fcbd44fd09f681e73437e6816bed7865f167148": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "edc0dfaf09eb87c4c71ada59c3f287d24d32c43a": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "9d910a4bd6cd73f092221dcf311a382ebb0a4dff": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "a3aa279241649ba2f7e8c97adc974f6cecc3c6bd": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d38e83d111c14e4ea2defbff339bf5390e9fd164": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4bbec8f5550ddfa0bcf5255f5ecd43f20b1d92cc": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "82af8b337f9ea3ebf0ff65aa5c04a88b900e4e91": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "06061a9718c36599f493008f375d76501d12fc98": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "9d6ee26993a86ebd4b368d79537f5f6d6f41e19f": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "ed08ed3cdd7aa8f283fb6d22bdb860b99814ffa9": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "0fd928fc64be0bf7c8a5f833197cd76ebe13bb33": {
+  "status": "out",
+  "why": "a different Daniel Kunin"
+ },
+ "21c98250b804614ed94ed62634d2d870581dd3ae": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "a16e4a19a30b6916ef757ad10e23616baeedaab6": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d5d7cd3460c8b85f3d399358bebdd555186b4981": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "152afdf3f3906ac4196386e33ce08c2b4293de52": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "cba6cbfd87eeeb5158cf20076fe1a213855ea726": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "2d69d5d8b02a34dbdba9781b6bd7b80393b47890": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "d009ff1554395de3ff57aaddec982445bd16409c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "manual-yocum2025feature": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "1047ffd73ff5184dce527700087b13571bc30297": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "df1ac3d2d897228e7666834853a6e3105af4ff21": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "02a0488deb94f78992e3f82b410356bea930e52b": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4a4dcb9a455e07b8795318d0a4795e574204c172": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "720bc38ddb9a74bd8298996c62bfdd6f9b0d89f2": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "e76c52564086374266e81a062afbf90bfbd46b3e": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "b12cb2ef2eca3c8ee46436c8d7fddcc5787df892": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "09e06e7d0c8eb23188b33af09cffd1d66d2012fe": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "0773556ce93bacb36f05b0912ebe6dd2a6869535": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "89048cef1d10f64bee639b16d81956ab66b063ba": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d5cd21c14ee3415c0f095ff4cb8b046d0a4aa159": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8711d2879dbeaee9943f8513d1b65f501c55596c": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "358311074c75bd2561de0733733142f2990d6814": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "a75715361490ae49001e2b3377e40da3c4715ca5": {
+  "status": "out",
+  "why": "Bouchard's LBNL work outside Redwood's science"
+ },
+ "5a3ba3eac18bf9a3b0ac9572b6cd42c81b918de6": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "61367305f611ddcdc491f54feca6cc71b14d2725": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "manual-bouchard2024feedback": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "f210de29343a58b61038da002355841c299f7592": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "ca9a06ce934a4e1835ecf92dc6967099c699679d": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "c3e9ea7de3986f224114669654d21f3bc8957acf": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "1d1add4ac04f1e2015fb35a0868ca5b39109431c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "manual-yun2024denoising": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "dcd9b28975e9a24bb9b032b800fa7aa00dbe1ea6": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "fa441002684bbb47349e1a25120be8d680eac7b0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "95e7232929b693ff2fadbd119fc2978768436654": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "45cab95c475b9460ae5cf3e5f9c2ff5a3172e28d": {
+  "status": "out",
+  "why": "Bouchard's LBNL work outside Redwood's science"
+ },
+ "cb84e762cdffbd3dd25f865474f384bb032960b1": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "782d400ba7aac6ccb2d4b6d3cadbf4b7c2600d50": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "744676ee2cd5d73cd3125f1eebc2373868c6c2e7": {
+  "status": "out",
+  "why": "conference abstract; the record's abstract is another paper's"
+ },
+ "e8bcf515d3346672e0d856c674fe51c045bd0f23": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4136f5c556b3f73973d8bf29dfc6f4f2e3dab2eb": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "40a82b44f26013ad30c4dae91f00e2e8cf836d6f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "ed0e37c2a6783dc47b01040e7fba75bc8c828b6a": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "43875bcccdd91c1121155b070884d5d95f35b131": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "7450a6b6280377733807e66b44a49fb75dd21154": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "196e48016d66617fe21f3d2fdde9657b9bb52ca3": {
+  "status": "out",
+  "why": "not a Redwood paper (Jamie)"
+ },
+ "e7ccf2254de9e8a36d5c06140168fd16e0da9f2c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "321d35f8c549f9b0e3c47150b20121d1af361742": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "0a16511a5a0952f5530b8434a91cdf9df912f28d": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "1aadc0caa5dbc51a1c46710e9168f7044a6f6c0f": {
+  "status": "out",
+  "why": "Bouchard's LBNL work outside Redwood's science"
+ },
+ "ff52455e57d89eef100d453b8c7dd31d1b1df796": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c82556c1a7788f86481bfd6f762c783255077530": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c607d9ebf5a6605d8f31e03e6f0408f96edbdd4b": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "0380271e23c5a3348f9f8ad1906b692b22f8b75e": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4f5d077014c468de409301c0f34eaf26500c6740": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "d1d4d8dd37a7aa4dddc8ff2aa74e1af9e91a7c80": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "481e22ae9044fccca6bdb35a6d7278499e296a0b": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "b66498d2bc443bbf38b59cede47b7c3fd53b4a92": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "80d3ebff456ba48b9827097b1940f229f805b509": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "244717ab8a5d006370f8f6ab4d88ba91acd9b1d9": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "977be24dca9040ec4f625991f3aed0d65c94855c": {
+  "status": "out",
+  "why": "Bouchard's LBNL work outside Redwood's science"
+ },
+ "81885c913ad8d0b86ee52e0d85f025f9d99052e0": {
+  "status": "out",
+  "why": "not a Redwood paper (Jamie)"
+ },
+ "5b7244ead54d1f13ea3eab5342d6e27d82758bba": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "e38bd08ca21bb29b849d2606c6637baba4399d4c": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "75a2b86c0376c59a79d1d62bdcf98d1aef3113f8": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "545f6a688ee2b1fedaeb234ca52f282b71a87751": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "2e35079c6172f49c4b9a830ec5bf977ea416db7f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "403e3a3b4e8c482e57c29d85d770bb17bad55c22": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "854a232798ae250d5892db1242efcc59e9a89dfd": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8353fcb9e388d7013bbed233549a7f05b35ec203": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "4c4b20d5102700fa6aa6e85d1c3c9b3d9861ad6a": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "b789d9a52380a1c1725123710641549954a84c4f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "24fb7e6f23f8613ffbff55ce8756d9e957fed4af": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8aa67f89e12bcf9afb2c546ab45bf1ec8e7619a2": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "6e177bd5889a6afb7eca5cb657b2fb06d268baba": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "5438340b53593c627f22cd0df0be70ba68eac2d1": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "6118b470605f2b1d57213cec19779bc670fca272": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "323e40737798040e33a7584f6859c81b4caccbc4": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "182c8c5d4710ac3a27eb29836e1ebd70e96a2b68": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "f39f2fcd9107c556ba4a1d2ee33300d713727189": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "73b0025560eceda72687f6bdc1bee29235f13f18": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "7bd71f81513011d4f5d3150c07331ac6802303b9": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "7890694b9063c740bd547a259cc08aea2a262788": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4fe9a32f92c663fa1c6c1d2b2dedc016be94e0eb": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "a5a3da7d6e33ba58864dbad1512e6a70d9f2e8a6": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "fabbdcd2a51771d9df3bc36664453823ce8497fa": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c06f8a04afa93aeb3d337d1b0103ea9cf7626b9b": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "3834edf530c639257555d41a3c67e128a22aefc0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "85a96c88cb091d51fb24b5ad7f820500b6b7e0d0": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "66ad8fd40bbcd1fbd1833663f3f5f0ab5edc15a0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "3201a46adfc959c79ffe6cec56701272884b8610": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "46c20dd977abc8b8f33c4a2fd9883e337627fc52": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "manual-eghbali2022feedback": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "390ab8f391493e99b86003b3e40aaff020357c33": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "5ec766770e4cd2bdb927a384ef1e0dbc63b31b24": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "7c93b9218c19d07350d8a652400f421acc4c374f": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "867366e0fd9c29402f2703ed7632613ae25c914d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "53ba765e77a660dde6f0e4c77378a60fc4d4416e": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c6706d409b8af72cac76ec5d2cb85acd51e42eb0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4c01e39c0b47e313cace1187e80b2db5fffe2747": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "809bbe12558a67efb88c61a286b5dad29487da8a": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "a0f5e1f1e2ebe949547596c30b7c0d8a1c96a9ed": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "f149038501f07350abfef62c14ffb981e8a3aa59": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "6140cd609cad1ee848ae44c2814bc735b978c398": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "7cc88a1a904e8bb6edc1123c0800d1c5a0ea435d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "b69e3f27a35d4328caa8eea8135458ced7558c53": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "18636735fc37b40b8bd82030989fb604c185ad05": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "180c78b132f6369a384d22a9529551d86c8788d3": {
+  "status": "out",
+  "why": "Darrell-group paper, not Redwood's (Jamie)"
+ },
+ "93cc63339db2add13ad587a563678803919271cd": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "6bc7448d4001a629fa53c8bb6d996bec69a54efa": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "7299750269755b80dcbf125d2d0282bfe45cdd6f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "0899c5b3ccfd68b9ae6430186381a188ec5230b0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "b9bc7a3a5d6291187720f7021cd4f2b4d74fce72": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8877f265a7727fb766287486998d483b634c7f62": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "0e6173b4d60895c4941fda825a6f1b3bafddf239": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "e385aa1ee90a21dcf59148e33f1921677201f79e": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "968660bc5e842f95295d640a23c5d3bdac92ec1b": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "efadccc4e024911819ae97c6a923ee6405bb4646": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "b1798748f66faf2dd6b89e2c8ce9cd8d5d88f4e9": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "2172186050d6a4d9ec39bcb9027d4d4db741c15c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "29909f8643bff147ed1175f101fc36908903680c": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "895c057c1276460dc7072ec72273a2ca25997b89": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "18f45b5bf08cccce84aca4131ea7bfadb5880c8f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "16e248998390f267ff7e9f413fb63d3415177dd3": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8fa7856550906c75b704da0d41f024eb966ef8aa": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "dac9387f5691dd9ddff24bb3ca1e91e3789fd944": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "5e78fa295730122b9aa2d382740310322d5a7e25": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4b4fa7f729dc52512b77c42e8da4b2fb0ceb54a5": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "3edfc8aeb86b4d4b525d386dcbd2206454f5ad60": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4b6245e2ce2f9581d27ce1ea8043940e72e2541f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4cb666015ca9abf0d8db960a969ae3e7118f63bc": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "4d64d1f44902ef781be9bd24257850f2bb4b79d5": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "a63087507a103768780a9d0ce59d74de9cf250b8": {
+  "status": "out",
+  "why": "Darrell-group paper, not Redwood's (Jamie)"
+ },
+ "567a14f8539425989f91e1262893f361be81a535": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "173fbf81f517e53e52fd79a0639a25dcae7d1f8a": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "f755cbe8cb930d779a6362c607546681ab06a221": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "8fc9987f0b4cb5dcd7e5616bf3a14798f105886f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "36dace95446dbee02951da976a8c6672617f82a0": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "d739805da378519f49b77604ae48049e7246284c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "ab78ed570c931ad1fabf17c2e75a2cd590907461": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "47149b2d9a106dca13f73f84d11b10b91e0e81fe": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "162dad30645fa26f8298fe9638decc85217f8e3d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "48f8882739d9f22f56016d133b5688e082db0d08": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "bffcec6da875d9e691fb50dc01ceba5c30297387": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "606b563ccd14abc52f67c74cbdaaa8d95f9fa92a": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d4583d1f81c7f057a5f42cc775130ce6cc8e334c": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "700aaea3c3fab573645cd802d217c3c2a7f46c3e": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "3028cb61c228ec81b4142170002ff8752f244f8e": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "31c9245da1ebf983062aec5e8a7b57488ae28273": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "eaa18a090891ff59acde1dfa9f29272cd93a8c22": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "e251d3b6d9d1280e7ec70e77c51b8a22efce114d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "a13333f8311006cbfe29088bc16f93ccb4e8a161": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "c5be5136874d1be27144db28cd51d53a18a37027": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "04f7af2efc330a28a2d5b05f965bb6ee608861a2": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "9331b96f1857420895852e8223a71bde834d951e": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "30df300c12f22edd0e13b9c046951d454faa075a": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d7058a2c4e68f319b0e0c98d1dee21c5910e4e15": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "9036f47a3d2aa6800ca50813846de8bd79f9cf4f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "601f6f68ff0e99d288a88cc480b5f460029da052": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "674ff46c2c3c61397d0ee2afa21d39ef048beb23": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "62f9d259e00f1ace4c9cef4dcbb323314bd27ac9": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "536871635e2cd2873be559cb023164b920a397a3": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "921d0d5afc3526c43aad7995981f9798516b6517": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "bcf8c6d4fdfee69268b77712abd1e78fbe73039b": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "6f403ddc82d0e59635e0bb8b65772464f45a27d0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "616bd47db9cc7d8e9cfb031ab8e7631887abc2d0": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "e9085c23d5094b4a33d06a72142ce19eff3c4c57": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "76322b0c97a847ffd634e855edacf785b31240d3": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "bfb6c9317ac703e41b843d93909dbd6b205fca22": {
+  "status": "out",
+  "why": "conference abstract or talk summary"
+ },
+ "a03069ce3dfcb7e8edd06c6090936e6d3d9d5012": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "61bc076cde78679254e25368e310f74f6a46014e": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "2fb9468ef20980e801ae9f91cb90e06f2690d7d4": {
+  "status": "out",
+  "why": "a lecture, not a paper (Jamie)"
+ },
+ "da1a0e93c8d5fad347c8a3132c8a7bde741da21f": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "6d49a7ad76e779df812bda5c4b037a0b9d6847be": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "9bdaa3510efb1ba36bc23d25917842b3aa1d36e3": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d369a79031f8ca1dbd8d1a40352d62ff48280058": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "279e4d54b936620eed080c1f9eb99de3c944f862": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "fa59560c1d82b0b37b5b08b504c23e8526605713": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "d9cbdff63dd970c846fa19cf4169685815629f6d": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "720256ab7d9a083697c6ff10a768d76c0d876f9f": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "e19fae250c1cf2428367084b39967ef346a196e8": {
+  "status": "in",
+  "why": "Claude's call"
+ },
+ "manual-weiss2016neural": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "acbb11a536aa2aa66d949c6f28b34fe9af58e1ac": {
+  "status": "in",
+  "why": "2+ Redwood authors"
+ },
+ "00b0644abb7bd23a9a8a68332fabd5f96faad5f1": {
+  "status": "out",
+  "why": "2011 PRL paper (arXiv copy posted 2020), before the window"
+ },
+ "f45d0cfb753b48f86b69950076efb3a252cb811e": {
+  "status": "out",
+  "why": "published 2009, before the 10-year window"
+ }
+}

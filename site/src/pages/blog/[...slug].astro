@@ -1,0 +1,45 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url, formatDate } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} current="blog" description={post.data.summary}>
+  <article class="wrap post">
+    <p class="back"><a href={url('blog/')}>Blog</a></p>
+    <h1>{post.data.title}</h1>
+    <p class="byline">
+      <time datetime={post.data.date.toISOString().slice(0, 10)}>{formatDate(post.data.date.toISOString())}</time>
+      {post.data.authors.length > 0 && <span>{post.data.authors.join(', ')}</span>}
+    </p>
+    <div class="prose body">
+      <Content />
+    </div>
+  </article>
+</Base>
+
+<style>
+  .post { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  .back { font-weight: 500; }
+  h1 {
+    margin-top: 1rem;
+    font-size: var(--step-4);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    max-width: 24ch;
+  }
+  .byline { margin-top: 1rem; color: var(--slate); display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
+  .body { margin-top: clamp(2rem, 4vw, 3rem); }
+  .body :global(h2) { font-size: var(--step-2); font-weight: 650; margin: 2rem 0 0.75rem; }
+  .body :global(h3) { font-size: var(--step-1); font-weight: 650; margin: 1.5rem 0 0.5rem; }
+  .body :global(img) { max-width: 100%; height: auto; margin-block: 1.5rem; }
+  .body :global(ul), .body :global(ol) { font-family: var(--serif); line-height: 1.65; max-width: var(--measure); }
+</style>

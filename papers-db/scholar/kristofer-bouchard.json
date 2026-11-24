@@ -1,0 +1,933 @@
+[
+ {
+  "title": "Automated analysis of C. elegans behavior by LabGym: an open-source, AI-powered platform",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4fKUyHm3Qg0C",
+  "authors": "LA Xu, H Liu, Z Li, XZS Xu, B Ye, Y Hu, EA Ronan",
+  "venue": "G3: Genes, Genomes, Genetics 16 (7), jkag120, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Accurately fitting biophysical neuron models to experimental voltage data enabled by meta-learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:AXPGKjj_ei8C",
+  "authors": "R Ben-Shalom, KG Kim, A Ladd, P Ghosh, T Fenton, H Kyoung, ...",
+  "venue": "Research Square, rs. 3. rs-9694895, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Resolving non-identifiability mitigates systematic errors in simultaneous models of neural tuning and functional coupling",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:V3AGJWp-ZtQC",
+  "authors": "P Sachdeva, JH Bak, J Livezey, C Kirst, L Frank, S Bhattacharyya, ...",
+  "venue": "Journal of Computational Neuroscience 54 (2), 239-274, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Robust electron counting for direct electron detectors with the Back-propagation counting method",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:1qzjygNMrQYC",
+  "authors": "J Renner, MA Wright, K Bouchard, BE Cohen, P Ercius, A Goldschmidt, ...",
+  "venue": "npj Computational Materials, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Yeti: A compact protein structure tokenizer for reconstruction and multi-modal generation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Mojj43d5GZwC",
+  "authors": "N Giri, S Farrell, KE Bouchard",
+  "venue": "arXiv preprint arXiv:2605.09981, 2026",
+  "year": 2026
+ },
+ {
+  "title": "A generalist intracortical motor decoder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:D_sINldO8mEC",
+  "authors": "J Ye, F Rizzoglio, X Ma, A Smoulder, H Mao, G Blumenthal, W Hockeimer, ...",
+  "venue": "Advances in Neural Information Processing Systems 38, 110547-110587, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Distinct laminar origins of sensory-evoked high-gamma and low-frequency ECoG signals revealed by optogenetics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:HE397vMXCloC",
+  "authors": "PM Garderes, DE Feldman, KE Bouchard",
+  "venue": "Proceedings of the National Academy of Sciences 123 (14), e2516293123, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Distinct laminar origins of high-gamma and low-frequency ECoG signals revealed by optogenetics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:kRWSkSYxWN8C",
+  "authors": "PM Garderes, DE Feldman, KE Bouchard",
+  "venue": "bioRxiv, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Open-source models for development of data and metadata standards",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:q3oQSFYPqjQC",
+  "authors": "A Rokem, V Mandava, N Cristea, A Tambay, K Bouchard, ...",
+  "venue": "Patterns 6 (7), 2025",
+  "year": 2025
+ },
+ {
+  "title": "Multiscale investigations of cortical processing by integrating laminar polytrodes and optogenetics with micro electrocorticography in rodents",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:eflP2zaiRacC",
+  "authors": "PM Garderes, N Chin, DE Feldman, KE Bouchard",
+  "venue": "JoVE (Journal of Visualized Experiments), e67983, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Partially observable Markov models inferred using statistical tests reveal context-dependent syllable transitions in Bengalese finch songs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:08ZZubdj9fEC",
+  "authors": "J Lu, S Surendralal, KE Bouchard, DZ Jin",
+  "venue": "The Journal of Neuroscience 45 (9), e0522242024, 2025",
+  "year": 2025
+ },
+ {
+  "title": "The geometry of correlated variability leads to highly suboptimal discriminative sensory coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:dfsIfKJdRG4C",
+  "authors": "JA Livezey, PS Sachdeva, ME Dougherty, MT Summers, KE Bouchard",
+  "venue": "Journal of neurophysiology 133 (1), 124-141, 2025",
+  "year": 2025
+ },
+ {
+  "title": "The Artificial Intelligence Ontology: LLM-assisted construction of AI concept hierarchies",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:738O_yMBCRsC",
+  "authors": "MP Joachimiak, MA Miller, JH Caufield, R Ly, NL Harris, A Tritt, ...",
+  "venue": "Applied Ontology 19 (4), 408-418, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Identifying feedforward and feedback controllable subspaces of neural population dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:B3FOqHPlNUQC",
+  "authors": "A Kumar, LM Frank, KE Bouchard",
+  "venue": "arXiv preprint arXiv:2408.05875, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Methods for Linking Data to Online Resources and Ontologies with Applications to Neurophysiology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:vRqMK49ujn8C",
+  "authors": "M Avaylon, R Ly, A Tritt, B Dichter, KE Bouchard, CJ Mungall, O Ruebel",
+  "venue": "arXiv preprint arXiv:2406.00063, 2024",
+  "year": 2024
+ },
+ {
+  "title": "AutoCT: Automated CT registration, segmentation, and quantification",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:SP6oXDckpogC",
+  "authors": "Z Bai, A Essiari, T Perciano, KE Bouchard",
+  "venue": "SoftwareX 26, 101673, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Bayesian inference of structured latent spaces from neural population activity with the orthogonal stochastic linear mixing model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:l7t_Zn2s7bgC",
+  "authors": "R Meng, KE Bouchard",
+  "venue": "PLOS Computational Biology 20 (4), e1011975, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Feedback controllability is a normative theory of neural population dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:K3LRdlH-MEoC",
+  "authors": "K Bouchard, A Kumar",
+  "venue": "",
+  "year": 2024
+ },
+ {
+  "title": "Towards Reverse-Engineering the Brain: Brain-Derived Neuromorphic Computing Approach with Photonic, Electronic, and Ionic Dynamicity in 3D integrated circuits",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:WbkHhVStYXYC",
+  "authors": "SJ Yoo, L El-Srouji, S Datta, S Yu, JA Incorvia, A Salleo, V Sorger, J Hu, ...",
+  "venue": "arXiv preprint arXiv:2403.19724, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Numerical characterization of support recovery in sparse regression with correlated design",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:lSLTfruPkqcC",
+  "authors": "A Kumar, S Bhattacharyya, K Bouchard",
+  "venue": "Communications in Statistics-Simulation and Computation 53 (3), 1504-1518, 2024",
+  "year": 2024
+ },
+ {
+  "title": "BigNeuron: a resource to benchmark and predict performance of algorithms for automated tracing of neurons",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:eJXPG6dFmWUC",
+  "authors": "L Manubens-Gil, DN Cox, M Hawrylycz, Z Zhou, H Chen, A Ramanathan, ...",
+  "venue": "Kluwer Academic Publishers, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Stochastic Collapsed Variational Inference for Structured Gaussian Process Regression",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:BrmTIyaxlBUC",
+  "authors": "R Meng, HKH Lee, K Bouchard",
+  "venue": "Classification and Data Science in the Digital Age, 253, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Data-driven distillation and precision prognosis in traumatic brain injury with interpretable machine learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:uWQEDVKXjbEC",
+  "authors": "A Tritt, JK Yue, AR Ferguson, A Torres Espin, LD Nelson, EL Yuh, ...",
+  "venue": "Scientific reports 13 (1), 21200, 2023",
+  "year": 2023
+ },
+ {
+  "title": "FAIR for AI: An interdisciplinary and international community building perspective",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:UxriW0iASnsC",
+  "authors": "EA Huerta, B Blaiszik, LC Brinson, KE Bouchard, D Diaz, C Doglioni, ...",
+  "venue": "Scientific data 10 (1), 487, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Resolving Non-identifiability Mitigates Bias in Models of Neural Tuning and Functional Coupling",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:dTyEYWd-f8wC",
+  "authors": "S Bhattacharyya, JH Bak, JA Livezey, C Kirst, LM Frank, KE Bouchard, ...",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory), 2023",
+  "year": 2023
+ },
+ {
+  "title": "Resolving Non-identifiability Mitigates Bias in Models of Neural Tuning and Functional Coupling",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:KxtntwgDAa4C",
+  "authors": "P Sachdeva, JH Bak, J Livezey, C Kirst, L Frank, S Bhattacharyya, ...",
+  "venue": "bioRxiv, 2023",
+  "year": 2023
+ },
+ {
+  "title": "BigNeuron: a resource to benchmark and predict performance of algorithms for automated tracing of neurons in light microscopy datasets",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:1sJd4Hv_s6UC",
+  "authors": "L Manubens-Gil, Z Zhou, H Chen, A Ramanathan, X Liu, Y Liu, A Bria, ...",
+  "venue": "Nature Methods 20 (6), 824-835, 2023",
+  "year": 2023
+ },
+ {
+  "title": "DL-TODA: a deep learning tool for omics data analysis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:CHSYGLWDkRkC",
+  "authors": "CM Cres, A Tritt, KE Bouchard, Y Zhang",
+  "venue": "Biomolecules 13 (4), 585, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Perspectives for self-driving labs in synthetic biology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:f2IySw72cVMC",
+  "authors": "HG Martin, T Radivojevic, J Zucker, K Bouchard, J Sustarich, S Peisert, ...",
+  "venue": "Current Opinion in Biotechnology 79, 102881, 2023",
+  "year": 2023
+ },
+ {
+  "title": "BIDS-specification",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:wbdj-CoPYUoC",
+  "authors": "A Oliver-Taylor, A Li, A Thomas, A Flinker, AS Wagner, A Karakuzu, ...",
+  "venue": "Zenodo, 2023",
+  "year": 2023
+ },
+ {
+  "title": "DL-TODA: a deep learning tool for omics data analysis. Biomolecules 2023; 13: 585",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:p2g8aNsByqUC",
+  "authors": "CM Cres, A Tritt, KE Bouchard, Y Zhang",
+  "venue": "",
+  "year": 2023
+ },
+ {
+  "title": "Revealing context dependence through Partially Observable Markov Model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:b0M2c_1WBrUC",
+  "authors": "J Lu, D Jin, S Surendralal, K Bouchard",
+  "venue": "Bulletin of the American Physical Society 67, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Generative models inferred using statistical tests reveal context-dependent syllable transitions in Bengalese finch songs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:EUQCXRtRnyEC",
+  "authors": "J Lu, S Surendralal, KE Bouchard, DZ Jin",
+  "venue": "bioRxiv, 2022.11. 15.516592, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Time-series ML-regression on Graphcore IPU-M2000 and Nvidia A100",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:NhqRSupF_l8C",
+  "authors": "J Balewski, Z Liu, A Tsyplikhin, ML Roland, K Bouchard",
+  "venue": "2022 IEEE/ACM International Workshop on Performance Modeling, Benchmarking …, 2022",
+  "year": 2022
+ },
+ {
+  "title": "The Neurodata Without Borders ecosystem for neurophysiological data science",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:RYcK_YlVTxYC",
+  "authors": "O Rübel, A Tritt, R Ly, BK Dichter, S Ghosh, L Niu, P Baker, I Soltesz, L Ng, ...",
+  "venue": "Elife 11, e78362, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Cortical surface electrical potentials are composed of multiple bandlimited frequency components, including high-gamma",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:pyW8ca7W8N0C",
+  "authors": "JA Livezey, A Hwang, K Usovich, ME Dougherty, EF Chang, KE Bouchard",
+  "venue": "bioRxiv, 2022.07. 22.501176, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Stochastic collapsed variational inference for structured gaussian process regression networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:D03iK_w7-QYC",
+  "authors": "R Meng, HKH Lee, K Bouchard",
+  "venue": "Conference of the international federation of classification societies, 253-261, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Scaling and benchmarking an evolutionary algorithm for constructing biophysical neuronal models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:yD5IFk8b50cC",
+  "authors": "A Ladd, KG Kim, J Balewski, K Bouchard, R Ben-Shalom",
+  "venue": "Frontiers in Neuroinformatics 16, 882552, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Hangul Fonts Dataset: A Hierarchical and Compositional Dataset for Investigating Learned Representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:r0BpntZqJG4C",
+  "authors": "JA Livezey, A Hwang, J Yeung, KE Bouchard",
+  "venue": "International Conference on Image Analysis and Processing, 3-14, 2022",
+  "year": 2022
+ },
+ {
+  "title": "BigNeuron: A resource to benchmark and predict best-performing algorithms for automated reconstruction of neuronal morphology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Y5dfb0dijaUC",
+  "authors": "P Aguiar, A Sironi, X Li, H Zeng, H Yu, CW Wang, EW Rubel, H Liu, Y Li, ...",
+  "venue": "",
+  "year": 2022
+ },
+ {
+  "title": "BigNeuron: A resource to benchmark and predict best-performing algorithms for automated reconstruction of neuronal morphology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:cFHS6HbyZ2cC",
+  "authors": "L Manubens-Gil, Z Zhou, H Chen, A Ramanathan, X Liu, Y Liu, A Bria, ...",
+  "venue": "bioRxiv, 2022.05. 10.491406, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Columnar localization and laminar origin of cortical surface electrical potentials",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:g5m5HwL7SMYC",
+  "authors": "VL Baratham, ME Dougherty, J Hermiz, P Ledochowitsch, MM Maharbiz, ...",
+  "venue": "The Journal of Neuroscience 42 (18), 3733-3748, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Compressed predictive information coding",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4OULZ7Gr8RgC",
+  "authors": "R Meng, T Luo, K Bouchard",
+  "venue": "arXiv preprint arXiv:2203.02051, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Non-normality in neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:fPk4N6BV_jEC",
+  "authors": "A Kumar, K Bouchard",
+  "venue": "AI and Optical Data Sciences III 12019, 70-76, 2022",
+  "year": 2022
+ },
+ {
+  "title": "NeuroGPU: Accelerating multi-compartment, biophysically detailed neuron simulations on GPUs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:NaGl4SEjCO4C",
+  "authors": "R Ben-Shalom, A Ladd, NS Artherya, C Cross, KG Kim, H Sanghevi, ...",
+  "venue": "Journal of neuroscience methods 366, 109400, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Neural optoelectrodes merging semiconductor scalability with polymeric-like bendability for low damage acute in vivo neuron readout and stimulation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:rO6llkc54NcC",
+  "authors": "V Lanzio, V Gutierrez, J Hermiz, K Bouchard, S Cabrini",
+  "venue": "Journal of Vacuum Science & Technology B 39 (6), 2021",
+  "year": 2021
+ },
+ {
+  "title": "Learning from learning machines: a new generation of AI technology to meet the needs of science",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ZHo1McVdvXMC",
+  "authors": "L Pion-Tonachini, K Bouchard, HG Martin, S Peisert, WB Holtz, A Aswani, ...",
+  "venue": "arXiv preprint arXiv:2111.13786, 2021",
+  "year": 2021
+ },
+ {
+  "title": "SCALING AND BENCHMARKING THE GENETIC ALGORITHM IN CONSTRUCTING BIOPHYSICAL NEURONAL MODELS",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:_xSYboBqXhAC",
+  "authors": "A Ladd, K Bouchard, J Balewski, R Ben-Shalom",
+  "venue": "",
+  "year": 2021
+ },
+ {
+  "title": "The impact of reducing signal acquisition specifications on neuronal spike sorting",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:3s1wT3WcHBgC",
+  "authors": "J Hermiz, E Joseph, KH Lee, IA Baldacci, JE Chung, LM Frank, ...",
+  "venue": "2021 43rd Annual International Conference of the IEEE Engineering in …, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Plant single-cell solutions for energy and the environment",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:HoB7MX3m0LUC",
+  "authors": "B Cole, D Bergmann, CE Blaby-Haas, IK Blaby, KE Bouchard, SM Brady, ...",
+  "venue": "Communications biology 4 (1), 962, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Achieving Shrinkage and Sparsity in Bayesian Vector Autoregressions with Three-Parameter-Beta-Normal Prior",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:zA6iFVUQeVQC",
+  "authors": "R Meng, H Rangarajan, K Bouchard",
+  "venue": "",
+  "year": 2021
+ },
+ {
+  "title": "Improved inference in coupling, encoding, and decoding models and its consequence for neuroscientific interpretation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:70eg2SAEIzsC",
+  "authors": "PS Sachdeva, JA Livezey, ME Dougherty, BM Gu, JD Berke, KE Bouchard",
+  "venue": "Journal of Neuroscience Methods 358, 109195, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Bayesian Inference in High-Dimensional Time-Serieswith the Orthogonal Stochastic Linear Mixing Model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:PELIpwtuRlgC",
+  "authors": "K Bouchard",
+  "venue": "Cornell University-arXiv, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Bayesian Inference in High-Dimensional Time-Serieswith the Orthogonal Stochastic Linear Mixing Model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:M05iB0D1s5AC",
+  "authors": "R Meng, K Bouchard",
+  "venue": "arXiv preprint arXiv:2106.13379, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Critical point-finding methods reveal gradient-flat regions of deep network losses",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:GnPB-g6toBAC",
+  "authors": "CG Frye, J Simon, NS Wadia, A Ligeralde, MR DeWeese, KE Bouchard",
+  "venue": "Neural computation 33 (6), 1469-1497, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Automated CT registration, segmentation, and quantification (AutoCT) v1. 0",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:vV6vV6tmYwMC",
+  "authors": "A Essiari, Z Bai, TPC Leite, K Bouchard",
+  "venue": "Lawrence Berkeley National Laboratory (LBNL), Berkeley, CA (United States), 2021",
+  "year": 2021
+ },
+ {
+  "title": "Automated CT registration, segmentation, and quantification (AutoCT) v1. 1",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:SeFeTyx0c_EC",
+  "authors": "Z Bai, A Essiari, T Perciano Costa Leite, K Bouchard",
+  "venue": "US Department of Energy (DOE) Software, 209, 2021",
+  "year": 2021
+ },
+ {
+  "title": "HangulFonts v1. 0.0",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:pqnbT2bcN3wC",
+  "authors": "K Bouchard, J Livezey",
+  "venue": "US Department of Energy (DOE) Software, 76, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Collaborative nonstationary multivariate gaussian process model",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:2P1L_qKh6hAC",
+  "authors": "R Meng, H Lee, K Bouchard",
+  "venue": "arXiv preprint arXiv:2106.00719 520, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Dynamical Components Analysis (DCA) v1. 0.0",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:35N4QoGY0k4C",
+  "authors": "J Livezey, K Bouchard, D Clark",
+  "venue": "US Department of Energy (DOE) Software, 24, 2021",
+  "year": 2021
+ },
+ {
+  "title": "Sparse and low-bias estimation of high dimensional vector autoregressive models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ns9cj8rnVeAC",
+  "authors": "T Ruiz, S Bhattacharyya, M Balasubramanian, K Bouchard",
+  "venue": "Learning for Dynamics and Control, 55-64, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Scaling of union of intersections for inference of granger causal networks from observational data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:YFjsv_pBGBYC",
+  "authors": "M Balasubramanian, TD Ruiz, B Cook, M Prabhat, S Bhattacharyya, ...",
+  "venue": "2020 IEEE International Parallel and Distributed Processing Symposium (IPDPS …, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Accurate inference in parametric models reshapes neuroscientific interpretation and improves data-driven discovery",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:O3NaXMp0MMsC",
+  "authors": "PS Sachdeva, JA Livezey, ME Dougherty, BM Gu, JD Berke, KE Bouchard",
+  "venue": "bioRxiv, 2020.04. 10.036244, 2020",
+  "year": 2020
+ },
+ {
+  "title": "State-based network similarity visualization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:blknAaTinKkC",
+  "authors": "S Murugesan, K Bouchard, J Brown, M Kiran, D Lurie, B Hamann, ...",
+  "venue": "Information Visualization 19 (2), 96-113, 2020",
+  "year": 2020
+ },
+ {
+  "title": "Robust, automated sleep scoring by a compact neural network with distributional shift correction",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:maZDTaKrznsC",
+  "authors": "Z Barger, CG Frye, D Liu, Y Dan, KE Bouchard",
+  "venue": "PloS one 14 (12), e0224642, 2019",
+  "year": 2019
+ },
+ {
+  "title": "HDMF: Hierarchical Data Modeling Framework for modern science data standards",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:BqipwSGYUEgC",
+  "authors": "AJ Tritt, O Rübel, B Dichter, R Ly, D Kang, EF Chang, LM Frank, ...",
+  "venue": "2019 IEEE International Conference on Big Data (Big Data), 165-179, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Pyuoi: the union of intersections framework in python",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:NMxIlDl6LWMC",
+  "authors": "PS Sachdeva, JA Livezey, AJ Tritt, KE Bouchard",
+  "venue": "Journal of Open Source Software 4 (44), 1799, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Methods of decoding speech from the brain and systems for practicing the same",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:mB3voiENLucC",
+  "authors": "EF CHANG, KE BOUCHARD",
+  "venue": "US Patent 10,438,603, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Deep learning as a tool for neural data analysis: speech classification and cross-frequency coupling in human sensorimotor cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ZeXyd9-uunAC",
+  "authors": "JA Livezey, KE Bouchard, EF Chang",
+  "venue": "PLoS computational biology 15 (9), e1007091, 2019",
+  "year": 2019
+ },
+ {
+  "title": "NeuroGPU: Accelerating multi-compartment, biophysically detailed neuron simulations on GPUs",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:a0OBvERweLwC",
+  "authors": "R Ben-Shalom, NS Artherya, A Ladd, C Cross, H Sanghevi, KG Kim, ...",
+  "venue": "bioRxiv, 727560, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Inferring neuronal ionic conductances from membrane potentials using cnns",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:TFP_iSt0sucC",
+  "authors": "R Ben-Shalom, J Balewski, A Siththaranjan, V Baratham, H Kyoung, ...",
+  "venue": "bioRxiv, 727974, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Sparse, Predictive, and Interpretable Functional Connectomics with UoILasso",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:JV2RwH3_ST0C",
+  "authors": "PS Sachdeva, S Bhattacharyya, KE Bouchard",
+  "venue": "2019 41st Annual International Conference of the IEEE Engineering in …, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Laminar origin of evoked ECoG high-gamma activity",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:M3NEmzRMIkIC",
+  "authors": "ME Dougherty, APQ Nguyen, VL Baratham, KE Bouchard",
+  "venue": "2019 41st Annual International Conference of the IEEE Engineering in …, 2019",
+  "year": 2019
+ },
+ {
+  "title": "iEEG-BIDS, extending the Brain Imaging Data Structure specification to human intracranial electrophysiology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:iH-uZ7U-co4C",
+  "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, S D’ambrosio, O David, ...",
+  "venue": "Scientific data 6 (1), 102, 2019",
+  "year": 2019
+ },
+ {
+  "title": "In vitro validation of in silico identified inhibitory interactions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4JMBOYKVnBMC",
+  "authors": "H Liu, D Bridges, C Randall, SA Solla, B Wu, P Hansma, X Yan, KS Kosik, ...",
+  "venue": "Journal of Neuroscience Methods 321, 39-48, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Numerically recovering the critical points of a deep linear autoencoder",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:e5wmG9Sq2KIC",
+  "authors": "CG Frye, NS Wadia, MR DeWeese, KE Bouchard",
+  "venue": "arXiv preprint arXiv:1901.10603, 2019",
+  "year": 2019
+ },
+ {
+  "title": "NWB: N 2.0: an accessible data standard for neurophysiology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:R3hNpaxXUhUC",
+  "authors": "O Rübel, A Tritt, B Dichter, T Braun, N Cain, N Clack, TJ Davidson, ...",
+  "venue": "BioRxiv, 523035, 2019",
+  "year": 2019
+ },
+ {
+  "title": "PyUoI: The Union of Intersections Framework in Python",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:9vf0nzSNQJEC",
+  "authors": "K Bouchard",
+  "venue": "Journal of Open Source Software, 2019",
+  "year": 2019
+ },
+ {
+  "title": "PyUoI v1. 0.0",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ldfaerwXgEUC",
+  "authors": "A Tritt, K Bouchard, J Livezey, P Sachdeva",
+  "venue": "US Department of Energy (DOE) Software, 246, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Sparse, low-bias, and scalable estimation of high dimensional vector autoregressive models via union of intersections",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:isC4tDSrTZIC",
+  "authors": "T Ruiz, M Balasubramanian, KE Bouchard, S Bhattacharyya",
+  "venue": "arXiv preprint arXiv:1908.11464, 2019",
+  "year": 2019
+ },
+ {
+  "title": "Unsupervised discovery of temporal structure in noisy data with dynamical components analysis",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:j3f4tGmQtD8C",
+  "authors": "D Clark, J Livezey, K Bouchard",
+  "venue": "Advances in Neural Information Processing Systems 32, 2019",
+  "year": 2019
+ },
+ {
+  "title": "BIDS-iEEG: an extension to the brain imaging data structure (BIDS) specification for human intracranial electrophysiology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:TQgYirikUcIC",
+  "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, S D'Ambrosio, O David, ...",
+  "venue": "OSF, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Optimizing the Union of Intersections LASSO () and Vector Autoregressive () Algorithms for Improved Statistical Estimation at Scale",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:bEWYMUwI8FkC",
+  "authors": "M Balasubramanian, T Ruiz, B Cook, S Bhattacharyya, A Shrivastava, ...",
+  "venue": "arXiv preprint arXiv:1808.06992, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Provably convergent acceleration in factored gradient descent with applications in matrix sensing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:hC7cP41nSMkC",
+  "authors": "T Ajayi, D Mildebrath, A Kyrillidis, S Ubaru, G Kollias, K Bouchard",
+  "venue": "arXiv preprint arXiv:1806.00534, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Spiking Linear Dynamical Systems on Neuromorphic Hardware for Low-Power Brain-Machine Interfaces",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:qUcmZB5y_30C",
+  "authors": "DG Clark, JA Livezey, EF Chang, KE Bouchard",
+  "venue": "arXiv preprint arXiv:1805.08889, 2018",
+  "year": 2018
+ },
+ {
+  "title": "International neuroscience initiatives through the lens of high-performance computing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:IWHjjKOFINEC",
+  "authors": "KE Bouchard, JB Aimone, M Chun, T Dean, M Denker, M Diesmann, ...",
+  "venue": "Computer 51 (4), 50-59, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Human sensorimotor cortex control of directly measured vocal tract movements during vowel production",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:L8Ckcad2t8MC",
+  "authors": "DF Conant, KE Bouchard, MK Leonard, EF Chang",
+  "venue": "The Journal of Neuroscience 38 (12), 2955-2966, 2018",
+  "year": 2018
+ },
+ {
+  "title": "Methods of decoding speech from the brain and systems for practicing the same",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:5nxA0vEk-isC",
+  "authors": "EF CHANG, KE BOUCHARD",
+  "venue": "US Patent 9,905,239, 2018",
+  "year": 2018
+ },
+ {
+  "title": "UoI-NMF cluster: a robust nonnegative matrix factorization algorithm for improved parts-based decomposition and reconstruction of noisy data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:9ZlFYXVOiuMC",
+  "authors": "S Ubaru, K Wu, KE Bouchard",
+  "venue": "2017 16th IEEE International Conference on Machine Learning and Applications …, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Use of a Neural Circuit Probe to Validate in silico Predictions of Inhibitory Connections",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:QIV2ME_5wuYC",
+  "authors": "H Liu, D Bridges, C Randall, SA Solla, B Wu, P Hansma, X Yan, KS Kosik, ...",
+  "venue": "bioRxiv, 204594, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Neuromorphic Kalman filter implementation in IBM’s TrueNorth",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:dhFuZR0502QC",
+  "authors": "R Carney, K Bouchard, P Calafiura, D Clark, D Donofrio, ...",
+  "venue": "Journal of Physics: Conference Series 898 (4), 042021, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Timing during transitions in Bengalese finch song: implications for motor sequencing",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:aqlVkmm33-oC",
+  "authors": "TW Troyer, MS Brainard, KE Bouchard",
+  "venue": "Journal of neurophysiology 118 (3), 1556-1566, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Sparse coding of ECoG signals identifies interpretable components for speech control in human sensorimotor cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4DMP91E08xMC",
+  "authors": "KE Bouchard, AF Bujan, EF Chang, FT Sommer",
+  "venue": "2017 39th Annual International Conference of the IEEE Engineering in …, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Multi-scale visual analysis of time-varying electrocorticography data via clustering of brain regions",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:4TOpqqG69KYC",
+  "authors": "S Murugesan, K Bouchard, E Chang, M Dougherty, B Hamann, GH Weber",
+  "venue": "BMC bioinformatics 18 (Suppl 6), 236, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Use of a Neural Circuit Probe to Validate in silico Predictions of Inhibitory Connections",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:JoZmwDi-zQgC",
+  "authors": "D Bridges, KS Kosik, KE Bouchard, X Yan, SA Solla, B Wu, PK Hansma, ...",
+  "venue": "",
+  "year": 2017
+ },
+ {
+  "title": "Union of intersections (uoi) for interpretable data driven discovery and prediction",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:8k81kl-MbHgC",
+  "authors": "K Bouchard, A Bujan, F Roosta, S Ubaru, M Prabhat, A Snijders, JH Mao, ...",
+  "venue": "Advances in Neural Information Processing Systems 30, 2017",
+  "year": 2017
+ },
+ {
+  "title": "Methods for specifying scientific data standards and modeling relationships with applications to neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:7PzlFSSx8tAC",
+  "authors": "E Chang, O Rübel, M Dougherty, P Prabhat, P Denes, D Conant, ...",
+  "venue": "",
+  "year": 2016
+ },
+ {
+  "title": "Methods for specifying scientific data standards and modeling relationships with applications to neuroscience",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:3fE2CSJIrl8C",
+  "authors": "O Rübel, M Dougherty, Prabhat, P Denes, D Conant, EF Chang, ...",
+  "venue": "Frontiers in Neuroinformatics 10, 48, 2016",
+  "year": 2016
+ },
+ {
+  "title": "High-performance computing in neuroscience for data-driven discovery, integration, and dissemination",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "KE Bouchard, JB Aimone, M Chun, T Dean, M Denker, M Diesmann, ...",
+  "venue": "Neuron 92 (3), 628-631, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Hierarchical spatio-temporal visual analysis of cluster evolution in electrocorticography data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:0EnyYjriUFMC",
+  "authors": "S Murugesan, K Bouchard, E Chang, M Dougherty, B Hamann, GH Weber",
+  "venue": "Proceedings of the 7th ACM International Conference on Bioinformatics …, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Spatial resolution dependence on spectral frequency in human speech cortex electrocorticography",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ufrVoPGSRksC",
+  "authors": "L Muller, LS Hamilton, E Edwards, KE Bouchard, EF Chang",
+  "venue": "Journal of neural engineering 13 (5), 056013, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Auditory-induced neural dynamics in sensory-motor circuitry predict learned temporal and sequential statistics of birdsong",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:YsMSGLbcyi4C",
+  "authors": "KE Bouchard, MS Brainard",
+  "venue": "Proceedings of the National Academy of Sciences 113 (34), 9641-9646, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Dynamic structure of neural variability in the cortical representation of speech sounds",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:ULOm3_A8WrAC",
+  "authors": "BK Dichter, KE Bouchard, EF Chang",
+  "venue": "The Journal of Neuroscience 36 (28), 7453-7463, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Usage pattern-driven dynamic data layout reorganization",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:LkGwnXOMwfcC",
+  "authors": "H Tang, S Byna, S Harenberg, X Zou, W Zhang, K Wu, B Dong, O Rubel, ...",
+  "venue": "2016 16th IEEE/ACM International Symposium on Cluster, Cloud and Grid …, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Brain modulyzer: interactive visual analysis of functional brain connectivity",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:_FxGoFyzp5QC",
+  "authors": "S Murugesan, K Bouchard, JA Brown, B Hamann, WW Seeley, A Trujillo, ...",
+  "venue": "IEEE/ACM transactions on computational biology and bioinformatics 14 (4 …, 2016",
+  "year": 2016
+ },
+ {
+  "title": "High-resolution, non-invasive imaging of upper vocal tract articulators compatible with human brain recordings",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:W7OEmFMy1HYC",
+  "authors": "KE Bouchard, DF Conant, GK Anumanchipalli, B Dichter, ...",
+  "venue": "PLoS One 11 (3), e0151327, 2016",
+  "year": 2016
+ },
+ {
+  "title": "Hierarchical Spatio-temporal Visual Analysis of Cluster Evolution in Electrocorticography",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Tiz5es2fbqcC",
+  "authors": "S Murugesan, K Bouchard, E Chang",
+  "venue": "",
+  "year": 2016
+ },
+ {
+  "title": "Hierarchical Spatio-temporal Visual Analysis of Cluster Evolution in Electrocorticography Data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:_Qo2XoVZTnwC",
+  "authors": "K Bouchard, E Chang, M Dougherty, B Hamann, GH Weber",
+  "venue": "",
+  "year": 2016
+ },
+ {
+  "title": "Strategies for optical control and simultaneous electrical readout of extended cortical circuits",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:UeHWp8X0CEIC",
+  "authors": "P Ledochowitsch, A Yazdan-Shahmorad, KE Bouchard, C Diaz-Botia, ...",
+  "venue": "Journal of neuroscience methods 256, 220-231, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Identification of genetic factors that modify motor performance and body weight using Collaborative Cross mice",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:zYLM7Y9cAGgC",
+  "authors": "JH Mao, SA Langley, Y Huang, M Hang, KE Bouchard, SE Celniker, ...",
+  "venue": "Scientific reports 5 (1), 16247, 2015",
+  "year": 2015
+ },
+ {
+  "title": "An adapting auditory-motor feedback loop can contribute to generating vocal repetition",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Y0pCki6q_DkC",
+  "authors": "JD Wittenbach, KE Bouchard, MS Brainard, DZ Jin",
+  "venue": "PLoS computational biology 11 (10), e1004471, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Brainformat: A data standardization framework for neuroscience data",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:roLk4NBRz8UC",
+  "authors": "O Ruebel, Prabhat, P Denes, D Conant, E Chang, K Bouchard",
+  "venue": "bioRxiv, 024521, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Role of the site of synaptic competition and the balance of learning forces for Hebbian encoding of probabilistic Markov sequences",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:eQOLeE2rZwMC",
+  "authors": "KE Bouchard, S Ganguli, MS Brainard",
+  "venue": "Frontiers in Computational Neuroscience 9, 92, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Bootstrapped adaptive threshold selection for statistical model selection and estimation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:WF5omc3nYNoC",
+  "authors": "KE Bouchard",
+  "venue": "arXiv preprint arXiv:1505.03511, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Dynamic encoding of speech sequence probability in human temporal cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:2osOgNQ5qMEC",
+  "authors": "MK Leonard, KE Bouchard, C Tang, EF Chang",
+  "venue": "The Journal of Neuroscience 35 (18), 7203-7214, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Modeling neural activity at the ensemble level",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:UebtZRa9Y70C",
+  "authors": "J Rapela, M Kostuk, PF Rowat, T Mullen, EF Chang, K Bouchard",
+  "venue": "arXiv preprint arXiv:1505.00041, 2015",
+  "year": 2015
+ },
+ {
+  "title": "Supporting Computational Neuroscience@ NERSC",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:-f6ydRqryjwC",
+  "authors": "M Prabhat, K Bouchard, A Greiner, J Teeters, O Ruebel, A Bujan, ...",
+  "venue": "",
+  "year": 2015
+ },
+ {
+  "title": "A multi-modal imaging system for simultaneous measurement of speech articulator kinematics for bedside applications in clinical settings",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Se3iqnhoufwC",
+  "authors": "DF Conant, KE Bouchard, AK Gopala, B Dichter, EF Chang",
+  "venue": "The Journal of the Acoustical Society of America 136 (4_Supplement), 2104-2104, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Control of spoken vowel acoustics and the influence of phonetic context in human speech sensorimotor cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:d1gkVwhDpl0C",
+  "authors": "KE Bouchard, EF Chang",
+  "venue": "The Journal of Neuroscience 34 (38), 12662-12677, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Neural decoding of spoken vowels from human sensory-motor cortex with high-density electrocorticography",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:IjCSPb-OGe4C",
+  "authors": "KE Bouchard, EF Chang",
+  "venue": "2014 36th Annual International Conference of the IEEE Engineering in …, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Speech map in the human ventral sensory-motor cortex",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:9yKSN-GCB0IC",
+  "authors": "D Conant, KE Bouchard, EF Chang",
+  "venue": "Current opinion in neurobiology 24, 63-67, 2014",
+  "year": 2014
+ },
+ {
+  "title": "Neural encoding and integration of learned probabilistic sequences in avian sensory-motor circuitry",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:qjMakFHDy7sC",
+  "authors": "KE Bouchard, MS Brainard",
+  "venue": "The Journal of Neuroscience 33 (45), 17710-17723, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Human superior temporal gyrus encoding of speech sequence probabilities",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:YOwf2qJgpHMC",
+  "authors": "MK Leonard, K Bouchard, EF Chang",
+  "venue": "The Journal of the Acoustical Society of America 134 (5_Supplement), 4234-4234, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Neural encoding of learned auditory feedback statistics in avian vocal-motor circuitry",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:MXK_kJrjxJIC",
+  "authors": "KE Bouchard, MS Brainard",
+  "venue": "The Journal of the Acoustical Society of America 134 (5_Supplement), 4086-4086, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Functional organization of human sensorimotor cortex for speech articulation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:u5HHmVD_uO8C",
+  "authors": "KE Bouchard, N Mesgarani, K Johnson, EF Chang",
+  "venue": "Nature 495 (7441), 327-332, 2013",
+  "year": 2013
+ },
+ {
+  "title": "Cannabinoid receptor 2 signaling in peripheral immune cells modulates disease onset and severity in mouse models of Huntington's disease",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:u-x6o8ySG0sC",
+  "authors": "J Bouchard, J Truong, K Bouchard, D Dunkelberger, S Desrayaud, ...",
+  "venue": "The Journal of Neuroscience 32 (50), 18259-18268, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Variability of inter-syllable gaps challenges the branched-chain model of sequence production in Bengalese finches",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:Zph67rFs4hoC",
+  "authors": "KE Bouchard, AS Kulkarni, MS Brainard, TW Troyer",
+  "venue": "BMC Neuroscience 13 (Suppl 1), P19, 2012",
+  "year": 2012
+ },
+ {
+  "title": "Form and formation of probabilistic sensory-motor circuits",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:hqOjcs7Dif8C",
+  "authors": "KE Bouchard",
+  "venue": "University of California, San Francisco, 2010",
+  "year": 2010
+ },
+ {
+  "title": "1Scientific Data|(2019) 6: 102| https://doi. org/10.1038/s41597-019-0105-7 www. nature. com/scientificdata iEEG-BIDS, extending the Brain Imaging Data Structure specification …",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:tkaPQYYpVKoC",
+  "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, BL Foster, KJ Gorgolewski, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "www. nature. com/scientificdata",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:eMMeJKvmdy0C",
+  "authors": "C Holdgraf, S Appelhoff, S Bickel, K Bouchard, S D’Ambrosio, O David, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "The geometry of correlated variability leads to highly suboptimal",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:XiVPGOgt02cC",
+  "authors": "JA Livezey, PS Sachdeva, ME Dougherty, MT Summers, KE Bouchard",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Not optimal, just noisy: the geometry of correlated variability leads",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:bnK-pcrLprsC",
+  "authors": "JA Livezey, PS Sachdeva, ME Dougherty, MT Summers, KE Bouchard",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Supplemental Information",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=mDvGOLkAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=mDvGOLkAAAAJ:KlAtU1dfN6UC",
+  "authors": "KE Bouchard, N Mesgarani, K Johnson, EF Chang",
+  "venue": "",
+  "year": null
+ }
+]

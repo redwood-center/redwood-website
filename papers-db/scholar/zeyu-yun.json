@@ -1,0 +1,79 @@
+[
+ {
+  "title": "Toward a mechanistic understanding of inference in visual cortex and diffusion models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:YsMSGLbcyi4C",
+  "authors": "Z Yun, A Belsten, D Bi, Z Kadkhodaie, Y Chen, BA Olshausen",
+  "venue": "arXiv preprint arXiv:2607.15693, 2026",
+  "year": 2026
+ },
+ {
+  "title": "When Does Continual Learning Require Learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:ufrVoPGSRksC",
+  "authors": "A Harrington, N Saxena, M Murphy, A Borovykh, Z Yun, S Kamath, AE Kyi, ...",
+  "venue": "arXiv preprint arXiv:2607.07847, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Urlost: Unsupervised representation learning without stationarity or topology",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:2osOgNQ5qMEC",
+  "authors": "Z Yun, J Zhang, Y LeCun, Y Chen",
+  "venue": "International Conference on Learning Representations 2025, 1492-1516, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Oscillator associative memories facilitate high-capacity, compositional inference",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:UeHWp8X0CEIC",
+  "authors": "C Kymn, C Bybee, Z Yun, D Kleyko, B Olshausen",
+  "venue": "New Frontiers in Associative Memories, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Sparse coding generates efficient representations for autoassociative memories",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:IjCSPb-OGe4C",
+  "authors": "Y Zhao, Z Yun, B Olshausen, C Kymn",
+  "venue": "Proceedings of the Annual Meeting of the Cognitive Science Society 47, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Natural retinal cone distributions emerge from optical and neural limits to vision",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:eQOLeE2rZwMC",
+  "authors": "Y Zhao, Z Yun, R Sun, D Bi",
+  "venue": "Journal of Vision 24 (10), 1505-1505, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Denoising for manifold extrapolation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:W7OEmFMy1HYC",
+  "authors": "Z Yun, G Chuang, D Dong, Y Chen",
+  "venue": "NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning, 2024",
+  "year": 2024
+ },
+ {
+  "title": "Minimalistic unsupervised representation learning with the sparse manifold transform",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:d1gkVwhDpl0C",
+  "authors": "Y Chen, Z Yun, Y Ma, B Olshausen, Y LeCun",
+  "venue": "The Eleventh International Conference on Learning Representations, 2022",
+  "year": 2022
+ },
+ {
+  "title": "Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:u5HHmVD_uO8C",
+  "authors": "Z Yun, Y Chen, B Olshausen, Y LeCun",
+  "venue": "Proceedings of Deep Learning Inside Out (DeeLIO): The 2nd Workshop on …, 2021",
+  "year": 2021
+ },
+ {
+  "title": "GramStatTexNet: Efficient, Interpretable, and Neuro-Inspired Spatiotemporal Texture",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:WF5omc3nYNoC",
+  "authors": "V DuTell, Z Yun, A Harrington, YS Fang, M Hamilton, C Koevesdi, ...",
+  "venue": "",
+  "year": null
+ },
+ {
+  "title": "Towards WhiteBox Generative Models: Scaling Non-Parametric Sampling with Representation",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=6WadrlgAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=6WadrlgAAAAJ:Tyk-4Ss8FVUC",
+  "authors": "V Lu, A Truong, Z Yun, Y Chen",
+  "venue": "",
+  "year": null
+ }
+]

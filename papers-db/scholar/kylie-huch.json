@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Toward practical superconducting accelerators for machine learning using U-SFQ",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:UeHWp8X0CEIC",
+  "authors": "P Gonzalez-Guerrero, K Huch, N Patra, T Popovici, G Michelogiannakis",
+  "venue": "ACM Journal on Emerging Technologies in Computing Systems 20 (2), 1-22, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Area efficient asynchronous sfq pulse round-robin distribution network",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:qjMakFHDy7sC",
+  "authors": "MG Bautista, D Lyles, K Huch, P Gonzalez-Guerrero, G Michelogiannakis",
+  "venue": "IEEE Transactions on Circuits and Systems I: Regular Papers 71 (1), 201-208, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Superconducting hyperdimensional associative memory circuit for scalable machine learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:9yKSN-GCB0IC",
+  "authors": "K Huch, P Gonzalez-Guerrero, D Lyles, G Michelogiannakis",
+  "venue": "IEEE Transactions on Applied Superconductivity 33 (5), 1-14, 2023",
+  "year": 2023
+ },
+ {
+  "title": "An area efficient superconducting unary CNN accelerator",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:2osOgNQ5qMEC",
+  "authors": "P Gonzalez-Guerrero, K Huch, N Patra, T Popovici, G Michelogiannakis",
+  "venue": "2023 24th international symposium on quality electronic design (ISQED), 1-8, 2023",
+  "year": 2023
+ },
+ {
+  "title": "Superconducting digital DIT butterfly unit for fast fourier transform using race logic",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:u5HHmVD_uO8C",
+  "authors": "G Bautista, P Gonzalez-Guerrero, D Lyles, K Huch, G Michelogiannakis",
+  "venue": "2022 20th IEEE Interregional NEWCAS Conference (NEWCAS), 441-445, 2022",
+  "year": 2022
+ },
+ {
+  "title": "From arbitrary functions to space-time implementations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:d1gkVwhDpl0C",
+  "authors": "G Tzimpragos, N Tsiskaridze, K Huch, A Madhavan, T Sherwood",
+  "venue": "Proceedings of the 1st Unary Computing Workshop (ISCA’19), 2019",
+  "year": 2019
+ },
+ {
+  "title": "Regulation of cell-type-specific transcriptomes by microRNA networks during human brain development",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Y7P2TcoAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=Y7P2TcoAAAAJ:u-x6o8ySG0sC",
+  "authors": "TJ Nowakowski, N Rani, M Golkaram, HR Zhou, B Alvarado, K Huch, ...",
+  "venue": "Nature neuroscience 21 (12), 1784-1792, 2018",
+  "year": 2018
+ }
+]

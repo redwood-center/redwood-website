@@ -1,0 +1,173 @@
+---
+import Base from '../layouts/Base.astro';
+import FilterGrid from '../components/FilterGrid.astro';
+import UpcomingSeminars from '../components/UpcomingSeminars.astro';
+import sparseFilters from '../data/filters-olshausen.json';
+import alexnetFilters from '../data/filters-alexnet.json';
+import macaqueFilters from '../data/filters-macaque.json';
+import { upcoming } from '../lib/seminars';
+import { missionHtml, pillars } from '../data/research';
+import { url } from '../lib/url';
+
+---
+
+<Base current="home" overlayHeader>
+  <section class="intro forest-bg">
+    <div class="wrap">
+      <h1 class="visually-hidden">Redwood Center for Theoretical Neuroscience</h1>
+      <p class="statement">
+        The Redwood Center is an interdepartmental research institute which seeks
+        the <em>scientific principles behind natural and artificial intelligence.</em>
+      </p>
+      <div class="intro-graphics">
+        <div class="intro-graphic">
+          <FilterGrid data={macaqueFilters} name="macaque" label="A grid of small grayscale patches, each the measured receptive field of a neuron in macaque visual cortex: oriented light and dark stripes, like the learned filters.">
+            Receptive fields measured from neurons in macaque V1 (data from
+            <a href="https://doi.org/10.1152/jn.2002.88.1.455">Ringach, 2002</a>, as shown in
+            <a href="https://doi.org/10.1371/journal.pcbi.1002250">Zylberberg et al., 2011</a>).
+          </FilterGrid>
+        </div>
+        <div class="intro-graphic">
+          <FilterGrid data={sparseFilters} name="sparse" label="A grid of small grayscale patches, each a striped, oriented edge detector learned by sparse coding.">
+            Receptive fields learned by sparse coding of natural images
+            (<a href="https://www.nature.com/articles/381607a0">Olshausen &amp; Field, 1996</a>).
+          </FilterGrid>
+        </div>
+        <div class="intro-graphic">
+          <FilterGrid data={alexnetFilters} name="alexnet" label="A grid of small grayscale patches, each a striped, oriented edge detector learned by the neural network AlexNet.">
+            Filters learned by the first layer of AlexNet, a deep network trained to classify images
+            (<a href="https://papers.nips.cc/paper_files/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">Krizhevsky et al., 2012</a>).
+          </FilterGrid>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="research" aria-labelledby="research-title">
+    <div class="wrap">
+      <h2 id="research-title">Seeking a science of intelligence</h2>
+      <p class="lead" set:html={missionHtml} />
+      <p class="pillars-intro">Our research has five pillars:</p>
+      <ol class="pillars">
+        {pillars.map((p, i) => (
+          <li>
+            <span class="num" aria-hidden="true">{i + 1}</span>
+            <h3><a href={url(`research/#${p.id}`)}>{p.short}</a></h3>
+            <p>{p.teaser}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="research-cta">
+        <a href={url('research/')}>Read about our research</a> and <a href={url('papers/')}>explore our papers</a>.
+      </p>
+    </div>
+  </section>
+
+  {upcoming.length > 0 && (
+    <section class="section section--wash" aria-labelledby="seminars-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="seminars-title">Upcoming seminars</h2>
+          <a href={url('seminars/')}>All seminars</a>
+        </div>
+        <UpcomingSeminars seminars={upcoming} />
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .intro {
+    /* Backdrop: .forest-bg (global.css), shared with the nav bar on other pages. */
+    color: #fff;
+    /* The header floats over the top of this section, so the forest runs behind it. */
+    padding-block: calc(var(--header-h) + clamp(2.75rem, 6vw, 4.75rem)) clamp(3rem, 7vw, 5.5rem);
+    --gabor-caption: rgb(255 255 255 / 0.78);
+  }
+  .statement {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 0.95rem + 2.1vw, 2.5rem);
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    text-wrap: pretty;
+    text-shadow: 0 1px 24px rgb(8 24 15 / 0.35);
+  }
+  .statement em { font-style: italic; }
+  /* Optical balance, tuned by eye: the long words leave a ragged right edge that reads as a
+     wider right margin, so the block is nudged right and allowed slightly past the column. */
+  @media (min-width: 900px) {
+    .statement { margin-left: 3rem; margin-right: -2.25rem; }
+  }
+  /* Three grids of equal size (one measured, two learned), centered as a row with fixed gaps. The row
+     breaks out of the text column into the page margins (up to 82rem wide, never closer to the window
+     edge than the page gutter). */
+  .intro-graphics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 24rem));
+    justify-content: center;
+    align-items: start;
+    gap: clamp(1.75rem, 4.5vw, 4.5rem);
+    margin-top: clamp(2.5rem, 6vw, 4.5rem);
+    margin-inline: calc(50% - min(50vw - var(--gutter), 41rem));
+  }
+  @media (max-width: 900px) {
+    .intro-graphics { grid-template-columns: minmax(0, 1fr); }
+    .intro-graphic { max-width: 30rem; }
+  }
+
+  /* Research: second hero-scale block; text lives in src/data/research.ts. */
+  .research { padding-block: clamp(3.5rem, 9vw, 7rem); }
+  .research h2 {
+    font-size: var(--step-3);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .lead {
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    max-width: 62ch;
+    margin-top: 1rem;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0 clamp(1rem, 2.5vw, 2rem);
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+  }
+  /* Each pillar spans three shared rows (number, name, question) so questions line up across columns. */
+  .pillars li { display: grid; grid-row: span 3; grid-template-rows: subgrid; align-content: start; }
+  .pillars-intro { margin-top: clamp(1.75rem, 4vw, 2.75rem); font-size: var(--step-1); font-weight: 600; color: var(--brand); }
+  /* Numbers sit on the rule, so each pillar reads as a numbered column. */
+  .num {
+    display: block;
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.85rem;
+    border-bottom: 3px solid #b4bdb7;
+    font-size: var(--step-2);
+    font-weight: 700;
+    line-height: 1;
+    color: #b4bdb7; /* pale gray: present but quieter than the names */
+    font-variant-numeric: tabular-nums;
+  }
+  .pillars h3 { align-self: start; font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
+  .pillars h3 a { text-decoration: none; }
+  .pillars h3 a:hover { text-decoration: underline; }
+  .pillars p { margin-top: 0.5rem; font-family: var(--serif); line-height: 1.55; }
+  .research-cta {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    font-size: var(--step-1);
+    font-weight: 600;
+  }
+
+  @media (max-width: 1000px) {
+    /* Fewer columns: drop the shared rows (they'd inherit the row gap) and stack each pillar normally. */
+    .pillars { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.75rem; }
+    .pillars li { display: block; grid-row: auto; }
+  }
+  @media (max-width: 560px) {
+    .pillars { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>

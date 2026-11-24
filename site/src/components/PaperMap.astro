@@ -1,0 +1,879 @@
+---
+// Live t-SNE map of Redwood papers (after jamiesimon.io/t-sne): the layout is computed in the browser as you watch.
+// Dots are colored by category or by Redwood PI (pie-split when several PIs are authors), joined by pale lines for
+// similarity or citation, and kept from overlapping. The year slider re-runs the layout from the current positions,
+// so papers fade in and out while the map re-settles; a second slider adds attraction between citing papers.
+import papers from '../data/papers.json';
+import map from '../data/papers-map.json';
+import people from '../data/people.json';
+import { OTHER_COLOR, PI_RAINBOW, TOPIC_COLORS, TOPIC_ORDER } from '../lib/topics';
+import { loadDecisions } from '../lib/paper-status';
+import { texToHtml } from '../lib/tex';
+import 'katex/dist/katex.min.css';
+
+interface Props {
+  model?: string;
+}
+const { model = 'specter2' } = Astro.props;
+
+const OTHER = OTHER_COLOR;
+const categoryColors = TOPIC_COLORS;
+const categories = papers.categories as Record<string, string>;
+const RAINBOW = [...TOPIC_ORDER];
+for (const k of Object.keys(categories)) if (!RAINBOW.includes(k)) RAINBOW.splice(RAINBOW.length - 1, 0, k);
+
+// Redwood PIs = faculty, in the People page's order.
+const faculty = people.filter((p) => p.group === 'Faculty').sort((a, b) => a.order - b.order);
+const pis = faculty.map((p, i) => ({ slug: p.slug, name: p.name, color: PI_RAINBOW[i % PI_RAINBOW.length] }));
+const piSlugs = new Set(pis.map((p) => p.slug));
+
+const decisions = loadDecisions();
+const m = (map.models as Record<string, { ids: string[]; vecs: string }>)[model];
+const byId = new Map(papers.papers.map((p) => [p.id, p]));
+
+// On the map: papers marked In, plus flagged candidates not yet marked Out.
+const keep = m ? m.ids.map((id, i) => [id, i] as const).filter(([id]) => {
+  const p = byId.get(id); const st = decisions.status(id);
+  return p && st !== 'out' && (st === 'in' || p.candidate);
+}) : [];
+const who = papers.people as Record<string, { name: string; current: boolean }>;
+const data = {
+  dims: map.dims,
+  vecs: m?.vecs ?? '',
+  rows: keep.map(([, i]) => i),
+  categories,
+  colors: categoryColors,
+  pis,
+  papers: keep.map(([id]) => {
+    const p = byId.get(id)!;
+    return {
+      id, title: p.title, year: p.year, venue: p.venue, links: p.links,
+      category: decisions.category(id, p.category),
+      authors: p.authors.map(([n, s]) => [n, s ? (who[s]?.current ? 1 : 2) : 0]),
+      pis: pis.map((q) => q.slug).filter((slug) => p.authors.some(([, s]) => s === slug)), // People-page order
+      abstract: p.abstract ? texToHtml(p.abstract) : null, cites: p.cites, cited_by: p.cited_by,
+    };
+  }),
+};
+const thisYear = new Date().getFullYear();
+const maxYears = Math.max(10, thisYear - Math.min(...data.papers.map((p) => p.year ?? thisYear)));
+---
+
+<div class="paper-map">
+  <script type="application/json" class="pm-data" set:html={JSON.stringify(data)} />
+  <div class="pm-main">
+    <div class="pm-stage">
+      <canvas aria-hidden="true"></canvas>
+      <div class="pm-dots" role="list" aria-label="Papers"></div>
+      <div class="pm-tip" role="tooltip" hidden></div>
+    </div>
+    <aside class="pm-side" aria-label="Map options">
+      <ul class="pm-legend" data-mode="category" aria-label="Topics (hover to highlight)">
+        {RAINBOW.filter((k) => categories[k]).map((k) => [k, categories[k]]).map(([k, v]) => (
+          <li data-key={k} tabindex="0"><span class="sw" style={`background:${categoryColors[k] ?? OTHER}`}></span>{v} <span class="n"></span></li>
+        ))}
+        <li data-key="" tabindex="0"><span class="sw" style="background:#c9cfcb"></span>No topic <span class="n"></span></li>
+      </ul>
+      <ul class="pm-legend" data-mode="pi" aria-label="Redwood PIs (hover to highlight)" hidden>
+        {pis.map((p) => (
+          <li data-key={p.slug} tabindex="0"><span class="sw" style={`background:${p.color}`}></span>{p.name} <span class="n"></span></li>
+        ))}
+        <li data-key="" tabindex="0"><span class="sw" style={`background:${OTHER}`}></span>No Redwood PI <span class="n"></span></li>
+      </ul>
+      <div class="pm-controls">
+        <fieldset class="pm-radio" data-name="color">
+          <legend>Color</legend>
+          <label><input type="radio" value="category" checked /> Topic</label>
+          <label><input type="radio" value="pi" /> Redwood PI</label>
+        </fieldset>
+        <label class="pm-search">
+          <span class="visually-hidden">Search titles and authors</span>
+          <input type="search" placeholder="Search titles and authors" autocomplete="off" />
+          <span class="pm-search-count" aria-live="polite"></span>
+        </label>
+        <div class="pm-line pm-years">
+          <span>Papers from the last</span>
+          <span class="pm-stepper">
+            <button type="button" data-step="-1" aria-label="Fewer years">−</button>
+            <input type="number" inputmode="numeric" min="1" max={maxYears} value="10" aria-label="Years" />
+            <button type="button" data-step="1" aria-label="More years">+</button>
+          </span>
+          <span class="pm-years-unit">years</span>
+        </div>
+        <div class="pm-line pm-influence">
+          <label class="pm-check"><input type="checkbox" /> Highlight papers cited by at least</label>
+          <span class="pm-stepper">
+            <button type="button" data-step="-1" aria-label="Lower threshold">−</button>
+            <input type="number" inputmode="numeric" min="1" max="50" value="3" aria-label="Citation threshold" />
+            <button type="button" data-step="1" aria-label="Raise threshold">+</button>
+          </span>
+          <span>Redwood papers <span class="pm-k-count"></span></span>
+        </div>
+        <p class="pm-status" aria-live="polite">Computing t-SNE…</p>
+        <p class="pm-credit">Embeddings from SPECTER2.</p>
+      </div>
+    </aside>
+  </div>
+  <div class="pm-panel" hidden aria-live="polite"></div>
+  <noscript><p>The paper map needs JavaScript. The full list is below.</p></noscript>
+  <span hidden class="pm-year" data-year={thisYear}></span>
+</div>
+
+<script>
+  import { LiveTSNE, DIMS } from '../lib/tsne-live';
+
+  type MP = {
+    id: string; title: string; year: number | null; venue: string; links: [string, string][];
+    category: string | null; authors: [string, number][]; pis: string[]; abstract: string | null; // abstract is HTML (LaTeX pre-rendered)
+    cites: string[]; cited_by: string[];
+  };
+  type Data = {
+    dims: number; vecs: string; rows: number[]; categories: Record<string, string>;
+    colors: Record<string, string>; pis: { slug: string; name: string; color: string }[]; papers: MP[];
+  };
+  // Newcomers take part in the layout from step 0 but stay hidden until they have come to rest (mean speed under
+  // CALM_PX per frame for CALM_FRAMES frames), then fade in where they stopped; LATE is the fallback.
+  const CALM_PX = 0.5, CALM_FRAMES = 10, LATE = 80;
+  const DOT = 10; // dot diameter, px
+  // Collisions keep dots this many diameters apart (plus a 2px gap per unit); contact drag damps touching pairs'
+  // relative motion by this fraction per step (it stops pairs orbiting each other). Jamie's picks, 2026-10-27.
+  const SPACING = 1.5;
+  const EDGE = DOT; // walls sit this many px inside the stage edge
+  // Damping 0.25 cost a lot of energy (KL 0.649 vs 0.526 at 0.8): touching pairs keep jostling the layout.
+  const DAMPING = Number(new URLSearchParams(location.search).get('damp') ?? 0.8);
+  const COOL = Number(new URLSearchParams(location.search).get('cool') ?? 300);
+
+  // Experiment knobs (?xdims=, ?squeeze=from,to, ?anneal=lift,exag,free,squeeze): defaults are the shipped behavior.
+  const Q = new URLSearchParams(location.search);
+  // Measured 2026-10-27 (KL, 213 papers): 4-D start (xdims=2) 0.528 vs 2-D 0.539, 5-D 0.540; anneal lift 2, exag 4,
+  // 200 free + 300 squeeze steps took a slider round trip from 0.564 to 0.499 (exag 12: 0.580).
+  const XDIMS = Number(Q.get('xdims') ?? 2); // extra dimensions used at the start (0..3)
+  const SQ = (Q.get('squeeze') ?? '150,300').split(',').map(Number);
+  const INIT = Q.get('init') ?? 'random'; // 'random' (new seed every load), 'pca', or 'topic' (bunched by topic)
+  const AN = (Q.get('anneal') ?? '2,4,200,300').split(',').map(Number);
+
+  // Step schedules (step counts), following standard t-SNE practice (scikit-learn, openTSNE; Kobak & Berens 2019):
+  // PCA start, early exaggeration 12 for 250 steps with momentum 0.5, learning rate N/12. We also start in 4-D and
+  // squeeze the extra 2 dimensions flat, so clusters can pass through each other before they lock in, and fade
+  // collisions in only once the layout has its shape. Adding papers (openTSNE's "transform"): each newcomer starts at
+  // the median position of its most similar papers on the map and settles against the frozen layout at mild
+  // exaggeration (it is pulled but pulls nothing), then everything relaxes together. Removing papers: just relax.
+  // Adding papers ends with one lift-and-squeeze anneal (see startAnneal): measured, it takes a 10->1->10 year round
+  // trip from KL 0.564 to 0.523; after a fresh load it doesn't help (0.533 vs 0.528), so the first load skips it.
+  // After every run the motion cools to a stop over COOL steps (about 5 s): step size and momentum ramp to zero. After a run the physics keeps going at one step per frame while the map is on screen.
+  type Plan = { total: number; ghostUntil: number; exag: number; exagUntil: number; momentumUntil: number;
+                squeezeFrom: number; squeezeTo: number; collideFrom: number; collideFull: number; anneal?: boolean };
+  const FIRST: Plan = { total: Math.max(900, SQ[1] + 600), ghostUntil: 0, exag: 12, exagUntil: 250, momentumUntil: 250,
+                        squeezeFrom: SQ[0], squeezeTo: SQ[1], collideFrom: SQ[1] + 100, collideFull: SQ[1] + 250 };
+  const ADD: Plan = { total: 650, ghostUntil: 250, exag: 1.5, exagUntil: 250, momentumUntil: 250, squeezeFrom: 100,
+                      squeezeTo: 220, collideFrom: 330, collideFull: 460, anneal: true };
+  const SETTLE: Plan = { total: 300, ghostUntil: 0, exag: 1, exagUntil: 0, momentumUntil: 0, squeezeFrom: 0,
+                         squeezeTo: 0, collideFrom: 0, collideFull: 0 };
+  const NO_CATEGORY = '#c9cfcb', NO_PI = '#9aa49e';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+
+  function mulberry32(a: number) {
+    return () => {
+      a |= 0; a = (a + 0x6d2b79f5) | 0;
+      let t = Math.imul(a ^ (a >>> 15), 1 | a);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  /** Top-k principal component scores of the rows (power iteration with deflation; rows are small). */
+  function pca(rows: Float32Array[], k: number) {
+    const n = rows.length, d = rows[0].length;
+    const mean = new Float64Array(d);
+    for (const r of rows) for (let j = 0; j < d; j++) mean[j] += r[j] / n;
+    const X = rows.map((r) => Float64Array.from(r, (x, j) => x - mean[j]));
+    const C = Array.from({ length: d }, () => new Float64Array(d));
+    for (const x of X) for (let a = 0; a < d; a++) for (let b = 0; b < d; b++) C[a][b] += x[a] * x[b];
+    const comps: Float64Array[] = [];
+    for (let c = 0; c < k; c++) {
+      let v = Float64Array.from({ length: d }, (_, j) => Math.sin(1 + j * (c + 1)));
+      for (let it = 0; it < 100; it++) {
+        const w = new Float64Array(d);
+        for (let a = 0; a < d; a++) for (let b = 0; b < d; b++) w[a] += C[a][b] * v[b];
+        for (const u of comps) { const dot = w.reduce((s, x, j) => s + x * u[j], 0); for (let j = 0; j < d; j++) w[j] -= dot * u[j]; }
+        const norm = Math.hypot(...w) || 1;
+        v = w.map((x) => x / norm);
+      }
+      comps.push(v);
+    }
+    const scores = X.map((x) => comps.map((u) => x.reduce((s, xi, j) => s + xi * u[j], 0)));
+    const sd = Math.sqrt(scores.reduce((s, r) => s + r[0] * r[0], 0) / n) || 1; // scale so PC1 has unit spread
+    return scores.map((r) => r.map((x) => x / sd));
+  }
+
+  function setup(root: HTMLElement) {
+    const D = JSON.parse(root.querySelector('.pm-data')!.textContent!) as Data;
+    const N = D.papers.length;
+    const thisYear = Number(root.querySelector<HTMLElement>('.pm-year')!.dataset.year);
+    const stage = root.querySelector<HTMLElement>('.pm-stage')!;
+    const canvas = root.querySelector('canvas')!;
+    const ctx = canvas.getContext('2d')!;
+    const dotsEl = root.querySelector<HTMLElement>('.pm-dots')!;
+    const tip = root.querySelector<HTMLElement>('.pm-tip')!;
+    const status = root.querySelector<HTMLElement>('.pm-status')!;
+    const years = root.querySelector<HTMLInputElement>('.pm-years input')!;
+    const yearsUnit = root.querySelector<HTMLElement>('.pm-years-unit')!;
+    const searchInput = root.querySelector<HTMLInputElement>('.pm-search input')!;
+    const searchCount = root.querySelector<HTMLElement>('.pm-search-count')!;
+
+    const influenceToggle = root.querySelector<HTMLInputElement>('.pm-check input')!;
+    const kInput = root.querySelector<HTMLInputElement>('.pm-influence input[type=number]')!;
+    const kCount = root.querySelector<HTMLElement>('.pm-k-count')!;
+    const panel = root.querySelector<HTMLElement>('.pm-panel')!;
+    if (!N) { status.textContent = 'No papers to map yet.'; return; }
+
+    // Unit vectors from the int8 rows, then all pairwise cosine similarities.
+    const bytes = Uint8Array.from(atob(D.vecs), (c) => c.charCodeAt(0));
+    const all = new Int8Array(bytes.buffer);
+    const V = D.rows.map((r) => {
+      const v = Float32Array.from(all.subarray(r * D.dims, (r + 1) * D.dims));
+      const n = Math.hypot(...v) || 1;
+      return v.map((x) => x / n);
+    });
+    const S = new Float32Array(N * N);
+    for (let i = 0; i < N; i++) for (let j = i; j < N; j++) {
+      let s = 0; for (let k = 0; k < D.dims; k++) s += V[i][k] * V[j][k];
+      S[i * N + j] = S[j * N + i] = s;
+    }
+    // Similarity lines: the most similar pairs, about three per paper; opacity scales with similarity above the cutoff.
+    const sims: number[] = [];
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) sims.push(S[i * N + j]);
+    sims.sort((a, b) => b - a);
+    const cut = sims[Math.min(sims.length - 1, Math.round(3 * N))] ?? 1;
+    const top = sims[0] ?? 1;
+    const edges: [number, number, number][] = [];
+    for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+      const s = S[i * N + j];
+      if (s > cut) edges.push([i, j, (s - cut) / (top - cut || 1)]);
+    }
+
+    const index = new Map(D.papers.map((p, i) => [p.id, i])); // paper id -> slot, for the panel's links
+
+    // Radio groups: each map gets its own names (two maps on one page must not share a group).
+    const choice: Record<string, string> = {};
+    root.querySelectorAll<HTMLFieldSetElement>('.pm-radio').forEach((fs) => {
+      const name = `${fs.dataset.name}-${Math.random().toString(36).slice(2)}`;
+      fs.querySelectorAll('input').forEach((r, k) => {
+        r.name = name; r.checked = k === 0;
+        if (k === 0) choice[fs.dataset.name!] = r.value;
+        r.addEventListener('change', () => { choice[fs.dataset.name!] = r.value; onChoice(fs.dataset.name!); });
+      });
+    });
+    const colorMode = () => choice.color as 'category' | 'pi';
+
+    // Dots: a solid category color, or a pie of PI colors.
+    const piColor = new Map(D.pis.map((p) => [p.slug, p.color]));
+    const piName = new Map(D.pis.map((p) => [p.slug, p.name]));
+    function fill(p: MP) {
+      if (colorMode() === 'category') return p.category ? D.colors[p.category] ?? NO_PI : NO_CATEGORY;
+      if (!p.pis.length) return NO_PI;
+      if (p.pis.length === 1) return piColor.get(p.pis[0])!;
+      const step = 360 / p.pis.length;
+      return `conic-gradient(${p.pis.map((s, k) => `${piColor.get(s)} ${k * step}deg ${(k + 1) * step}deg`).join(', ')})`;
+    }
+    const dots = D.papers.map((p, i) => {
+      const d = document.createElement('button');
+      d.type = 'button';
+      d.className = 'pm-dot gone'; // revealed by the first layout
+      d.style.background = fill(p);
+      d.dataset.i = String(i);
+      d.setAttribute('aria-label', `${p.title} (${p.year ?? ''})`);
+      dotsEl.appendChild(d);
+      return d;
+    });
+
+    // Layout state. `active` = indices in the current layout; `shown` = dots on screen; `pending` = newcomers waiting
+    // until they have come to rest; `fadeAt` = when a dot was revealed (its lines fade in with it).
+    let active: number[] = [];
+    const shown = new Set<number>(), pending = new Set<number>(), fadeAt = new Map<number, number>();
+    let lay: LiveTSNE | null = null;
+    let isNew = new Uint8Array(0); // per active slot: joined in this run (collisions ramp in for these)
+    let plan: Plan = FIRST, t = 0, runFrom = 0; // runFrom: step where the current stretch started (status count)
+    let firstPlan: Plan | null = null; // the first load's plan: the view locks during it
+    const screen = new Map<number, [number, number]>();
+    let box = { x0: 0, x1: 1, y0: 0, y1: 1 };
+    let unit = 1; // layout units per screen pixel, from the latest draw
+    let raf = 0;
+    let hover: { mode: string; key: string } | null = null, hoverDot = -1, selected = -1;
+    let calm = 0;
+    const lastPos = new Map<number, [number, number]>();
+    const FADE_MS = 700;
+
+    const inWindow = (p: MP, y: number) => (p.year ?? 0) >= thisYear - y;
+
+    // Influential papers: cited by at least k Redwood papers. Drawn larger with a dark ring; collisions use the size.
+    const BIG = 16;
+    const big = new Uint8Array(N);
+    function markInfluential() {
+      const on = influenceToggle.checked, k = clampInt(kInput) ?? 3;
+      let count = 0;
+      D.papers.forEach((p, i) => {
+        big[i] = on && p.cited_by.length >= k ? 1 : 0;
+        dots[i].classList.toggle('big', !!big[i]);
+        if (big[i] && active.includes(i)) count++;
+      });
+      kCount.textContent = on ? `(${count} on the map)` : '';
+    }
+    const radius = (i: number) => (big[i] ? BIG : DOT) / 2;
+
+    function start(y: number) {
+      const next = D.papers.map((p, i) => i).filter((i) => inWindow(D.papers[i], y));
+      const prev = new Map<number, number[]>(); // survivors' current 2-D positions
+      if (lay) active.forEach((i, k) => prev.set(i, [lay!.x(k), lay!.y(k)]));
+      const n = next.length;
+      const dist = new Float64Array(n * n);
+      next.forEach((i, a) => next.forEach((j, b) => { dist[a * n + b] = 2 * Math.max(0, 1 - S[i * N + j]); }));
+      const L = new LiveTSNE(dist, n, Math.max(2, Math.min(30, Math.floor((n - 1) / 3))));
+      const first = !lay;
+      const newcomers = next.filter((i) => !prev.has(i));
+      isNew = Uint8Array.from(next, (i) => (prev.has(i) ? 0 : 1));
+      L.learningRate = Math.max(n / 12, 10);
+      if (first || !prev.size) {
+        // Deterministic start: the papers' top 4 principal components, scaled tiny so the load shows the unfold.
+        const pcs = pca(next.map((i) => V[i]), DIMS);
+        const seed = mulberry32((Math.random() * 2 ** 31) | 0); // a different layout on every load
+        const gauss = () => Math.sqrt(-2 * Math.log(seed() + 1e-12)) * Math.cos(2 * Math.PI * seed());
+        for (let a = 0; a < n; a++) for (let k = 0; k < DIMS; k++)
+          L.Y[a * DIMS + k] = k >= 2 + XDIMS ? 0 : (INIT === 'pca' ? pcs[a][k] : gauss()) * 1e-4;
+        if (INIT === 'topic') {
+          // Experiment: every topic starts bunched at its own point on a circle (PCA detail kept small within it).
+          const topics = [...new Set(next.map((i) => D.papers[i].category ?? ''))];
+          next.forEach((i, a) => {
+            const th = (2 * Math.PI * topics.indexOf(D.papers[i].category ?? '')) / topics.length;
+            L.Y[a * DIMS] = 3e-4 * Math.cos(th) + 0.3 * L.Y[a * DIMS];
+            L.Y[a * DIMS + 1] = 3e-4 * Math.sin(th) + 0.3 * L.Y[a * DIMS + 1];
+          });
+        }
+        plan = FIRST;
+      } else {
+        // Survivors keep their places (flat). Each newcomer starts at the median position of its 5 most similar
+        // survivors, with a little jitter (also through the extra dimensions, so it can slide past its neighbours).
+        const ys = [...prev.values()];
+        const mx = ys.reduce((a, q) => a + q[0], 0) / ys.length, my = ys.reduce((a, q) => a + q[1], 0) / ys.length;
+        const spread = Math.max(...ys.map((q) => Math.hypot(q[0] - mx, q[1] - my)), 1);
+        const rnd = mulberry32(n);
+        const survivors = [...prev.keys()];
+        next.forEach((i, a) => {
+          let row = prev.get(i) ? [...prev.get(i)!, ...new Array(DIMS - 2).fill(0)] : null;
+          if (!row) {
+            const near = [...survivors].sort((x, z) => S[i * N + z] - S[i * N + x]).slice(0, 5).map((j) => prev.get(j)!);
+            const med = (k: number) => near.map((q) => q[k]).sort((x, z) => x - z)[near.length >> 1];
+            const jit = () => (rnd() - 0.5) * 0.02 * spread;
+            row = [med(0) + jit(), med(1) + jit(), ...Array.from({ length: DIMS - 2 }, jit)];
+          }
+          for (let k = 0; k < DIMS; k++) L.Y[a * DIMS + k] = row[k];
+        });
+        plan = newcomers.length ? ADD : SETTLE;
+      }
+      const inNext = new Set(next);
+      for (const i of [...shown, ...pending]) if (!inNext.has(i)) { dots[i].classList.add('gone'); shown.delete(i); pending.delete(i); }
+      for (const i of next) {
+        if (shown.has(i)) continue;
+        if (first) { dots[i].classList.remove('gone'); shown.add(i); } // the first load shows the whole unfold
+        else pending.add(i);
+      }
+      lay = L; active = next; t = 0; runFrom = 0; plan = { ...plan };
+      if (first) firstPlan = plan;
+      calm = 0; lastPos.clear();
+      counts();
+      if (kCount) markInfluential();
+      if (first) draw(true); // start from the random init, so the load shows the layout unfolding
+      run();
+    }
+
+    /** Keep optimizing the current layout (after a force slider moves), without restarting it. */
+    function relax() {
+      if (!lay) return;
+      if (t >= plan.total) runFrom = t;
+      plan.total = Math.max(plan.total, t + 300);
+      run();
+    }
+    let onScreen = true;
+    // Anneal ("lift"): push every paper out into the extra dimensions by a random amount, let the layout reorganize
+    // there (optionally exaggerated), squeeze the extra dimensions flat again, then fade collisions back in.
+    function startAnneal() {
+      if (!lay) return;
+      const L = lay, n = active.length;
+      const [lift, exag, free, squeeze] = AN;
+      let r2 = 0;
+      for (let a = 0; a < n; a++) r2 += L.x(a) ** 2 + L.y(a) ** 2;
+      const rms = Math.sqrt(r2 / n), rnd = mulberry32(t + 1);
+      for (let a = 0; a < n; a++) for (let k = 2; k < DIMS; k++) {
+        L.Y[a * DIMS + k] = (rnd() - 0.5) * 2 * lift * rms;
+        L.v[a * DIMS + k] = 0;
+      }
+      L.v.fill(0); L.gains.fill(1);
+      isNew = new Uint8Array(n).fill(1); // collisions fade back in for everyone
+      runFrom = t;
+      plan = { total: t + free + squeeze + 450, ghostUntil: 0, exag, exagUntil: t + free, momentumUntil: t + free,
+               squeezeFrom: t + free, squeezeTo: t + free + squeeze, collideFrom: t + free + squeeze + 50,
+               collideFull: t + free + squeeze + 200 };
+      run();
+    }
+    function run() {
+      if (reduced) { while (t < plan.total) step(); reveal(); draw(true); finish(); return; }
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(frame);
+    }
+
+    // One step of the schedule: t-SNE (with ghosts / exaggeration / squeeze as planned), then citation pull, then
+    // collisions with contact drag.
+    function step() {
+      const L = lay!, n = active.length;
+      const ghost = t < plan.ghostUntil;
+      const frozen = ghost ? Uint8Array.from(isNew, (x) => 1 - x) : null; // ghost phase: only newcomers move
+      const squeeze = t >= plan.squeezeFrom && t < plan.squeezeTo ? 1 / (plan.squeezeTo - t) : 0;
+      const exag = t < plan.exagUntil ? plan.exag : 1;
+      const cool = t >= plan.total ? Math.max(0, 1 - (t - plan.total) / COOL) : 1;
+      L.lrScale = cool;
+      L.step(exag, (t < plan.momentumUntil ? 0.5 : 0.8) * cool, frozen, squeeze);
+      t++;
+      if (ghost) return;
+      const Y = L.Y;
+      // Lock the view when the first layout is done; from then on the stage edges are walls.
+      if (!locked && t >= plan.total && plan === firstPlan) lockView();
+      if (locked) {
+        const w = stage.clientWidth, h = stage.clientHeight;
+        const wx = (w / 2 - EDGE) * unit, wy = (h / 2 - EDGE) * unit;
+        for (let a = 0; a < n; a++) {
+          const ix = a * DIMS, iy = ix + 1;
+          if (Y[ix] < locked.cx - wx) { Y[ix] = locked.cx - wx; L.v[ix] = 0; } else if (Y[ix] > locked.cx + wx) { Y[ix] = locked.cx + wx; L.v[ix] = 0; }
+          if (Y[iy] < locked.cy - wy) { Y[iy] = locked.cy - wy; L.v[iy] = 0; } else if (Y[iy] > locked.cy + wy) { Y[iy] = locked.cy + wy; L.v[iy] = 0; }
+        }
+      }
+      const spacing = SPACING;
+      if (spacing <= 0 || t < plan.collideFrom) return;
+      // Collisions fade in for papers that joined this run, so they don't jam the layout before it has its shape.
+      const ramp = Math.min(1, (t - plan.collideFrom) / Math.max(1, plan.collideFull - plan.collideFrom));
+      const gapPx = 2 * spacing * unit;
+      const damp = DAMPING;
+      const v = L.v, g = L.gains;
+      for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) {
+        const full = (radius(active[a]) + radius(active[b])) * spacing * unit + gapPx;
+        const min = isNew[a] || isNew[b] ? full * ramp : full;
+        let dx = Y[b * DIMS] - Y[a * DIMS], dy = Y[b * DIMS + 1] - Y[a * DIMS + 1];
+        let d = Math.hypot(dx, dy);
+        if (d >= min) continue;
+        if (d < 1e-9) { dx = Math.cos(a + b); dy = Math.sin(a + b); d = 1; }
+        const push = (0.5 * (min - Math.max(d, 1e-9))) / d;
+        Y[a * DIMS] -= dx * push; Y[a * DIMS + 1] -= dy * push; Y[b * DIMS] += dx * push; Y[b * DIMS + 1] += dy * push;
+        // Contact drag (touching pairs only): momentum and adaptive gains otherwise build sideways motion in a pair whose
+        // attraction the collision blocks, and the pair orbits. Damp their relative velocity and the gains.
+        if (damp > 0) {
+          for (let k = 0; k < 2; k++) {
+            const ia = a * DIMS + k, ib = b * DIMS + k, mid = (v[ia] + v[ib]) / 2;
+            v[ia] += (mid - v[ia]) * damp; v[ib] += (mid - v[ib]) * damp;
+            g[ia] = 1 + (g[ia] - 1) * (1 - damp); g[ib] = 1 + (g[ib] - 1) * (1 - damp);
+          }
+        }
+      }
+    }
+
+    // Up to five steps per frame (fewer if a frame gets slow), so the layout visibly unfolds, as on jamiesimon.io.
+    function frame() {
+      root.dataset.t = `${t}/${plan.total}`; // for tests
+      if (!onScreen) return; // resumes when the map scrolls back into view
+      const t0 = performance.now();
+      const wasRunning = t < plan.total;
+      const cooling = !wasRunning && t < plan.total + COOL;
+      if (wasRunning) for (let k = 0; k < 5 && t < plan.total && (k === 0 || performance.now() - t0 < 10); k++) step();
+      else if (cooling) step(); // after the run: one step per frame, slowing to a stop
+      const fading = [...fadeAt.values()].some((x) => performance.now() - x < FADE_MS);
+      const moved = draw(false) || fading;
+      if (pending.size && t > plan.ghostUntil) {
+        let sum = 0;
+        for (const i of pending) {
+          const q = screen.get(i)!, o = lastPos.get(i);
+          if (o) sum += Math.hypot(q[0] - o[0], q[1] - o[1]);
+          lastPos.set(i, [q[0], q[1]]);
+        }
+        calm = sum / pending.size < CALM_PX ? calm + 1 : 0;
+        if (calm >= CALM_FRAMES || t >= plan.total - LATE) reveal();
+      }
+      if (wasRunning && t >= plan.total && plan.anneal) startAnneal(); // chained: one anneal after a full layout
+      if (t < plan.total) status.textContent = `Computing t-SNE… ${t - runFrom}/${plan.total - runFrom}`;
+      else if (cooling && t < plan.total + COOL) status.textContent = 'Settling…';
+      else if (cooling) finish(); // just came to rest
+      if (wasRunning || cooling || moved) raf = requestAnimationFrame(frame);
+    }
+    function reveal() {
+      const now = performance.now();
+      for (const i of pending) { dots[i].classList.remove('gone'); shown.add(i); fadeAt.set(i, now); }
+      pending.clear();
+    }
+    function finish() {
+      const kl = lay!.kl();
+      root.dataset.kl = kl.toFixed(4); // for tests
+      status.textContent = `${active.length} papers, KL ${kl.toFixed(3)}`;
+    }
+
+    // View. Until the first layout has its shape, frame the bulk of the papers (2nd-98th percentile, so one outlier
+    // can't shrink everything); then lock the scale and centre for the session. From then on the map keeps a
+    // consistent scale (fewer papers = a smaller cloud) and the stage edges are hard walls (see step()).
+    let locked: { unit: number; cx: number; cy: number } | null = null;
+    const quantile = (v: number[], q: number) => { const s2 = [...v].sort((x, y) => x - y); return s2[Math.round(q * (s2.length - 1))]; };
+    function draw(snap: boolean) {
+      const L = lay!;
+      const w = stage.clientWidth, h = stage.clientHeight;
+      let gap = 0, cx: number, cy: number;
+      if (locked) {
+        ({ unit, cx, cy } = locked);
+      } else {
+        const xs: number[] = [], ys: number[] = [];
+        active.forEach((i, k) => { if (!pending.has(i)) { xs.push(L.x(k)); ys.push(L.y(k)); } });
+        let x0 = -1, x1 = 1, y0 = -1, y1 = 1;
+        if (xs.length) { x0 = quantile(xs, 0.02); x1 = quantile(xs, 0.98); y0 = quantile(ys, 0.02); y1 = quantile(ys, 0.98); }
+        // The view zooms out at once when the layout grows and eases in when it shrinks.
+        const a = snap ? 1 : 0.12;
+        gap = Math.max(Math.abs(x0 - box.x0), Math.abs(x1 - box.x1), Math.abs(y0 - box.y0), Math.abs(y1 - box.y1)) / Math.max(x1 - x0, y1 - y0, 1e-12);
+        const ease = (cur: number, to: number, grow: boolean) => (grow ? to : cur + (to - cur) * a);
+        box = { x0: ease(box.x0, x0, x0 < box.x0), x1: ease(box.x1, x1, x1 > box.x1),
+                y0: ease(box.y0, y0, y0 < box.y0), y1: ease(box.y1, y1, y1 > box.y1) };
+        const pad = 0.8; // room around the bulk for the outer papers
+        unit = (Math.max((box.x1 - box.x0) / w, (box.y1 - box.y0) / h) || 1) / pad;
+        cx = (box.x0 + box.x1) / 2; cy = (box.y0 + box.y1) / 2;
+      }
+      active.forEach((i, k) => {
+        const px = w / 2 + (L.x(k) - cx) / unit, py = h / 2 + (L.y(k) - cy) / unit;
+        screen.set(i, [px, py]);
+        // `translate`, not `transform`: the fade's `scale` would otherwise scale the position too (toward the corner).
+        dots[i].style.translate = `${px}px ${py}px`;
+      });
+      paintLines();
+      return gap > 1e-3; // still easing toward the layout's bounds?
+    }
+    function lockView() {
+      if (locked || !lay) return;
+      // Fit every paper, except that a far outlier can't stretch the frame past 1.4x the bulk (2nd-98th percentile);
+      // anything beyond that meets the wall.
+      const L = lay, xs = active.map((_, k) => L.x(k)), ys = active.map((_, k) => L.y(k));
+      const qx0 = quantile(xs, 0.02), qx1 = quantile(xs, 0.98), qy0 = quantile(ys, 0.02), qy1 = quantile(ys, 0.98);
+      const cx = (qx0 + qx1) / 2, cy = (qy0 + qy1) / 2;
+      const hx = Math.min(Math.max(...xs.map((x) => Math.abs(x - cx))), 1.4 * (qx1 - qx0) / 2);
+      const hy = Math.min(Math.max(...ys.map((y) => Math.abs(y - cy))), 1.4 * (qy1 - qy0) / 2);
+      const w = stage.clientWidth, h = stage.clientHeight;
+      locked = { unit: Math.max(hx / (w / 2 - EDGE - 6), hy / (h / 2 - EDGE - 6)), cx, cy };
+    }
+
+    // Search: every word must appear in the title or the author list.
+    const haystack = D.papers.map((p) => `${p.title} ${p.authors.map((a) => a[0]).join(' ')}`.toLowerCase());
+    let terms: string[] = [];
+    const searchHit = (i: number) => terms.every((w) => haystack[i].includes(w));
+    const matches = (i: number) => {
+      if (terms.length && !searchHit(i)) return false;
+      if (!hover) return true;
+      const p = D.papers[i];
+      if (hover.mode === 'category') return (p.category ?? '') === hover.key;
+      return hover.key ? p.pis.includes(hover.key) : p.pis.length === 0;
+    };
+    function paintLines() {
+      const dpr = devicePixelRatio || 1, w = stage.clientWidth, h = stage.clientHeight;
+      if (canvas.width !== w * dpr || canvas.height !== h * dpr) { canvas.width = w * dpr; canvas.height = h * dpr; }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      const on = new Set(active.filter((i) => shown.has(i)));
+      const now = performance.now();
+      const fadeIn = (i: number) => { const t = fadeAt.get(i); return t === undefined ? 1 : Math.min(1, (now - t) / FADE_MS); };
+      ctx.lineWidth = 1.25;
+      // Same emphasis rules for both kinds of line: a hovered dot's lines, or lines within a hovered legend entry.
+      const weigh = (i: number, j: number, s: number) => {
+        let alpha = (0.06 + 0.3 * s) * Math.min(fadeIn(i), fadeIn(j));
+        if (hoverDot >= 0) alpha = i === hoverDot || j === hoverDot ? 0.25 + 0.5 * s : alpha * 0.25;
+        else if (hover || terms.length) alpha = matches(i) && matches(j) ? 0.15 + 0.45 * s : alpha * 0.2;
+        return alpha;
+      };
+      const line = (i: number, j: number, s: number) => {
+        const a = screen.get(i)!, b = screen.get(j)!;
+        ctx.strokeStyle = `rgba(31, 64, 48, ${weigh(i, j, s)})`;
+        ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke();
+      };
+      for (const [i, j, s] of edges) if (on.has(i) && on.has(j)) line(i, j, s);
+    }
+
+    const empty = new Set(Object.keys(D.categories).filter((k) => !D.papers.some((p) => p.category === k)));
+    function counts() {
+      const c: Record<string, number> = {};
+      for (const i of active) {
+        const p = D.papers[i];
+        const keys = colorMode() === 'category' ? [p.category ?? ''] : p.pis.length ? p.pis : [''];
+        for (const k of keys) c[k] = (c[k] ?? 0) + 1;
+      }
+      root.querySelectorAll<HTMLElement>('.pm-legend').forEach((ul) => {
+        ul.hidden = ul.dataset.mode !== colorMode();
+        ul.querySelectorAll<HTMLElement>('li').forEach((li) => {
+          const n = c[li.dataset.key!] ?? 0;
+          li.querySelector('.n')!.textContent = String(n);
+          li.hidden = (n === 0 && li.dataset.key === '') || empty.has(li.dataset.key!); // topics with no papers at all
+        });
+      });
+    }
+
+    function highlight(key: string | null) {
+      hover = key === null ? null : { mode: colorMode(), key };
+      refreshHighlight();
+    }
+    function refreshHighlight() {
+      const on = hover !== null || terms.length > 0;
+      root.classList.toggle('pm-dim', on);
+      dots.forEach((d, i) => d.classList.toggle('hi', on && matches(i)));
+      paintLines();
+    }
+    searchInput.addEventListener('input', () => {
+      unpin();
+      terms = searchInput.value.toLowerCase().split(/\s+/).filter(Boolean);
+      const n = terms.length ? active.filter((i) => searchHit(i)).length : 0;
+      searchCount.textContent = terms.length ? `${n} ${n === 1 ? 'paper' : 'papers'}` : '';
+      refreshHighlight();
+    });
+    root.querySelectorAll<HTMLElement>('.pm-legend li').forEach((li) => {
+      li.addEventListener('mouseenter', () => { unpin(); highlight(li.dataset.key!); });
+      li.addEventListener('mouseleave', () => highlight(null));
+      li.addEventListener('focus', () => { unpin(); highlight(li.dataset.key!); });
+      li.addEventListener('blur', () => highlight(null));
+    });
+
+    // papers/?topic=<key> (the Research page's "papers tagged ..." links) opens with that topic highlighted, as if
+    // its legend entry were hovered, until the reader hovers a legend entry, searches, or switches the coloring.
+    let pinned: HTMLElement | null = null;
+    function unpin() {
+      if (!pinned) return;
+      pinned.classList.remove('pinned');
+      pinned = null;
+      highlight(null);
+    }
+    const linkedTopic = Q.get('topic');
+    if (linkedTopic && D.categories[linkedTopic]) {
+      pinned = root.querySelector<HTMLElement>(`.pm-legend[data-mode="category"] li[data-key="${CSS.escape(linkedTopic)}"]`);
+      pinned?.classList.add('pinned');
+      highlight(linkedTopic);
+    }
+
+    function onChoice(name: string) {
+      if (name === 'color') { unpin(); dots.forEach((d, i) => (d.style.background = fill(D.papers[i]))); counts(); if (selected >= 0) select(selected); }
+      paintLines();
+    }
+
+    const catName = (p: MP) => (p.category ? D.categories[p.category] ?? p.category : 'No topic');
+    function authorLine(p: MP) {
+      return p.authors.map(([n, r]) => (r ? `<b>${esc(n)}</b>` : esc(n))).join(', ');
+    }
+    function shortAuthors(p: MP) {
+      const a = p.authors.length > 8 ? [...p.authors.slice(0, 6), null, p.authors[p.authors.length - 1]] : p.authors;
+      return a.map((x) => (x === null ? '…' : x[1] ? `<b>${esc(x[0])}</b>` : esc(x[0]))).join(', ');
+    }
+    dots.forEach((d, i) => {
+      const p = D.papers[i];
+      d.addEventListener('mouseenter', () => {
+        hoverDot = i; paintLines();
+        tip.innerHTML = `<strong>${esc(p.title)}</strong><span class="ta">${shortAuthors(p)}</span><span>${p.year ?? ''}</span>`;
+        tip.hidden = false;
+        const [x, y] = screen.get(i) ?? [0, 0];
+        const left = x + 14 + tip.offsetWidth > stage.clientWidth ? x - 14 - tip.offsetWidth : x + 14;
+        const topY = y + 12 + tip.offsetHeight > stage.clientHeight ? y - 12 - tip.offsetHeight : y + 12;
+        tip.style.transform = `translate(${Math.max(0, left)}px, ${Math.max(0, topY)}px)`;
+      });
+      d.addEventListener('mouseleave', () => { hoverDot = -1; tip.hidden = true; paintLines(); });
+      d.addEventListener('click', () => select(i));
+    });
+
+    function related(ids: string[], label: string) {
+      const items = ids.map((id) => index.get(id)).filter((i): i is number => i !== undefined);
+      if (!items.length) return '';
+      return `<div class="rel"><h4>${label}</h4><ul>${items.map((i) =>
+        `<li><button type="button" class="pm-go" data-i="${i}">${esc(D.papers[i].title)}</button> <span>${D.papers[i].year ?? ''}</span></li>`).join('')}</ul></div>`;
+    }
+    function select(i: number) {
+      if (selected >= 0) dots[selected].classList.remove('sel');
+      selected = i; dots[i].classList.add('sel');
+      const p = D.papers[i];
+      const tag = colorMode() === 'category'
+        ? `<span class="sw" style="background:${p.category ? D.colors[p.category] ?? NO_PI : NO_CATEGORY}"></span>${esc(catName(p))}`
+        : `<span class="sw" style="background:${fill(p)}"></span>${p.pis.length ? p.pis.map((s) => esc(piName.get(s)!)).join(', ') : 'No Redwood PI'}`;
+      panel.innerHTML = `
+        <div class="pm-panel-head">
+          <p class="cat">${tag}</p>
+          <button type="button" class="pm-close" aria-label="Close">×</button>
+        </div>
+        <h3>${esc(p.title)}</h3>
+        <p class="au">${authorLine(p)}</p>
+        <p class="meta">${esc([p.venue, p.year].filter(Boolean).join(', '))}</p>
+        ${p.abstract ? `<p class="abs">${p.abstract}</p>` : ''}
+        <p class="links">${p.links.map(([l, u]) => `<a href="${esc(u)}">${esc(l)}</a>`).join(' ')}</p>
+        <div class="rels">${related(p.cites, 'Cites these Redwood papers')}${related(p.cited_by, 'Cited by these Redwood papers')}</div>`;
+      panel.hidden = false;
+    }
+    function deselect() {
+      panel.hidden = true;
+      if (selected >= 0) dots[selected].classList.remove('sel');
+      selected = -1;
+    }
+    // Clicking empty space on the map clears the selection.
+    stage.addEventListener('click', (e) => { if (!(e.target as HTMLElement).closest('.pm-dot')) deselect(); });
+    panel.addEventListener('click', (e) => {
+      const t = e.target as HTMLElement;
+      if (t.closest('.pm-close')) deselect();
+      const go = t.closest<HTMLElement>('.pm-go');
+      if (go) select(Number(go.dataset.i));
+    });
+
+    // Number fields with − / + buttons: typed values apply as soon as they're valid.
+    const clampInt = (el: HTMLInputElement) => {
+      const v = Math.round(Number(el.value));
+      return Number.isFinite(v) && el.value !== '' ? Math.min(Number(el.max), Math.max(Number(el.min), v)) : null;
+    };
+    root.querySelectorAll<HTMLElement>('.pm-stepper').forEach((st) => {
+      const input = st.querySelector('input')!;
+      st.querySelectorAll<HTMLButtonElement>('button').forEach((b) => b.addEventListener('click', () => {
+        const v = (clampInt(input) ?? Number(input.min)) + Number(b.dataset.step);
+        input.value = String(Math.min(Number(input.max), Math.max(Number(input.min), v)));
+        input.dispatchEvent(new Event('input'));
+      }));
+      input.addEventListener('blur', () => { input.value = String(clampInt(input) ?? input.defaultValue); });
+    });
+    let shownYears = Number(years.value);
+    years.addEventListener('input', () => {
+      const y = clampInt(years);
+      if (y === null || y === shownYears) return;
+      shownYears = y;
+      yearsUnit.textContent = y === 1 ? 'year' : 'years';
+      start(y);
+    });
+
+    const onInfluence = () => { if (clampInt(kInput) === null) return; markInfluential(); relax(); };
+    influenceToggle.addEventListener('change', onInfluence);
+    kInput.addEventListener('input', onInfluence);
+    new ResizeObserver(() => lay && draw(true)).observe(stage);
+    new IntersectionObserver(([e]) => { const was = onScreen; onScreen = e.isIntersecting; if (onScreen && !was) run(); }).observe(stage);
+    start(Number(years.value));
+    markInfluential();
+  }
+
+  document.querySelectorAll<HTMLElement>('.paper-map').forEach(setup);
+</script>
+
+<style>
+  .paper-map { --pm-surface: #fafcfa; }
+  /* Map on the left, its legend and options in a column on the right (below the map on narrow screens). */
+  .pm-main { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 1.75rem; align-items: start; }
+  .pm-side { display: grid; gap: 1.25rem; font-size: 0.9375rem; }
+  .pm-legend { display: grid; gap: 0.3rem; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; }
+  .pm-legend li { display: inline-flex; align-items: center; gap: 0.4rem; cursor: default; color: var(--text); border-radius: 3px; }
+  .pm-legend li:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .pm-legend li.pinned { background: rgb(31 64 48 / 0.09); box-shadow: 0 0 0 3px rgb(31 64 48 / 0.09); }
+  .pm-legend .n { color: var(--slate); font-variant-numeric: tabular-nums; }
+  .sw { width: 0.7rem; height: 0.7rem; border-radius: 50%; flex: none; }
+  .pm-controls { display: grid; gap: 0.9rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+  .pm-radio { display: flex; align-items: center; gap: 0.8rem; margin: 0; padding: 0; border: 0; }
+  .pm-radio legend { float: left; margin-right: 0.1rem; padding: 0; color: var(--slate); }
+  .pm-radio label { display: inline-flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+  .pm-radio input { accent-color: var(--brand); margin: 0; }
+  .pm-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.45rem; }
+  .pm-stepper { display: inline-flex; align-items: stretch; border: 1px solid var(--line); border-radius: 5px; overflow: hidden; background: #fff; }
+  .pm-stepper input {
+    width: 2.6rem; border: 0; padding: 0.2rem 0; text-align: center;
+    font: inherit; font-weight: 650; font-variant-numeric: tabular-nums; color: var(--text); background: none;
+    appearance: textfield; -moz-appearance: textfield;
+  }
+  .pm-stepper input::-webkit-inner-spin-button, .pm-stepper input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .pm-stepper button {
+    width: 1.7rem; border: 0; background: var(--wash); color: var(--brand); font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .pm-stepper button:hover { background: #dfe8e2; }
+  .pm-stepper:focus-within { outline: 2px solid var(--brand); outline-offset: 1px; }
+  .pm-search { display: grid; gap: 0.25rem; }
+  .pm-search input {
+    width: 100%; font: inherit; font-size: 0.9375rem; padding: 0.4rem 0.6rem;
+    border: 1px solid var(--line); border-radius: 5px; background: #fff; color: var(--text);
+  }
+  .pm-search-count { font-size: 0.8125rem; color: var(--slate); }
+  .pm-search-count:empty { display: none; }
+  .pm-check { display: inline-flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+  .pm-check input { accent-color: var(--brand); margin: 0; }
+  .pm-k-count { color: var(--slate); }
+  .pm-status { font-size: 0.8125rem; color: var(--slate); font-variant-numeric: tabular-nums; }
+
+  .pm-stage {
+    position: relative;
+    height: clamp(22rem, 46vw, 40rem);
+    background: var(--pm-surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .pm-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .pm-dots { position: absolute; inset: 0; }
+  .pm-dots :global(.pm-dot) {
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.7s, scale 0.7s, box-shadow 0.15s;
+  }
+  .pm-dots :global(.pm-dot::after) { content: ''; position: absolute; inset: -5px; border-radius: 50%; } /* bigger hit target */
+  .pm-dots :global(.pm-dot.big) { left: -8px; top: -8px; width: 16px; height: 16px; box-shadow: 0 0 0 1.5px #14201a; z-index: 1; }
+  .pm-dots :global(.pm-dot:hover), .pm-dots :global(.pm-dot.sel) { box-shadow: 0 0 0 2px #14201a; z-index: 2; }
+  .pm-dots :global(.pm-dot.big:hover), .pm-dots :global(.pm-dot.big.sel) { box-shadow: 0 0 0 3px #14201a; }
+  .pm-dots :global(.pm-dot:focus-visible) { outline: 2px solid var(--brand); outline-offset: 2px; }
+  .pm-dots :global(.pm-dot.gone) { opacity: 0; scale: 0.3; pointer-events: none; }
+  .paper-map:global(.pm-dim) .pm-dots :global(.pm-dot:not(.hi):not(.gone)) { opacity: 0.15; }
+  .pm-credit { margin: -0.6rem 0 0; font-size: 0.75rem; color: var(--slate); opacity: 0.75; }
+  .pm-tip[hidden], .pm-legend li[hidden], .pm-legend[hidden], .pm-panel[hidden] { display: none; }
+  .pm-tip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    max-width: 24rem;
+    display: grid;
+    gap: 0.2rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: 5px;
+    background: rgb(20 32 26 / 0.94);
+    color: #fff;
+    font-size: 0.8125rem;
+    line-height: 1.35;
+    pointer-events: none;
+  }
+  .pm-tip :global(span) { color: rgb(255 255 255 / 0.75); }
+  .pm-tip :global(.ta b) { color: #fff; font-weight: 600; }
+
+  .pm-panel {
+    margin-top: 1rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+  }
+  .pm-panel :global(.pm-panel-head) { display: flex; justify-content: space-between; align-items: center; }
+  .pm-panel :global(.cat) { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8125rem; color: var(--slate); }
+  .pm-panel :global(.pm-close) { font-size: 1.4rem; line-height: 1; background: none; border: 0; cursor: pointer; color: var(--slate); padding: 0 0.25rem; }
+  .pm-panel :global(h3) { font-size: var(--step-1); font-weight: 650; line-height: 1.3; margin-top: 0.35rem; color: var(--brand); }
+  .pm-panel :global(.au) { margin-top: 0.35rem; font-size: 0.9375rem; }
+  .pm-panel :global(.au b) { font-weight: 650; color: var(--text); }
+  .pm-panel :global(.meta) { margin-top: 0.2rem; font-size: 0.875rem; color: var(--slate); }
+  .pm-panel :global(.abs) { margin-top: 0.75rem; font-family: var(--serif); line-height: 1.6; }
+  .pm-panel :global(.abs .katex) { font-size: 1.08em; }
+  .pm-panel :global(.links) { margin-top: 0.6rem; display: flex; gap: 1rem; font-size: 0.875rem; font-weight: 500; }
+  .pm-panel :global(.links:empty) { display: none; }
+  .pm-panel :global(.rels) { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.5rem 2rem; margin-top: 0.75rem; }
+  .pm-panel :global(h4) { font-size: 0.875rem; font-weight: 650; margin-bottom: 0.3rem; }
+  .pm-panel :global(.rel ul) { margin: 0; padding: 0; list-style: none; font-size: 0.875rem; line-height: 1.4; }
+  .pm-panel :global(.rel li + li) { margin-top: 0.35rem; }
+  .pm-panel :global(.rel span) { color: var(--slate); }
+  .pm-panel :global(.pm-go) { font: inherit; text-align: left; padding: 0; border: 0; background: none; color: var(--brand); text-decoration: underline; cursor: pointer; }
+
+  @media (max-width: 900px) {
+    .pm-main { grid-template-columns: minmax(0, 1fr); }
+    .pm-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1rem; }
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import Base from '../layouts/Base.astro';
+import PaperMap from '../components/PaperMap.astro';
+import data from '../data/papers.json';
+import { loadDecisions } from '../lib/paper-status';
+import { OTHER_COLOR, TOPIC_COLORS, TOPIC_ORDER } from '../lib/topics';
+import { texToHtml } from '../lib/tex';
+import 'katex/dist/katex.min.css';
+
+// The papers that are in (Jamie's review decisions, else the automatic ones), newest first. The review tool itself
+// lives at /papers/review/ (local dev server only).
+const decisions = loadDecisions();
+const people = data.people as Record<string, { name: string }>;
+const papers = data.papers
+  .filter((p) => decisions.status(p.id) === 'in')
+  .map((p) => {
+    const topic = decisions.category(p.id, p.category);
+    return {
+      id: p.id, title: p.title, venue: p.venue, year: p.year, date: p.date, links: p.links,
+      abstract: p.abstract ? texToHtml(p.abstract) : null, // HTML, LaTeX rendered
+      authors: p.authors.map(([n, s]) => [s ? people[s]?.name ?? n : n, s ? 1 : 0]),
+      key: topic ?? '',
+      topic: topic ? (data.categories as Record<string, string>)[topic] ?? null : null,
+      color: topic ? TOPIC_COLORS[topic] ?? OTHER_COLOR : OTHER_COLOR,
+    };
+  })
+  .sort((a, b) => (b.date ?? `${b.year ?? 0}`).localeCompare(a.date ?? `${a.year ?? 0}`));
+const topicNames = data.categories as Record<string, string>;
+const topics = TOPIC_ORDER.filter((k) => papers.some((p) => p.key === k))
+  .map((k) => ({ key: k, name: topicNames[k] ?? k, n: papers.filter((p) => p.key === k).length }));
+---
+
+<Base title="Papers" current="papers">
+  <section class="intro wrap">
+    <h1>Papers</h1>
+    <p class="lead">
+      The Center's research spans machine learning, physics, and neuroscience. Below is a t-SNE plot of the Center's
+      publications.
+    </p>
+  </section>
+
+  <section class="wrap map" aria-label="Map of papers">
+    <PaperMap />
+  </section>
+
+  <section class="wrap list" aria-label="All papers">
+    <div class="toolbar">
+      <label class="search">
+        <span class="visually-hidden">Search by title, author, or venue</span>
+        <input type="search" id="q" placeholder="Search by title, author, or venue" autocomplete="off" />
+      </label>
+      <label>
+        <span class="visually-hidden">Topic</span>
+        <select id="topic">
+          <option value="">All topics</option>
+          {topics.map((t) => <option value={t.key}>{t.name} ({t.n})</option>)}
+        </select>
+      </label>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ol class="plist" id="plist"></ol>
+    <noscript><p>The paper list needs JavaScript.</p></noscript>
+  </section>
+
+  <script type="application/json" id="list-data" set:html={JSON.stringify(papers)} />
+</Base>
+
+<script>
+  type P = { id: string; title: string; venue: string; year: number | null; date: string | null; links: [string, string][];
+             abstract: string | null; authors: [string, number][]; key: string; topic: string | null; color: string };
+  const papers = JSON.parse(document.getElementById('list-data')!.textContent!) as P[];
+  const q = document.getElementById('q') as HTMLInputElement;
+  const topicSel = document.getElementById('topic') as HTMLSelectElement;
+  const list = document.getElementById('plist')!;
+  const count = document.getElementById('count')!;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const hay = papers.map((p) => `${p.title} ${p.authors.map((a) => a[0]).join(' ')} ${p.venue}`.toLowerCase());
+
+  // With no search and no topic: the last 12 months (by publication date; year-only papers count from July 1).
+  const cutoff = new Date(Date.now() - 365 * 864e5).toISOString().slice(0, 10);
+  const recent = (p: P) => (p.date ?? `${p.year ?? 0}-07-01`) >= cutoff;
+
+  // Clicking a paper opens its abstract and links in place; the title itself doesn't leave the page.
+  const open = new Set<string>();
+  function row(p: P) {
+    const authors = p.authors.map(([n, r]) => (r ? `<b>${esc(n)}</b>` : esc(n))).join(', ');
+    const topic = p.topic ? `<span class="topic"><span class="sw" style="background:${p.color}"></span>${esc(p.topic)}</span>` : '';
+    const isOpen = open.has(p.id);
+    return `<li class="paper${isOpen ? ' open' : ''}" data-id="${p.id}"><span class="yr">${p.year ?? ''}</span><div>
+      <h3><button type="button" class="ttl" aria-expanded="${isOpen}">${esc(p.title)}</button></h3><p class="au">${authors}</p>
+      <p class="meta">${p.venue ? `<span>${esc(p.venue)}</span>` : ''}${topic}</p>
+      <div class="more"${isOpen ? '' : ' hidden'}>
+        ${p.abstract ? `<p class="abs">${p.abstract}</p>` : '<p class="abs none">No abstract available.</p>'}
+        <p class="links">${p.links.map(([l, u]) => `<a href="${esc(u)}">${esc(l)}</a>`).join('')}</p>
+      </div></div></li>`;
+  }
+  function render() {
+    const words = q.value.toLowerCase().split(/\s+/).filter(Boolean);
+    const topic = topicSel.value;
+    const filtering = words.length > 0 || topic !== '';
+    const shown = papers.filter((p, i) => (filtering
+      ? (!topic || p.key === topic) && words.every((w) => hay[i].includes(w))
+      : recent(p)));
+    count.textContent = filtering
+      ? `${shown.length} ${shown.length === 1 ? 'paper' : 'papers'}`
+      : `${shown.length} papers from the last 12 months. Search or pick a topic to see all ${papers.length}.`;
+    list.innerHTML = shown.map(row).join('');
+  }
+  list.addEventListener('click', (e) => {
+    const t = e.target as HTMLElement;
+    // Links inside an open paper work as links; selecting text doesn't toggle.
+    if (t.closest('a') || (!t.closest('.ttl') && getSelection()?.toString())) return;
+    const li = t.closest<HTMLElement>('.paper');
+    if (!li || (li.classList.contains('open') && t.closest('.more'))) return;
+    const id = li.dataset.id!;
+    const now = !open.has(id);
+    if (now) open.add(id); else open.delete(id);
+    li.classList.toggle('open', now);
+    li.querySelector('.ttl')!.setAttribute('aria-expanded', String(now));
+    (li.querySelector('.more') as HTMLElement).hidden = !now;
+  });
+  q.addEventListener('input', render);
+  topicSel.addEventListener('change', render);
+  render();
+</script>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead { font-family: var(--serif); font-size: var(--step-1); line-height: 1.5; max-width: 60ch; margin-top: 1rem; }
+  .map { padding-top: 2rem; }
+  .list { padding-block: 2rem clamp(4rem, 8vw, 6rem); }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--line); }
+  .search { flex: 1 1 20rem; max-width: 28rem; }
+  .toolbar input, .toolbar select {
+    width: 100%; font: inherit; font-size: 0.9375rem; padding: 0.4rem 0.6rem;
+    border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--text);
+  }
+  .toolbar select { width: auto; max-width: 100%; }
+  .count { margin: 1rem 0 0.25rem; color: var(--slate); font-size: 0.875rem; }
+  .plist { list-style: none; margin: 0; padding: 0; }
+  .plist :global(.paper) {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    gap: 0.25rem 1rem;
+    padding-block: 0.9rem;
+    border-top: 1px solid var(--line);
+  }
+  .plist :global(.yr) { color: var(--slate); font-variant-numeric: tabular-nums; font-size: 0.9375rem; padding-top: 0.1rem; }
+  .plist :global(h3) { font-size: 1.0625rem; font-weight: 600; line-height: 1.35; }
+  .plist :global(.paper) { cursor: pointer; }
+  .plist :global(.ttl) {
+    all: unset; cursor: pointer; color: var(--brand); font: inherit; text-align: left;
+  }
+  .plist :global(.paper:hover .ttl) { text-decoration: underline; }
+  .plist :global(.ttl:focus-visible) { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 2px; }
+  .plist :global(.more) { cursor: auto; max-width: 75ch; }
+  .plist :global(.abs) { margin-top: 0.75rem; font-family: var(--serif); line-height: 1.6; }
+  .plist :global(.abs.none) { color: var(--slate); font-style: italic; }
+  .plist :global(.abs .katex) { font-size: 1.08em; }
+  .plist :global(.links) { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.875rem; font-weight: 500; }
+  .plist :global(.au) { margin-top: 0.25rem; font-size: 0.9375rem; line-height: 1.45; }
+  .plist :global(.au b) { font-weight: 650; }
+  .plist :global(.meta) { margin-top: 0.2rem; font-size: 0.875rem; color: var(--slate); display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; }
+  .plist :global(.topic) { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .plist :global(.sw) { width: 0.6rem; height: 0.6rem; border-radius: 50%; }
+  @media (max-width: 760px) {
+    .plist :global(.paper) { grid-template-columns: 2.75rem minmax(0, 1fr); }
+  }
+</style>

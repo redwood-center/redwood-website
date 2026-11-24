@@ -1,0 +1,72 @@
+[
+ {
+  "title": "Muon learns balanced solutions in matrix factorization without slow saddle-to-saddle dynamics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:roLk4NBRz8UC",
+  "authors": "M Rhee, J Simon, D Karkada",
+  "venue": "arXiv preprint arXiv:2606.30509, 2026",
+  "year": 2026
+ },
+ {
+  "title": "There will be a scientific theory of deep learning",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:LkGwnXOMwfcC",
+  "authors": "J Simon, D Kunin, A Atanasov, E Boix-Adserà, B Bordelon, J Cohen, ...",
+  "venue": "arXiv preprint arXiv:2604.21691, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Predicting kernel regression learning curves from only raw data statistics",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:WF5omc3nYNoC",
+  "authors": "D Karkada, J Turnbull, Y Liu, J Simon",
+  "venue": "International Conference on Learning Representations 2026, 118355-118425, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Symmetry in language statistics shapes the geometry of model representations",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:Se3iqnhoufwC",
+  "authors": "D Karkada, DJ Korchinski, A Nava, M Wyart, Y Bahri",
+  "venue": "Forty-third International Conference on Machine Learning, 2026",
+  "year": 2026
+ },
+ {
+  "title": "Alternating Gradient Flows: A Theory of Feature Learning in Two-layer Neural Networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:YsMSGLbcyi4C",
+  "authors": "D Kunin, GL Marchetti, F Chen, D Karkada, JB Simon, MR DeWeese, ...",
+  "venue": "NeurIPS 2025, 2025",
+  "year": 2025
+ },
+ {
+  "title": "On the Emergence of Linear Analogies in Word Embeddings",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:W7OEmFMy1HYC",
+  "authors": "DJ Korchinski, D Karkada, Y Bahri, M Wyart",
+  "venue": "NeurIPS 2025, 2025",
+  "year": 2025
+ },
+ {
+  "title": "Closed-Form Training Dynamics Reveal Learned Features and Linear Structure in Word2Vec-like Models",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:eQOLeE2rZwMC",
+  "authors": "D Karkada, JB Simon, Y Bahri, MR DeWeese",
+  "venue": "NeurIPS 2025, 2025",
+  "year": 2025
+ },
+ {
+  "title": "The lazy (NTK) and rich (P) regimes: a gentle tutorial",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:zYLM7Y9cAGgC",
+  "authors": "D Karkada",
+  "venue": "arXiv preprint arXiv:2404.19719, 2024",
+  "year": 2024
+ },
+ {
+  "title": "More is better: when infinite overparameterization is optimal and overfitting is obligatory",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:qjMakFHDy7sC",
+  "authors": "JB Simon, D Karkada, N Ghosh, M Belkin",
+  "venue": "ICLR 2024, 2023",
+  "year": 2023
+ },
+ {
+  "title": "The eigenlearning framework: A conservation law perspective on kernel regression and wide neural networks",
+  "scholar": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=VVisg3cAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=VVisg3cAAAAJ:u5HHmVD_uO8C",
+  "authors": "JB Simon, M Dickens, D Karkada, MR DeWeese",
+  "venue": "arXiv preprint arXiv:2110.03922, 2021",
+  "year": 2021
+ }
+]

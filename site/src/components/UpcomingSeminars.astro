@@ -1,0 +1,64 @@
+---
+import { seminarUrl, type Seminar } from '../lib/seminars';
+import { formatShort, weekday } from '../lib/url';
+
+interface Props {
+  seminars: Seminar[];
+  showSummary?: boolean;
+}
+const { seminars, showSummary = false } = Astro.props;
+---
+
+<ul class="upcoming">
+  {seminars.map((s) => (
+    <li>
+      <p class="when">
+        <time datetime={s.date}>
+          <span class="day">{formatShort(s.date)}</span>
+          <span class="meta">{weekday(s.date)}{s.time && `, ${s.time}`}</span>
+        </time>
+      </p>
+      <div class="what">
+        <h3><a href={seminarUrl(s)}>{s.title}</a></h3>
+        <p class="speaker">{s.speaker}{s.affiliation && <span class="affil">, {s.affiliation}</span>}</p>
+        {s.location && <p class="where">{s.location}</p>}
+        {showSummary && s.summary && <p class="summary">{s.summary}</p>}
+      </div>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .upcoming { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem; }
+  li {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 0.5rem 2rem;
+    padding-left: 1.1rem;
+    border-left: 4px solid var(--gold);
+  }
+  .day {
+    display: block;
+    font-size: var(--step-2);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--brand);
+    line-height: 1.1;
+  }
+  .meta { display: block; color: var(--slate); font-size: 0.9375rem; margin-top: 0.2rem; }
+  h3 { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; max-width: 46ch; }
+  h3 a { text-decoration: none; }
+  h3 a:hover { text-decoration: underline; }
+  .speaker { margin-top: 0.35rem; font-weight: 600; }
+  .affil { font-weight: 400; color: var(--slate); }
+  .where { margin-top: 0.2rem; font-size: 0.9375rem; color: var(--slate); }
+  .summary {
+    margin-top: 0.75rem;
+    font-family: var(--serif);
+    line-height: 1.6;
+    max-width: var(--measure);
+  }
+  @media (max-width: 640px) {
+    li { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
