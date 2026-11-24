@@ -9,7 +9,8 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
    `CLAUDE.md` tells it where content lives.
 2. **Preview.** On confirmation (a reply like "go ahead", or the Build preview button) the agent edits the worktree.
    The bot builds the site, uploads a preview to Cloudflare Pages and posts its link. Replies
-   go back to step 1 for a revision (in channels, @mention the bot in the reply).
+   go back to step 1 for a revision. In channels, a request starts with an @mention; replies in its thread don't
+   need one.
 3. **Publish.** If the requester is approved (`config.json` → `approved`), the preview has a Publish button: it opens a
    pull request and merges it, and the site redeploys. Anyone else gets Submit for review, which opens the pull
    request; an approved person then clicks Publish. Each button gets a reply in the thread: the pull request, the

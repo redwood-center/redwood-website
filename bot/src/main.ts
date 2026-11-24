@@ -128,11 +128,14 @@ app.event('app_mention', async ({ event, client, context: ctx }) => {
   handle(client, { ...(event as unknown as Incoming), text });
 });
 
-app.message(async ({ message, client }) => {
+app.message(async ({ message, client, context: ctx }) => {
   const m = message as unknown as Incoming & { channel_type?: string; subtype?: string; bot_id?: string };
-  // Direct messages only; in channels the bot answers @mentions (above).
-  if (m.channel_type !== 'im' || m.bot_id || (m.subtype && m.subtype !== 'file_share')) return;
-  handle(client, m);
+  if (m.bot_id || (m.subtype && m.subtype !== 'file_share')) return;
+  if (m.channel_type === 'im') return handle(client, m);
+  // In channels: replies in a thread with a request in progress, without needing an @mention. Messages that do
+  // mention the bot arrive as app_mention events (above), so skip them here to avoid answering twice.
+  const job = m.thread_ts ? jobs[`${m.channel}:${m.thread_ts}`] : undefined;
+  if (job && ACTIVE.has(job.status) && !m.text?.includes(`<@${ctx.botUserId}>`)) handle(client, m);
 });
 
 function handle(client: WebClient, m: Incoming) {
