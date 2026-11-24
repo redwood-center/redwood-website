@@ -1,0 +1,19 @@
+{
+  "repo": "redwood-center/redwood-website",
+  "siteUrl": "https://redwood-center.github.io/redwood-website/",
+  "model": "claude-opus-5-5",
+  "maxBudgetUsd": 3,
+  "previews": {
+    "repo": null,
+    "url": null,
+    "localPort": 4500
+  },
+  "approved": {
+    "UQGJCSLAJ": "Jamie Simon",
+    "U0GG8P9BR": "Jeff Teeters",
+    "U07AC5HBF51": "Jake Yates",
+    "U09G9FKE0ET": "Daniel Kunin",
+    "U075A4RTF7G": "Joey Turnbull",
+    "U06M7HXBX0U": "Dhruva Karkada"
+  }
+}

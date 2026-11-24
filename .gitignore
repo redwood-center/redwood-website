@@ -18,3 +18,10 @@ node_modules/
 scripts/figures/out/
 __pycache__/
 .DS_Store
+
+# Website bot secrets (Slack tokens, API keys)
+bot/.env
+
+# Website bot runtime state (git working copies, job records, logs)
+bot/state/
+bot/node_modules/

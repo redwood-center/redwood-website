@@ -5,6 +5,9 @@ name: Deploy site
 on:
   push:
     branches: [main]
+  # Daily rebuild, so "upcoming seminars" moves on as dates pass.
+  schedule:
+    - cron: '0 13 * * *'
   workflow_dispatch:
 
 permissions:
