@@ -17,6 +17,11 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
    request, the merged commit, a link to the deploy. An Undo button reverts a merged change, through a preview.
    `everyoneCanPublishUntil` in `config.json` gives everyone merge access until that time (a trial period).
 
+The agent can also read the site's git history (read-only `git log`/`git show` tools, `src/history.ts`) and the
+public web (`src/web.ts`: read a page, download an image into `site/public/media/`), e.g. "use the headshot on her
+lab page". Web requests run in the bot, reach only public addresses on ports 80/443 (private, loopback and
+Tailscale ranges are refused, after redirects too), and new images the change doesn't use are removed.
+
 Nothing goes live from a message: only Merge to main, or merging the pull request on GitHub. The agent can only read
 and edit files in its worktree (editing only after confirmation), and never sees the bot's credentials.
 

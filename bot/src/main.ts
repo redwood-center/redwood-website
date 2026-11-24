@@ -17,7 +17,7 @@ import type { WebClient } from '@slack/web-api';
 import { type AgentResult, runAgent } from './agent.ts';
 import { STATE, config, isApproved, log, redact, secret } from './config.ts';
 import {
-  changedFiles, closePR, commitAll, deleteRemoteBranch, diffText, mergePR, newWorktree, openPR, pushBranch,
+  changedFiles, closePR, commitAll, deleteRemoteBranch, mergePR, newWorktree, openPR, pushBranch, unusedNewMedia,
   removeWorktree, revert, updatePR, WORK_DIR,
 } from './git.ts';
 import { build, linkDeps, publishPreview, removePreview } from './site.ts';
@@ -231,7 +231,7 @@ async function buildPreview(client: WebClient, job: Job, status: Post, name: str
       job.sessionId = agent.sessionId;
       log(job.id, `edit $${agent.costUsd.toFixed(2)}`, agent.error ?? '');
       if (agent.error) throw new Error(`the editing step stopped early (${agent.error})`);
-      await dropUnusedAttachments(dir, job.attached ?? []);
+      await dropUnusedMedia(dir);
       job.attached = [];
     }
 
@@ -339,14 +339,9 @@ async function saveAttachments(dir: string, files: SlackFile[]) {
   return saved;
 }
 
-/** Remove attachments the change doesn't reference, so stray uploads don't end up on the site. */
-async function dropUnusedAttachments(dir: string, attached: string[]) {
-  if (!attached.length) return;
-  const diff = await diffText(dir);
-  for (const rel of attached) {
-    // Pages refer to public files without the site/public/ prefix, e.g. "media/people/jane.jpg".
-    if (!diff.includes(rel.replace(/^site\/public\//, ''))) fs.rmSync(path.join(dir, rel), { force: true });
-  }
+/** Remove new images (attachments, downloads) the change doesn't use, so they don't end up on the site. */
+async function dropUnusedMedia(dir: string) {
+  for (const rel of await unusedNewMedia(dir)) fs.rmSync(path.join(dir, rel), { force: true });
 }
 
 // --- Buttons ---

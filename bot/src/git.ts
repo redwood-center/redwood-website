@@ -74,6 +74,17 @@ export async function diffText(dir: string) {
   return git(dir, 'diff', '--cached', 'origin/main');
 }
 
+/** New files under site/public/media (attachments, downloads) that the rest of the change doesn't refer to.
+ * Pages refer to public files without the site/public/ prefix, e.g. "media/people/jane.jpg". */
+export async function unusedNewMedia(dir: string) {
+  await git(dir, 'add', '-A');
+  const added = (await git(dir, 'diff', '--cached', '--name-only', '--diff-filter=A', 'origin/main', '--', 'site/public/media'))
+    .split('\n').filter(Boolean);
+  if (!added.length) return [];
+  const rest = await git(dir, 'diff', '--cached', 'origin/main', '--', '.', ':(exclude)site/public/media');
+  return added.filter((f) => !rest.includes(f.replace(/^site\/public\//, '')));
+}
+
 export const botCommit = (cwd: string, message: string) => run('git', [...BOT_AUTHOR, 'commit', '--quiet', '-m', message], cwd);
 
 /** Commit everything in the worktree (if anything changed). */
