@@ -2,14 +2,14 @@
 @import '@fontsource-variable/source-serif-4';
 
 :root {
-  --brand: #6b1e1e;
-  --brand-soft: #8a5a5a;
+  --brand: #1f4030;
+  --brand-soft: #5a7d66;
   --gold: #fdb515;
   --paper: #ffffff;
-  --wash: #f5eeee;
-  --text: #302626;
-  --slate: #665959;
-  --line: #ddd3d3;
+  --wash: #eef3ef;
+  --text: #26302a;
+  --slate: #59665e;
+  --line: #d3ddd6;
 
   --sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
   --serif: 'Source Serif 4 Variable', Georgia, serif;

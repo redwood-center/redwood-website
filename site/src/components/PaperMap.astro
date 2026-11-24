@@ -757,14 +757,14 @@ const maxYears = Math.max(10, thisYear - Math.min(...data.papers.map((p) => p.ye
 </script>
 
 <style>
-  .paper-map { --pm-surface: #fcfafa; }
+  .paper-map { --pm-surface: #fafcfa; }
   /* Map on the left, its legend and options in a column on the right (below the map on narrow screens). */
   .pm-main { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 1.75rem; align-items: start; }
   .pm-side { display: grid; gap: 1.25rem; font-size: 0.9375rem; }
   .pm-legend { display: grid; gap: 0.3rem; list-style: none; margin: 0; padding: 0; font-size: 0.875rem; }
   .pm-legend li { display: inline-flex; align-items: center; gap: 0.4rem; cursor: default; color: var(--text); border-radius: 3px; }
   .pm-legend li:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
-  .pm-legend li.pinned { background: rgb(107 30 30 / 0.09); box-shadow: 0 0 0 3px rgb(107 30 30 / 0.09); }
+  .pm-legend li.pinned { background: rgb(31 64 48 / 0.09); box-shadow: 0 0 0 3px rgb(31 64 48 / 0.09); }
   .pm-legend .n { color: var(--slate); font-variant-numeric: tabular-nums; }
   .sw { width: 0.7rem; height: 0.7rem; border-radius: 50%; flex: none; }
   .pm-controls { display: grid; gap: 0.9rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
@@ -783,7 +783,7 @@ const maxYears = Math.max(10, thisYear - Math.min(...data.papers.map((p) => p.ye
   .pm-stepper button {
     width: 1.7rem; border: 0; background: var(--wash); color: var(--brand); font: inherit; font-weight: 600; cursor: pointer;
   }
-  .pm-stepper button:hover { background: #e8dfdf; }
+  .pm-stepper button:hover { background: #dfe8e2; }
   .pm-stepper:focus-within { outline: 2px solid var(--brand); outline-offset: 1px; }
   .pm-search { display: grid; gap: 0.25rem; }
   .pm-search input {
