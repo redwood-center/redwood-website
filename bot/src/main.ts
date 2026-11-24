@@ -3,10 +3,11 @@
 //   1. Talk: the agent (read-only) works out the change with the requester, then describes it and asks to confirm.
 //   2. Build: on confirmation (a reply, or the Build preview button) it edits a branch; the bot builds the site,
 //      uploads a preview and posts its link. Replies after that go back to step 1 for a revision.
-//   3. Publish (approved people): opens a pull request and merges it; the live site redeploys. Anyone else gets
-//      Submit for review instead, which opens the pull request for an approved person to publish.
-//   4. Undo (approved people) reverts a published change, through the same preview.
-// Nothing goes live from a message: only the Publish button publishes.
+//   3. Submit a PR (anyone): opens a pull request for review. Merge to main (people with merge access, the
+//      `approved` list; shown only on their own requests): opens the pull request if needed and merges it, and
+//      the live site redeploys.
+//   4. Undo (merge access) reverts a merged change, through the same preview.
+// Nothing goes live from a message: only the Merge to main button (or merging the pull request on GitHub) does.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -25,8 +26,8 @@ type Status =
   | 'discussing' // talking it over; nothing proposed yet (or a question was answered)
   | 'proposed' // the agent described a change and asked to confirm
   | 'working' // editing and building
-  | 'preview' // a preview is up, waiting for Publish / Submit for review / a reply
-  | 'submitted' // pull request open, waiting for an approved person to publish
+  | 'preview' // a preview is up, waiting for Merge to main / Submit a PR / a reply
+  | 'submitted' // pull request open, waiting to be merged
   | 'merged' | 'discarded' | 'failed';
 const ACTIVE = new Set<Status>(['discussing', 'proposed', 'preview', 'submitted']); // a reply continues the request
 
@@ -275,25 +276,30 @@ async function buildPreview(client: WebClient, job: Job, status: Post, name: str
   }
 }
 
-/** The preview's message: what changed, the link, and Publish (approved requester, or once submitted) or Submit
- * for review (anyone else). */
+/** The preview's message: what changed, and the buttons: Open preview, Submit a PR (until one is open), Merge to
+ * main (only on requests from people with merge access), Discard. */
 function previewMessage(job: Job, files: string[]) {
   const fileList = files.map((f) => `\`${f.replace(/^site\//, '')}\``).join(', ');
   const submitted = job.status === 'submitted';
+  const admin = isApproved(job.requester);
   const next = submitted
-    ? `Submitted for review. An approved person (${approvedList()}) can publish it. Reply here to change it.`
-    : isApproved(job.requester)
-      ? 'Open the preview; if it looks right, Publish. Reply here to change it.'
-      : `Open the preview; if it looks right, Submit for review and an approved person (${approvedList()}) will publish it. Reply here to change it.`;
+    ? admin
+      ? 'The pull request is open. Merge to main to publish it. Reply here to change it.'
+      : `The pull request is open; someone with merge access (${approvedList()}) will merge it. Reply here to change it.`
+    : admin
+      ? 'Open the preview. If it looks right, Merge to main to publish it, or Submit a PR to have it reviewed first. Reply here to change it.'
+      : `Open the preview. If it looks right, Submit a PR and someone with merge access (${approvedList()}) will merge it. Reply here to change it.`;
   const text = `${job.summary}\n\n${next}`;
   const links = [`Changed ${fileList}`, job.pr && `<${job.pr.url}|Pull request #${job.pr.number}>`].filter(Boolean).join('  ·  ');
-  const open = { ...button('Open preview', 'open_preview', job.id), url: job.previewUrl };
-  const primary = submitted || isApproved(job.requester)
-    ? button('Publish', 'publish', job.id, 'primary')
-    : button('Submit for review', 'submit', job.id, 'primary');
+  const buttons = [
+    { ...button('Open preview', 'open_preview', job.id), url: job.previewUrl },
+    !submitted && button('Submit a PR', 'submit', job.id, admin ? undefined : 'primary'),
+    admin && button('Merge to main', 'publish', job.id, 'primary'),
+    button('Discard', 'discard', job.id),
+  ].filter(Boolean);
   return {
     text: `${text}\nPreview: ${job.previewUrl}`, // notification fallback
-    blocks: [section(text), context(links), actions(open, primary, button('Discard', 'discard', job.id))],
+    blocks: [section(text), context(links), actions(...buttons)],
   };
 }
 
@@ -362,7 +368,7 @@ app.action('build', async (args) => {
   await args.ack();
   const { job, user, post, text } = clicked(args);
   if (!job || job.status !== 'proposed') return;
-  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can build this.');
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or someone with merge access, can build this.');
   await update(args.client, post, text, [section(text), context(`<@${user}> confirmed.`)]);
   enqueue(async () => {
     const status = await postIn(args.client, job, 'Working on it…');
@@ -374,8 +380,8 @@ app.action('submit', async (args) => {
   await args.ack();
   const { job, user, post } = clicked(args);
   if (!job || job.status !== 'preview') return;
-  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can submit this.');
-  const status = await postIn(args.client, job, 'Submitting…');
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or someone with merge access, can submit this.');
+  const status = await postIn(args.client, job, 'Opening a pull request…');
   enqueue(async () => {
     try {
       await ensurePR(args.client, job);
@@ -383,10 +389,10 @@ app.action('submit', async (args) => {
       saveJobs();
       const { text, blocks } = previewMessage(job, await changedFiles(path.join(WORK_DIR, job.id)));
       await update(args.client, post, text, blocks);
-      await update(args.client, status, `:inbox_tray: Submitted for review by <@${user}>: <${job.pr!.url}|pull request #${job.pr!.number}>. Nothing is live yet; an approved person (${approvedList()}) can publish it with the Publish button above.`);
+      await update(args.client, status, `:inbox_tray: <@${user}> opened <${job.pr!.url}|pull request #${job.pr!.number}>. Nothing is live yet; it goes live when someone with merge access (${approvedList()}) merges it.`);
     } catch (e) {
       log(job.id, 'submit failed', e);
-      await update(args.client, status, `Couldn't submit: ${failure(e)}`);
+      await update(args.client, status, `Couldn't open the pull request: ${failure(e)}`);
     }
   });
 });
@@ -395,18 +401,18 @@ app.action('publish', async (args) => {
   await args.ack();
   const { job, user, post } = clicked(args);
   if (!job || (job.status !== 'preview' && job.status !== 'submitted')) return;
-  if (!isApproved(user)) return deny(args.client, job, user, `Only approved people can publish (${approvedList()}).`);
-  const status = await postIn(args.client, job, 'Publishing…');
+  if (!isApproved(user)) return deny(args.client, job, user, `Only people with merge access can merge to main (${approvedList()}).`);
+  const status = await postIn(args.client, job, 'Merging to main…');
   enqueue(async () => {
     try {
       await ensurePR(args.client, job);
       job.mergeSha = (await mergePR(job.pr!.number, job.title)).sha;
       job.status = 'merged';
       saveJobs();
-      await update(args.client, post, job.summary ?? job.title, [section(job.summary ?? job.title), context(`Published by <@${user}>; see below.`)]);
+      await update(args.client, post, job.summary ?? job.title, [section(job.summary ?? job.title), context(`Merged to main by <@${user}>; see below.`)]);
       const repo = `https://github.com/${config.repo}`;
       const text = [
-        `:white_check_mark: Published by <@${user}>.`,
+        `:white_check_mark: Merged to main by <@${user}>.`,
         `• <${job.pr!.url}|Pull request #${job.pr!.number}> is merged into main as commit <${repo}/commit/${job.mergeSha}|${job.mergeSha.slice(0, 7)}>.`,
         `• <${config.siteUrl}|The live site> updates in a few minutes (<${repo}/actions|deploy progress>).`,
       ].join('\n');
@@ -414,7 +420,7 @@ app.action('publish', async (args) => {
       await cleanUp(job).catch((e) => log(job.id, 'cleanup failed', e));
     } catch (e) {
       log(job.id, 'publish failed', e);
-      await update(args.client, status, `Couldn't publish: ${failure(e)}${job.status === 'merged' ? '' : '\nNothing went live.'}`);
+      await update(args.client, status, `Couldn't merge: ${failure(e)}${job.status === 'merged' ? '' : '\nNothing went live.'}`);
     }
   });
 });
@@ -423,7 +429,7 @@ app.action('discard', async (args) => {
   await args.ack();
   const { job, user, post } = clicked(args);
   if (!job || !ACTIVE.has(job.status)) return;
-  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or an approved person, can discard this.');
+  if (user !== job.requester && !isApproved(user)) return deny(args.client, job, user, 'Only the person who asked, or someone with merge access, can discard this.');
   enqueue(async () => {
     if (job.pr) await closePR(job.pr.number).catch((e) => log(job.id, 'close failed', e));
     job.status = 'discarded';
@@ -439,8 +445,8 @@ app.action('undo', async (args) => {
   await args.ack();
   const { job: published, user } = clicked(args);
   if (!published || published.status !== 'merged') return;
-  if (!isApproved(user)) return deny(args.client, published, user, `Only approved people can undo a published change (${approvedList()}).`);
-  // Undo is a new request in the same thread (a git revert of the published commit) with its own preview, then Publish.
+  if (!isApproved(user)) return deny(args.client, published, user, `Only people with merge access can undo a merged change (${approvedList()}).`);
+  // Undo is a new request in the same thread (a git revert of the published commit) with its own preview, then Merge to main.
   enqueue(async () => {
     const status = await postIn(args.client, published, 'Working on it… (undoing)');
     const id = newId(`undo ${published.title}`);

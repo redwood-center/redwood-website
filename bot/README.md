@@ -11,12 +11,13 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
    The bot builds the site, uploads a preview to Cloudflare Pages and posts its link. Replies
    go back to step 1 for a revision. In channels, a request starts with an @mention; replies in its thread don't
    need one.
-3. **Publish.** If the requester is approved (`config.json` → `approved`), the preview has a Publish button: it opens a
-   pull request and merges it, and the site redeploys. Anyone else gets Submit for review, which opens the pull
-   request; an approved person then clicks Publish. Each button gets a reply in the thread: the pull request, the
-   merged commit, a link to the deploy. An Undo button reverts a published change, through a preview.
+3. **Merge or submit.** The preview message has Open preview, Submit a PR (anyone: opens a pull request for review),
+   Merge to main (only on requests from people with merge access, `config.json` → `approved`: opens the pull request
+   if needed and merges it, and the site redeploys) and Discard. Each button gets a reply in the thread: the pull
+   request, the merged commit, a link to the deploy. An Undo button reverts a merged change, through a preview.
+   `everyoneCanPublishUntil` in `config.json` gives everyone merge access until that time (a trial period).
 
-Nothing goes live from a message. The agent can only read and edit files in its worktree (editing only after
+Nothing goes live from a message: only Merge to main, or merging the pull request on GitHub. The agent can only read and edit files in its worktree (editing only after
 confirmation), and never sees the bot's credentials.
 
 ## Running it
