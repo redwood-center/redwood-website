@@ -283,14 +283,18 @@ function previewMessage(job: Job, files: string[]) {
   const next = submitted
     ? `Submitted for review. An approved person (${approvedList()}) can publish it. Reply here to change it.`
     : isApproved(job.requester)
-      ? 'If it looks right, Publish. Reply here to change it.'
-      : `If it looks right, Submit for review and an approved person (${approvedList()}) will publish it. Reply here to change it.`;
-  const text = `${job.summary}\n\n<${job.previewUrl}|Open the preview>. ${next}`;
+      ? 'Open the preview; if it looks right, Publish. Reply here to change it.'
+      : `Open the preview; if it looks right, Submit for review and an approved person (${approvedList()}) will publish it. Reply here to change it.`;
+  const text = `${job.summary}\n\n${next}`;
   const links = [`Changed ${fileList}`, job.pr && `<${job.pr.url}|Pull request #${job.pr.number}>`].filter(Boolean).join('  ·  ');
+  const open = { ...button('Open preview', 'open_preview', job.id), url: job.previewUrl };
   const primary = submitted || isApproved(job.requester)
     ? button('Publish', 'publish', job.id, 'primary')
     : button('Submit for review', 'submit', job.id, 'primary');
-  return { text, blocks: [section(text), context(links), actions(primary, button('Discard', 'discard', job.id))] };
+  return {
+    text: `${text}\nPreview: ${job.previewUrl}`, // notification fallback
+    blocks: [section(text), context(links), actions(open, primary, button('Discard', 'discard', job.id))],
+  };
 }
 
 const prBody = (job: Job, requester: string) =>
@@ -350,6 +354,9 @@ function clicked({ body, action }: ActionArgs) {
 }
 const deny = (client: WebClient, job: Job, user: string, text: string) =>
   client.chat.postEphemeral({ channel: job.channel, user, thread_ts: job.threadTs, text }).then(() => {}, () => {});
+
+// A link button: the browser opens the preview; Slack still sends the click, which must be acknowledged.
+app.action('open_preview', async ({ ack }) => { await ack(); });
 
 app.action('build', async (args) => {
   await args.ack();
