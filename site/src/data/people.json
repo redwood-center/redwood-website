@@ -120,6 +120,14 @@
   "photo": "media/people/dasheng_bi_profile_picture-300x350.jpg"
  },
  {
+  "slug": "tom-thomas",
+  "name": "Tom Thomas",
+  "group": "Students",
+  "order": 999,
+  "title": "PhD Student",
+  "photo": "media/people/tom_thomas_emoji-300x350.svg"
+ },
+ {
   "slug": "connor-bybee",
   "name": "Connor Bybee",
   "group": "Alumni",
