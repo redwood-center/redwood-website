@@ -6,10 +6,10 @@ papers-db/pdf/
 
 # Local-only material: the crawl of the old site (2.2 GB), its extracted content (includes contact details),
 # downloaded research data, and working notes
-archive/
-content/
-research-data/
-claude-notes/
+/archive/
+/content/
+/research-data/
+/claude-notes/
 
 # Build output and dependencies
 site/dist/
