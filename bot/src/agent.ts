@@ -7,6 +7,7 @@ import path from 'node:path';
 import { query } from '@anthropic-ai/claude-agent-sdk';
 
 import { STATE, config, log, secret } from './config.ts';
+import { HISTORY_TOOLS, historyServer } from './history.ts';
 
 const INSTRUCTIONS = `You are the Redwood Center website's editing assistant, talking with a Center member on Slack about a
 change to the website. You are working in a git working copy of the site; CLAUDE.md says where content lives. You
@@ -26,6 +27,10 @@ Each message says which of two phases you're in.
 
 [Editing] They confirmed. Make exactly the change you proposed, then finish with one to three plain sentences saying
 what you changed.
+
+The git tools (log, show) show the site's change history: who changed what and when, with the diffs. Use them for
+requests about past changes ("undo the theme change", "what did Jake change last week?"). To undo a change, propose
+it like any other, then edit the files back to how they were.
 
 Always:
 - Make the smallest change that does what was asked, matching the existing style and data formats.
@@ -57,6 +62,7 @@ function guard(root: string, mode: Mode) {
     return top !== '.git' && top !== '.github';
   };
   return async (tool: string, input: Record<string, unknown>) => {
+    if (HISTORY_TOOLS.has(tool)) return { behavior: 'allow' as const, updatedInput: input }; // they check their own arguments
     if (!READ_TOOLS.has(tool) && !(mode === 'edit' && EDIT_TOOLS.has(tool))) {
       return { behavior: 'deny' as const, message: `${tool} isn't available now.` };
     }
@@ -83,6 +89,7 @@ export async function runAgent(cwd: string, prompt: string, mode: Mode, resume?:
       maxTurns: 60,
       maxBudgetUsd: config.maxBudgetUsd,
       tools: mode === 'edit' ? ['Read', 'Glob', 'Grep', 'Edit', 'Write'] : ['Read', 'Glob', 'Grep'],
+      mcpServers: { git: historyServer(cwd) },
       canUseTool: guard(cwd, mode),
       permissionMode: 'default',
       settingSources: ['project'], // the repo's CLAUDE.md, nothing from this machine's own Claude settings
