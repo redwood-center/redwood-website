@@ -13,6 +13,7 @@ type Config = {
   // Previews: a Cloudflare Pages project and its domain (<project>.pages.dev, possibly with a suffix Cloudflare added).
   previews: { project: string; domain: string };
   approved: Record<string, string>; // Slack user ID -> name: who can publish
+  everyoneCanPublishUntil?: string; // optional ISO time: until then, everyone counts as approved (a trial period)
 };
 
 export const config: Config = JSON.parse(fs.readFileSync(path.join(BOT_DIR, 'config.json'), 'utf8'));
@@ -23,7 +24,9 @@ export function secret(name: string): string {
   return v;
 }
 
-export const isApproved = (user: string) => Object.hasOwn(config.approved, user);
+export const isApproved = (user: string) =>
+  Object.hasOwn(config.approved, user) ||
+  (config.everyoneCanPublishUntil !== undefined && Date.now() < Date.parse(config.everyoneCanPublishUntil));
 
 const SECRETS = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN', 'GITHUB_TOKEN', 'ANTHROPIC_API_KEY', 'CLOUDFLARE_API_TOKEN'];
 
