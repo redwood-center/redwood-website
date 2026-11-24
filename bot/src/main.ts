@@ -1,7 +1,7 @@
 // Redwood Website Bot. Anyone in the Redwood Slack can DM it (or @mention it in a channel) with a change to the
 // website. Each Slack thread is one request: the agent edits a branch, the bot builds the site, publishes a preview,
-// posts screenshots and opens a pull request. Requests from approved people are merged (published) right away;
-// anyone else's wait until an approved person clicks Publish. Replies in the thread revise the change.
+// posts screenshots and opens a pull request. Nothing goes live until an approved person clicks Publish (approved
+// people's own requests included). Replies in the thread revise the change.
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -196,26 +196,21 @@ async function work(client: WebClient, key: string, m: Incoming, threadTs: strin
       return [] as string[];
     });
 
-    // 4. Publish now (approved requester) or offer buttons.
+    // 4. Offer it. Nothing goes live from a message: only the Publish button (approved people) publishes.
     const fileList = files.map((f) => `\`${f.replace(/^site\//, '')}\``).join(', ');
-    let text: string;
-    let blocks: unknown[];
-    if (isApproved(m.user)) {
-      await publish(job);
-      text = `${agent.text}\n\n:white_check_mark: Published; <${config.siteUrl}|the live site> updates in about a minute.`;
-      blocks = resultBlocks(text, fileList, job, null, [button('Undo', 'undo', job.id)]);
-    } else {
-      job.status = 'open';
-      text = `${agent.text}\n\nThis needs an approved person (${approvedList()}) to publish it. Reply here to change it.`;
-      blocks = resultBlocks(text, fileList, job, preview, [button('Publish', 'publish', job.id, 'primary'), button('Discard', 'discard', job.id)]);
-    }
+    job.status = 'open';
+    const next = isApproved(m.user)
+      ? 'Check the preview, then Publish. Reply here to change it.'
+      : `An approved person (${approvedList()}) can publish it. Reply here to change it.`;
+    const text = `${agent.text}\n\n${next}`;
+    const blocks = resultBlocks(text, fileList, job, preview, [button('Publish', 'publish', job.id, 'primary'), button('Discard', 'discard', job.id)]);
     saveJobs();
     await client.chat.update({ channel: m.channel, ts: status.ts!, text, blocks: blocks as never });
     if (shots.length) {
       await client.files.uploadV2({
         channel_id: m.channel, thread_ts: threadTs,
         file_uploads: shots.map((f) => ({ file: f, filename: path.basename(f) })),
-        initial_comment: isApproved(m.user) ? 'How it looks:' : 'How it would look:',
+        initial_comment: 'How it would look:',
       }).catch((e) => log(job!.id, 'upload failed', e));
     }
     await react('eyes', true);

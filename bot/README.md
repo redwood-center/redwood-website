@@ -7,8 +7,8 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
 1. A Claude agent (Agent SDK) edits a fresh git worktree of the website on its own branch. It can only read and edit
    files in that worktree, and never sees the bot's credentials. The repo's `CLAUDE.md` tells it where content lives.
 2. The bot builds the site, publishes a preview, posts screenshots of the changed pages, and opens a pull request.
-3. If the requester is approved (`config.json` → `approved`), the pull request is merged at once and the site
-   redeploys; an Undo button reverts it. Otherwise approved people get Publish / Discard buttons.
+3. Nothing goes live until an approved person (`config.json` → `approved`) clicks Publish, even for their own
+   requests. Publishing merges the pull request and the site redeploys; an Undo button reverts it.
 4. Replies in the thread revise the change (in channels, @mention the bot in the reply).
 
 ## Running it
