@@ -132,6 +132,8 @@ async function work(client: WebClient, key: string, m: Incoming, threadTs: strin
       jobs[key] = job;
       await newWorktree(job.id, job.branch);
     }
+    // Name the change after the message that asked for it, not a greeting that opened the thread.
+    if (followUp && !job.pr && (await changedFiles(path.join(WORK_DIR, job.id))).length === 0) job.title = shortTitle(m.text);
     job.status = 'working';
     saveJobs();
     const dir = path.join(WORK_DIR, job.id);
@@ -220,7 +222,8 @@ async function work(client: WebClient, key: string, m: Incoming, threadTs: strin
     await react('white_check_mark');
   } catch (e) {
     log(job?.id, 'failed', e);
-    if (job) { job.status = job.pr ? 'open' : 'failed'; saveJobs(); }
+    // Keep the thread's work if there is any, so a reply like "try again" picks up where this stopped.
+    if (job) { job.status = job.pr || fs.existsSync(path.join(WORK_DIR, job.id)) ? 'open' : 'failed'; saveJobs(); }
     await setStatus(`Sorry, something went wrong: ${failure(e)}`);
     await react('eyes', true);
     await react('x');
