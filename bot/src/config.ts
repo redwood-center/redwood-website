@@ -25,6 +25,20 @@ export function secret(name: string): string {
 
 export const isApproved = (user: string) => Object.hasOwn(config.approved, user);
 
+const SECRETS = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN', 'GITHUB_TOKEN', 'ANTHROPIC_API_KEY'];
+
+/** Remove every credential (raw, or base64 in a git auth header) from text bound for Slack, GitHub or the log. */
+export function redact(text: string) {
+  let out = text.replace(/(AUTHORIZATION:\s*\w+\s+)\S+/gi, '$1[redacted]');
+  for (const name of SECRETS) {
+    const v = process.env[name];
+    if (!v) continue;
+    for (const form of [v, Buffer.from(`x-access-token:${v}`).toString('base64')]) out = out.split(form).join('[redacted]');
+  }
+  return out;
+}
+
 export function log(...parts: unknown[]) {
-  console.log(new Date().toISOString(), ...parts);
+  const text = parts.map((p) => (p instanceof Error ? p.stack ?? p.message : typeof p === 'string' ? p : JSON.stringify(p)));
+  console.log(new Date().toISOString(), redact(text.join(' ')));
 }

@@ -1,6 +1,6 @@
 {
   "display_information": {
-    "name": "Redwood Website",
+    "name": "Redwood Website Bot",
     "description": "Ask for changes to the Redwood Center website; get a preview and a pull request.",
     "background_color": "#1f4030"
   },
@@ -11,7 +11,7 @@
       "messages_tab_read_only_enabled": false
     },
     "bot_user": {
-      "display_name": "website",
+      "display_name": "redwood-website-bot",
       "always_online": true
     }
   },

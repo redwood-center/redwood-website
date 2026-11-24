@@ -9,7 +9,7 @@ import { App, LogLevel } from '@slack/bolt';
 import type { WebClient } from '@slack/web-api';
 
 import { type AgentResult, runAgent } from './agent.ts';
-import { STATE, config, isApproved, log, secret } from './config.ts';
+import { STATE, config, isApproved, log, redact, secret } from './config.ts';
 import {
   changedFiles, closePR, commitAndPush, deleteRemoteBranch, diffText, mergePR, newWorktree, openPR, removeWorktree,
   revert, updatePR, WORK_DIR,
@@ -68,6 +68,11 @@ async function nameOf(client: WebClient, user: string) {
 }
 
 const approvedList = () => Object.values(config.approved).join(', ');
+// Error text for Slack: credentials scrubbed (again; run() already does) and kept short. Details go to the log.
+const failure = (e: unknown) => {
+  const text = redact(e instanceof Error ? e.message : String(e));
+  return text.length > 600 ? `${text.slice(0, 600)}…` : text;
+};
 const shortTitle = (text: string) => {
   const line = text.split('\n')[0].trim();
   return line.length > 70 ? `${line.slice(0, 67)}…` : line;
@@ -216,7 +221,7 @@ async function work(client: WebClient, key: string, m: Incoming, threadTs: strin
   } catch (e) {
     log(job?.id, 'failed', e);
     if (job) { job.status = job.pr ? 'open' : 'failed'; saveJobs(); }
-    await setStatus(`Sorry, something went wrong: ${(e as Error).message}`);
+    await setStatus(`Sorry, something went wrong: ${failure(e)}`);
     await react('eyes', true);
     await react('x');
   }
@@ -303,7 +308,7 @@ app.action('publish', async ({ ack, body, action, client }) => {
       await client.chat.update({ channel, ts, text, blocks: [section(text), { type: 'actions', elements: [button('Undo', 'undo', job.id)] }] as never });
     } catch (e) {
       log(job.id, 'publish failed', e);
-      await client.chat.postMessage({ channel, thread_ts: job.threadTs, text: `Couldn't publish: ${(e as Error).message}` });
+      await client.chat.postMessage({ channel, thread_ts: job.threadTs, text: `Couldn't publish: ${failure(e)}` });
     }
   });
 });

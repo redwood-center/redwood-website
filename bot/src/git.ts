@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
-import { STATE, config, secret } from './config.ts';
+import { STATE, config, redact, secret } from './config.ts';
 
 const exec = promisify(execFile);
 export const REPO_DIR = path.join(STATE, 'repo');
@@ -18,9 +18,20 @@ function auth() {
   return ['-c', `http.https://github.com/.extraheader=AUTHORIZATION: basic ${basic}`];
 }
 
+/** Run a command. On failure, throws an error naming the command without its `-c` settings (which carry the
+ * GitHub token) and with any credential scrubbed from its output, so the message is safe to show in Slack. */
 export async function run(cmd: string, args: string[], cwd: string, env: Record<string, string> = {}) {
-  const { stdout } = await exec(cmd, args, { cwd, env: { ...process.env, ...env }, maxBuffer: 64 << 20 });
-  return stdout;
+  try {
+    const { stdout } = await exec(cmd, args, { cwd, env: { ...process.env, ...env }, maxBuffer: 64 << 20 });
+    return stdout;
+  } catch (e) {
+    const err = e as { stdout?: string; stderr?: string };
+    const shown = args.filter((a, i) => a !== '-c' && args[i - 1] !== '-c');
+    const failure = new Error(redact(`${cmd} ${shown.join(' ')} failed: ${(err.stderr ?? '').trim()}`)) as Error & { stdout: string; stderr: string };
+    failure.stdout = redact(err.stdout ?? '');
+    failure.stderr = redact(err.stderr ?? '');
+    throw failure;
+  }
 }
 
 export const git = (cwd: string, ...args: string[]) => run('git', args, cwd);
