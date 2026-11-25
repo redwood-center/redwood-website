@@ -139,8 +139,12 @@ app.message(async ({ message, client, context: ctx }) => {
   if (job && ACTIVE.has(job.status) && !m.text?.includes(`<@${ctx.botUserId}>`)) handle(client, m);
 });
 
+// "[no bot reply]" anywhere in a message lets people talk in a bot thread without the bot answering (or seeing it).
+const NO_REPLY = /\[\s*no[\s-]*bot[\s-]*reply\s*\]/i;
+
 function handle(client: WebClient, m: Incoming) {
   if (!m.text?.trim() && !m.files?.length) return;
+  if (NO_REPLY.test(m.text ?? '')) return;
   const threadTs = m.thread_ts ?? m.ts;
   if (pending > 0) {
     client.chat.postMessage({ channel: m.channel, thread_ts: threadTs, text: "Got it. I'm finishing another request first; this one is next." });

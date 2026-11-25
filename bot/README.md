@@ -10,7 +10,7 @@ Anyone in the Redwood Slack can DM it, or @mention it in a channel. Each Slack t
 2. **Preview.** On confirmation (a reply like "go ahead", or the Build preview button) the agent edits the worktree.
    The bot builds the site, uploads a preview to Cloudflare Pages and posts its link. Replies
    go back to step 1 for a revision. In channels, a request starts with an @mention; replies in its thread don't
-   need one.
+   need one. A message containing `[no bot reply]` is ignored, so people can talk in a thread without the bot.
 3. **Merge or submit.** The preview message has Open preview, Submit a PR (anyone: opens a pull request for review),
    Merge to main (only on requests from people with merge access, `config.json` → `approved`: opens the pull request
    if needed and merges it, and the site redeploys) and Discard. Each button gets a reply in the thread: the pull
