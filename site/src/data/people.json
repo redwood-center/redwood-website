@@ -1187,12 +1187,14 @@
  {
   "group": "Students",
   "order": 999,
-  "affiliation": null,
+  "affiliation": "Electrical Engineering and Computer Science",
   "slug": "sultan-daniels",
   "name": "Sultan Daniels",
   "title": "PhD Student",
-  "labs": [],
-  "website": null,
+  "labs": [
+   "BLISS Lab"
+  ],
+  "website": "https://sultandaniels.github.io/",
   "photo": "media/people/sultan-daniels.jpg"
  },
  {
