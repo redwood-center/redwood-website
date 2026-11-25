@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import FilterGrid from '../components/FilterGrid.astro';
 import UpcomingSeminars from '../components/UpcomingSeminars.astro';
+import PillarGlyph from '../components/PillarGlyph.astro';
 import sparseFilters from '../data/filters-olshausen.json';
 import alexnetFilters from '../data/filters-alexnet.json';
 import macaqueFilters from '../data/filters-macaque.json';
@@ -48,15 +49,15 @@ import { url } from '../lib/url';
       <h2 id="research-title">Seeking a science of intelligence</h2>
       <p class="lead" set:html={missionHtml} />
       <p class="pillars-intro">Our research has five pillars:</p>
-      <ol class="pillars">
-        {pillars.map((p, i) => (
+      <ul class="pillars">
+        {pillars.map((p) => (
           <li>
-            <span class="num" aria-hidden="true">{i + 1}</span>
+            <span class="glyph"><PillarGlyph id={p.id} /></span>
             <h3><a href={url(`research/#${p.id}`)}>{p.short}</a></h3>
             <p>{p.teaser}</p>
           </li>
         ))}
-      </ol>
+      </ul>
       <p class="research-cta">
         <a href={url('research/')}>Read about our research</a> and <a href={url('papers/')}>explore our papers</a>.
       </p>
@@ -137,21 +138,20 @@ import { url } from '../lib/url';
     margin: 1.25rem 0 0;
     padding: 0;
   }
-  /* Each pillar spans three shared rows (number, name, question) so questions line up across columns. */
+  /* Each pillar spans three shared rows (glyph, name, question) so questions line up across columns. */
   .pillars li { display: grid; grid-row: span 3; grid-template-rows: subgrid; align-content: start; }
   .pillars-intro { margin-top: clamp(1.75rem, 4vw, 2.75rem); font-size: var(--step-1); font-weight: 600; color: var(--brand); }
-  /* Numbers sit on the rule, so each pillar reads as a numbered column. */
-  .num {
+  /* Glyphs (components/PillarGlyph.astro) sit on the rule, heading each pillar's column. */
+  .glyph {
     display: block;
     padding-bottom: 0.35rem;
     margin-bottom: 0.85rem;
     border-bottom: 3px solid #b4bdb7;
     font-size: var(--step-2);
-    font-weight: 700;
     line-height: 1;
     color: #b4bdb7; /* pale gray: present but quieter than the names */
-    font-variant-numeric: tabular-nums;
   }
+  .glyph :global(svg) { display: block; width: 1.4em; height: 1.4em; }
   .pillars h3 { align-self: start; font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
   .pillars h3 a { text-decoration: none; }
   .pillars h3 a:hover { text-decoration: underline; }

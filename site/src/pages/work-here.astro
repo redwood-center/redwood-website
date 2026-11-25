@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { pillars } from '../data/research';
 import { url } from '../lib/url';
+import PillarGlyph from '../components/PillarGlyph.astro';
 ---
 
 <Base title="Work here" current="work-here">
@@ -32,11 +33,11 @@ import { url } from '../lib/url';
       </p>
 
       <h3>Research areas</h3>
-      <ol class="areas">
+      <ul class="areas">
         {pillars.map((p) => (
-          <li><a href={url(`research/#${p.id}`)}>{p.name}</a></li>
+          <li><span class="glyph"><PillarGlyph id={p.id} /></span><a href={url(`research/#${p.id}`)}>{p.name}</a></li>
         ))}
-      </ol>
+      </ul>
 
       <h3>Requirements</h3>
       <ul>
@@ -107,7 +108,9 @@ import { url } from '../lib/url';
   h3 { font-size: var(--step-1); font-weight: 650; margin: 2rem 0 0.6rem; }
   .prose ul, .prose ol { margin: 0; padding-left: 1.25rem; }
   .prose li + li { margin-top: 0.35rem; }
-  .areas li::marker { color: var(--slate); font-weight: 600; }
+  .prose ul.areas { list-style: none; padding-left: 0; }
+  .areas li { display: flex; align-items: center; gap: 0.6rem; }
+  .glyph { display: flex; flex: none; font-size: 1.25em; color: var(--slate); }
 
   .placeholder-note {
     margin-bottom: 2rem;

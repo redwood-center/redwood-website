@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { mission, missionHtml, pillars } from '../data/research';
 import { url } from '../lib/url';
+import PillarGlyph from '../components/PillarGlyph.astro';
 
 ---
 
@@ -15,10 +16,10 @@ import { url } from '../lib/url';
     <div class="wrap">
       <h2 id="pillars-title">Research pillars</h2>
       <p class="pillars-intro">The Redwood Center's research agenda has five interrelated pillars.</p>
-      <ol class="pillars">
-        {pillars.map((p, i) => (
+      <ul class="pillars">
+        {pillars.map((p) => (
           <li id={p.id}>
-            <span class="num" aria-hidden="true">{i + 1}</span>
+            <span class="glyph"><PillarGlyph id={p.id} /></span>
             <div>
               <h3>{p.name}</h3>
               <p class="question">{p.question}</p>
@@ -38,7 +39,7 @@ import { url } from '../lib/url';
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   </section>
 
@@ -76,13 +77,12 @@ import { url } from '../lib/url';
     scroll-margin-top: 1.5rem;
   }
   .pillars li:last-child { border-bottom: 1px solid var(--line); }
-  .num {
+  .glyph {
     font-size: var(--step-3);
-    font-weight: 700;
     line-height: 1;
     color: var(--brand);
-    font-variant-numeric: tabular-nums;
   }
+  .glyph :global(svg) { display: block; width: min(1.25em, 3rem); height: min(1.25em, 3rem); }
   .pillars h3 { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.01em; }
   .question {
     margin-top: 0.3rem;
