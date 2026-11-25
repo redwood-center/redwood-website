@@ -1,0 +1,20 @@
+# systemd unit for the bot on node-006 (see README.md, "Where it runs").
+# Install: sudo cp redwood-bot.service /etc/systemd/system/ && sudo systemctl daemon-reload && sudo systemctl enable --now redwood-bot
+[Unit]
+Description=Redwood website Slack bot
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+User=host
+WorkingDirectory=/home/host/redwood-website/bot
+Environment=PATH=/home/host/.local/opt/node/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/host/.local/opt/node/bin/node --env-file=.env src/main.ts
+StandardOutput=append:/home/host/redwood-website/bot/state/bot.log
+StandardError=append:/home/host/redwood-website/bot/state/bot.log
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

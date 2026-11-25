@@ -45,3 +45,19 @@ discarded.
 `node --env-file=.env src/try.ts "<request>"` runs one request without Slack or GitHub writes (worktree, talk, edit
 with the proposal confirmed automatically, build, preview) and prints where everything went.
 `npm run check` type-checks.
+
+## Where it runs
+
+On node-006 (`ssh host@64.71.162.76`), as the systemd service `redwood-bot` (`redwood-bot.service`): it starts at
+boot and restarts itself if it exits. The code is a clone of this repo in `~/redwood-website`, Node is in
+`~/.local/opt/node`, and the log is `~/redwood-website/bot/state/bot.log`. Run only one copy: Slack splits events
+between every connected copy.
+
+```sh
+cd ~/redwood-website && git pull && cd bot && PATH=~/.local/opt/node/bin:$PATH npm ci   # update the code
+sudo systemctl restart redwood-bot                                                        # pick it up
+tail -f ~/redwood-website/bot/state/bot.log
+```
+
+A restart drops a request that is mid-build back to discussion (the requester has to confirm again), so check the log
+for a quiet moment first.
