@@ -32,7 +32,10 @@ not code. Keep changes as small as the request allows, and match the surrounding
   by `course` in a table. Lecture files stay on the old server, linked at
   `https://redwood.berkeley.edu/wp-content/uploads/...`. Don't show personal email addresses.
 - **Blog posts**: Markdown in `site/src/content/blog/<slug>.md`, with front matter `title`, `date`, `authors`
-  (list), `summary`.
+  (list), `summary`. Use `.mdx` instead for a post that imports components; interactive figures live in
+  `site/src/content/blog/widgets/` (no `.md` or `.mdx` files there, or they become posts). Math is `$...$` or
+  `$$...$$` (KaTeX); footnotes (`[^label]`) show as margin notes. Plugins for both are in
+  `site/src/lib/markdown.mjs`.
 - **Research pillars** (Research page and homepage): `site/src/data/research.ts`.
 - **Page text**: `site/src/pages/*.astro` (home is `index.astro`); header and footer in `site/src/components/`.
 - `site/src/data/news.json` exists but isn't shown on the site.
