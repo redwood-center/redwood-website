@@ -1,0 +1,112 @@
+---
+import Base from '../layouts/Base.astro';
+import { courses, currentTerm, hasPage, offeringUrl, type Offering } from '../lib/courses';
+
+/** Offerings in runs of the same season: Fall 2024 2022 2020 / Spring 2015. */
+function runs(list: Offering[]) {
+  const out: { season: string; items: Offering[] }[] = [];
+  for (const o of list) {
+    const season = o.term.split(' ')[0];
+    const last = out.at(-1);
+    if (last?.season === season) last.items.push(o);
+    else out.push({ season, items: [o] });
+  }
+  return out;
+}
+
+---
+
+<Base title="Courses" current="courses">
+  <section class="intro wrap">
+    <h1>Courses</h1>
+    <p class="lead">Click on a course for schedule information and course materials.</p>
+  </section>
+
+  <section class="wrap list">
+    <table class="courses">
+      <thead>
+        <tr><th scope="col" colspan="2">Course</th><th scope="col">Instructors</th><th scope="col">Taught</th></tr>
+      </thead>
+      <tbody>
+        {courses.map((c) => (
+          <tr>
+            <td class="code">{c.latest.code}</td>
+            <td class="course"><a class="title" href={offeringUrl(c.latest)}>{c.latest.title}</a></td>
+            <td class="who">{c.instructors.length ? c.instructors.join(', ') : '—'}</td>
+            <td class="terms">
+              {runs(c.offerings).map((r) => (
+                <span class="run">
+                  <span class="season">{r.season}</span>
+                  {r.items.map((o) => {
+                    const year = o.term.split(' ')[1];
+                    const label = hasPage(o)
+                      ? <a class="year" href={offeringUrl(o)} aria-label={o.term}>{year}</a>
+                      : <span class="year">{year}</span>;
+                    return o.term === currentTerm ? <span>{label} (now!)</span> : label;
+                  })}
+                </span>
+              ))}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+</Base>
+
+<style>
+  .intro { padding-block: clamp(2.5rem, 6vw, 4.5rem) 0; }
+  h1 { font-size: var(--step-4); font-weight: 700; letter-spacing: -0.025em; }
+  .lead {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+  .list { padding-block: 2rem clamp(3rem, 7vw, 5.5rem); }
+
+  .courses { width: 100%; border-collapse: collapse; }
+  .courses th {
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--slate);
+    padding: 0 1.25rem 0.6rem 0;
+    border-bottom: 2px solid var(--brand);
+  }
+  .courses td {
+    padding: 0.9rem 1.25rem 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: baseline;
+  }
+  .courses th:last-child, .courses td:last-child { padding-right: 0; }
+
+  .code {
+    white-space: nowrap;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--slate);
+    font-variant-numeric: tabular-nums;
+  }
+  .course { width: 36%; }
+  .title { font-size: 1.0625rem; font-weight: 600; text-decoration: none; }
+  .title:hover { text-decoration: underline; }
+  .who { width: 30%; color: var(--slate); font-size: 0.9375rem; }
+
+  .terms { font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+  .run { display: inline-flex; flex-wrap: wrap; gap: 0.15rem 0.6rem; margin-right: 1rem; }
+  .season { color: var(--slate); }
+  .year { font-weight: 500; }
+
+  @media (max-width: 700px) {
+    .courses thead { display: none; }
+    .courses, .courses tbody, .courses tr, .courses td { display: block; width: auto; }
+    .courses tr { padding-block: 0.9rem; border-bottom: 1px solid var(--line); }
+    .courses tr:first-child { border-top: 2px solid var(--brand); }
+    .courses td { padding: 0; border: 0; }
+    .code { font-size: 0.8125rem; margin-bottom: 0.1rem; }
+    .code:empty { display: none; }
+    .who:not(:empty) { margin-top: 0.3rem; }
+    .terms { margin-top: 0.35rem; }
+  }
+</style>

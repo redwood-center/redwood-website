@@ -1,0 +1,300 @@
+<p>This course provides an introduction to the theory of neural computation. The goal is to familiarize students with the major theoretical frameworks and models used in neuroscience and psychology, and to provide hands-on experience in using these models. Topics include neural network models, supervised and unsupervised learning, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain.</p>
+<p><strong>Instructor</strong>: <a href="https://www.rctn.org/bruno">Bruno Olshausen</a>, 570 Evans, office hours immediately after class</p>
+<p><strong>GSI</strong>: <a href="/people/">Shariq Mobin</a>, 560 Evans, office hours 2:30 – 4:00 pm on Mondays.</p>
+<p><strong>Lectures</strong>: Tuesdays &amp; Thursdays 3:30-5, 170 Barrows.</p>
+<p><strong>Grading</strong>: based on weekly assignments (60%) and final project (40%)</p>
+<ul>
+<li>Late homework will not be accepted but your lowest homework score will be dropped at the end of the semester</li>
+<li>Each homework will be graded holistically out of 3 points:
+<ul>
+<li>3: problems were done correctly aside from minor errors</li>
+<li>2: problems were attempted but some portions or concepts were missed</li>
+<li>1: something relevant was done but no clear direction or mostly incomplete</li>
+<li>0: problems were not attempted</li></ul></li>
+<li>You have 1 week to dispute your grade from the time they are released on bCourses</li>
+<li>Final project guidelines:
+<ul>
+<li>5 page report + poster or oral presentation at project presentation day, likely Dec. 11 or 12 of finals week.</li>
+<li>You are encouraged to work in teams of 3-4 students.</li>
+<li>The project itself may explore one of the lab assignments (but not limited to this) in more depth, either mathematically or computationally, or it can also be a critical analysis of the history of neural computation, or the prospects for how these approaches can be used to inform our understanding of the brain.</li></ul></li></ul>
+<p><strong>Textbooks</strong>:</p>
+<ul>
+<li>[<strong>HKP</strong>] Hertz, J. and Krogh, A. and Palmer, R.G. <em>Introduction to the theory of neural computation.</em> <a href="https://www.amazon.com/Introduction-Theory-Neural-Computation-Institute/dp/0201515601">Amazon</a></li>
+<li>[<strong>DJCM</strong>] MacKay, D.J.C. <em>Information Theory, Inference and Learning Algorithms.</em> <a href="http://www.inference.phy.cam.ac.uk/mackay/itila/book.html">Available online</a> or <a href="http://www.amazon.com/exec/obidos/redirect?tag=davidmackayca-20&amp;path=tg/detail/-/0521642981/qid%3D1057850920/sr%3D1-4">Amazon</a></li>
+<li>[<strong>DA</strong>] Dayan, P. and Abbott, L.F. <em>Theoretical neuroscience: computational and mathematical modeling of neural systems.</em> <a href="http://www.amazon.com/Theoretical-Neuroscience-Computational-Mathematical-Modeling/dp/0262541858/ref=pd_bbs_1?ie=UTF8&amp;s=books&amp;qid=1219848910&amp;sr=8-1">Amazon</a></li></ul>
+<p><strong>Discussion forum</strong>: We have established a <a href="https://piazza.com/berkeley/fall2018/vs265">Piazza site</a> where students can ask questions or propose topics for discussion.</p>
+<p><strong>Syllabus</strong></p>
+<p><strong>Aug. 23: Introduction</strong></p>
+<ul>
+<li>Theory and modeling in neuroscience</li>
+<li>Goals of AI/machine learning vs. theoretical neuroscience</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/intro-lecture.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li><strong>HKP</strong> chapter 1</li>
+<li>Dreyfus, H.L. and Dreyfus, S.E. <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/DreyfusDreyfus.pdf">Making a Mind vs. Modeling the Brain: Artificial Intelligence Back at a Branchpoint.</a></li>
+<li>Bell, A.J. <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/bell-levels-loops.pdf">Levels and Loops: the future of artificial intelligence and neuroscience</a>.</li>
+<li><a href="http://www.aiai.ed.ac.uk/events/lighthill1973/1973-BBC-Lighthill-Controversy.mov">1973 Lighthill debate on future of AI</a></li></ul></li>
+<li>Homework 0:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Python_Install.pdf">Python Installation</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab0-tutorials.zip">Lab 0 tutorial</a> (start with lab0_1-Introduction-to-Python-for-Scientific-Computing.html, then once in jupyter proceed to lab0_2 and lab0_3)</li></ul></li></ul>
+<p><strong>Aug. 28, 30: Neuron models</strong></p>
+<ul>
+<li>Membrane equation, compartmental model of a neuron</li>
+<li>Physics of computation, Analog VLSI</li>
+<li>Lecture slides
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/neuron-models.pdf">Neuron models</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/physics-of-computation.pdf">Physics of computation</a></li></ul></li>
+<li>Reading:
+<ul>
+<li>Mead, C., <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mead-chapter5-transconductance-amplifier.pdf">Chapter 5: Transconductance amplifier</a> from <em>Analog VLSI and Neural Systems</em>.</li>
+<li>Mead, C., <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mead-chapter15-silicon-retina.pdf">Chapter 15: Silicon retina</a> from <em>Analog VLSI and Neural Systems</em>.Reading</li>
+<li>Mead, C. <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mead-intro.pdf">Chapter 1: Introduction</a> and <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mead-neurons.pdf">Chapter 4: Neurons</a> from <em>Analog VLSI and Neural Systems</em>.</li>
+<li>Carandini M, Heeger D (1994) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/carandini-heeger.pdf">Summation and division by neurons in primate visual cortex</a>.</li>
+<li>Background on dynamics, linear time-invariant systems and convolution, and differential equations:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/dynamics.pdf">Dynamics</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lti_convolution.pdf">Linear time-invariant systems and convolution</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/diffeq_sim.pdf">Simulating differential equation</a></li></ul></li>
+<li>Background on transistor physics and analog VLSI circuits:
+<ul>
+<li>Mead, C., <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mead-chapters23.pdf">Chapters 2 &amp; 3</a> from <em>Analog VLSI and Neural Systems</em>.</li></ul></li>
+<li>Extra background on neuroscience:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/cognitive-consilience.pdf">Cognitive Consilience</a>, by Solari &amp; Stoner (nice overview of brain architecture and circuits)</li>
+<li><a href="https://www.amazon.com/Neuron-Brain-Fifth-John-Nicholls/dp/0878936092">From Neuron to Brain</a>, by Nicholls, et al. (good intro to neuroscience)</li>
+<li><a href="https://www.amazon.com/Principles-Neural-Science-Fifth-Kandel/dp/0071390111">Principles of Neural Science</a>, by Kandel and Schwartz et al. (basic neuroscience textbook)</li>
+<li><a href="https://www.amazon.com/Synaptic-Organization-Brain-Gordon-Shepherd/dp/019515956X">Synaptic organization of the Brain</a>, by Gordon Shepard (good overview of neural circuits)</li>
+<li><a href="https://www.amazon.com/Ion-Channels-Excitable-Membranes-Third/dp/0878933212">Ion Channels of Excitable Membranes</a>, by Bertil Hille (focuses on ion channel dynamics)</li></ul></li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab1-neuron_models_v2.zip">Lab1 Neuron Models (v2)</a> (due Tuesday Sept. 4 before class) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab1-neuron_models.zip">(old version)</a>
+<ul>
+<li>To complete the lab you need to fill in text, latex, and code in the indicated spaces (Your TEXT/LATEX/CODE here) of lab1.ipynb. Please indicate your name and anyone you work with at the top of the file. To submit the lab rezipthe folder lab1-neuron_models and upload it to bcourses.</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab1-neuron_models_solutions.zip">Solutions</a></li></ul></li></ul>
+<p><strong>Sept. 4, 6: Supervised learning</strong></p>
+<ul>
+<li>Perceptron model and learning rule</li>
+<li>Adaptation in linear neurons, Widrow-Hoff rule</li>
+<li>Objective functions and gradient descent</li>
+<li>Multilayer networks and back propagation</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/superlearn.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li><strong>HKP</strong> chapter 5 <strong>DJCM</strong> chapters 38-40, 44 <strong>DA</strong> chapter 8 (sec. 4-6)</li>
+<li><strong>HKP</strong> chapter 6</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/linear-neuron-models.html">Linear Neuron Models</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/handout-superlearn1.pdf">Supervised learning in single-stage feedforward networks</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/handout-superlearn2.pdf">Supervised learning in multi-layer feedforward networks – “back propagation”</a></li>
+<li>Background on linear algebra
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/linear-algebra.html">Linear algebra primer</a></li>
+<li>Jordan, M.I. <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/PDP-chap9.pdf">An Introduction to Linear Algebra in Parallel Distributed Processing</a> in McClelland and Rumelhart, <em>Parallel Distributed Processing</em>, MIT Press, 1985.</li></ul></li>
+<li>Further reading: Y. LeCun, L. Bottou, G. Orr, and K. Muller (1998) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lecun-98b.pdf">“Efficient BackProp,”</a> in Neural Networks: Tricks of the trade.</li></ul></li>
+<li><a href="http://cnl.salk.edu/Research_2011/ParallelNetsPronounce/">NetTalk demo</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab2-supervised_learning.zip">Lab 2 Supervised Learning</a> (due Thursday Sept. 13th before class) (<a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab2-supervised_learning_solution.zip">Solutions</a>)<br> – Please include your group members names in your lab2.ipynb file.</li></ul>
+<p><strong>Sept. 11, 13, 18: Unsupervised learning</strong></p>
+<ul>
+<li>Linear Hebbian learning and PCA, decorrelation</li>
+<li>Winner-take-all networks and clustering</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/unsupervised-learning.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li><strong>HKP</strong> Chapters 8 and 9 <strong>DJCM</strong> chapter 36 <strong>DA</strong> chapter 8, 10</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/handout-hebb-PCA.pdf">Hebbian learning and PCA</a></li></ul></li>
+<li>Further reading on neuroscience implications:
+<ul>
+<li>Atick &amp; Redlich (1992). <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Atick-Redlich-NC92.pdf">What does the retina know about natural scenes?</a></li>
+<li>Dan, Atick &amp; Reid (1996). <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/dan-atick-reid96.pdf">Efficient Coding of Natural Scenes in the Lateral Geniculate Nucleus: Experimental Test of a Computational Theory.</a></li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab3-unsupervised_learning.zip">Lab 3 – Unsupervised Learning</a> (Due Thursday Sept. 20th before class) (<a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab3-unsupervised_learning_solutions.zip">Solutions</a>)<br> – lab3_2.ipynb is optional (same algorithms but with pictures of faces instead of 2-dimensional points)<br> – There is also a file that makes clear our matrix conventions in this class, it is also optional.</li></ul>
+<p><strong>Sept. 20, 25, 27: Sparse, distributed coding</strong></p>
+<ul>
+<li>Autoencoders</li>
+<li>Natural image statistics, projection pursuit</li>
+<li>Sparse coding model</li>
+<li>Locally competitive algorithms (LCA)</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/sparse-coding.pdf">Lecture slides (Olshausen)</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Dylan-lca_overcompleteness_09-27-2018.pdf">Lecture slides (Dylan Paiton)</a></li>
+<li>Reading:
+<ul>
+<li>Barlow, HB (1972) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/barlow1972.pdf">Single units and sensation: A neuron doctrine for perceptual psychology?</a></li>
+<li>Foldiak, P. (1990) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/foldiak90.pdf">Forming sparse representations by local anti-hebbian learning</a></li>
+<li>Olshausen BA, Field DJ (1996) <a href="http://www.rctn.org/bruno/papers/nature-paper.pdf">Emergence of simple-cell receptive field properties by learning a sparse code for natural images.</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/sparse-coding-LCA.pdf">Handout</a> on sparse coding via LCA</li></ul></li>
+<li>Additional readings:
+<ul>
+<li>Rozell, Johnson, Baraniuk, Olshausen. (2008) <a href="http://www.rctn.org/bruno/papers/rozell-sparse-coding-nc08.pdf">Sparse Coding via Thresholding and Local Competition in Neural Circuits.</a></li>
+<li>Zylberberg, Murphy, DeWeese, (2011) <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002250">A sparse coding model with synaptically local plasticity and spiking neurons can account for the diverse shapes of V1 simple cell receptive fields.</a></li>
+<li>Olshausen <a href="http://www.rctn.org/bruno/papers/icip03.pdf">Sparse coding of time-varying natural images</a>, ICIP 2003. (convolution sparse coding of video)</li>
+<li>Olshausen <a href="http://www.rctn.org/bruno/papers/highly-overcomplete-SPIE.pdf">Highly Overcomplete Sparse Coding</a>, SPIE 2013.</li>
+<li>Smith E, Lewicki MS. <a href="https://www.nature.com/articles/nature04485">Efficient auditory coding</a>, Nature Vol 439 (2006). (convolution sparse coding of sound)</li>
+<li>Olshausen &amp; Lewicki.<a href="http://www.rctn.org/bruno/papers/olshausen-lewicki-TNVN.pdf">What Natural Scene Statistics Can Tell Us About Cortical Representation</a>. TNVN 2014</li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/09/lab4-sparse_distributed_coding.zip">Lab 4 – Sparse Coding</a><br> – lab4_2.ipynb is optional (Foldiak Model)<br> – <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/10/lab4-sparse_distributed_coding_solutions.zip">Solutions</a></li></ul>
+<p><strong>Oct. 2, 4: Self-organizing maps</strong></p>
+<ul>
+<li>Plasticity and cortical maps</li>
+<li>Self-organizing maps, Kohonen nets</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/som.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li><strong>HKP</strong> chapter 9 <strong>DA</strong> chapter 8</li>
+<li>Miller, Keller &amp; Stryker (1989) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/miller89.pdf">Ocular dominance column development: Analysis and simulation</a></li>
+<li>Durbin &amp; Mitchison (1990) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/durbin-mitchison.pdf">A dimension reduction framework for understanding cortical maps</a></li>
+<li>Horton &amp; Adams (2005) <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/horton05.pdf">The cortical column: a structure without a function</a></li></ul></li>
+<li>Further background:
+<ul>
+<li>Blasdel (1992), <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/blasdel92.pdf">Orientation selectivity, preference, and continuity in monkey striate cortex.</a></li>
+<li>Another source of many of nice images are in the galleries on Amiram Grinvald’s site: <a href="http://www.weizmann.ac.il/brain/grinvald/">[1]</a></li>
+<li>From Clay Reid’s lab, <a href="http://www.nature.com/nature/journal/v433/n7026/abs/nature03274.html">Functional imaging with cellular resolution reveals precise micro-architecture in visual cortex</a>. Make sure you look at the supplementary material and videos on their web site (seems partly broken) <a href="http://reid.med.harvard.edu/movies.html">[2]</a>.</li>
+<li>Gilbert &amp; Wiesel (1992), <a href="http://www.nature.com/nature/journal/v356/n6365/pdf/356150a0.pdf">Receptive Field Dynamics in Adult Primary Visual Cortex</a></li>
+<li>Pettet &amp; Gilbert (1992), <a href="http://www.pnas.org/content/89/17/8366.full.pdf+html">Dynamic changes in receptive-field size in cat primary visual cortex</a></li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/10/lab5-som_manifolds.zip">Lab 5 – Kohonen Maps (due Oct 11th)</a>
+<ul>
+<li>Lab5_2 optional</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/10/lab5-som_manifolds_solutions.zip">Solutions</a></li></ul></li></ul>
+<p><strong>Oct. 9: Manifold learning (Chen)</strong></p>
+<ul>
+<li>Local linear embedding, Isomap</li>
+<li>The sparse manifold transform</li>
+<li>Lecture slides:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Manifold_SMT.pdf">Lecture slides</a> (Chen)</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/adaptation.pdf">Lecture slides</a> – adaptation</li></ul></li>
+<li>Reading:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/tenenbaum-manifold.pdf">A Global Geometric Framework for Nonlinear Dimensionality Reduction</a>, Tenenbaum et al., Science 2000.</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/roweis-saul-manifold.pdf">Nonlinear Dimensionality Reduction by Locally Linear Embedding</a>, Roweis and Saul, Science 2000.</li>
+<li><a href="https://arxiv.org/abs/1806.08887">The Sparse Manifold Transform</a>, Chen, Paiton &amp; Olshausen, 2018.</li></ul></li>
+<li>Further background:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/carlsson-ijcv08.pdf">On the Local Behavior of Spaces of Natural Images</a>, Carlsson et al., Int J Comput Vis (2008) 76: 1–12.</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/webster-face-adaptation.pdf">Adaptation to natural facial categories</a>, Michael A. Webster, Daniel Kaping, Yoko Mizokami &amp; Paul Duhamel, Nature, 2004.</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/leopold.pdf">Prototype-referenced shape encoding revealed by high-level aftereffects</a>, Leopold, O’Toole, Vetter and Blanz, Nature, 2001.</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Blanz-siggraph-99.pdf">A Morphable Model For The Synthesis Of 3D Faces</a>, Blanz &amp; Vetter 1999.</li>
+<li><a href="http://mbthompson.com/research/">Matthew B. Thompson’s web page on flashed face distortion effect<br> </a></li></ul></li></ul>
+<p><strong>Oct. 11: Reinforcement learning (Mobin)</strong></p>
+<ul>
+<li>Reward-based learning</li>
+<li>Predicting future rewards via temporal-difference learning</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/10/VS265-2018-Reinforcement-Learning-Lecture.pdf">Lecture slides</a></li></ul>
+<p><strong>Oct. 16, 18, 23, 25: Attractor neural networks</strong></p>
+<ul>
+<li>Hopfield networks, memories as ‘basis of attraction’</li>
+<li>Line attractors and `bump circuits’</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/attractor-lecture-slides.pdf">Lecture slides</a></li>
+<li><img alt="" src="/media/courses/peixes-300x196.jpg"/></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/three-way-connections.pdf">Lecture slides</a> – three-way interactions/dynamic routing</li>
+<li>Reading:
+<ul>
+<li><strong>HKP</strong> Chapter 2 and 3 (sec. 3.3-3.5), 7 (sec. 7.2-7.3) <strong>DJCM</strong> chapter 42 <strong>DA</strong> chapter 7</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/handout-attractor-nets.pdf">Handout</a> on attractor networks – their learning, dynamics and how they differ from feed-forward networks</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/hopfield82.pdf">Hopfield (1982)</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/hopfield84.pdf">Hopfield (1984)</a></li></ul></li>
+<li>Additional background:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/willshaw1969.pdf">Willshaw (1969)</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/marr-poggio-science76.pdf">Marr-Poggio stereo algorithm</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/zhang96.pdf">Kechen Zhang paper</a> on bump circuits</li></ul></li>
+<li>Three-way interactions/dynamic routing:
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/hinton-object-based81.pdf">Hinton (1981)</a> – A parallel computation that assigns canonical object-base frames of reference</li>
+<li><a href="http://www.rctn.org/bruno/papers/jneurosci93.pdf">Olshausen (1993)</a> – Dynamic routing circuit</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/tenenbaum-freeman.pdf">Tenenbaum &amp; Freemen (2000) </a>– Bilinear models</li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab6-hopfield_networks.zip">Lab 6</a> – Hopfield networks (due Oct. 25)
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/11/lab6-hopfield_networks_solutions.zip">Solutions</a></li></ul></li></ul>
+<p><strong>Oct. 30, Nov. 1, 6: Probabilistic models and inference</strong></p>
+<ul>
+<li>Probability theory and Bayes’ rule</li>
+<li>Learning and inference in generative models</li>
+<li>The mixture of Gaussians model (Charles Frye)</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/prob-models.pdf">Lecture slides</a> (Olshausen)</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Mixture-of-Gaussians_charles.pdf">Lecture slides</a> (Frye)</li>
+<li>Reading:
+<ul>
+<li>HKP chapter 7 (sec. 7.1),DJCM chapter 1-3, 20-24,41,43, DA chapter 10</li>
+<li><a href="http://www.rctn.org/bruno/papers/perception-as-inference.pdf">Olshausen (2014) Perception as an Inference Problem</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/probability-primer.pdf">A probability primer</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Bayes-prob-generative.pdf">Bayesian probability theory and generative models</a></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/mog.pdf">Mixture of Gaussians model</a></li></ul></li>
+<li>Additional background:
+<ul>
+<li>D.J.C. MacKay, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/mackay-thesis.pdf">Bayesian Methods for Adaptive Models</a> (Ph.D. Thesis)</li>
+<li>T.J. Loredo, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/loredo-laplace-supernova.pdf">From Laplace to Supernova SN 1987A: Bayesian Inference in Astrophysics</a></li>
+<li>Lee &amp; Mumford, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lee-mumford.pdf">Hierarchical Bayesian inference in the visual cortex.</a></li></ul></li>
+<li>Additional background from Charles Frye:
+<ul>
+<li><a href="https://charlesfrye.github.io/stats/2017/11/22/gaussian-diff-eq.html">Differential Equations View of the Gaussian Family</a>. Derives key properties of the Gaussian family from one differential equation.</li>
+<li>Leinster, <a href="https://golem.ph.utexas.edu/category/2016/06/how_the_simplex_is_a_vector_sp.html">How the Simplex is a Vector Space</a>. Explains why logarithms of probabilities are in some ways more natural.</li>
+<li>Neal and Hinton, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/A-View-of-the-EM-Algorithm-Neal-and-Hinton.pdf">A View of the EM Algorithm</a>. Takes a statistical-physics-inspired view and describes the most common interpretation of EM.</li>
+<li>Csiszar and Tusnady, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Csiszar-and-Tusnady-Information-Geometry-and-Alternating-Minimization-Techniques.pdf">Information Geometry and Alternating Minimization Techniques</a>. This is the original paper that noted the connection between a variety of alternating minimization techniques in non-Euclidean geometries, including EM. The later paper by Amari – <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/Amari-Information-Geometry-of-the-EM-and-em-Algorithms-for-Neural-Networks.pdf"> Information Geometry of the EM Algorithms for Neural Networks</a> – is easier going, but still requires a bit of differential geometry to fully digest.</li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab7-mixture_of_gaussians.zip">Lab 7</a> – Mixture of Gaussians model (due Nov. 8)
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab7-mixture_of_gaussians_solutions.zip">Solutions</a></li></ul></li></ul>
+<p><strong>Nov. 8: Boltzmann machines</strong></p>
+<ul>
+<li>Sampling, inference and learning rules</li>
+<li>Restricted Boltzmann machines and Energy-based models</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/boltzmann-machine.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li>HKP Chapter 7 (sec 7.1)</li>
+<li>Crick and Mitchison theory on ‘unlearning’ during sleep – <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/crick-mitchison-sleep.pdf">paper</a></li>
+<li>Hinton and Salakhutdinov, ‘deep belief networks’ – <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/hinton06.pdf">paper</a></li></ul></li>
+<li>Application of Boltzmann machines to neural data analysis:
+<ul>
+<li>E. Schneidman, M.J. Berry, R. Segev and W. Bialek,<a href="http://www.nature.com/nature/journal/v440/n7087/full/nature04701.html">Weak pairwise correlations imply strongly correlated network states in a neural population</a>, Nature 4400 (7087) (2006)</li>
+<li>J. Shlens, G.D. Field, J.L. Gauthier, M.I. Grivich, D. Petrusca, A. Sher, A.M. Litke and E.J. Chichilnisky, <a href="http://www.jneurosci.org/cgi/content/abstract/26/32/8254">The structure of multi-neuron firing patterns in primate retina</a>, J Neurosci 260 (32) (2006), pp. 8254-8266.</li>
+<li>U. Koster, J. Sohl-Dickstein, C.M. Gray, B.A. Olshausen, <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003684">Modeling higher-order correlations within Cortical Microcolumns</a>, PLOS Computational Biology, July 2014.</li></ul></li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/11/lab8-boltzmann_machines.zip">Lab 8</a> – Boltzmann Machines (due Nov. 20th)
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/lab8-boltzmann_machines_solutions.zip">Solutions</a></li></ul></li></ul>
+<p><strong>Nov. 13, 15: Independent Components Analysis (ICA)</strong></p>
+<ul>
+<li>Relation between sparse coding and ‘ICA’</li>
+<li>Applications</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/sparse-coding-ICA-slides.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li>DA Chapter 10</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/info-theory.pdf">Information theory primer</a></li>
+<li>Handout on <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/sparse-coding-ICA.pdf">Sparse Coding and ICA</a></li></ul></li>
+<li>Additional reading:
+<ul>
+<li>Jascha Sohl-Dickstein, <a href="http://arxiv.org/abs/1205.1828">The Natural Gradient by Analogy to Signal Whitening, and Recipes and Tricks for its Use</a></li>
+<li>Jascha Sohl-Dickstein, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/jascha-cookbook.pdf">Natural gradient cookbook</a></li>
+<li>Bell &amp; Sejnowski, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/tony-ica.pdf">An Information-Maximization Approach to Blind Separation and Blind Deconvolution</a>, Neural Comp, 1995.</li>
+<li>Hyvarinen, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/hyvarinen-fastICA.html">Fast and Robust Fixed-Point Algorithms for Independent Component Analysis</a>. IEEE Trans Neural Networks, 1999.</li>
+<li>Simoncelli, Olshausen. <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/simoncelli01-reprint.pdf">Natural Image Statistics and Neural Representation</a>, Annu. Rev. Neurosci. 2001.</li></ul></li></ul>
+<p><strong>Nov. 27: Dynamical models</strong></p>
+<ul>
+<li>Hidden Markov models</li>
+<li>Kalman filter model</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/kalman.pdf">Lecture slides</a> on Kalman filter</li>
+<li>Reading:
+<ul>
+<li>Robbie Jacobs’ <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/jacobs-sensoryIntegration.pdf">notes on Kalman filter</a></li>
+<li><a href="http://rctn.org/vs265/kalman.m">kalman.m</a> demo script</li>
+<li>Greg Welch’s <a href="http://www.cs.unc.edu/~welch/kalman/kalmanIntro.html">tutorial on Kalman filter</a></li>
+<li><a href="http://vision.ucla.edu/papers/dorettoCWS03.pdf">Dynamic texture models</a></li>
+<li>Kevin Murphy’s <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/murphy-hmm.pdf">HMM tutorial</a></li></ul></li></ul>
+<p><strong>Nov. 29: Neural coding</strong></p>
+<ul>
+<li>Integrate-and-fire model</li>
+<li>Neural encoding and decoding</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/spikes.pdf">Lecture slides</a></li>
+<li>Reading:
+<ul>
+<li>DA chapters 1-4, 5.4</li>
+<li>Mainen &amp; Sejnowski, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/mainen-sejnowski.pdf">Reliability of Spike Timing in Neocortical Neurons</a>, Science, Vol 268, 6 June 1995.</li>
+<li><a href="https://mitpress.mit.edu/books/spikes">Spikes: exploring the neural code</a>. by Rieke, Warland, deRuyter van Stevenick and Bialek</li>
+<li>Karklin &amp; Simoncelli, <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/08/karklin-simoncelli.pdf">Efficient coding of natural images with a population of noisy Linear-Nonlinear neurons</a>, NIPS 2011</li></ul></li></ul>
+<p><strong>Dec. 4, 6: High-dimensional (HD) computing</strong></p>
+<ul>
+<li>Holographic reduced representation; Vector symbolic architectures</li>
+<li>Computing with 10,000 bits</li>
+<li>Sparse, distributed memory</li>
+<li>Reading:
+<ul>
+<li>Kanerva: <a href="http://rctn.org/vs265/kanerva09-hyperdimensional.pdf">Hyperdimensional computing</a></li>
+<li>Kanerva: <a href="http://rctn.org/vs265/Kanerva-allerton2014.pdf">Computing with 10,000 bits</a></li></ul></li></ul>

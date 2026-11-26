@@ -23,6 +23,14 @@ not code. Keep changes as small as the request allows, and match the surrounding
   blank line, links as `[text](url)` or a bare URL or email address). Each seminar gets its own page at
   `seminars/<slug>/`. Upcoming seminars appear on the homepage and at the top of the Seminars page automatically,
   by date.
+- **Courses**: `site/src/data/courses.json`, one record per offering (a course in a term), newest first. Fields:
+  `slug` (the page is `courses/<slug>/`), `course` (shared by every offering of the same course, e.g.
+  `neural-computation`), `code` (e.g. `VS265`, or `null`), `title`, `term` (`Fall 2024`, `Spring 2015`, `Summer
+  2018`), `instructors` (list), `url` (only for a course whose page is elsewhere, else `null`), `summary` (one line,
+  the page's description for search engines). The page content is plain HTML in `site/src/data/courses/<slug>.html`
+  (paragraphs, headings, lists, tables, links; links to site pages start with `/`). The Courses page groups offerings
+  by `course` in a table. Lecture files stay on the old server, linked at
+  `https://redwood.berkeley.edu/wp-content/uploads/...`. Don't show personal email addresses.
 - **Blog posts**: Markdown in `site/src/content/blog/<slug>.md`, with front matter `title`, `date`, `authors`
   (list), `summary`.
 - **Research pillars** (Research page and homepage): `site/src/data/research.ts`.

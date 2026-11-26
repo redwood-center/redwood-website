@@ -1,0 +1,242 @@
+[
+ {
+  "slug": "neu-290",
+  "course": "science-of-intelligence",
+  "code": "NEU 290",
+  "title": "The Science of Intelligence",
+  "term": "Fall 2026",
+  "instructors": [],
+  "url": null,
+  "summary": "Weekly seminar featuring speakers from across campus and elsewhere to explore the open questions, topics of study and debate, and relevant disciplines that a science of intelligence should encompass."
+ },
+ {
+  "slug": "vs265",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2024",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation, especially as it pertains to vision. Topics include neural network models, learning rules, associative memory models, recurrent networks, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs265-2022",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2022",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation, especially as it pertains to vision. Topics include neural network models, learning rules, associative memory models, recurrent networks, and models of neural coding in the brain."
+ },
+ {
+  "slug": "computing-with-high-dimensional-vectors",
+  "course": "computing-with-high-dimensional-vectors",
+  "code": "Neuroscience 299",
+  "title": "Computing with High-Dimensional Vectors",
+  "term": "Fall 2021",
+  "instructors": [
+   "Denis Kleyko",
+   "Bruno Olshausen",
+   "Fritz Sommer",
+   "Pentti Kanerva"
+  ],
+  "url": null,
+  "summary": "This seminar will introduce an emerging computing framework that is based on using high-dimensional vectors to represent and manipulate symbols, data structures, and functions. In recent years, there have been an increasing number of applications in perception, analogical reasoning, models of memory, and language processing. These applications in turn can help us understand how these functions are performed by distributed networks of neurons in the brain."
+ },
+ {
+  "slug": "art-of-modeling",
+  "course": "art-of-modeling",
+  "code": null,
+  "title": "The Art of Modeling",
+  "term": "Spring 2021",
+  "instructors": [
+   "Gautam Agarwal"
+  ],
+  "url": null,
+  "summary": "While models are central to scientific practice, modeling remains a surprisingly individual process that relies on the inclinations and ingenuity of the investigator. In this course we will attempt to identify what constitutes a good model by examining general perspectives on modeling practice and specific case studies of successful models, as well as modeling our own data sets."
+ },
+ {
+  "slug": "vs265-2020",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2020",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation, especially as it pertains to vision. Topics include neural network models, learning rules, associative memory models, recurrent networks, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs265-fall-2018",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2018",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ },
+ {
+  "slug": "crcns-summer-course-summer-2018",
+  "course": "crcns-summer-course",
+  "code": null,
+  "title": "CRCNS Course on Mining and Modeling of Neuroscience Data",
+  "term": "Summer 2018",
+  "instructors": [
+   "Fritz Sommer",
+   "Bruno Olshausen",
+   "Jeff Teeters"
+  ],
+  "url": "https://crcns.org/course",
+  "summary": "This course introduces the major open questions of neuroscience and teaches state-of–the-art techniques for analyzing and modeling neuroscience data sets."
+ },
+ {
+  "slug": "crcns-summer-course-summer-2017",
+  "course": "crcns-summer-course",
+  "code": null,
+  "title": "CRCNS Course on Mining and Modeling of Neuroscience Data",
+  "term": "Summer 2017",
+  "instructors": [],
+  "url": "https://crcns.org/course",
+  "summary": "This course introduces the major open questions of neuroscience and teaches state-of–the-art techniques for analyzing and modeling neuroscience data sets."
+ },
+ {
+  "slug": "crcns-summer2015",
+  "course": "crcns-summer-course",
+  "code": null,
+  "title": "CRCNS Course on Mining and Modeling of Neuroscience Data",
+  "term": "Summer 2015",
+  "instructors": [],
+  "url": "https://crcns.org/course",
+  "summary": "This course introduces the major open questions of neuroscience and teaches state-of–the-art techniques for analyzing and modeling neuroscience data sets."
+ },
+ {
+  "slug": "vs298-2015",
+  "course": "visual-perception",
+  "code": "VS298",
+  "title": "Visual Perception and its Neural Substrates",
+  "term": "Spring 2015",
+  "instructors": [
+   "Karl Zipser"
+  ],
+  "url": null,
+  "summary": "This is a seminar course that attempts to examine and unite the psychophysical and neural coding theory literature in the context of visual perception."
+ },
+ {
+  "slug": "vs298-fall2014",
+  "course": "unsolved-problems-in-vision",
+  "code": "VS298",
+  "title": "Unsolved Problems in Vision",
+  "term": "Fall 2014",
+  "instructors": [
+   "Stan Klein",
+   "Jerry Feldman",
+   "Bruno Olshausen",
+   "Karl Zipser"
+  ],
+  "url": null,
+  "summary": "The goal of this seminar course is to step back and ask, what are the important problems that remain unsolved in vision research, and how should these be approached empirically?"
+ },
+ {
+  "slug": "nw_vs265-fall2014",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2014",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs198-2014",
+  "course": "natural-scene-statistics",
+  "code": "VS298",
+  "title": "Natural Scene Statistics",
+  "term": "Spring 2014",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This seminar examines what is known about the statistical structure of natural visual and auditory scenes, and theories of how sensory coding strategies have been adapted to this structure."
+ },
+ {
+  "slug": "nw_vs265-fall2012",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2012",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs298-2012",
+  "course": "animal-eyes",
+  "code": "VS298",
+  "title": "Animal Eyes",
+  "term": "Spring 2012",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This seminar will survey the wide variety of eye designs and visual systems found in the animal kingdom."
+ },
+ {
+  "slug": "crcns-summer2011",
+  "course": "crcns-summer-course",
+  "code": null,
+  "title": "CRCNS Course on Mining and Modeling of Neuroscience Data",
+  "term": "Summer 2011",
+  "instructors": [],
+  "url": "https://crcns.org/course",
+  "summary": "This course introduces the major open questions of neuroscience and teaches state-of–the-art techniques for analyzing and modeling neuroscience data sets."
+ },
+ {
+  "slug": "nw_vs265-fall2010",
+  "course": "neural-computation",
+  "code": "VS265",
+  "title": "Neural Computation",
+  "term": "Fall 2010",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs298-fall2008",
+  "course": "neural-computation",
+  "code": "VS298",
+  "title": "Neural Computation",
+  "term": "Fall 2008",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ },
+ {
+  "slug": "vs298-fall2006",
+  "course": "neural-computation",
+  "code": "VS298",
+  "title": "Neural Computation",
+  "term": "Fall 2006",
+  "instructors": [
+   "Bruno Olshausen"
+  ],
+  "url": null,
+  "summary": "This course provides an introduction to the theory of neural computation. Topics include neural network models, supervised and unsupervised learning rules, associative memory models, recurrent networks, probabilistic/graphical models, and models of neural coding in the brain."
+ }
+]

@@ -1,0 +1,287 @@
+<p>This seminar will introduce an emerging computing framework that is based on using high-dimensional vectors to represent and manipulate symbols, data structures, and functions. This framework, commonly known as both Hyperdimensional Computing or Vector Symbolic Architectures (VSAs), originated at the intersection of symbolic and connectionist approaches to Artificial Intelligence but has turned into a research area of its own. In recent years, there have been an increasing number of applications in perception, analogical reasoning, models of memory, and language processing. These applications in turn can help us understand how these functions are performed by distributed networks of neurons in the brain. The purpose of this seminar is to convey this framework and recent developments to students across a wide variety of disciplines spanning neuroscience, computer science, electrical engineering, mathematics, and cognitive science.</p>
+<p><strong>Instructors</strong><br> <a href="https://www.oru.se/english/employee/denis_kleyko">Denis Kleyko</a> <br> <a href="https://www.rctn.org/bruno">Bruno Olshausen</a> <br> <a href="https://www.rctn.org/wiki/Fritz_Sommer">Fritz Sommer</a> <br> <a href="http://www.rctn.org/wiki/Pentti_Kanerva">Pentti Kanerva</a></p>
+<p><strong>GSI: </strong>Chris Kymn <br> Office hours: Monday 4:30-5:30pm or by appointment</p>
+<p><strong>Time: </strong>Wednesdays, 1-4pm, Evans 560</p>
+<p><strong>Grading: </strong>based on (1) regular attendance &amp; participation (10%), (2) paper presentation (30%), (3) weekly short programming or writing assignments (60%).</p>
+<ul>
+<li>Late weekly assignments will not be accepted but only your best 9 scores will count towards your final grade.</li>
+<li>You may work in groups of 2-3 on weekly assignments, but please submit individual writeups and indicate whom you worked with.</li></ul>
+<p><strong>Discussion forum:</strong> We have established a <a href="http://piazza.com/berkeley/fall2021/neurosc299sem001">Piazza site</a> where students can ask questions or propose topics for discussion.</p>
+<p><strong>Prerequisites: </strong>The seminar is intended for graduate or undergraduate students with basic knowledge of linear algebra or abstract algebra, probability theory, elementary logic, as well as basic programming skills.</p>
+<p><strong>Organizational Matters</strong></p>
+<ul>
+<li>All seminars will be held in person in Evans Hall, room 560.</li>
+<li>The first seminar will occur on Wednesday, September 1 at 1 pm. (We will NOT meet on the first day of instruction, August 25.)</li>
+<li>There will be an assignment after every seminar due the following week.</li>
+<li>Each class session will be structured in two halves:
+<ul>
+<li>the first half will consist of student presentations on the previous week’s topic;</li>
+<li>the second half will be a presentation on the current week’s topic given by one of the instructors or a guest lecturer.</li></ul></li>
+<li>Grading is based on the combination of assignments, student presentations, and class participation.</li></ul>
+<p><strong>Schedule </strong>(provisional)</p>
+<table>
+<tbody>
+<tr>
+<td>Date</td>
+<td>Week</td>
+<td>Module</td>
+<td>Speaker(s)</td></tr>
+<tr>
+<td>9/1</td>
+<td>1</td>
+<td>Introduction to computing with high-dimensional vectors</td>
+<td>Bruno Olshausen &amp; Pentti Kanerva</td></tr>
+<tr>
+<td>9/8</td>
+<td>2</td>
+<td>Overview of different HD Computing/VSA models</td>
+<td>Denis Kleyko</td></tr>
+<tr>
+<td>9/15</td>
+<td>3</td>
+<td>Semantic vectors</td>
+<td>Ryan Moughan</td></tr>
+<tr>
+<td>9/22</td>
+<td>4</td>
+<td>Representation and manipulation of data structures</td>
+<td>Denis Kleyko</td></tr>
+<tr>
+<td>9/29</td>
+<td>5</td>
+<td>Resonator Networks</td>
+<td>Paxon Frady</td></tr>
+<tr>
+<td>10/6</td>
+<td>6</td>
+<td>Analogical reasoning</td>
+<td>Ross Gayler</td></tr>
+<tr>
+<td>10/13</td>
+<td>7</td>
+<td>Connections to information theory</td>
+<td>Fritz Sommer</td></tr>
+<tr>
+<td>10/20</td>
+<td>8</td>
+<td>Locality-preserving encodings: representing continuous values and functions</td>
+<td>Chris Kymn</td></tr>
+<tr>
+<td>10/27</td>
+<td>9</td>
+<td>Solving classification problems</td>
+<td>Laura Galindez Olascoaga</td></tr>
+<tr>
+<td>11/3</td>
+<td>10</td>
+<td>Relations to neural networks</td>
+<td>Denis Kleyko</td></tr>
+<tr>
+<td>11/10</td>
+<td>11</td>
+<td>Hardware implementations</td>
+<td>Mohamed Ibrahim</td></tr>
+<tr>
+<td>11/17</td>
+<td>12</td>
+<td>Applications: Communication</td>
+<td>Ping-Chen Huang</td></tr>
+<tr>
+<td>11/24</td>
+<td></td>
+<td><em>No class (Thanksgiving Holiday)</em></td>
+<td></td></tr>
+<tr>
+<td>12/1</td>
+<td>13</td>
+<td>Discussion of module 12/To be announced</td>
+<td></td></tr></tbody></table>
+<p><strong>Module 1 (9/1): Introduction</strong></p>
+<ul>
+<li>Lecture slides (<a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module1_Olshausen_slides.pdf">Olshausen</a>, <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module1_Kanerva_slides.pdf">Kanerva</a>) and recordings (<a href="https://drive.google.com/file/d/1l86WHErDejXrKnwIQ11Y-v-5OQC0hQqi/view?usp=sharing">Olshausen</a>, <a href="https://drive.google.com/file/d/1ER0-l0taTig2J8fFnRqjS-sDV7qgSoL9/view?usp=sharing">Kanerva</a>)</li>
+<li>Focus paper: <a href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/kanerva09-hyperdimensional.pdf">Kanerva, Hyperdimensional Computing: An Introduction to Computing in Distributed Representation with High-Dimensional Random Vectors</a></li>
+<li>Assignments for next session (9/8):
+<ul>
+<li>(<em>Recommended</em>) Join <a href="http://piazza.com/berkeley/fall2021/neurosc299sem001">Piazza site</a></li>
+<li><a href="https://forms.gle/jHymwj9W8RYxVUHd8">Fill out presentation preferences sheet (by 9/3)</a></li>
+<li>Submit 2 discussion questions to Notion page (to be posted)</li>
+<li>Complete <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-1.pdf">Assignment 1</a></li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li>Neubert, Schubert, Protzel: <a href="https://link.springer.com/article/10.1007/s13218-019-00623-z">An Introduction to Hyperdimensional Computing for Robotics</a></li>
+<li>Kanerva: <a href="https://par.nsf.gov/servlets/purl/10123437">Computing with High-Dimensional Vectors</a></li>
+<li>Gayler: <a href="https://arxiv.org/ftp/cs/papers/0412/0412059.pdf">Vector Symbolic Architectures Answer Jackendoff’s Challenges for Cognitive Neuroscience</a></li>
+<li>Fodor, Pylyshyn: <a href="https://ruccs.rutgers.edu/images/personal-zenon-pylyshyn/proseminars/Proseminar13/ConnectionistArchitecture.pdf">Connectionism and Cognitive Architecture: A Critical Analysis</a></li>
+<li>Plate: <a href="http://www2.fiit.stuba.sk/~kvasnicka/CognitiveScience/6.prednaska/thesis_Plate.pdf">Distributed Representations and Nested Compositional Structure</a></li></ul></li></ul>
+<p><strong>Module 2 (9/8): Surveying Different HD Computing/VSA Models</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module2_VSA_models_slides.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1wvH7RSHwXPXqtSu5_wphydSEfDB-63iS/view?usp=sharing">recording</a></li>
+<li>Focus paper: Schlegel, Neubert, Protzel: <a href="https://arxiv.org/pdf/2001.11797.pdf">A Comparison of Vector Symbolic Architectures</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-2.pdf">Assignment 2</a> and discussion questions by next session (9/15)</li>
+<li>Further recommended reading:
+<ul>
+<li>Plate, <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.4546&amp;rep=rep1&amp;type=pdf">Holographic Reduced Representations</a></li>
+<li>Kanerva, <a href="http://www.cap-lore.com/RWC97-kanerva.pdf">Fully Distributed Representation</a></li>
+<li>Gayler, <a href="https://www.researchgate.net/publication/28762580_Multiplicative_Binding_Representation_Operators_Analogy_Workshop_Poster">Multiplicative Binding, Representation Operators &amp; Analogy</a></li>
+<li>Gallant, Okaywe: <a href="https://direct.mit.edu/neco/article-abstract/25/8/2038/7896/Representing-Objects-Relations-and-Sequences?redirectedFrom=fulltext">Representing Objects, Relations &amp; Sequences</a></li>
+<li>Rachkovskij, Kussul: <a href="https://ieeexplore.ieee.org/document/6789756">Binding and Normalization of Binary Sparse Distributed Representations by Context-Dependent Thinning</a></li>
+<li>Laiho, Pokonen, Kanerva, Lehtonen: <a href="https://www.researchgate.net/publication/299535938_High-Dimensional_Computing_with_Sparse_Vectors">High-Dimensional Computing with Sparse Vectors</a></li>
+<li>Smolensky: <a href="http://www.lscp.net/persons/dupoux/teaching/AT1_2014/papers/Smolensky_1990_TensorProductVariableBinding.AI.pdf">Tensor Product Variable Binding and the Representation of Symbolic Structures in Connectionist Systems</a></li>
+<li>Mizraji, <a href="https://pubmed.ncbi.nlm.nih.gov/2924018/">Context-Dependent Associations in Linear Distributed Memories</a></li></ul></li></ul>
+<p><strong>Module 3 (9/15): Semantic vectors</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Word-Embeddings-with-HD-Computing_VSA.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1vXO4wtBI2swI6uQUew3Y3NARM6GHXV8f/view?usp=sharing">recording</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assigment3.pdf">Assignment 3</a> and discussion questions by next session (9/22)
+<ul>
+<li><a href="https://www.dropbox.com/s/5c8fj4zgcg7kg78/Assignment3_HD_embeddings_TOEFL.ipynb?dl=0">Python notebook</a> for programming assignment</li></ul></li>
+<li>Focus paper: Jones, Mewhort: <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.89.3355&amp;rep=rep1&amp;type=pdf">Representing Word Meaning and Order Information in a Composite Holographic Lexicon</a></li>
+<li>Further recommended reading:
+<ul>
+<li>Mikolov, Sutskever, Chen, Corrado, Dean: <a href="https://papers.nips.cc/paper/2013/file/9aa42b31882ec039965f3c4923ce901b-Paper.pdf">Distributed Representations of Words and Phrases and their Compositionality</a></li>
+<li>Pennington, Socher, Manning: GloVe:<a href="https://nlp.stanford.edu/pubs/glove.pdf"> Global Vectors for Word Representation</a></li>
+<li>Sahlgren, <a href="https://core.ac.uk/download/pdf/11433324.pdf">An Introduction to Random Indexing</a></li>
+<li>Sahlgren, Holst, Kanerva: <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1063.7841&amp;rep=rep1&amp;type=pdf">Permutations as a Means to Encode Order in Word Space</a></li>
+<li>Recchia, Sahlgren, Kanerva, Jones: <a href="https://downloads.hindawi.com/journals/cin/2015/986574.pdf">Encoding Sequential Information in Semantic Space Models: Comparing Holographic Reduced Representation and Random Permutation</a></li>
+<li>Sutor, Summers-Stay, Aloimonos:<a href="https://arxiv.org/pdf/1806.10755.pdf"> A Computational Theory for Life-long Learning of Semantics</a></li>
+<li>Kelly, Mewhort, and West:<a href="https://www.researchgate.net/publication/310750750_The_memory_tesseract_Mathematical_equivalence_between_composite_and_separate_storage_memory_models"> The Memory Tesseract: Mathematical Equivalence between Composite and Separate Storage Memory Models</a></li></ul></li></ul>
+<p><strong>Module 4 (9/22): Data structures</strong></p>
+<ul>
+<li><a href="https://www.dropbox.com/s/3lbt2h3d769t686/2021_09_22_data_structures.pdf?dl=0">Lecture slides</a> and <a href="https://drive.google.com/file/d/1KO9WeeRwog-9usDnXq4XUSU5h61YQoeY/view?usp=sharing">recording</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-4.pdf">Assignment 4</a> and discussion questions by next session (9/29)
+<ul>
+<li><a href="https://www.dropbox.com/s/9d71tp3rpeopngs/Module4_HD_vectors_ngrams_ToDo.ipynb?dl=0">Python notebook</a> for programming assignment</li></ul></li>
+<li>Focus paper: Kleyko et al., <a href="https://arxiv.org/pdf/2106.05268.pdf">Vector Symbolic Architectures as a Computing Framework for Nanoscale Hardware</a>
+<ul>
+<li><em>Note for focus paper: You are encouraged to read the whole paper, but the main focus of our discussion will be on Sections IV &amp; V.</em></li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li>Yerxa, Anderson, Weiss: <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Yerxa_HSM.pdf">The Hyperdimensional Stack Machine</a></li>
+<li>Joshi, Halseth, Kanerva. <a href="https://redwood.berkeley.edu/wp-content/uploads/2020/08/JoshiEtAl-QI2016-language-geometry-copy.pdf">Language Geometry Using Random Indexing</a></li>
+<li>Gayler, Levy: <a href="https://www.researchgate.net/publication/215990020_A_distributed_basis_for_analogical_mapping">A Distributed Basis for Analogical Mapping: New frontiers in Analogy Research</a></li>
+<li>Hannagan, Dupoux, Christophe: <a href="http://www.lscp.net/persons/dupoux/papers/Hannagan_DC_2011_Holographic_string_encoding.CognitScience.pdf">Holographic String Encoding</a></li>
+<li>Bloom, <a href="https://dl.acm.org/doi/10.1145/362686.362692">Space/Time Trade-offs in Hash Coding with Allowable Errors</a></li>
+<li>Kleyko, Rahimi, Gayler, Osipov: <a href="https://arxiv.org/abs/1705.03934">Autoscaling Bloom Filter: Controlling Trade-off between True and False Positives</a></li>
+<li>Nickel, Rosasco, Poggio: <a href="https://dl.acm.org/doi/10.5555/3016100.3016172">Holographic Embeddings of Knowledge Graphs</a></li>
+<li>Rachkovskij: <a href="https://ieeexplore.ieee.org/abstract/document/917565">Representation and Processing of Structures with Binary Sparse Distributed Codes</a></li>
+<li>Neubert, Protzel: <a href="https://www.tu-chemnitz.de/etit/proaut/publications/neubert18_hypervector_schemas.pdf">Towards Hypervector Representations for Learning and Planning with Schemas</a></li></ul></li></ul>
+<p><strong>Module 5 (9/29): Resonator networks</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module5_Lecture_slides.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1p7pfGxPXKnBl3kqhAB5d8Nny5QwlJJVc/view?usp=sharing">recording</a></li>
+<li>Focus paper: Frady et al., <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module5_ResonatorNetworks_FocusReading.pdf">“Resonator circuits” &amp; “Resonator Networks, 1”</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-5.pdf">Assignment 5</a> and discussion questions by next session (10/6)</li>
+<li>Further recommended reading:
+<ul>
+<li>Kent et al.,<a href="https://redwood.berkeley.edu/wp-content/uploads/2020/11/kent2020resonator.pdf"> Resonator networks, 2: factorization performance and capacity compared to optimization-based methods</a></li>
+<li>Kent, <a href="https://www2.eecs.berkeley.edu/Pubs/TechRpts/2020/EECS-2020-215.pdf">Multiplicative coding and factorization in vector symbolic models of cognition</a> (especially Chapter 2)</li></ul></li></ul>
+<p><strong>Module 6 (10/6): Analogical reasoning</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module6_lecture_slides.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1-zlR1b6fHvua1tLolDvAKWjt9uOGjEW9/view?usp=sharing">recording</a></li>
+<li>Focus paper: Gayler, Levy: <a href="https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=473CFC698C2CCFFEA5E8092C59F75EE0?doi=10.1.1.324.4736&amp;rep=rep1&amp;type=pdf">A Distributed Basis for Analogical Mapping</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-6.pdf">Assignment 6</a> and discussion questions by next session (10/13)</li>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Module-6-Reading-List.pdf">Further recommended reading (annotated list)</a></li></ul>
+<p><strong>Module 7 (10/13): Information theory</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/VSA_capacity21lecture.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1GK43EJqmBnLaSJJDGOE0yHIgUPDcCsKw/view?usp=sharing">recording</a></li>
+<li>Focus paper: Frady, Kleyko, Sommer: <a href="https://direct.mit.edu/neco/article-abstract/30/6/1449/8400/A-Theory-of-Sequence-Indexing-and-Working-Memory?redirectedFrom=fulltext">A Theory of Sequence Indexing and Working Memory in Recurrent Neural Networks</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuro299-Assigment7.pdf">Assignment 7</a> and discussion questions by next session (10/20)</li>
+<li>Further recommended reading:
+<ul>
+<li>Plate: <a href="http://www2.fiit.stuba.sk/~kvasnicka/CognitiveScience/6.prednaska/thesis_Plate.pdf">Distributed Representations and Nested Compositional Structure</a> <strong>(Section 3.8 and Appendices B-E)</strong></li>
+<li>Gallant, Okaywe: <a href="https://direct.mit.edu/neco/article-abstract/25/8/2038/7896/Representing-Objects-Relations-and-Sequences?redirectedFrom=fulltext">Representing Objects, Relations &amp; Sequences </a><strong>(Section 5)</strong></li>
+<li>Thomas, Dasgupta, Rosing: <a href="https://dl.acm.org/doi/10.1613/jair.1.12664">A Theoretical Perspective on Hyperdimensional Computing</a></li>
+<li>Mirus, Stewart, Conradt: <a href="https://arxiv.org/pdf/2010.00055.pdf">Analyzing the Capacity of Distributed Vector Representations to Encode Spatial Information</a></li>
+<li>Kleyko, Rosato, Frady, Panella, Sommer: <a href="https://arxiv.org/pdf/2012.07881.pdf">Perceptron Theory for Predicting the Accuracy of Neural Networks</a></li></ul></li></ul>
+<p><strong>Module 8 (10/20): Locality-preserving encoding</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299_Module8_slides.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1taZ1WrqketnL4ubd4PivS7_7AjnjCxtq/view?usp=sharing">recording</a></li>
+<li>Focus paper: Frady, Kleyko, Kymn, Olshausen, Sommer: <a href="https://arxiv.org/pdf/2109.03429.pdf">Computing on Functions Using Randomized Vector Representations</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299_Assignment8.pdf">Assignment 8</a> and discussion questions by next session (10/27)</li>
+<li>Further recommended reading:
+<ul>
+<li>Rachkovskij, Slipchenko, Kussul, Baidyk: <a href="https://www.researchgate.net/publication/245407061_Sparse_Binary_Distributed_Encoding_of_Scalars">Sparse Binary Distributed Encoding of Scalars</a></li>
+<li>Smith, Stanford: <a href="https://ieeexplore.ieee.org/document/5726715">A Random Walk in Hamming Space</a></li>
+<li>Purdy, <a href="https://arxiv.org/ftp/arxiv/papers/1602/1602.05925.pdf">Encoding Data for HTM [Hierarchical Temporal Memory] Systems</a></li>
+<li>Räsänen, <a href="http://users.spa.aalto.fi/orasanen/papers/HDC_mapping_CogSci2015.pdf">Generating Hyperdimensional Distributed Representations from Continuous Valued Multivariate Sensory Input</a></li>
+<li>Thomas, Dasgupta, Rosing: <a href="https://dl.acm.org/doi/10.1613/jair.1.12664">A Theoretical Perspective on Hyperdimensional Computing</a> <strong>(Section 5)</strong></li></ul></li></ul>
+<p><strong>Module 9 (10/27): Solving classification problems</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/classification-module-lecture_final_share.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1oP-pBbLOOjB2wuTIkd42YWkZqimzrSh1/view?usp=sharing">recording</a></li>
+<li>Focus paper: Rahimi, Kanerva, Benini, Rabaey: <a href="https://iis-people.ee.ethz.ch/~arahimi/papers/PROC18.pdf">Efficient Biosignal Processing Using Hyperdimensional Computing: Network Templates for Combined Learning and Classification of ExG Signals</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neurosc299-Assignment-9_revised.pdf">Assignment 9</a> and discussion questions by next session (November 3)
+<ul>
+<li>Python Notebooks (<a href="https://www.dropbox.com/s/vi13ddwfamjh65p/Module9_Part_1_Language_identification_ToDo.ipynb?dl=0">for part 1</a>, <a href="https://www.dropbox.com/s/78imlwojtp9zmiy/Module9_Part_2_LPE_GLVQ_vs_cent_ToDo.ipynb?dl=0">for part 2</a>)</li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li>Ge, Parhi: <a href="https://arxiv.org/pdf/2004.11204.pdf">Classification using Hyperdimensional Computing: A Review </a></li>
+<li>Neubert, Schubert, Protzel: <a href="https://link.springer.com/article/10.1007/s13218-019-00623-z">An Introduction to Hyperdimensional Computing for Robotics</a></li>
+<li>Joshi, Halseth, Kanerva: <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/LanguageGeometry.pdf">Language Geometry Using Random Indexing</a></li>
+<li>Rahimi, Benatti, Kanerva, Benini, Rabaey: <a href="https://iis-people.ee.ethz.ch/~arahimi/papers/ICRC16.pdf">Hyperdimensional Biosignal Processing: A Case Study for EMG-based Hand Gesture Recognition</a></li>
+<li>Kleyko, Rahimi, Rachkovskij, Osipov, Rabaey: <a href="https://iis-people.ee.ethz.ch/~arahimi/papers/TNNLS18.pdf">Classification and Recall with Binary Hyperdimensional Computing: Tradeoffs in Choice of Density and Mapping Characteristic</a></li></ul></li></ul>
+<p><strong>Module 10 (11/3): Relations to neural networks</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/2021_11_03_Relations_to_neural_networks.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1UEI677_EpeN8StPg4yO5KkKKyoPeaSq2/view?usp=sharing">recording</a>*
+<ul>
+<li><em>*Note: due to a technical problem, approximately 1 minute is missing at 00:31:55</em></li></ul></li>
+<li>Focus paper: Danihelka, Wayne, Uria, Kalchbrenner, Graves: <a href="https://proceedings.mlr.press/v48/danihelka16.html">Associative Long Short-Term Memory</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299-Assignment10.pdf">Assignment 10</a> and discussion questions by next session (November 10)
+<ul>
+<li><a href="https://www.dropbox.com/s/ulyg87ufa3iclds/Module10_intRVFL_ToDo.ipynb?dl=0">Python Notebook</a></li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li>Ganesan et al.: <a href="https://arxiv.org/abs/2109.02157">Learning with Holographic Reduced Representations</a></li>
+<li>Karunaratne et al.: <a href="https://www.nature.com/articles/s41467-021-22364-0">Robust high-dimensional memory-augmented neural networks</a></li>
+<li>Cheung, Terekhov, Chen, Agrawal, Olshausen: <a href="https://openreview.net/pdf?id=SJewgBBlLH">Superposition of many models into one</a></li>
+<li>Kleyko, Kheffache, Frady, Wiklund, Osipov: <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9174774">Density Encoding Enables Resource-Efficient Randomly Connected Neural Networks</a></li>
+<li>Kleyko, Frady, Kheffache, Osipov: <a href="https://arxiv.org/abs/1706.00280">Integer Echo State Networks: Efficient Reservoir Computing for Digital Hardware</a></li>
+<li>Mitrokhin, Sutor, Summers-Stay, Fermuller, Aloimonos: <a href="https://www.frontiersin.org/articles/10.3389/frobt.2020.00063/full">Symbolic Representation and Learning with Hyperdimensional Computing</a></li>
+<li>Mirus, Blouw, Stewart, Conradt: <a href="https://www.frontiersin.org/articles/10.3389/fnbot.2019.00084/full">An Investigation of Vehicle Behavior Prediction Using a Vector Power Representation to Encode Spatial Positions of Multiple Objects and Neural Networks</a></li>
+<li>“Kanerva machines”
+<ul>
+<li>Wu, Wayne, Graves, Lillicrap: <a href="https://arxiv.org/abs/1804.01756">The Kanerva Machine: A Generative Distributed Memory</a></li>
+<li>Marblestone, Wu, Wayne: <a href="https://arxiv.org/abs/2002.02385">Product Kanerva Machines: Factorized Bayesian Memory</a></li>
+<li>Ramapuram, Wu, Kalousis: <a href="https://openreview.net/pdf?id=QoWatN-b8T">Kanerva++: Extending the Kanerva Machine With Differentiable, Locally Block Allocated Latent Memory</a></li></ul></li></ul></li></ul>
+<p><strong>Module 11 (11/10): Hardware implementations</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299_Slides_Shared-1.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1IuxCcO6HMOm6eq-q9CKr_Ies04T8owUn/view?usp=sharing">recording</a></li>
+<li>Focus paper: Karunaratne et al., <a href="https://www.nature.com/articles/s41928-020-0410-3">In-Memory Hyperdimensional Computing</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299-Assignment11.pdf">Assignment 11</a> and discussion questions by next session (November 17)
+<ul>
+<li><a href="https://www.dropbox.com/s/it8ee88lzkzwvzn/Module11_key_value_memory_ToDo.ipynb?dl=0">Python Notebook</a></li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li><em>Specialized Hardware</em>
+<ul>
+<li>Rahimi, Kanerva, Rabaey: <a href="https://iis-people.ee.ethz.ch/~arahimi/papers/ISLPED16.pdf">A robust and energy-efficient classifier using brain-inspired hyperdimensional computing</a></li>
+<li>Imani et al., <a href="https://ieeexplore.ieee.org/ielaam/6221038/8107686/8012434-aam.pdf?tag=1">Low-power sparse hyperdimensional encoder for language recognition</a></li>
+<li>Menon et al., A Highly Energy-Efficient Hyperdimensional Computing Processor for Wearable Multi-Modal Classification</li></ul></li>
+<li><em>Nearly General-Purpose Hardware</em>
+<ul>
+<li>Datta et al.,<a href="https://ieeexplore.ieee.org/document/8801933"> A programmable hyper-dimensional processor architecture for human-centric IoT</a></li>
+<li>Eggimann, Rahimi, Benini: <a href="https://arxiv.org/abs/2102.02758">A 5 μW Standard Cell Memory-based Configurable Hyperdimensional Computing Accelerator for Always-on Smart Sensing</a></li></ul></li>
+<li><em>Design of Associative Memories</em>
+<ul>
+<li>Imani et al., <a href="http://moimani.weebly.com/uploads/2/3/8/6/23860882/hpca16_imani.pdf">Exploring hyperdimensional associative memory</a></li></ul></li>
+<li><em>NVM and Nanoscalable Paradigm</em> (see also focus paper)
+<ul>
+<li>Rahimi et al., <a href="https://redwood.berkeley.edu/wp-content/uploads/2018/01/rahimi2017high.pdf">High-dimensional computing as a nanoscalable paradigm</a></li>
+<li>Li et al., <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Li2016.pdf">Hyperdimensional computing with 3D VRRAM in-memory kernels: Device-architecture co-design for energy-efficient, error-resilient language recognitionhttps://ieeexplore.ieee.org/document/7838428</a></li></ul></li>
+<li><em>Other Brain-Inspired Hardware Models</em>
+<ul>
+<li>Davies et al., <a href="https://ieeexplore.ieee.org/document/8259423">Loihi: A neuromorphic manycore processor with on-chip learning</a></li>
+<li>Akopyan et al.,<a href="https://ieeexplore.ieee.org/document/7229264"> TrueNorth: Design and tool flow of a 65 mw 1 million neuron programmable neurosynaptic chip</a></li></ul></li></ul></li></ul>
+<p><strong>Module 12 (11/17): Communications</strong></p>
+<ul>
+<li><a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/HD-Computing-in-Communication.pdf">Lecture slides</a> and <a href="https://drive.google.com/file/d/1OwybspcS_mMOn6LqX34loFYRlOh5qg9H/view?usp=sharing">recording</a></li>
+<li>Focus paper: Kim, <a href="https://ieeexplore.ieee.org/document/8422472/">Hyper-Dimensional Modulation for Robust Low-Power Communications</a></li>
+<li>Assignments: Submit <a href="https://redwood.berkeley.edu/wp-content/uploads/2021/08/Neuroscience299-Assignment-12.pdf">Assignment 12</a> and discussion questions by next session (December 1)
+<ul>
+<li><a href="https://www.dropbox.com/s/0rzwakp3hccgahu/NEURO_299_Assignment12_hyperdimensional_modulation.ipynb?dl=0">Python Notebook</a></li></ul></li>
+<li>Further recommended reading:
+<ul>
+<li>Jakimovski, Becker, Sigg, Schmidtke, Beigl: <a href="https://www.teco.edu/~jakimov/papers/Jakimovski-IE11-paper-KIT.pdf">Collective Computing for Dense Sensing Environments</a></li>
+<li>Hsu, Kim: <a href="https://ieeexplore.ieee.org/document/9013603">Collision-Tolerant Narrowband Communication using Non-Orthogonal Modulation and Multiple Access</a></li>
+<li>Hsu, Kim: <a href="https://ieeexplore.ieee.org/document/9348238/">Non-Orthogonal Modulation for Short Packets in Massive Machine Type Communications</a></li>
+<li>Hersche, Lippuner, Korb, Benini, Rahimi: <a href="https://braininformatics.springeropen.com/articles/10.1186/s40708-021-00138-0">Near-channel classifier: symbiotic communication and classification in high-dimensional space</a></li>
+<li>Simpkin et al., <a href="https://research.ibm.com/publications/constructing-distributed-time-critical-applications-using-cognitive-enabled-services">Constructing distributed time-critical applications using cognitive enabled services</a></li>
+<li>Simpkin et al., <a href="https://www.sciencedirect.com/science/article/pii/S0167739X19317467">Efficient Orchestration of Node-RED IoT Workflows using a Vector Symbolic Architecture</a></li></ul></li></ul>
+<p><strong>Related resources</strong><br> <a href="https://www.hd-computing.com/">https://www.hd-computing.com/</a><br> <a href="https://sites.google.com/ltu.se/vsaonline/home?authuser=0">VSAOnline — Online Speakers’ Corner on Vector Symbolic Architectures and Hyperdimensional Computing</a></p>

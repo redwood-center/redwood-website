@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import { fullTitle, hasPage, offeringUrl, offerings, pageHtml, type Offering } from '../../lib/courses';
+import { url } from '../../lib/url';
+
+export function getStaticPaths() {
+  return offerings.filter(hasPage).map((o) => ({ params: { slug: o.slug }, props: { o } }));
+}
+
+const { o } = Astro.props as { o: Offering };
+const others = offerings.filter((x) => x.course === o.course && x !== o);
+---
+
+<Base title={`${fullTitle(o)}, ${o.term}`} current="courses" description={o.summary}>
+  <article class="wrap course">
+    <p class="back"><a href={url('courses/')}>Courses</a></p>
+    <h1>{fullTitle(o)}</h1>
+    <dl class="facts">
+      <div>
+        <dt>Term</dt>
+        <dd>{o.term}</dd>
+      </div>
+      {o.instructors.length > 0 && (
+        <div>
+          <dt>{o.instructors.length === 1 ? 'Instructor' : 'Instructors'}</dt>
+          <dd>{o.instructors.join(', ')}</dd>
+        </div>
+      )}
+      {others.length > 0 && (
+        <div>
+          <dt>Other years</dt>
+          <dd class="others">
+            {others.map((x) => hasPage(x) ? <a href={offeringUrl(x)}>{x.term}</a> : <span>{x.term}</span>)}
+          </dd>
+        </div>
+      )}
+    </dl>
+    <div class="prose body" set:html={pageHtml(o)} />
+  </article>
+</Base>
+
+<style>
+  .course { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  .back { font-weight: 500; }
+  h1 {
+    margin-top: 1rem;
+    font-size: var(--step-4);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 40ch;
+  }
+  .facts {
+    margin: 1.5rem 0 0;
+    padding-left: 1.1rem;
+    border-left: 4px solid var(--gold);
+    display: grid;
+    gap: 0.35rem;
+  }
+  .facts div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1rem; }
+  .facts dt { color: var(--slate); font-size: 0.9375rem; padding-top: 0.1rem; }
+  .facts dd { margin: 0; }
+  .others { display: flex; flex-wrap: wrap; gap: 0.2rem 0.9rem; }
+
+  /* The page content is the old site's HTML, cleaned: paragraphs, headings, lists, tables, a few images. */
+  .body { margin-top: clamp(2rem, 4vw, 2.75rem); }
+  .body :global(p) { max-width: none; }
+  .body :global(p + p) { margin-top: 0.9em; }
+  .body :global(:is(p, ul, ol, .table-scroll) + :is(p, ul, ol, .table-scroll, h2, h3)) { margin-top: 1rem; }
+  .body :global(h2) { font-size: var(--step-2); font-weight: 650; margin-top: 2.25rem; }
+  .body :global(h3) { font-size: var(--step-1); font-weight: 650; margin-top: 1.75rem; }
+  .body :global(:is(h2, h3) + *) { margin-top: 0.6rem; }
+  .body :global(:is(ul, ol)) {
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+    padding-left: 1.4rem;
+  }
+  .body :global(li + li) { margin-top: 0.3rem; }
+  .body :global(li > :is(ul, ol)) { margin-top: 0.3rem; font-size: 1em; }
+  .body :global(a) { overflow-wrap: anywhere; }
+  .body :global(img) { height: auto; margin-block: 1rem; }
+
+  .body :global(.table-scroll) { overflow-x: auto; }
+  .body :global(table) { border-collapse: collapse; width: 100%; font-size: 0.9375rem; line-height: 1.45; }
+  .body :global(:is(td, th)) {
+    padding: 0.55rem 0.9rem 0.55rem 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    text-align: left;
+    min-width: 6rem;
+  }
+  .body :global(th) { font-weight: 600; color: var(--slate); border-bottom: 2px solid var(--brand); }
+  .body :global(td :is(ul, ol)) { font-family: var(--sans); font-size: 1em; line-height: 1.45; padding-left: 1.1rem; }
+  .body :global(td p + p) { margin-top: 0.4rem; }
+  .body :global(td p) { font-family: var(--sans); font-size: 1em; line-height: 1.45; }
+
+  @media (max-width: 640px) {
+    .facts div { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .facts div + div { margin-top: 0.4rem; }
+  }
+</style>
