@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 import { satteri } from '@astrojs/markdown-satteri';
 import fs from 'node:fs';
 import path from 'node:path';
-import { katexMath } from './src/lib/markdown.mjs';
+import { katexMath, marginNotes } from './src/lib/markdown.mjs';
 
 // Paper review decisions (Papers page, dev only) are saved here, outside src/ so saving doesn't reload the page.
 const REVIEW_FILE = path.resolve('../papers-db/review.json');
@@ -48,7 +48,7 @@ export default defineConfig({
   devToolbar: { enabled: false },
   // Jekyll (which builds jamiesimon.io, where the draft is hosted) skips `_`-prefixed folders like `_astro`.
   build: { assets: 'assets' },
-  // Blog posts: $...$ and $$...$$ math, rendered with KaTeX.
-  markdown: { processor: satteri({ features: { math: true }, mdastPlugins: [katexMath] }) },
+  // Blog posts: $...$ and $$...$$ math, rendered with KaTeX, and footnotes shown as margin notes.
+  markdown: { processor: satteri({ features: { math: true }, mdastPlugins: [marginNotes, katexMath] }) },
   vite: { plugins: [paperReview()] },
 });
