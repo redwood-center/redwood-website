@@ -19,7 +19,7 @@ _What structure within the data does the model naturally learn to represent, and
 This is a question of both academic interest and practical importance.
 On the academic side, it'd be very interesting to understand how network weights organize to (imperfectly) reflect the real structure of the natural world.
 Which aspects of natural data are salient for a given learning task, and how do models represent them?
-Which details do the model consider spurious, and therefore ignore?
+Which details does the model consider spurious, and therefore ignore?
 To what degree do these categories align with our intuitions about what's salient and what's spurious?
 When do different models trained on different modalities learn similar representations?
 On the practical side, (pre-/mid-/post-)training on data is still the most effective way to elicit particular behaviors from language models.
@@ -29,7 +29,7 @@ How can we leverage the map between data statistics and model internals to yield
 These are very big and ambitious research questions; we'll likely be working on them for years to come.
 But in this blog post I'll give two examples of research from the Redwood Center that already makes progress in this direction.
 
-## Example 1: Representation manifolds in LLM representations for continuous semantic concepts
+## Example 1: Smooth feature manifolds in LLM representations for continuous semantic concepts
 
 The first example is about geometric structures that arise in the residual stream of language models; this includes linear representational subspaces, curved feature manifolds, latent graphs, posteriors on a simplex, etc.
 These representation geometries are plausibly the substrates of forward pass computations (since the residual stream is the "stage" on which a model performs its high-dimensional computations).
@@ -42,7 +42,7 @@ In each such case, one finds that LLMs consistently self-organize their represen
 For example, the hidden representations for the calendar dates form a wavy loop:
 
 <DatesPCA>
-I pass twenty date-related prompts through the [OLMo 3 7B base model](https://huggingface.co/allenai/Olmo-3-1025-7B), e.g. "Today is my birthday, 14 March", for every date of the year.
+I pass twenty date-related prompts through the [OLMo 3 7B base model](https://huggingface.co/allenai/Olmo-3-1025-7B), e.g., "Today is my birthday, 14 March", for every date of the year.
 For each date, I collect the final-token residual stream vectors, average over the prompts, and then project the 365 resulting vectors onto their top three principal components.
 </DatesPCA>
 
@@ -53,20 +53,20 @@ The analysis has two steps:
 [^sym]: Here's an example of the symmetry, again for calendar months: suppose that the frequency with which two months co-occur with each other in natural language depends _only_ on the time interval between the two months, and not on the individual calendar position of either month. In other words, November co-occurs with January just as frequently as June co-occurs with August, since they are both two months apart.
 
 1. Establish that the symmetry structure is legit (real natural language really has this structure).
-2. Posit that language models are "`word2vec`-like:" they encode co-occurrence statistics via inner products of representation vectors. The hidden representations for phrases and ideas that co-occur more frequently in text will have higher cosine similarity.
+2. Posit that language models are "`word2vec`-like": they encode co-occurrence statistics via inner products of representation vectors. The hidden representations for phrases and ideas that co-occur more frequently in text will have higher cosine similarity.
 
 Then we can exploit the [known solution of the `word2vec` learning problem](https://arxiv.org/abs/2502.09863), which states that the (top) PCA directions of the learned representations correspond to the (top) eigenvectors of the matrix of co-occurrence statistics.[^w2v]
 Since this matrix inherits the translation symmetry from natural language, it's diagonalized by the discrete Fourier transform, and therefore the PCA directions of the model representations correspond to Fourier modes!
-This explains why we see rippled loops: these are the exactly the low-frequency sines and cosines of, e.g., calendar time.
+This explains why we see rippled loops: these are exactly the low-frequency sines and cosines of, e.g., calendar time.
 In fact, we analytically derive the parametric equations for these manifolds in many realistic cases, and show that they predict the empirical observations.
-(The paper goes on to study other interesting properties of learning, including some nice computational properties of these manifolds, but these aspects are beyond scope for this blog post.)
+(The paper goes on to study other interesting properties of learning, including some nice computational properties of these manifolds, but these aspects are beyond the scope of this blog post.)
 
-[^w2v]: One way to think of our approach is that we're using `word2vec` as a "Hydrogen atom" of language modelling: complicated enough to be interesting and predictive, simple enough to be solvable.
+[^w2v]: One way to think of our approach is that we're using `word2vec` as a "hydrogen atom" of language modeling: complicated enough to be interesting and predictive, simple enough to be solvable.
 
 ## Example 2: Irreducible representations in hidden neurons for group composition tasks
 
 The second example is about how neural networks learn to encode structure in computational tasks.
-[Daniel Kunin](https://redwood.berkeley.edu/people/daniel-kunin/) and coauthors [recently studied _sequential group composition_](https://arxiv.org/abs/2602.03655), in which the network is given a sequence of $k$ elements from a group, $g_1, \dots, g_k$, and must output their product.
+Redwood Center postdoc Daniel Kunin and coauthors [recently studied _sequential group composition_](https://arxiv.org/abs/2602.03655), in which the network is given a sequence of $k$ elements from a group, $g_1, \dots, g_k$, and must output their product.
 This is a toy model of the compositional computations that both LLMs and biological brains need to learn (e.g., arithmetic, navigation, generic state tracking).
 This task can't be solved by a linear model.
 How do neural networks learn to represent the group structure of the data?
@@ -75,7 +75,7 @@ The central idea is actually pretty similar in spirit to the previous example.
 The data here has a group symmetry, which comes equipped with a natural "group Fourier transform."[^fourier]
 The role of the "Fourier basis elements" is played by the so-called _irreducible representations_, or irreps, of the group.
 The neural network benefits from transforming each input group element into its irreps because it makes group composition really easy: it reduces to multiplication of matching irreps, with no cross-irrep terms.
-(This is essentially the convolution theorem, i.e. that composition in the original space is just pointwise multiplication in the Fourier space, generalized to groups.)
+(This is essentially the convolution theorem, i.e., that composition in the original space is just pointwise multiplication in the Fourier space, generalized to groups.)
 Therefore, it is _computationally efficient_ for the model to learn how to represent the group elements in terms of their irreps.
 
 [^fourier]: The classical Fourier transform, with $\sin$ and $\cos$, is the special case for the translation/cyclic group.
@@ -83,18 +83,18 @@ Therefore, it is _computationally efficient_ for the model to learn how to repre
 The paper presents a careful analysis of the learning behavior, and shows that in a solvable MLP setting, each hidden neuron specializes to a single irrep.
 In other words, neural networks prefer to represent the irreps in a neuron-aligned basis.
 As a result, the weights pick up the Fourier structure of the data, via a mechanism strongly reminiscent of the previous example!
-(The paper goes on to study other interesting properties of learning, including the learning order and the role of architecture, but these aspects are beyond scope for this blog post.)
+(The paper goes on to study other interesting properties of learning, including the learning order and the role of architecture, but these aspects are beyond the scope of this blog post.)
 
 <D5Irreps>
 A one-hidden-layer neural network learns to compose pairs of elements of $D_5$, the ten symmetries of a regular pentagon.
 Besides the trivial irrep, $D_5$ has a 1-dimensional sign irrep and two 2-dimensional irreps, $\rho_1$ and $\rho_2$.
 Prism (top left): each hidden neuron is a dot; its projection onto the triangular face denotes how specialized the neuron is to the three nontrivial irreps (vertices), and its height represents the neuron norm (i.e., its salience within the model).
 Neurons start small and random; over training, they specialize to an irrep and grow in norm.
-The 1d sign irrep only needs 1 neuron, while the 2d irreps require multiple neurons to be fully represented.
-Table (top right): depicts how sensitive the selected neuron is to each of the 10 group elements.
+The 1-dimensional sign irrep only needs one neuron, while the 2-dimensional irreps require multiple neurons to be fully represented.
+Table (top right): how sensitive the selected neuron is to each of the 10 group elements.
 The sign irrep (and its neuron) distinguishes reflections from pure rotations; the $\rho_1$ irrep oscillates once per full rotation around the pentagon (going down the columns); the $\rho_2$ irrep oscillates twice.
 Bottom: loss curve, showing stepwise learning as irreps are learned in sequence.
-Training details: 1-hidden-layer MLP with bias, mild weight decay, small init and small learning rate.
+Training details: one-hidden-layer MLP with bias, full-batch GD, mild weight decay, small learning rate.
 </D5Irreps>
 
 One interesting difference between the two examples is in how the symmetry in the data becomes manifest to the model.

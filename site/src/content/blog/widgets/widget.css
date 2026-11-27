@@ -1,4 +1,4 @@
-/* Shared look for the blog's interactive figures (DatesPCA, D3Irreps): a figure as wide as the text column, a
+/* Shared look for the blog's interactive figures (DatesPCA, D5Irreps): a figure as wide as the text column, a
    light card like the Papers map, a row of controls, and a caption. */
 
 /* Same font and size as .prose p, so --measure (66ch) gives exactly the text column's width. */

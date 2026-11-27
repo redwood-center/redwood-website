@@ -5,11 +5,12 @@
 // matter. Top: a slowly turning triangular prism with one dot per hidden neuron. Its floor is a triangle with a corner
 // for each of sign, rho1 and rho2, and a dot sits over the point given by the neuron's share of weight energy in each,
 // relative to random weights (which sit at the center); its height is the neuron's weight norm (log scale), so
-// neurons that grow rise and dormant ones stay low and grey. Drag to turn it; it springs back on release. Below: the
+// neurons that grow rise and dormant ones stay low and grey. Drag to turn it; it springs back on release; click a dot
+// to inspect that neuron. Beside it: the inspected neuron's weight on each of the 10 group elements. Below: the
 // training loss, with a dashed line at the loss left once each irrep has been learned. Play runs through training
 // once; the slider (or dragging along the loss plot) scrubs.
 //
-// Data: d5-irreps.json, from d3-widget-src/train.py at the repo root (gitignored), run with ORDER=5 WIDTH=48 BIAS=out
+// Data: d5-irreps.json, from widget-src/train.py at the repo root (gitignored), run with ORDER=5 WIDTH=48 BIAS=out
 // WD=5e-4 LR=0.5 AMPS=0,1.6,1.3,1 SEED=2 STEPS=6000 EVERY=20. The drawing code reads the irreps from the data, so a
 // run on another dihedral group (e.g. ORDER=3) also works. The caption is the component's children:
 // <D5Irreps>Caption text.</D5Irreps>
