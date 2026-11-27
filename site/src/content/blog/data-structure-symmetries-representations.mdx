@@ -94,7 +94,7 @@ The 1-dimensional sign irrep only needs one neuron, while the 2-dimensional irre
 Table (top right): how sensitive the selected neuron is to each of the 10 group elements.
 The sign irrep (and its neuron) distinguishes reflections from pure rotations; the $\rho_1$ irrep oscillates once per full rotation around the pentagon (going down the columns); the $\rho_2$ irrep oscillates twice.
 Bottom: loss curve, showing stepwise learning as irreps are learned in sequence.
-Training details: one-hidden-layer MLP with bias, full-batch GD, mild weight decay, small learning rate.
+Training details: one-hidden-layer MLP with bias, full-batch GD, mild weight decay, small initialization.
 </D5Irreps>
 
 One interesting difference between the two examples is in how the symmetry in the data becomes manifest to the model.
