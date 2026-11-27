@@ -25,3 +25,6 @@ bot/.env
 # Website bot runtime state (git working copies, job records, logs)
 bot/state/
 bot/node_modules/
+
+# Source and data for the blog widgets in site/src/content/blog/widgets/ (experiments, local only)
+/widget-src/

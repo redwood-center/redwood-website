@@ -1,0 +1,695 @@
+---
+// A two-layer network learning to compose elements of D_5 (the pentagon's 10 symmetries), and its hidden neurons
+// settling into irreps. D_5's real irreps are trivial, sign, and two 2-dim rotation irreps rho1 and rho2 (in which the
+// basic rotation turns the plane by 72 and 144 degrees); the inputs have no trivial part, so only the other three
+// matter. Top: a slowly turning triangular prism with one dot per hidden neuron. Its floor is a triangle with a corner
+// for each of sign, rho1 and rho2, and a dot sits over the point given by the neuron's share of weight energy in each,
+// relative to random weights (which sit at the center); its height is the neuron's weight norm (log scale), so
+// neurons that grow rise and dormant ones stay low and grey. Drag to turn it; it springs back on release; click a dot
+// to inspect that neuron. Beside it: the inspected neuron's weight on each of the 10 group elements. Below: the
+// training loss, with a dashed line at the loss left once each irrep has been learned. Play runs through training
+// once; the slider (or dragging along the loss plot) scrubs.
+//
+// Data: d5-irreps.json, from widget-src/train.py at the repo root (gitignored), run with ORDER=5 WIDTH=48 BIAS=out
+// WD=5e-4 LR=0.5 AMPS=0,1.6,1.3,1 SEED=2 STEPS=6000 EVERY=20. The drawing code reads the irreps from the data, so a
+// run on another dihedral group (e.g. ORDER=3) also works. The caption is the component's children:
+// <D5Irreps>Caption text.</D5Irreps>
+import './widget.css';
+import dataUrl from './d5-irreps.json?url';
+---
+
+<figure class="bw-figure">
+  <div class="bw-card" data-d5-irreps data-src={dataUrl}>
+    <div class="top">
+      <canvas
+        class="prism"
+        role="img"
+        aria-label="A slowly turning triangular prism with one dot per hidden neuron. The floor is a triangle with a corner for each of three irreps, and each dot sits over the point given by how its weights split across the three irreps, relative to random weights, which sit at the center; its height is the size of its weights. Neurons are grey while small and take on the color of where they sit as they grow. Over training, the neurons that grow move to one corner and rise. Drag to turn the prism."
+      ></canvas>
+      <canvas
+        class="pent"
+        role="img"
+        aria-label="One neuron's first-input weights, as a grid of ten squares, one per symmetry of the pentagon: the five rotations in the left column and the five reflections in the right, each row holding the two that send the top corner to the same place. Each square is colored by the neuron's weight on that symmetry (grey near zero) and shows a small pentagon moved by it; hovering a square plays the move. It shows the sign neuron, circled in the prism, unless another neuron is clicked. By the end of training the sign neuron's weights are positive on every rotation and negative on every reflection; a rho-1 neuron's go down each column as a wave that goes once around the pentagon, and a rho-2 neuron's twice."
+      ></canvas>
+    </div>
+    <canvas
+      class="loss"
+      role="img"
+      aria-label="Training loss against step. Dashed lines mark the loss left once each irrep has been learned, one irrep after another."
+    ></canvas>
+    <div class="bw-controls">
+      <button type="button" class="bw-play" aria-label="Play training" aria-pressed="false"></button>
+      <input class="bw-slider" type="range" min="0" max="1" step="1" value="0" aria-label="Training step" />
+      <span class="bw-readout"></span>
+    </div>
+  </div>
+  <figcaption><slot /></figcaption>
+</figure>
+
+<style>
+  /* Vertical swipes still scroll the page on touch; horizontal ones turn the prism. */
+  .prism { cursor: grab; touch-action: pan-y; }
+  .prism:active { cursor: grabbing; }
+  /* The prism, and beside it (below it, on a narrow screen) the weights of one neuron. */
+  .top { display: flex; flex-wrap: wrap; align-items: center; }
+  .top .prism { flex: 3 1 340px; width: auto; min-width: 0; }
+  .top .pent { flex: 1 0 150px; width: auto; min-width: 0; }
+  .loss { margin-top: 0.4rem; cursor: ew-resize; touch-action: pan-y; }
+</style>
+
+<script>
+  const STEPS_PER_S = 500; // training steps per second of playback
+  const SPIN = 0.14; // the prism's turning speed (rad/s)
+  const PITCH = 0.3; // camera looks down on the prism by this much (rad)
+  const PITCH_MIN = 0.05, PITCH_MAX = Math.PI / 2; // how far a drag can tilt it: nearly level, up to looking straight down
+  const HEIGHT = 1.7; // prism height, in the same units
+  const DRAG_RAD = 0.01; // turn per dragged pixel (rad)
+  const SPRING_S = 0.15; // time constant of the spring back after a drag (s)
+  const LOSS_H = 150; // px
+  // Weights in the inspector: a diverging scale from purple (negative) through light grey to red (positive).
+  const NEG = [106, 76, 156], MID = [214, 220, 216], POS = [196, 71, 58];
+  const PLAY = '<svg viewBox="0 0 10 10"><path d="M2 1 L9 5 L2 9 Z"/></svg>';
+  const PAUSE = '<svg viewBox="0 0 10 10"><path d="M2 1 H4 V9 H2 Z M6 1 H8 V9 H6 Z"/></svg>';
+  // Each irrep's color and display name, by its name in the data. Dormant neurons are drawn in grey.
+  const COLORS: Record<string, string> = { trivial: '#7d8a82', sign: '#c27c0e', standard: '#2f6f52', rho1: '#2f6f52', rho2: '#3a66a3' };
+  const NAMES: Record<string, string> = { rho1: 'ρ₁', rho2: 'ρ₂' };
+  const DORMANT = '#a9b3ac';
+  // A neuron is grey below norm GREY_BELOW and takes on the color of where it sits on the floor as its norm grows to
+  // FULL_AT (on a log scale). The prism's floor is at norm FLOOR_NORM.
+  const GREY_BELOW = 0.3, FULL_AT = 1, FLOOR_NORM = 0.01;
+  // Floor corners [x, z] (z toward the viewer before turning) for the prism's three irreps: back, left, right.
+  const R3 = Math.sqrt(3);
+  const VERT = [[0, (-2 * R3) / 3], [-1, R3 / 3], [1, R3 / 3]];
+
+  type Data = {
+    irreps: string[];
+    dims?: number[]; // each irrep's dimension (D_3's data leaves it out: 1, 1, 2)
+    width: number;
+    lossInit: number;
+    steps: number[];
+    loss: number[][]; // [snapshot][irrep]
+    frac: number[]; // flat [snapshot][neuron][irrep], thousandths
+    norm: number[]; // flat [snapshot][neuron], units of 1e-4
+    elements?: number[][]; // the group elements [a, b] (r^a s^b), in the order the weights list them
+    watch?: number[]; // neurons whose weights the pentagons show to start with, one per floor irrep
+    w1Every?: number; // steps between the weight snapshots below
+    w1?: (number[] | null)[][]; // [snapshot][neuron]: first-input weights, largest entry 100; null: same as before
+  };
+
+  function sizeCanvas(canvas: HTMLCanvasElement, height: (w: number) => number) {
+    const dpr = window.devicePixelRatio || 1;
+    const W = canvas.clientWidth;
+    const H = Math.round(height(W));
+    canvas.style.height = `${H}px`;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    const ctx = canvas.getContext('2d')!;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, W, H };
+  }
+
+  // Sets the figure up for one run's data; returns a function that tears it down again (listeners, observers and the
+  // animation loop), so another run can take its place.
+  function setup(root: HTMLElement, d: Data): () => void {
+    const ac = new AbortController(), signal = ac.signal;
+    let dead = false;
+    const prism = root.querySelector<HTMLCanvasElement>('.prism')!;
+    const lossCanvas = root.querySelector<HTMLCanvasElement>('.loss')!;
+    const pentCanvas = root.querySelector<HTMLCanvasElement>('.pent')!;
+    const button = root.querySelector<HTMLButtonElement>('.bw-play')!;
+    const slider = root.querySelector<HTMLInputElement>('.bw-slider')!;
+    const readout = root.querySelector<HTMLElement>('.bw-readout')!;
+    const css = getComputedStyle(document.documentElement);
+    const C = { text: css.getPropertyValue('--text').trim(), slate: css.getPropertyValue('--slate').trim(), line: css.getPropertyValue('--line').trim() };
+    const font = css.getPropertyValue('--sans').trim() || 'sans-serif';
+    const fs = 12;
+
+    const S = d.steps.length, N = d.width, last = S - 1, K = d.irreps.length;
+    const dims = d.dims ?? [1, 1, 2];
+    const frac = (s: number, n: number, k: number) => d.frac[(s * N + n) * K + k] / 1000;
+    const colorOf = (k: number) => COLORS[d.irreps[k]] ?? '#7d8a82';
+    const nameOf = (k: number) => NAMES[d.irreps[k]] ?? d.irreps[k];
+    // The prism's floor: the three irreps (leaving out trivial when there are more than three). A neuron sits at its
+    // share of weight energy in each, relative to chance: random weights put a share proportional to dim^2 in an
+    // irrep, so each share is divided by dim^2 before renormalizing. Random weights then sit at the triangle's
+    // center, and a neuron entirely in one irrep still sits at its corner.
+    const FLOOR = K > 3 ? [1, 2, 3] : [0, 1, 2];
+    const floorShares = (get: (k: number) => number) => {
+      const w = FLOOR.map((k) => get(k) / dims[k] ** 2), tot = w[0] + w[1] + w[2];
+      return tot > 0 ? w.map((v) => v / tot) : [1 / 3, 1 / 3, 1 / 3];
+    };
+    const norm = (s: number, n: number) => d.norm[s * N + n] / 1e4;
+    const watch = d.watch ?? []; // neurons the pentagons below show to start with
+    let pick = watch[0] ?? -1; // the neuron the inspector shows (and the prism circles); click a neuron to change it
+    const maxNorm = Math.max(...Array.from({ length: N }, (_, n) => norm(last, n)));
+    // A neuron's color from where it is now: its floor position mixes the corners' colors, and its norm sets how much
+    // of that shows over grey (none below GREY_BELOW, all from FULL_AT up). Returns [css color, saturation 0 to 1].
+    const rgb = (hex: string) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+    const FLOOR_RGB = FLOOR.map((k) => rgb(colorOf(k))), GREY_RGB = rgb(DORMANT);
+    const tint = (w: number[], nv: number): [string, number] => {
+      const sat = Math.min(1, Math.max(0, Math.log(nv / GREY_BELOW) / Math.log(FULL_AT / GREY_BELOW)));
+      const c = [0, 1, 2].map((j) => {
+        const hue = w[0] * FLOOR_RGB[0][j] + w[1] * FLOOR_RGB[1][j] + w[2] * FLOOR_RGB[2][j];
+        return Math.round(GREY_RGB[j] + sat * (hue - GREY_RGB[j]));
+      });
+      return [`rgb(${c[0]}, ${c[1]}, ${c[2]})`, sat];
+    };
+
+    slider.max = String(last);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let t = reduceMotion ? last : 0; // snapshot position, fractional while playing
+    const lerp = (get: (s: number) => number) => {
+      const i0 = Math.floor(t), i1 = Math.min(i0 + 1, last), f = t - i0;
+      return get(i0) * (1 - f) + get(i1) * f;
+    };
+
+    // --- Prism. Height is log(norm), from FLOOR_NORM (anything smaller sits on the floor) to a little over the largest.
+    const yLo = FLOOR_NORM, yHi = 1.4 * maxNorm;
+    const hOf = (nv: number) => Math.log(Math.max(nv, yLo) / yLo) / Math.log(yHi / yLo); // 0 (floor) to 1 (roof)
+    const TICKS = [0.01, 0.03, 0.1, 0.3, 1, 3].filter((v) => v >= yLo && v <= yHi);
+    let yaw = 0, dragYaw = 0, dragPitch = 0;
+    // Model space: x right, y up, z toward the viewer before turning. Turn by yaw about the vertical, then tilt by
+    // pitch so the camera looks down; no perspective (parallel projection), so from straight above the prism is
+    // just its triangle. Returns [x, y] about the center in prism units (y down) and the depth (larger is nearer).
+    const view = (x: number, h: number, z: number, a: number, b: number) => {
+      const y = (h - 0.5) * HEIGHT;
+      const x1 = x * Math.cos(a) + z * Math.sin(a), z1 = -x * Math.sin(a) + z * Math.cos(a);
+      const y2 = y * Math.cos(b) - z1 * Math.sin(b), z2 = y * Math.sin(b) + z1 * Math.cos(b);
+      return [x1, -y2, z2];
+    };
+    // A fixed scale and center, chosen so the prism fits at every turn and tilt it can reach: it never zooms.
+    let P = sizeCanvas(prism, () => Math.min(0.8 * root.clientWidth, 380));
+    let fit = { cx: 0, cy: 0, sc: 1 };
+    function fitPrism() {
+      let mx = 0, up = 0, down = 0;
+      for (let i = 0; i < 72; i++)
+        for (let j = 0; j <= 12; j++) {
+          const b = PITCH_MIN + (j / 12) * (PITCH_MAX - PITCH_MIN);
+          for (const [x, z] of VERT)
+            for (const h of [0, 1]) {
+              const [px, py] = view(x, h, z, (i / 72) * 2 * Math.PI, b);
+              mx = Math.max(mx, Math.abs(px));
+              up = Math.max(up, -py);
+              down = Math.max(down, py);
+            }
+        }
+      const sc = Math.min((P.W / 2 - 56) / mx, (P.H - 30 - 14) / (up + down));
+      fit = { cx: P.W / 2, cy: 30 + up * sc, sc };
+    }
+    const proj = (x: number, h: number, z: number) => {
+      const [px, py, depth] = view(x, h, z, yaw + dragYaw, PITCH + dragPitch);
+      return [fit.cx + fit.sc * px, fit.cy + fit.sc * py, depth];
+    };
+    const at = (w: number[], h: number) => {
+      const [x, z] = [0, 1].map((j) => w.reduce((a, wk, k) => a + wk * VERT[k][j], 0));
+      return proj(x, h, z);
+    };
+    const corner = (k: number, h: number) => proj(VERT[k][0], h, VERT[k][1]);
+    // Depth in [0, 1], far to near, for fading what is at the back.
+    const near = (depth: number) => Math.max(0, Math.min(1, (depth + 1.3) / 2.6));
+
+    let shown: number[][] = []; // where each neuron's dot was last drawn
+    function drawPrism() {
+      const { ctx, W, H } = P;
+      if (!W) return;
+      ctx.clearRect(0, 0, W, H);
+      const seg = (a: number[], b: number[]) => { ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.stroke(); };
+      const poly = (pts: number[][]) => {
+        ctx.beginPath();
+        pts.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
+        ctx.closePath();
+      };
+      const halo = (text: string, x: number, y: number, col: string, alpha = 1) => {
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = '#fafcfa';
+        ctx.lineWidth = 3;
+        ctx.lineJoin = 'round';
+        ctx.strokeText(text, x, y);
+        ctx.fillStyle = col;
+        ctx.fillText(text, x, y);
+        ctx.globalAlpha = 1;
+      };
+      const tri = (h: number) => [0, 1, 2].map((k) => corner(k, h));
+      // The prism's space in white, gridline triangles at the norm ticks, then the edges (dashed at the back).
+      ctx.fillStyle = '#fff';
+      for (const h of [0, 1]) { poly(tri(h)); ctx.fill(); }
+      for (let k = 0; k < 3; k++) { poly([corner(k, 0), corner((k + 1) % 3, 0), corner((k + 1) % 3, 1), corner(k, 1)]); ctx.fill(); }
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = C.line;
+      for (const v of TICKS) {
+        const t3 = tri(hOf(v));
+        for (let k = 0; k < 3; k++) seg(t3[k], t3[(k + 1) % 3]);
+      }
+      // Edges in the irreps' colors: each upright in its corner's color, and each floor and roof edge shading from one
+      // corner's color to the other's; dashed at the back.
+      const edge = (a: number[], b: number[], ka: number, kb: number) => {
+        const g = ctx.createLinearGradient(a[0], a[1], b[0], b[1]);
+        g.addColorStop(0, colorOf(FLOOR[ka]));
+        g.addColorStop(1, colorOf(FLOOR[kb]));
+        ctx.strokeStyle = g;
+        ctx.setLineDash(a[2] + b[2] < -0.1 ? [3, 3] : []);
+        seg(a, b);
+      };
+      ctx.globalAlpha = 0.55;
+      for (const h of [0, 1]) {
+        const t3 = tri(h);
+        for (let k = 0; k < 3; k++) edge(t3[k], t3[(k + 1) % 3], k, (k + 1) % 3);
+      }
+      for (let k = 0; k < 3; k++) edge(corner(k, 0), corner(k, 1), k, k);
+      ctx.globalAlpha = 1;
+      ctx.setLineDash([]);
+      ctx.font = `${fs - 1}px ${font}`;
+      // The norm axis runs up one upright, its labels on the outside and its title turned to run up beside them;
+      // fainter when it is at the back, and fading out as the camera nears looking straight down (where the upright
+      // shrinks to a point).
+      const lookDown = Math.min(1, Math.max(0, (Math.cos(PITCH + dragPitch) - 0.25) / 0.35));
+      const base = corner(1, 0), side = base[0] < fit.cx ? -1 : 1, axisAlpha = (0.45 + 0.55 * near(base[2])) * lookDown;
+      if (axisAlpha > 0.01) {
+        ctx.textAlign = side < 0 ? 'right' : 'left';
+        ctx.textBaseline = 'middle';
+        ctx.strokeStyle = C.slate;
+        let labelW = 0;
+        for (const v of TICKS) {
+          const p = corner(1, hOf(v));
+          ctx.globalAlpha = axisAlpha;
+          seg(p, [p[0] + 3 * side, p[1]]);
+          halo(String(v), p[0] + 6 * side, p[1], C.slate, axisAlpha);
+          labelW = Math.max(labelW, ctx.measureText(String(v)).width);
+        }
+        const lo = corner(1, 0), hi = corner(1, 1);
+        ctx.save();
+        ctx.translate(lo[0] + side * (6 + labelW + 6), (lo[1] + hi[1]) / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = side < 0 ? 'bottom' : 'top';
+        halo('weight norm', 0, 0, C.slate, axisAlpha);
+        ctx.restore();
+      }
+      // Corner names at the roof, pushed out from the roof's center.
+      ctx.font = `600 ${fs}px ${font}`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      const roof = tri(1), rc = [0, 1].map((j) => (roof[0][j] + roof[1][j] + roof[2][j]) / 3);
+      FLOOR.forEach((irrep, k) => {
+        const [x, y, depth] = roof[k];
+        const dx = x - rc[0], dy = y - rc[1], len = Math.hypot(dx, dy) || 1;
+        halo(nameOf(irrep), x + (dx / len) * 13, y + (dy / len) * 13 - 3, colorOf(irrep), 0.5 + 0.5 * near(depth));
+      });
+      ctx.font = `${fs - 1}px ${font}`;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'top';
+      halo('drag to turn', 2, 2, C.slate, 0.7);
+      if (watch.length) halo('click a neuron to see its weights', 2, 2 + fs + 2, C.slate, 0.7);
+
+      // Each neuron now: floor position, norm, color and saturation.
+      const nowAt = Array.from({ length: N }, (_, n) => {
+        const w = floorShares((k) => lerp((s) => frac(s, n, k))), nv = lerp((s) => norm(s, n));
+        return { w, nv, tint: tint(w, nv) };
+      });
+      // Every neuron's trail, from initialization to now, in its current color (grey while it is grey, and fainter).
+      const now = Math.floor(t);
+      ctx.lineWidth = 1.25;
+      for (let n = 0; n < N; n++) {
+        ctx.strokeStyle = nowAt[n].tint[0];
+        ctx.globalAlpha = 0.14 + 0.21 * nowAt[n].tint[1];
+        ctx.beginPath();
+        for (let s = 0; s <= now; s++) {
+          const [x, y] = at(floorShares((k) => frac(s, n, k)), hOf(norm(s, n)));
+          s ? ctx.lineTo(x, y) : ctx.moveTo(x, y);
+        }
+        const [x, y] = at(nowAt[n].w, hOf(nowAt[n].nv));
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+      // Dots, back to front, fainter at the back; they grow a little as they take on color.
+      const dots = nowAt.map(({ w, nv }) => at(w, hOf(nv)));
+      shown = dots;
+      const order = Array.from({ length: N }, (_, n) => n).sort((a, b) => dots[a][2] - dots[b][2]);
+      for (const n of order) {
+        const [x, y, depth] = dots[n];
+        const [col, sat] = nowAt[n].tint;
+        ctx.globalAlpha = (0.55 + 0.37 * sat) * (0.7 + 0.3 * near(depth));
+        ctx.fillStyle = col;
+        ctx.beginPath(); ctx.arc(x, y, 3.2 + 1.3 * sat, 0, 2 * Math.PI); ctx.fill();
+        if (n === pick) {
+          ctx.globalAlpha = 0.75;
+          ctx.strokeStyle = C.text;
+          ctx.lineWidth = 1.25;
+          ctx.beginPath(); ctx.arc(x, y, 7.5, 0, 2 * Math.PI); ctx.stroke();
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // --- One neuron's weights, one square per group element. Element r^a s^b (s the flip through the top corner, r
+    // the turn by 360/n degrees anticlockwise) sits in row a and column b: rotations on the left, reflections on the
+    // right, so each row holds a pair g, g s that send the top corner to the same place. Each square holds a little
+    // pentagon showing the move: a dot where the top corner goes, and a curl that reverses if the move flips it over.
+    // Hovering (or tapping) a square plays the move from the start. Colors are on one scale for every neuron and step,
+    // so a small neuron is grey.
+    const G = d.elements?.length ?? 0, ngon = G / 2, nw = d.w1?.length ?? 0, w1Every = d.w1Every ?? 1;
+    if (!watch.length || !nw) pentCanvas.style.display = 'none';
+    const cellOf: number[][] = [[], []]; // [b][a] -> element index
+    (d.elements ?? []).forEach(([a, b], e) => (cellOf[b][a] = e));
+    // Unpack the "same as before" markers: [snapshot][neuron][element].
+    const W1: number[][][] = [];
+    (d.w1 ?? []).forEach((row, i) => W1.push(row.map((w, n) => (w ? w.map((v) => v / 1000) : W1[i - 1][n]))));
+    // The color scale runs from -wMax to +wMax (anything beyond is full color): the typical largest weight of a neuron
+    // that grows, rounded to a tenth.
+    const peaks = W1.length ? W1[nw - 1].map((w) => Math.max(...w.map(Math.abs))).filter((_, n) => norm(last, n) >= GREY_BELOW).sort((a, b) => a - b) : [];
+    const wMax = peaks.length ? Math.max(0.1, Math.round(10 * peaks[Math.floor(peaks.length / 2)]) / 10) : 1;
+    const w1Now = (n: number, e: number) => {
+      const x = Math.min(nw - 1, lerp((s) => d.steps[s]) / w1Every), i0 = Math.floor(x), i1 = Math.min(i0 + 1, nw - 1), f = x - i0;
+      return W1[i0][n][e] * (1 - f) + W1[i1][n][e] * f;
+    };
+    const mixArr = (v: number) => {
+      const end = v > 0 ? POS : NEG, f = Math.min(1, Math.abs(v) / wMax);
+      return [0, 1, 2].map((j) => Math.round(MID[j] + f * (end[j] - MID[j])));
+    };
+    const mixRGB = (v: number) => `rgb(${mixArr(v).join(', ')})`;
+    // The grid's layout, from the canvas width: square size, gap, and where the grid starts.
+    const GAP = 5, TOP = 2 * (fs + 2) + 8, HEAD = 14;
+    const cellSize = (W: number) => Math.max(26, Math.min(40, (W - 20 - GAP) / 2));
+    const pentH = (W: number) => TOP + HEAD + ngon * cellSize(W) + (ngon - 1) * GAP + 46;
+    const cellXY = (W: number, a: number, b: number) => {
+      const cs = cellSize(W);
+      return [W / 2 - cs - GAP / 2 + b * (cs + GAP), TOP + HEAD + a * (cs + GAP)];
+    };
+    let hover = -1, hoverAt = 0; // the square being hovered (element index) and when the hover began (ms)
+    // How far through its move a hovered square is: [flip 0..1, turn 0..1]; a square not hovered shows the move done.
+    const moveAt = (a: number, b: number, now: number) => {
+      const PRE = 0.3, FLIP = b ? 0.55 : 0, TURN = a ? 0.3 + 0.15 * a : 0, HOLD = 1;
+      let u = ((now - hoverAt) / 1000) % (PRE + FLIP + TURN + HOLD) - PRE;
+      const ease = (x: number) => { x = Math.min(1, Math.max(0, x)); return x * x * (3 - 2 * x); };
+      const f = FLIP ? ease(u / FLIP) : 0;
+      u -= FLIP;
+      return [f, TURN ? ease(u / TURN) : 0];
+    };
+    let Q = sizeCanvas(pentCanvas, pentH);
+    function drawPent() {
+      const { ctx, W, H } = Q;
+      if (!W || !nw || pick < 0) return;
+      ctx.clearRect(0, 0, W, H);
+      const n = pick, cs = cellSize(W), now = performance.now();
+      ctx.font = `${fs - 1}px ${font}`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = C.slate;
+      ctx.fillText('neuron weight', W / 2, 2);
+      ctx.fillText('per group element', W / 2, 2 + fs + 2);
+      ctx.font = `${fs - 2}px ${font}`;
+      ctx.textBaseline = 'bottom';
+      ['rotate', 'reflect'].forEach((label, b) => ctx.fillText(label, cellXY(W, 0, b)[0] + cs / 2, TOP + HEAD - 3));
+      const ri = cs * 0.34, rc = ri * 0.45;
+      for (let b = 0; b < 2; b++) {
+        for (let a = 0; a < ngon; a++) {
+          const e = cellOf[b][a], [x, y] = cellXY(W, a, b), c = mixArr(w1Now(n, e));
+          ctx.fillStyle = `rgb(${c.join(', ')})`;
+          ctx.beginPath();
+          ctx.roundRect(x, y, cs, cs, 4);
+          ctx.fill();
+          if (e === hover) { ctx.strokeStyle = C.text; ctx.lineWidth = 1.5; ctx.stroke(); }
+          // The move, applied to the pentagon: flip about the vertical (through the top corner), then turn.
+          const [f, r] = e === hover && !reduceMotion ? moveAt(a, b, now) : [b, 1];
+          const sx = b ? Math.cos(Math.PI * f) : 1, al = (-2 * Math.PI * a * r) / ngon;
+          const ox = x + cs / 2, oy = y + cs / 2 + ri * 0.08;
+          const T = (px: number, py: number) => [ox + px * sx * Math.cos(al) - py * Math.sin(al), oy + px * sx * Math.sin(al) + py * Math.cos(al)];
+          const lum = 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2];
+          const ink = lum < 140 ? '#fff' : '#24302a';
+          ctx.strokeStyle = ctx.fillStyle = ink;
+          ctx.lineWidth = 1.1;
+          ctx.lineJoin = 'round';
+          ctx.beginPath();
+          for (let k = 0; k <= ngon; k++) {
+            const th = -Math.PI / 2 - (2 * Math.PI * k) / ngon;
+            const [px, py] = T(ri * Math.cos(th), ri * Math.sin(th));
+            if (k) ctx.lineTo(px, py); else ctx.moveTo(px, py);
+          }
+          ctx.stroke();
+          // The top corner's dot, and an anticlockwise curl.
+          const [dx, dy] = T(0, -ri);
+          ctx.beginPath(); ctx.arc(dx, dy, 2.4, 0, 2 * Math.PI); ctx.fill();
+          const pts = Array.from({ length: 16 }, (_, k) => { const th = Math.PI / 2 + 0.6 - (1.35 * Math.PI * k) / 15; return T(rc * Math.cos(th), rc * Math.sin(th)); });
+          ctx.beginPath();
+          pts.forEach(([px, py], k) => (k ? ctx.lineTo(px, py) : ctx.moveTo(px, py)));
+          ctx.stroke();
+          const [tx, ty] = pts[15], [qx, qy] = pts[13], ql = Math.hypot(tx - qx, ty - qy) || 1, ux = (tx - qx) / ql, uy = (ty - qy) / ql;
+          ctx.beginPath();
+          ctx.moveTo(tx + ux * 1.5, ty + uy * 1.5);
+          ctx.lineTo(tx - ux * 3.5 - uy * 2.6, ty - uy * 3.5 + ux * 2.6);
+          ctx.lineTo(tx - ux * 3.5 + uy * 2.6, ty - uy * 3.5 - ux * 2.6);
+          ctx.closePath();
+          ctx.fill();
+        }
+      }
+      // Below the grid: the hovered move and its weight, then the color key.
+      const gy = TOP + HEAD + ngon * cs + (ngon - 1) * GAP;
+      ctx.font = `${fs - 1}px ${font}`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = C.text;
+      if (hover >= 0) {
+        const [a, b] = d.elements![hover], deg = (360 * a) / ngon, v = w1Now(n, hover);
+        const move = b ? (a ? `flip, turn ${deg}°` : 'flip') : a ? `turn ${deg}°` : 'identity';
+        ctx.fillText(`${move}: ${v >= 0 ? '+' : '−'}${Math.abs(v).toFixed(2)}`, W / 2, gy + 6);
+      } else {
+        ctx.fillStyle = C.slate;
+        ctx.globalAlpha = 0.7;
+        ctx.fillText(matchMedia('(hover: hover)').matches ? 'hover a square to see it move' : 'tap a square to see it move', W / 2, gy + 6);
+        ctx.globalAlpha = 1;
+      }
+      ctx.textBaseline = 'middle';
+      const kw = Math.min(70, W - 80), ky = gy + 34, kx = W / 2 - kw / 2;
+      const g = ctx.createLinearGradient(kx, 0, kx + kw, 0);
+      [-1, 0, 1].forEach((v) => g.addColorStop((v + 1) / 2, mixRGB(v * wMax)));
+      ctx.fillStyle = g;
+      ctx.fillRect(kx, ky - 4, kw, 8);
+      ctx.fillStyle = C.slate;
+      ctx.textAlign = 'right';
+      ctx.fillText(`−${wMax}`, kx - 4, ky);
+      ctx.textAlign = 'left';
+      ctx.fillText(`+${wMax}`, kx + kw + 4, ky);
+    }
+    // Which square is under the pointer.
+    const cellAt = (e: PointerEvent) => {
+      const r = pentCanvas.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top, cs = cellSize(Q.W);
+      for (const [g, [a, b]] of (d.elements ?? []).entries()) {
+        const [x, y] = cellXY(Q.W, a, b);
+        if (px >= x && px <= x + cs && py >= y && py <= y + cs) return g;
+      }
+      return -1;
+    };
+    const setHover = (g: number) => {
+      if (g === hover) return;
+      hover = g;
+      hoverAt = performance.now();
+      pentCanvas.style.cursor = g >= 0 ? 'pointer' : '';
+      drawPent();
+      kick();
+    };
+    pentCanvas.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') setHover(cellAt(e)); }, { signal });
+    pentCanvas.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') setHover(-1); }, { signal });
+    pentCanvas.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse') return;
+      const g = cellAt(e);
+      if (g === hover) hoverAt = performance.now(); else setHover(g); // tapping again replays the move
+      kick();
+    }, { signal });
+
+    // --- Loss: the total, with a dashed line at the loss left once each irrep has been learned, in the order they
+    // are learned (by when each irrep's part of the loss halves).
+    let L = sizeCanvas(lossCanvas, () => LOSS_H);
+    const box = () => ({ x0: 34, x1: L.W - 8, y0: 18, y1: L.H - 32 });
+    const total = (s: number) => d.loss[s].reduce((a, b) => a + b, 0);
+    const halfway = (k: number) => d.steps[d.loss.findIndex((l) => l[k] < d.loss[0][k] / 2)] ?? Infinity;
+    const learned = d.irreps.map((_, k) => k).filter((k) => d.loss[0][k] > 1e-6).sort((a, b) => halfway(a) - halfway(b));
+    const levels = learned.map((k, i) => [k, total(0) - learned.slice(0, i + 1).reduce((a, j) => a + d.loss[0][j], 0)]);
+    function drawLoss() {
+      const { ctx, W, H } = L;
+      if (!W) return;
+      ctx.clearRect(0, 0, W, H);
+      const { x0, x1, y0, y1 } = box();
+      const xmax = d.steps[last], ymax = d.lossInit * 1.05;
+      const X = (step: number) => x0 + ((x1 - x0) * step) / xmax;
+      const Y = (v: number) => y1 - ((y1 - y0) * v) / ymax;
+      ctx.font = `${fs - 1}px ${font}`;
+      ctx.fillStyle = C.slate;
+      ctx.strokeStyle = C.line;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y1); ctx.lineTo(x1, y1); ctx.stroke();
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'middle';
+      for (let v = 0; v <= ymax; v += 0.2) ctx.fillText(String(Math.round(v * 10) / 10), x0 - 5, Y(v));
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      for (let s = 0; s <= xmax; s += xmax > 4000 ? 1000 : 500) {
+        ctx.beginPath(); ctx.moveTo(X(s), y1); ctx.lineTo(X(s), y1 + 3); ctx.stroke();
+        // Keep the last label inside the canvas.
+        ctx.textAlign = X(s) + ctx.measureText(String(s)).width / 2 > W ? 'right' : 'center';
+        ctx.fillText(String(s), ctx.textAlign === 'right' ? W : X(s), y1 + 5);
+      }
+      ctx.textAlign = 'center';
+      ctx.fillText('training step', (x0 + x1) / 2, y1 + 5 + fs + 1);
+      ctx.textAlign = 'left';
+      ctx.fillText('loss', 2, 0);
+      // A dashed line per irrep at the loss left once it is learned.
+      ctx.setLineDash([4, 4]);
+      for (const [k, v] of levels) {
+        ctx.strokeStyle = colorOf(k);
+        ctx.globalAlpha = 0.8;
+        ctx.beginPath(); ctx.moveTo(x0, Y(v)); ctx.lineTo(x1, Y(v)); ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.globalAlpha = 1;
+      // The loss.
+      ctx.strokeStyle = C.text;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let s = 0; s <= last; s++) s ? ctx.lineTo(X(d.steps[s]), Y(total(s))) : ctx.moveTo(X(d.steps[s]), Y(total(s)));
+      ctx.stroke();
+      // Cursor at the current step.
+      const sx = X(lerp((s) => d.steps[s]));
+      ctx.strokeStyle = C.text;
+      ctx.globalAlpha = 0.35;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(sx, y0); ctx.lineTo(sx, y1); ctx.stroke();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = C.text;
+      ctx.beginPath(); ctx.arc(sx, Y(lerp(total)), 3, 0, 2 * Math.PI); ctx.fill();
+      // Labels at the right end of each dashed line, on a halo of the card's color.
+      ctx.font = `600 ${fs - 1}px ${font}`;
+      ctx.textAlign = 'right';
+      ctx.textBaseline = 'bottom';
+      for (const [k, v] of levels) {
+        const text = `${nameOf(k)} irrep learned`;
+        ctx.strokeStyle = '#fafcfa';
+        ctx.lineWidth = 4;
+        ctx.lineJoin = 'round';
+        ctx.strokeText(text, x1 - 4, Y(v) - 2);
+        ctx.fillStyle = colorOf(k);
+        ctx.fillText(text, x1 - 4, Y(v) - 2);
+      }
+    }
+
+    function draw() {
+      drawPrism();
+      drawPent();
+      drawLoss();
+      readout.textContent = `step ${Math.round(lerp((s) => d.steps[s]))}`;
+      slider.value = String(Math.round(t));
+    }
+
+    // --- One animation loop for playback, the prism's turning, and its spring back after a drag. It runs while the
+    // figure is on screen (or while playing).
+    let playing = false, started = false, visible = false, raf: number | null = null, prev: number | null = null;
+    let drag: { x: number; y: number; yaw: number; pitch: number; moved: boolean } | null = null;
+    const kick = () => { if (raf === null) { prev = null; raf = requestAnimationFrame(frame); } };
+    function frame(now: number) {
+      raf = null;
+      if (dead) return;
+      const dt = prev === null ? 0 : Math.min(0.1, (now - prev) / 1000);
+      prev = now;
+      if (playing) {
+        t = Math.min(last, t + (dt * STEPS_PER_S * last) / d.steps[last]);
+        if (t >= last) setPlaying(false);
+      }
+      if (!drag) {
+        if (!reduceMotion) yaw += SPIN * dt;
+        const k = reduceMotion ? 0 : Math.exp(-dt / SPRING_S);
+        dragYaw *= k;
+        dragPitch *= k;
+        if (Math.abs(dragYaw) + Math.abs(dragPitch) < 1e-3) dragYaw = dragPitch = 0;
+      }
+      draw();
+      const moving = playing || drag || dragYaw || dragPitch || (visible && !reduceMotion) || (hover >= 0 && !reduceMotion);
+      if (moving) raf = requestAnimationFrame(frame);
+    }
+
+    function setPlaying(p: boolean) {
+      playing = p;
+      if (playing && t >= last) t = 0;
+      button.innerHTML = playing ? PAUSE : PLAY;
+      button.setAttribute('aria-label', playing ? 'Pause' : 'Play training');
+      button.setAttribute('aria-pressed', String(playing));
+      if (playing) kick();
+    }
+
+    button.addEventListener('click', () => setPlaying(!playing), { signal });
+    slider.addEventListener('input', () => {
+      setPlaying(false);
+      t = Number(slider.value);
+      draw();
+    }, { signal });
+
+    // Drag the prism to turn it; it springs back on release.
+    prism.addEventListener('pointerdown', (e) => {
+      drag = { x: e.clientX, y: e.clientY, yaw: dragYaw, pitch: dragPitch, moved: false };
+      prism.setPointerCapture(e.pointerId);
+      kick();
+    }, { signal });
+    prism.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      if (Math.hypot(e.clientX - drag.x, e.clientY - drag.y) > 4) drag.moved = true;
+      dragYaw = drag.yaw + (e.clientX - drag.x) * DRAG_RAD;
+      dragPitch = Math.max(PITCH_MIN - PITCH, Math.min(PITCH_MAX - PITCH, drag.pitch + (e.clientY - drag.y) * DRAG_RAD));
+    }, { signal });
+    const release = (e: PointerEvent) => {
+      if (!drag) return;
+      if (!drag.moved && e.type === 'pointerup' && nw) {
+        const r = prism.getBoundingClientRect(), px = e.clientX - r.left, py = e.clientY - r.top;
+        let best = -1, bestD = 12;
+        shown.forEach(([x, y], n) => { const dd = Math.hypot(x - px, y - py); if (dd < bestD) { bestD = dd; best = n; } });
+        if (best >= 0) {
+          pick = pick === best ? watch[0] : best; // clicking the shown neuron again goes back to the sign neuron
+          draw();
+        }
+      }
+      drag = null;
+      dragYaw = Math.atan2(Math.sin(dragYaw), Math.cos(dragYaw)); // spring back the short way round
+      kick();
+    };
+    prism.addEventListener('pointerup', release, { signal });
+    prism.addEventListener('pointercancel', release, { signal });
+
+    // Drag along the loss plot to scrub through training.
+    const scrub = (e: PointerEvent) => {
+      const { x0, x1 } = box();
+      const x = e.clientX - lossCanvas.getBoundingClientRect().left;
+      setPlaying(false);
+      t = Math.max(0, Math.min(1, (x - x0) / (x1 - x0))) * last;
+      draw();
+    };
+    lossCanvas.addEventListener('pointerdown', (e) => { lossCanvas.setPointerCapture(e.pointerId); scrub(e); }, { signal });
+    lossCanvas.addEventListener('pointermove', (e) => { if (lossCanvas.hasPointerCapture(e.pointerId)) scrub(e); }, { signal });
+
+    setPlaying(false);
+    const ro = new ResizeObserver(() => {
+      P = sizeCanvas(prism, () => Math.min(0.8 * root.clientWidth, 380));
+      L = sizeCanvas(lossCanvas, () => LOSS_H);
+      if (watch.length) Q = sizeCanvas(pentCanvas, pentH);
+      fitPrism();
+      draw();
+    });
+    ro.observe(root);
+    document.fonts?.load(`1em ${font}`).then(() => dead || draw());
+    // Turn while on screen; play through training once, the first time the figure scrolls into view.
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible) kick();
+      if (entry.intersectionRatio >= 0.5 && !started && !reduceMotion) { started = true; setPlaying(true); }
+    }, { threshold: [0, 0.5] });
+    io.observe(root);
+
+    return () => {
+      dead = true;
+      ac.abort();
+      ro.disconnect();
+      io.disconnect();
+      if (raf !== null) cancelAnimationFrame(raf);
+    };
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-d5-irreps]')) {
+    fetch(root.dataset.src!).then((r) => r.json()).then((data) => setup(root, data));
+  }
+</script>

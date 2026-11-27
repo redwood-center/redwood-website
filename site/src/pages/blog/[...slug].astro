@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { url, formatDate } from '../../lib/url';
+import 'katex/dist/katex.min.css';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', (p) => !p.data.draft);
@@ -27,7 +28,8 @@ const { Content } = await render(post);
 </Base>
 
 <style>
-  .post { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  /* Posts get a wider text column than the rest of the site. */
+  .post { padding-block: clamp(2.5rem, 6vw, 4.5rem); --measure: 79ch; }
   .back { font-weight: 500; }
   h1 {
     margin-top: 1rem;
@@ -37,9 +39,76 @@ const { Content } = await render(post);
     max-width: 24ch;
   }
   .byline { margin-top: 1rem; color: var(--slate); display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
-  .body { margin-top: clamp(2rem, 4vw, 3rem); }
+  /* The text column: in the paragraphs' font and size, so its width (in ch) matches theirs, and everything in it
+     (headings, lists, figures) wraps to the same width. Margin notes float out past its right edge. */
+  .body {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    display: flow-root; /* contain margin notes that run past the end */
+    max-width: var(--measure);
+    font-family: var(--serif);
+    font-size: 1.0625rem;
+  }
   .body :global(h2) { font-size: var(--step-2); font-weight: 650; margin: 2rem 0 0.75rem; }
   .body :global(h3) { font-size: var(--step-1); font-weight: 650; margin: 1.5rem 0 0.5rem; }
   .body :global(img) { max-width: 100%; height: auto; margin-block: 1.5rem; }
-  .body :global(ul), .body :global(ol) { font-family: var(--serif); line-height: 1.65; max-width: var(--measure); }
+  .body :global(ul), .body :global(ol) { line-height: 1.65; }
+  /* Margin notes (footnotes, from src/lib/markdown.mjs): a numbered label, a checkbox, then the note. Narrow
+     screens: the label opens the note below the line. Wide screens: the note floats into the right margin. */
+  .body :global(.sn-ref) {
+    font-family: var(--sans);
+    font-size: 0.7em;
+    font-weight: 600;
+    line-height: 0;
+    vertical-align: super;
+    padding-inline: 0.1em 0.05em;
+    color: var(--brand);
+    cursor: pointer;
+  }
+  .body :global(.sn-toggle) { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .body :global(.sn-ref:has(+ .sn-toggle:focus-visible)) { outline: 3px solid var(--brand-soft); outline-offset: 2px; border-radius: 2px; }
+  .body :global(.sn-num) {
+    font-family: var(--sans);
+    font-size: 0.75em;
+    font-weight: 600;
+    vertical-align: super;
+    line-height: 0;
+    margin-right: 0.3em;
+    color: var(--brand);
+  }
+  .body :global(.sidenote) {
+    display: none;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--slate);
+  }
+  .body :global(.sn-toggle:checked + .sidenote) {
+    display: block;
+    margin-block: 0.6rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--wash);
+    border-left: 3px solid var(--brand-soft);
+  }
+  @media (min-width: 68rem) {
+    .body :global(.sn-ref) { cursor: default; }
+    .body :global(.sidenote),
+    .body :global(.sn-toggle:checked + .sidenote) {
+      display: block;
+      float: right;
+      clear: right;
+      width: 15rem;
+      margin: 0.2rem -17.5rem 0.75rem 0;
+      padding: 0;
+      background: none;
+      border: 0;
+      font-size: 0.875rem;
+    }
+  }
+  .body :global(.katex) { font-size: 1.05em; }
+  .body :global(.katex-display) {
+    max-width: var(--measure);
+    margin-block: 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-block: 0.25rem; /* room for tall glyphs, which overflow-y would clip */
+  }
 </style>
